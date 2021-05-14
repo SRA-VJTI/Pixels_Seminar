@@ -1,2 +1,2 @@
-# Intro_to_CV
+# Introduction to Computer Vision
 SRA's seminar on Introduction to Computer Vision Fundamentals
