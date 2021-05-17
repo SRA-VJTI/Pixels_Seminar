@@ -1,0 +1,43 @@
+# Version control, Git and GitHub
+
+* [Get familiar with version control, git and GitHub](#1.get-familiar-with-version-control,-git-and-github)
+* [Create your own repository and project folder structure](#2.create-your-own-repository-and-project-folder-structure)
+* Sync and interact with your repository through the command line
+
+# 1.Get familiar with version control, Git and GitHub
+
+## What is version control?
+* Version control allows you to keep track of your work and helps you to easily explore the changes you have made, be it data, coding scripts, notes, etc.
+* With version control software such as Git, version control is much smoother and easier to implement. Using an online platform like Github to store your files means that you have an online back up of your work, which is beneficial for both you and your collaborator
+* Having a GitHub repo makes it easy for you to keep track of collaborative and personal projects - all files necessary for certain analyses can be held together and people can add in their code, graphs, etc. as the projects develop. 
+
+## How to get started (Download)
+* ### For Windows
+    * Download and install [Git](https://git-scm.com/downloads) for your operating system.
+
+* ### For Linux
+    ```
+    $ sudo apt-get update
+    $ sudo apt-get install git
+    ```
+## How does version control work?
+### What is a repository?
+* You can think of a repository (aka a repo) as a “main folder”, everything associated with a specific project should be kept in a repo for that project. Repos can have folders within them, or just be separate files.
+
+* You will have a local copy (on your computer) and an online copy (on GitHub) of all the files in the repository.
+
+### The workflow
+#### The GitHub workflow can be summarised by the “commit-pull-push” mantra.
+
+* Commit
+    * Once you’ve saved your files, you need to commit them - this means the changes you have made to files in your repo will be saved as a version of the repo, and your changes are now ready to go up on GitHub (the online copy of the repository).
+* Pull 
+    * Now, before you send your changes to Github, you need to pull, i.e. make sure you are completely up to date with the latest version of the online version of the files - other people could have been working on them even if you haven’t. You should always pull before you start editing and before you push.
+* Push
+    * Once you are up to date, you can push your changes - at this point in time your local copy and the online copy of the files will be the same.
+
+
+# 2.Create your own repository and project folder structure
+
+## To make a repository, go to `Repositories/New repository`.
+![](https://github.com/Spnetic-5/Intro_to_CV/tree/main/Git_Github/assets/1.png)
