@@ -2,7 +2,7 @@
 
 * [Get familiar with version control, git and GitHub](#1.get-familiar-with-version-control,-git-and-github)
 * [Create your own repository and project folder structure](#2.create-your-own-repository-and-project-folder-structure)
-* Sync and interact with your repository through the command line
+* [Sync and interact with your repository through the command line](#3.sync-and-interact-with-your-repository-through-the-command-line)
 
 # 1.Get familiar with version control, Git and GitHub
 
