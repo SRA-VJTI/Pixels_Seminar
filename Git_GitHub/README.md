@@ -39,14 +39,21 @@
 
 # 2.Create your own repository and project folder structure
 
-## 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
+### 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/1.png" align="center">
 
-## 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
+### 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/2.png" align="center">
 
-## 3. Click on Initialise repo with a README.md file, which contains information about the project, the purpose of the repository, as well as any comments on licensing and data sources. Choose a License also & Click on `Create Repository` button.
+### 3. Click on Initialise repo with a README.md file, which contains information about the project. Choose a License also & Click on `Create Repository` button.
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/3.png" align="center">
 
-## 4. Here is how the repository should look:
+### 4. Here is how the repository should look:
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/4.png" align="center">
+
+# 3.Sync and interact with your repository through the command line:
+
+### Run the following command in Terminal or cmd, change `<username>` with your own username:
+```
+$ git clone https://github.com/<username>/my-first-repo.git
+```
