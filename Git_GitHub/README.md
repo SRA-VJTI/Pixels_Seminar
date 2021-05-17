@@ -39,5 +39,14 @@
 
 # 2.Create your own repository and project folder structure
 
-## To make a repository, go to `Repositories/New repository`.
-![](https://github.com/Spnetic-5/Intro_to_CV/tree/main/Git_Github/assets/1.png)
+## 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/1.png" align="center">
+
+## 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/2.png" align="center">
+
+## 3. Click on Initialise repo with a README.md file, which contains information about the project, the purpose of the repository, as well as any comments on licensing and data sources. Choose a License also & Click on `Create Repository` button.
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/3.png" align="center">
+
+## 4. Here is how the repository should look:
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/4.png" align="center">
