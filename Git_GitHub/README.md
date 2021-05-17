@@ -1,10 +1,10 @@
 # Version control, Git and GitHub
 
-* [Get familiar with version control, git and GitHub](#1.get-familiar-with-version-control,-git-and-github)
-* [Create your own repository and project folder structure](#2.create-your-own-repository-and-project-folder-structure)
-* [Sync and interact with your repository through the command line](#3.sync-and-interact-with-your-repository-through-the-command-line)
+* [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control,-git-and-github)
+* [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
+* [Sync and interact with your repository through the command line](#sync-and-interact-with-your-repository-through-the-command-line)
 
-# 1.Get familiar with version control, Git and GitHub
+# Get familiar with version control, Git and GitHub
 
 ## What is version control?
 * Version control allows you to keep track of your work and helps you to easily explore the changes you have made, be it data, coding scripts, notes, etc.
@@ -37,7 +37,7 @@
     * Once you are up to date, you can push your changes - at this point in time your local copy and the online copy of the files will be the same.
 
 
-# 2.Create your own repository and project folder structure
+# Create your own repository and project folder structure
 
 ### 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/1.png" align="center">
@@ -51,7 +51,7 @@
 ### 4. Here is how the repository should look:
 <img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/Git_GitHub/assets/4.png" align="center">
 
-# 3.Sync and interact with your repository through the command line:
+# Sync and interact with your repository through the command line:
 
 ### Run the following command in Terminal or cmd, change `<username>` with your own username:
 ```
