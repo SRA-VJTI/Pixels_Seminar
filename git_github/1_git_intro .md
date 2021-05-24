@@ -2,14 +2,9 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
-<<<<<<< HEAD
-    - [Initialise new projects remotely](#remote-initialisation)
-    - [Initialise new projects locally](#local-initialisation)
-=======
-    - [Initialise new projects locally](#local-Initialisation)
-    - [Initialise new projects remotely](#cloning-from-a-remote)
->>>>>>> ef633af1be2ec379989bf5c010f81f14814f2838
-* [Clone a repository using the command line](#clone-a-repository-using-the-command-line)
+  * [Remote Initialisation](remote-initialisation)
+  * [Local Initialisation](local-initialisation)
+* [Sync and interact with your repository through the command line](#sync-and-interact-with-your-repository-through-the-command-line)
 
 # Get familiar with version control, Git and GitHub
 
@@ -47,19 +42,19 @@
 # Create your own repository and project folder structure
 
 # Remote Initialisation
+
 ### 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
-<img src="./assets/1.png" align="center">
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/1.png" align="center">
 
 ### 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
-<img src="./assets/2.png" align="center">
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/2.png" align="center">
 
 ### 3. Click on Initialise repo with a README.md file, which contains information about the project. Choose a License also & Click on `Create Repository` button.
-<img src="./assets/3.png" align="center">
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/3.png" align="center">
 
 ### 4. Here is how the repository should look:
-<img src="./assets/4.png" align="center">
+<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/4.png" align="center">
 
-<<<<<<< HEAD
 
 # Local Initialisation
 
@@ -117,9 +112,8 @@
   <img src="./assets/1.git_push_new.JPG" width="500"/>
 </p>
 
-=======
->>>>>>> ef633af1be2ec379989bf5c010f81f14814f2838
-# Clone a repository using the command line
+
+# Sync and interact with your repository through the command line:
 
 ### Run the following command in Terminal or cmd, change `<username>` with your own username:
 ```
