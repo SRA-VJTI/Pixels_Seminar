@@ -2,7 +2,9 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
-* [Sync and interact with your repository through the command line](#sync-and-interact-with-your-repository-through-the-command-line)
+    - [Initialise new projects remotely](#remote-initialisation)
+    - [Initialise new projects locally](#local-initialisation)
+* [Clone a repository using the command line](#clone-a-repository-using-the-command-line)
 
 # Get familiar with version control, Git and GitHub
 
@@ -39,19 +41,77 @@
 
 # Create your own repository and project folder structure
 
+# Remote Initialisation
 ### 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/1.png" align="center">
+<img src="./assets/1.png" align="center">
 
 ### 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/2.png" align="center">
+<img src="./assets/2.png" align="center">
 
 ### 3. Click on Initialise repo with a README.md file, which contains information about the project. Choose a License also & Click on `Create Repository` button.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/3.png" align="center">
+<img src="./assets/3.png" align="center">
 
 ### 4. Here is how the repository should look:
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/4.png" align="center">
+<img src="./assets/4.png" align="center">
 
-# Sync and interact with your repository through the command line:
+
+# Local Initialisation
+
+* You can create a git repository **from a local directory** as well. The repository running on your local computer will have all the properties of a git repository
+* To do this, first create a new folder
+```
+    mkdir my_project
+```
+
+* Initialise directory as git
+
+```
+    git init
+```
+
+<p align="center">
+  <img src="./assets/1.git_init.JPG" width="500"/>
+</p>
+
+* Your default branch may be 'master'. Set it as 'main'
+
+```
+    git branch -m main
+```
+<p align="center">
+  <img src="./assets/1.git_branch.JPG" width="500"/>
+</p>
+
+
+* Set remote. URL will be the HTTPS url of the repo you have created before in [remote-initialisation]
+
+```
+    git remote add origin URL
+```
+<p align="center">
+  <img src="./assets/1.git_remote.JPG" width="500"/>
+</p>
+
+
+* Now your local directory is a git repository. You can start making changes to it as follows : 
+
+```
+    touch new_file.txt
+    git status
+    git add .
+    git commit
+    git push -u -f origin main
+    
+```
+<p align="center">
+  <img src="./assets/1.git_first_commit_push.JPG" width="500"/>
+</p>
+
+<p align="center">
+  <img src="./assets/1.git_push_new.JPG" width="500"/>
+</p>
+
+# Clone a repository using the command line
 
 ### Run the following command in Terminal or cmd, change `<username>` with your own username:
 ```
