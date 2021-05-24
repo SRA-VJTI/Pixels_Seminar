@@ -108,9 +108,6 @@
   <img src="./assets/1.git_first_commit_push.JPG" width="500"/>
 </p>
 
-<p align="center">
-  <img src="./assets/1.git_push_new.JPG" width="500"/>
-</p>
 
 
 # Sync and interact with your repository through the command line:
