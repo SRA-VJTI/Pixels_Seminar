@@ -232,6 +232,7 @@ After merging, you can successfully push your changes to your Remote Repository
 ```
  git branch new_branch_name
  git branch
+ cat .git/HEAD
  
 ```
 <p align="center">
