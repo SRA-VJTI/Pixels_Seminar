@@ -148,8 +148,8 @@ Note : The files that you commit will **not** be visible in your **Remote Reposi
 ## git pull and git push
 
 * We have so far studied how to modify a file, track it and store it in our Local Git Repository
-* To make these changes visible in your Remote Repository, you need to run **git pull** command
-* The git pull command updates your Remote Repository with content from your local Git Repository
+* To make these changes visible in your Remote Repository, you need to run **git push** command
+* The git push command updates your Remote Repository with content from your local Git Repository
 
 * If you want to publish your project uptil now to your git server, you can run the 'git push' command as follows
 ```
