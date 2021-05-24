@@ -89,3 +89,20 @@ Ignored files are usually build artifacts and machine generated files that can b
 Ignored files are tracked in a special file named .gitignore that is checked in at the root of your repository. **There is no explicit git ignore command**: instead the .gitignore file must be edited and committed by hand when you have new files that you wish to ignore.
 
 ![git ignore](assets/3_gitignore.png)
+
+## Undoing past changes
+In order to undo you will have to first learn to see the past commits and see what changes have happened in the past.
+
+### git log
+Gives a list of commits that have happened on the current branch.
+![git log Example](assets/3_git_log.png)
+
+
+### git checkout .
+This is used when you have uncommited changes that you wish to remove, from the workspace.
+
+![git checkout . example](assets/3_git_remove_unstaged.png)
+
+### git reset
+#### DEMO
+![git reset options](assets/3_git_reset_ss.png)

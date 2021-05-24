@@ -2,8 +2,13 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
+<<<<<<< HEAD
     - [Initialise new projects remotely](#remote-initialisation)
     - [Initialise new projects locally](#local-initialisation)
+=======
+    - [Initialise new projects locally](#local-Initialisation)
+    - [Initialise new projects remotely](#cloning-from-a-remote)
+>>>>>>> ef633af1be2ec379989bf5c010f81f14814f2838
 * [Clone a repository using the command line](#clone-a-repository-using-the-command-line)
 
 # Get familiar with version control, Git and GitHub
@@ -54,6 +59,7 @@
 ### 4. Here is how the repository should look:
 <img src="./assets/4.png" align="center">
 
+<<<<<<< HEAD
 
 # Local Initialisation
 
@@ -111,6 +117,8 @@
   <img src="./assets/1.git_push_new.JPG" width="500"/>
 </p>
 
+=======
+>>>>>>> ef633af1be2ec379989bf5c010f81f14814f2838
 # Clone a repository using the command line
 
 ### Run the following command in Terminal or cmd, change `<username>` with your own username:

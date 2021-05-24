@@ -6,7 +6,6 @@
   - [Fetching from and Pushing to Remotes](#fetching-and-pushing)
 - [Three States of a Git file](#states-of-a-git-file)
 - [Pulling and Pushing](#git-pull-and-git-push)
-- [Undoing commits](#undoing-commits)
 - [Git Branching](#git-branching)
 
 
@@ -233,6 +232,7 @@ After merging, you can successfully push your changes to your Remote Repository
 ```
  git branch new_branch_name
  git branch
+ cat .git/HEAD
  
 ```
 <p align="center">
