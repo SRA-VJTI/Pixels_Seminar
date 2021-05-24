@@ -2,6 +2,8 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
+    - [Initialise new projects locally](#local-Initialisation)
+    - [Initialise new projects remotely](#cloning-from-a-remote)
 * [Clone a repository using the command line](#clone-a-repository-using-the-command-line)
 
 # Get familiar with version control, Git and GitHub
