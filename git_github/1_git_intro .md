@@ -2,8 +2,8 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
-  * [Remote Initialisation](remote-initialisation)
-  * [Local Initialisation](local-initialisation)
+  * [Remote Initialisation](#remote-initialisation)
+  * [Local Initialisation](#local-initialisation)
 * [Sync and interact with your repository through the command line](#sync-and-interact-with-your-repository-through-the-command-line)
 
 # Get familiar with version control, Git and GitHub
