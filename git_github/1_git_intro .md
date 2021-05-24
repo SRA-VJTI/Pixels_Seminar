@@ -2,7 +2,7 @@
 
 * [Get familiar with version control, Git and GitHub](#get-familiar-with-version-control-git-and-github)
 * [Create your own repository and project folder structure](#create-your-own-repository-and-project-folder-structure)
-* [Sync and interact with your repository through the command line](#sync-and-interact-with-your-repository-through-the-command-line)
+* [Clone a repository using the command line](#clone-a-repository-using-the-command-line)
 
 # Get familiar with version control, Git and GitHub
 
@@ -40,18 +40,18 @@
 # Create your own repository and project folder structure
 
 ### 1. To make a repository, go to `Repositories/New repository` & Click on `New` button.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/1.png" align="center">
+<img src="./assets/1.png" align="center">
 
 ### 2. Let’s create a new public repository. You can call it whatever you like if the name is available also add a small description.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/2.png" align="center">
+<img src="./assets/2.png" align="center">
 
 ### 3. Click on Initialise repo with a README.md file, which contains information about the project. Choose a License also & Click on `Create Repository` button.
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/3.png" align="center">
+<img src="./assets/3.png" align="center">
 
 ### 4. Here is how the repository should look:
-<img src="https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/assets/4.png" align="center">
+<img src="./assets/4.png" align="center">
 
-# Sync and interact with your repository through the command line:
+# Clone a repository using the command line
 
 ### Run the following command in Terminal or cmd, change `<username>` with your own username:
 ```
