@@ -29,7 +29,7 @@ number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 102
 **BINARY IMAGES**
 
 
-![BINARY IMAGES](/assets/images/tux.png)
+![BINARY IMAGES](Intro_to_CV/cv-basics/Images/b&w.png)
 
 
 
