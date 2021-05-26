@@ -26,16 +26,16 @@ The size of the image is defined as the total number of pixels in the horizontal
 
 number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
 
-**BINARY IMAGES**
+## BINARY IMAGES
 
 
-![BINARY IMAGES](Intro_to_CV/cv-basics/images/b&w.PNG)
+![BINARY IMAGES](/cv-basics/images/b&w.PNG)
 
-**GRAYSCALE IMAGES**
-![GRAYSCALE IMAGES](Intro_to_CV/cv-basics/images/gray.PNG)
+## GRAYSCALE IMAGES
+![GRAYSCALE IMAGES](/cv-basics/images/gray.PNG)
 
-**RGB IMAGES**
-![RGB IMAGES](Intro_to_CV/cv-basics/images/rgb.PNG)
+## RGB IMAGES
+![RGB IMAGES](/cv-basics/images/rgb.PNG)
 
 \2. **Resolution**: The number of pixels per unit is called the resolution
 
@@ -83,11 +83,7 @@ Their types are:
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
-![ADDITIVE MODEL](Intro_to_CV/cv-basics/images/add.PNG)
-
-
-
-
+![ADDITIVE MODEL](/cv-basics/images/add.PNG)
 
 ### SUBTRACTIVE MODEL
 
@@ -99,11 +95,7 @@ Their types are:
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
-![SUBTRACTIVE MODEL](Intro_to_CV/cv-basics/images/subt.PNG)
-
-
-
-
+![SUBTRACTIVE MODEL](/cv-basics/images/subt.PNG)
 
 ### HSV COLOUR MODEL
 
@@ -115,11 +107,7 @@ Their types are:
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
-![HSV COLOUR MODEL](Intro_to_CV/cv-basics/images/hsv(img).PNG)
-
-
-
-
+![HSV COLOUR MODEL](/cv-basics/images/hsv(img).PNG)
 
 ### THREE COMPONENTS
 
