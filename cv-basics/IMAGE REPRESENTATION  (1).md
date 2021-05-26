@@ -1,22 +1,20 @@
 ﻿
 
-How do we represent Image?
+## How do we represent Image?
 
-It can be represented in various forms. As most of the time, representation
+- It can be represented in various forms. 
+- As most of the time, representation
 
-refers to the way that brings information, such as color is coded digitally,
+  refers to the way that brings information, such as color is coded digitally,
 
-and how the image is stored, i.e., how an image file is structured.
+  and how the image is stored, i.e., how an image file is structured.
 
-So,for the simplicity of computing it is represented in a matrix form.
-
-
-
+- So,for the simplicity of computing it is represented in a matrix form.
 
 
-SOME IMPORTANT TERMINOLOGIES
+## SOME IMPORTANT TERMINOLOGIES
 
-\1. Pixel: Pixel is the smallest unit of a picture displayed on the computer screen.
+1. Pixel: Pixel is the smallest unit of a picture displayed on the computer screen.
 
 A pixel includes its own:-
 
@@ -28,6 +26,16 @@ The size of the image is defined as the total number of pixels in the horizontal
 
 number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
 
+**BINARY IMAGES**
+
+
+![BINARY IMAGES](/assets/images/tux.png)
+
+
+
+
+**GRAYSCALE IMAGES**
+![GRAYSCALE IMAGES](/assets/images/tux.png)
 
 
 
@@ -36,55 +44,21 @@ number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 102
 
 
 
-BINARY IMAGES
+
+**RGB IMAGES**
+![RGB IMAGES](/assets/images/tux.png)
 
 
 
 
 
-MATRIX REPRESENTATION
 
 
 
 
 
-GRAYSCALE IMAGES
 
-
-
-
-
-MATRIX REPRESENTATION
-
-
-
-
-
-RGB IMAGES
-
-
-
-
-
-VALUE DISTRIBUTION OVER CHANNELS
-
-
-
-
-
-MATRIX REPRESENTATION
-
-
-
-
-
-STAGGERING OF 3 CHANNELS
-
-
-
-
-
-\2. Resolution: The number of pixels per unit is called the resolution
+\2. **Resolution**: The number of pixels per unit is called the resolution
 
 of the image.The sharpness of the picture on display depends on the
 
@@ -92,19 +66,16 @@ resolution and the size of the monitor.
 
 It includes-
 
-● Image Resolution: The distance between two pixels.
+● **Image Resolution**: The distance between two pixels.
 
-● Screen Resolution: The number of horizontal and vertical pixels displayed on the screen is called
+● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called
 
 Screen Resolution.
 
 For Example– 640 x 480, 1024 x 768 (Horizontal x Vertical)
 
 
-
-
-
-\3. Aspect Ratio: The ratio of image’s width to its height is known as
+\3. **Aspect Ratio**: The ratio of image’s width to its height is known as
 
 the aspect ratio of an image. The height and width of an image are
 
@@ -114,23 +85,16 @@ For Example: If a graphics has an aspect ratio of 2:1, it means the width is twi
 
 It includes–
 
-● Frame aspect ratio: Horizontal /Vertical Size
+● **Frame aspect ratio**: Horizontal /Vertical Size
 
-● Pixel aspect ratio: Width of Pixel/Height of Pixel
+● **Pixel aspect ratio**: Width of Pixel/Height of Pixel
 
-
-
-
-
-COLOUR MODELS
+## COLOUR MODELS
 
 Color model is a 3D color coordinate system to produce all range of color through the primary color set.
+Their types are:
 
-
-
-
-
-ADDITIVE MODEL
+### ADDITIVE MODEL
 
 ● It is also named as “RGB model.” RGB stands for Red, Green, Blue.
 
@@ -140,27 +104,29 @@ ADDITIVE MODEL
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
+![ADDITIVE MODEL](/assets/images/tux.png)
 
 
 
 
-SUBTRACTIVE MODEL
+
+### SUBTRACTIVE MODEL
 
 ● It is also named as “CMYK Model.” CMYK stands for Cyan, Magenta, Yellow, and Black.
 
-●
-
-The Subtractive model uses a reflection of light to display the colors.
+● The Subtractive model uses a reflection of light to display the colors.
 
 ● The perceived color depends on the reflection of light.
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
+![SUBTRACTIVE MODEL](/assets/images/tux.png)
 
 
 
 
-HSV COLOUR MODEL
+
+### HSV COLOUR MODEL
 
 ● These are schemes that describe the way colors combine to create the spectrum we see.
 
@@ -170,13 +136,15 @@ HSV COLOUR MODEL
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
+![HSV COLOUR MODEL](/assets/images/tux.png)
 
 
 
 
-THREE COMPONENTS
 
-HUE: Hue is the color portion of the model, expressed as a number from 0 to 360 degrees:
+### THREE COMPONENTS
+
+**HUE**: Hue is the color portion of the model, expressed as a number from 0 to 360 degrees:
 
 Red falls between 0 and 60 degrees.
 
@@ -190,13 +158,13 @@ Blue falls between 241 and 300 degrees.
 
 Magenta falls between 301 and 360 degrees.
 
-SATURATION: Saturation describes the amount of gray in a particular color, from 0 to 100 percent.
+**SATURATION**: Saturation describes the amount of gray in a particular color, from 0 to 100 percent.
 
 Reducing this component toward zero introduces more gray and produces a faded effect. Sometimes,
 
 saturation appears as a range from 0 to 1, where 0 is gray, and 1 is a primary color.
 
-VALUE (OR BRIGHTNESS): Value works in conjunction with saturation and describes the brightness or
+**VALUE (OR BRIGHTNESS)**: Value works in conjunction with saturation and describes the brightness or
 
 intensity of the color, from 0 to 100 percent, where 0 is completely black, and 100 is the brightest and
 
