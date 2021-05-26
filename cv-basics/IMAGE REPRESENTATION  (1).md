@@ -29,13 +29,13 @@ number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 102
 **BINARY IMAGES**
 
 
-![BINARY IMAGES](/Intro_to_CV/cv-basics/images/b&w.png)
+![BINARY IMAGES](Intro_to_CV/cv-basics/images/b&w.PNG)
 
 **GRAYSCALE IMAGES**
-![GRAYSCALE IMAGES](/Intro_to_CV/cv-basics/images/gray.png)
+![GRAYSCALE IMAGES](Intro_to_CV/cv-basics/images/gray.PNG)
 
 **RGB IMAGES**
-![RGB IMAGES](/Intro_to_CV/cv-basics/images/rgb.png)
+![RGB IMAGES](Intro_to_CV/cv-basics/images/rgb.PNG)
 
 \2. **Resolution**: The number of pixels per unit is called the resolution
 
@@ -83,7 +83,7 @@ Their types are:
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
-![ADDITIVE MODEL](/Intro_to_CV/cv-basics/images/add.png)
+![ADDITIVE MODEL](Intro_to_CV/cv-basics/images/add.PNG)
 
 
 
@@ -99,7 +99,7 @@ Their types are:
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
-![SUBTRACTIVE MODEL](/Intro_to_CV/cv-basics/images/subt.png)
+![SUBTRACTIVE MODEL](Intro_to_CV/cv-basics/images/subt.PNG)
 
 
 
@@ -115,7 +115,7 @@ Their types are:
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
-![HSV COLOUR MODEL](/Intro_to_CV/cv-basics/images/hsv(img).png.png)
+![HSV COLOUR MODEL](Intro_to_CV/cv-basics/images/hsv(img).PNG)
 
 
 
