@@ -1,7 +1,7 @@
 # Table Of Contents
 * [Table Of Contents](#table-of-contents)
 
-* [Intro to Git](/git_github/1_git_intro.md)
+* [Intro to Git](/git_github/1_git_intro%20.md)
   * [Get familiar with version control, Git and GitHub](1_git_intro%20.md#get-familiar-with-version-control-git-and-github)
   * [Create your own repository and project folder structure](1_git_intro%20.md#create-your-own-repository-and-project-folder-structure)
    * [Remote Initialisation](1_git_intro%20.md#remote-initialisation)
