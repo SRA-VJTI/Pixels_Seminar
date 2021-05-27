@@ -5,7 +5,7 @@
   * [Get familiar with version control, Git and GitHub](1_git_intro%20.md#get-familiar-with-version-control-git-and-github)
   * [Create your own repository and project folder structure](1_git_intro%20.md#create-your-own-repository-and-project-folder-structure)
    * [Remote Initialisation](1_git_intro%20.md#remote-initialisation)
-   * [Local Initialisation](#1_git_intro%20.md#local-initialisation)
+   * [Local Initialisation](1_git_intro%20.md#local-initialisation)
   * [Sync and interact with your repository through the command line](1_git_intro%20.md#sync-and-interact-with-your-repository-through-the-command-line)
 
 * [Git Workflow](/git_github/2_git_workflow.md)
