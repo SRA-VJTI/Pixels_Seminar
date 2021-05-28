@@ -30,15 +30,15 @@ number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 102
 ## BINARY IMAGES
 
 
-![BINARY IMAGES](/cv-basics/images/b&w.PNG)
+![BINARY IMAGES](./images/b&w.PNG)
 
 ## GRAYSCALE IMAGES
-![GRAYSCALE IMAGES](/cv-basics/images/gray.PNG)
+![GRAYSCALE IMAGES](./images/gray.PNG)
 
 ## RGB IMAGES
-![RGB IMAGES](/cv-basics/images/rgb.PNG)
+![RGB IMAGES](./images/rgb.PNG)
 
-\2. **Resolution**: The number of pixels per unit is called the resolution
+2. **Resolution**: The number of pixels per unit is called the resolution
 
 of the image.The sharpness of the picture on display depends on the
 
@@ -55,7 +55,7 @@ Screen Resolution.
 For Example– 640 x 480, 1024 x 768 (Horizontal x Vertical)
 
 
-\3. **Aspect Ratio**: The ratio of image’s width to its height is known as
+3. **Aspect Ratio**: The ratio of image’s width to its height is known as
 
 the aspect ratio of an image. The height and width of an image are
 
@@ -84,7 +84,7 @@ Their types are:
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
-![ADDITIVE MODEL](/cv-basics/images/add.PNG)
+![ADDITIVE MODEL](./images/add.PNG)
 
 ### SUBTRACTIVE MODEL
 
@@ -96,7 +96,7 @@ Their types are:
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
-![SUBTRACTIVE MODEL](/cv-basics/images/subt.PNG)
+![SUBTRACTIVE MODEL](./images/subt.PNG)
 
 ### HSV COLOUR MODEL
 
@@ -108,7 +108,7 @@ Their types are:
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
-![HSV COLOUR MODEL](/cv-basics/images/hsv(img).PNG)
+![HSV COLOUR MODEL](./images/hsv(img).PNG)
 
 ### THREE COMPONENTS
 
