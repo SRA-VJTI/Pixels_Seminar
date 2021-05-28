@@ -1,9 +1,19 @@
 # Introduction to Computer Vision
-This repository includes basics to python , numpy , git and Computer Vision. The aim of this repository is to provide the brief idea of algorithms involved in Computer Vision . It also features an Introduction to Git and GitHub. The CV-basics covers the ideas of implementation of various algorithms involved in Computer Vision,  using only numpy , instead of any dedicated image processing library like OpenCV.
+This repository includes basics to :
+1. Python 
+2. Numpy: A python library 
+3. Git 
+4. Computer Vision. </br></br>
+### The aim of this repository is to provide:  
+- A brief idea of algorithms involved in Computer Vision . 
+- Introduction to Version Control System: Git and GitHub. 
+- Computer Vision and Image Processing basics, idea of implementation of various algorithms involved using numpy (instead of any dedicated image processing library like OpenCV.)
+- Introduction to a commonly used Image Processing Library: <i>OpenCV</i>
 
-![](./assets/blob_detection.gif)
+## Demonstration 
+<img src="./assets/blob_detection.gif" width="800" />
 
-# Table Of Contents
+## Table Of Contents
 - [Table Of Contents](#table-of-contents)
 - [Python](1_python_numpy_basics/README.md)
     * [Basics Of Python](/1_python_numpy_basics/1_python_basics.ipynb)
@@ -14,7 +24,7 @@ This repository includes basics to python , numpy , git and Computer Vision. The
     * [Functions](/1_python_numpy_basics/6_functions.ipynb)
     * [Classes And Objects](/1_python_numpy_basics/7_classes_and_objects.ipynb)
     * [Numpy Part-1](/1_python_numpy_basics/8_numpy_part_1.ipynb)
-    * [Numpy Part-2](/1_python_numpy_basics/9_numPy_part_2.ipynb)
+    * [Numpy Part-2](/1_python_numpy_basics/9_numpy_part_2.ipynb)
 - [Introduction to Git and GitHub](2_git_github/README.md)
     * [Intro to Git](/2_git_github/1_git_intro%20.md)
     * [Git Workflow](/2_git_github/2_git_workflow.md)
