@@ -19,13 +19,13 @@ ifeq ($(OPENCV_INSTALLED), true)
 else
 	@echo "OpenCV is not installed"
 	@echo "Installing OpenCV..."
-ifeq ($(shell uname -a | awk '{if (match ($$0, /Debian/)) print "true"}'),true)
+ifeq ($(shell cat /etc/os-release | awk '{if (match ($$0, /debian/)) {print "true"; exit;}}'),true)
 	@echo "Debian"
 	@sudo apt-get install libopencv-dev
 else ifeq ($(shell uname -a | awk '{if (match ($$0, /Darwin/)) print "true"}'),true)
 	@echo "Mac"
 	@brew install opencv
-else ifeq ($(shell uname -a | awk '{if (match ($$0, /arch/)) print "true"}'),true)
+else ifeq ($(shell cat /etc/os-release | awk '{if (match ($$0, /arch/)) {print "true"; exit;}}'),true)
 	@echo "Arch Linux"
 	@sudo pacman -S opencv hdf5 glew vtk fmt 
 else
