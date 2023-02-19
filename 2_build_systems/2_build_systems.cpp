@@ -1,5 +1,5 @@
-#include <opencv2/opencv.hpp>
-#include <iostream>
+#include "2_build_systems.hpp"
+
 using namespace cv;
 using namespace std;
 
@@ -13,6 +13,10 @@ int main(int argc, char** argv)
         FONT_HERSHEY_SIMPLEX, 2, Scalar(0, 255, 0), 3);
 
     imshow("Hello World", image);
+    
+    //display an image from the $PROJECT_SOURCE_DIR/assets/images/b&w.PNG
+    Mat img = imread("PROJECT_SOURCE_DIR/assets/images/bcci.png", IMREAD_COLOR);
+    imshow("b&w", img);
 
     // Wait for a keystroke in the window
     waitKey(0);

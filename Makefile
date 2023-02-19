@@ -35,6 +35,7 @@ endif
 
 
 # the command make build FOLDER=<subfolder> should build the executable in the subfolder
+# the compile command should compile the <subfolder>.cpp file and link it with the OpenCV libraries, including the header files in the subfolder
 ifeq ($(FOLDER),)
 build:
 	@echo "Folder is not set"
@@ -43,9 +44,10 @@ build:
 	@echo "Building..."
 	@mkdir -p $(BIN_DIR)
 	@mkdir -p $(FOLDER)/build
-	@cp $(FOLDER)/*.cpp $(FOLDER)/build
+	@cp $(FOLDER)/*.cpp $(FOLDER)/build && cp $(FOLDER)/*.hpp $(FOLDER)/build 
 	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
-	@$(CC) $(CFLAGS) $(LDFLAGS) $(FOLDER)/build/*.cpp -o ./bin/$(FOLDER)
+	@find $(FOLDER)/build -name "*.hpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
+	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FOLDER).cpp -o $(BIN_DIR)/$(FOLDER) -I $(FOLDER)/build $(LDFLAGS)
 endif
 	
 
