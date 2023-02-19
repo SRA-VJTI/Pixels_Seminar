@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( grayscale )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( grayscale main.cpp)
+target_link_libraries( grayscale ${OpenCV_LIBS})
