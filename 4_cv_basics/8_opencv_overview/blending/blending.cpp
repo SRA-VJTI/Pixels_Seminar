@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    Mat image1 = imread("../../assets/dummy1.jpg");
-    Mat image2 = imread("../../assets/purple_night.jpg");
+    Mat image1 = imread("PROJECT_SOURCE_DIR/assets/images/dummy1.jpg");
+    Mat image2 = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
 
     imshow("Image1", image1);
     imshow("Image2", image2);

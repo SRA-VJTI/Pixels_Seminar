@@ -6,24 +6,22 @@ using namespace std;
 int main()
 {
     Mat image;
-    image = imread("../../assets/purple_night.jpg");
+    image = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
     if (!image.data)
     {
         cout << "Image not found" << endl;
         return -1;
     }
 
-    Mat im2;
+    auto x = image.size;
 
-    cvtColor(image, im2, COLOR_BGR2GRAY);
-
-    auto x = im2.size;
-
+    // x[0] - height of the image (number of rows)
+    // x[1] - width of the image (number of columns)
     cout << x[0] << ',' << x[1] << endl;
-    cout << im2.channels() << endl;
-
+    cout << image.channels() << endl;
+    cout << typeid(image).name() << endl;
     namedWindow("Display Image");
-    imshow("Display Image", im2);
+    imshow("Display Image", image);
     waitKey(0);
 
     return 0;

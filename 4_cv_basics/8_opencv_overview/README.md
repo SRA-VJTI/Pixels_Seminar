@@ -357,13 +357,13 @@ For example, if the subfolder is `masking` then the following commands needs to 
 
 #### Illustrations
 
-<img src="assets/grayscale.png"/>
+<img src="../../assets/images/grayscale.png"/>
 
 ### Resizing an Image
 
 #### Illustrations
 
-<img src = "assets/resize.png" />
+<img src = "../../assets/images/resize.png" />
 
 ### Image Blending
 
@@ -383,8 +383,8 @@ Here γ is taken as zero.
 
 #### Illustrations
 
-<img src="./assets/blending1.png" aligh = "left"/>
-<img src="./assets/blending2.png"/>
+<img src="../../assets/images/blending1.png" aligh = "left"/>
+<img src="../../assets/images/blending2.png"/>
 
 ### Bitwise Operations and Masking
 
@@ -397,27 +397,31 @@ Here γ is taken as zero.
 
 #### Input Images
 
-<img src="./assets/bitwise_ip1.png" align="left" width="300" height="300"/>
-<img src="./assets/bitwise_ip2.png" align = "centre" width="300" height="300"/>
+<img src="../../assets/images/bitwise_ip1.png" align="left" width="300" height="300"/>
+<img src="../../assets/images/bitwise_ip2.png" align = "centre" width="300" height="300"/>
 
 #### Bitwise AND
 
-<img src="./assets/bitwise_and1.png" width="300" height="300"/>
+<img src="../../assets/images/bitwise_and1.png" width="300" height="300"/>
 
 #### Bitwise OR
 
-<img src="./assets/bitwise_or1.png" width="300" height="300"/>
+<img src="../../assets/images/bitwise_or1.png" width="300" height="300"/>
 
 #### Bitwise XOR
 
-<img src="./assets/bitwise_xor.png" width="300" height="300"/>
+<img src="../../assets/images/bitwise_xor.png" width="300" height="300"/>
 
 #### Bitwise NOT
 
 1. Image1 - Bitwise NOT/inversion of Input Image 1
 2. Image2 - Bitwise NOT/inversion of Input Image 2
 
-<img src="./assets/bitwise_not1.png" align="left" width="300" height="300"/> <img src="./assets/bitwise_not2.png" align="justified" width="300" height="300"/>
+<img src="../../assets/images/bitwise_not1.png" align="left" width="300" height="300"/>
+
+<br>
+
+<img src="../../assets/images/bitwise_not2.png" align="justified" width="300" height="300"/>
 
 ### Masking
 
@@ -437,12 +441,12 @@ Here γ is taken as zero.
 2. Variation of the saturation goes from unsaturated to represent shades of gray and fully saturated (no white component).
 3. Value channel describes the brightness or the intensity of the color.
 
-<img src="assets/hsv.jpg"/>
+<img src="../../assets/images/hsv.jpg"/>
 
 #### Object Detection Illustration
 
-<img src="assets/inrange1.jpeg" width = "400" height="550" align = "left"/>
-<img src="assets/inrange2.jpeg" width = "400" height="400"/>
+<img src="../../assets/images/inrange1.jpeg" width = "400" height="550" align = "left"/>
+<img src="../../assets/images/inrange2.jpeg" width = "400" height="400"/>
 
 ### Countours
 
@@ -450,7 +454,7 @@ Contours can be explained simply as a curve joining all the continuous points (a
 
 Illustration:
 
-<img src="assets/contours_1.png" />
+<img src="../../assets/images/contours_1.png" />
 
 ## Expected Results
 
@@ -464,8 +468,8 @@ Illustration:
 <th style="text-align:center"> Image2 </th>
 </tr>
 <tr>
-<td><image src="assets/Image1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/Image2.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/Image1.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/Image2.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
@@ -473,16 +477,16 @@ Illustration:
 <th style="text-align:center"> Gray </th>
 </tr>
 <tr>
-<td><image src="assets/roi.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/gray.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/roi.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/gray.png" alt = "Image1" width = 350 height="200"></td>
 
 <tr>
 <th style="text-align:center"> Mask</th>
 <th style="text-align:center"> Mask_Inv </th>
 </tr>
 <tr>
-<td><image src="assets/mask.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/mask_inv.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/mask.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/mask_inv.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
@@ -490,15 +494,15 @@ Illustration:
 <th style="text-align:center"> FG </th>
 </tr>
 <tr>
-<td><image src="assets/bg.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/fg.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/bg.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/fg.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
 <th colspan="2" style="text-align:center"> dst</th>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center"><image src="assets/dst.png" alt = "Image1" width = 350 height="200"></td>
+<td colspan="2" style="text-align: center"><image src="../../assets/images/dst.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 </table>
 
@@ -512,8 +516,8 @@ Illustration:
 <th style="text-align:center"> hsv </th>
 </tr>
 <tr>
-<td><image src="assets/img.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/hsv.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/img.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/hsv.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
@@ -521,16 +525,16 @@ Illustration:
 <th style="text-align:center"> mask2 </th>
 </tr>
 <tr>
-<td><image src="assets/mask1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/mask2.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/mask1.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/mask2.png" alt = "Image1" width = 350 height="200"></td>
 
 <tr>
 <th style="text-align:center"> Mask</th>
 <th style="text-align:center"> target </th>
 </tr>
 <tr>
-<td><image src="assets/mask_od.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/target.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/mask_od.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/target.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 </table>
@@ -545,13 +549,13 @@ Illustration:
 <th style="text-align:center"> Edges </th>
 </tr>
 <tr>
-<td><image src="assets/gray_player.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="assets/edges.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/gray_player.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../../assets/images/edges.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
 <th style="text-align:center" colspan="2"> Contours</th>
 </tr>
 <tr>
-<td style="text-align: center" colspan="2"><image src="assets/contours.png" alt = "Image1" width = 350 height="200"></td>
+<td style="text-align: center" colspan="2"><image src="../../assets/images/contours.png" alt = "Image1" width = 350 height="200"></td>
 </table>

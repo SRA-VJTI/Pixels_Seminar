@@ -7,7 +7,7 @@ using namespace cv;
 int main()
 {
     // Read image
-    Mat img = imread("../../assets/DK.jpeg");
+    Mat img = imread("PROJECT_SOURCE_DIR/assets/images/DK.jpeg");
     imshow("Image", img);
 
     // Convert image to hsv

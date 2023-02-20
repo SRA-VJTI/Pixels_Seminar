@@ -6,8 +6,8 @@ using namespace std;
 int main()
 {
     // Load two images
-    Mat img1 = imread("../../assets/DK.jpeg");
-    Mat img2 = imread("../../assets/bcci.png");
+    Mat img1 = imread("PROJECT_SOURCE_DIR/assets/images/DK.jpeg");
+    Mat img2 = imread("PROJECT_SOURCE_DIR/assets/images/bcci.png");
     imshow("Image1", img1);
 
     // Getting the height, width and number of channels of the image

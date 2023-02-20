@@ -7,7 +7,7 @@ using namespace cv;
 int main()
 {
     Mat img;
-    img = imread("../../assets/DK.jpeg");
+    img = imread("PROJECT_SOURCE_DIR/assets/images/DK.jpeg");
 
     Mat gray;
     cvtColor(img, gray, COLOR_BGR2GRAY);
