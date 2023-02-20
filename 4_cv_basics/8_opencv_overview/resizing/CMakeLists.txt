@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( resizing )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( resizing main.cpp)
+target_link_libraries( resizing ${OpenCV_LIBS})
