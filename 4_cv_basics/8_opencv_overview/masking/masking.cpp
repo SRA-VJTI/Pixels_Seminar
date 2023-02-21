@@ -11,15 +11,14 @@ int main()
     imshow("Image1", img1);
 
     // Getting the height, width and number of channels of the image
-    // I want to put logo on top - left corner, So I create a ROI
+    // Creating ROI to put the logo on top - left corner
     int rows = img2.rows, cols = img2.cols, channels = img2.channels();
 
-    // Cropping the img1 with (0,0) as the top left corner and (rows,cols) as the bottom right corner
-    // clone() is used to store the copy of the cropped image in roi Mat object so that changes made to roi object won't affect the original image.
+    // Cropping the img1
     Mat roi = img1(Rect(0, 0, rows, cols)).clone();
 
     // Converting the image to grayscale
-    // Now create a mask of logo and create its inverse mask also
+    // Creating a mask of logo and create its inverse mask also
     Mat img2gray;
     cvtColor(img2, img2gray, COLOR_BGR2GRAY);
 
@@ -32,10 +31,10 @@ int main()
     Mat mask_inv;
     bitwise_not(mask, mask_inv);
 
-    // Resizing mask to ensure that roi and mask are of same dimensions while doing bitwise and operation
+    // Resizing mask
     resize(mask, mask, roi.size());
 
-    // Now black-out the area of logo in ROI
+    // Blacking-out the area of logo in ROI
     Mat img1_bg;
     bitwise_and(roi, roi, img1_bg, mask);
 
