@@ -14,9 +14,8 @@ using namespace cv;
 /// @return : An Output Image with the kernel applied
 Mat convolve(Mat kernel, Mat original_image){
     
-    Mat kernel_inv;
+    Mat kernel_inv{kernel.size(), kernel.type()}, temp_kernel{kernel.size(), kernel.type()};
     Mat resultant_image{original_image.size(), original_image.type()};
-
 
     // Just checking whether these funcitons are continuous or not
     kernel_inv.isContinuous();
@@ -24,30 +23,51 @@ Mat convolve(Mat kernel, Mat original_image){
 
     // ################################ Flip Kernel Suboptimally ######################## //
 
+    /* 
+        ################################### Using For Loops ###############################
+    for(int i = 0 ; i < kernel.rows ; i++ ){
+        cout<<"k"<<endl;
+        kernel_inv.row(i) = kernel.row(kernel.rows - i - 1).clone(); 
+    }
+
+    temp_kernel = kernel_inv.clone();
+
+    for(int i = 0 ; i < kernel.cols ; i++ ){
+        kernel_inv.col(i) = temp_kernel.col(kernel.cols - i - 1).clone();
+    }
+    */
+
+
     // Method 2: Simply using in-built functions
-    flip(kernel, kernel_inv, -1);
+    flip(kernel, kernel_inv, -1);  
+
+    // Viewing channels for each image
+    // cout<<original_image.channels()<<endl;
 
     // #################################################################################### //
 
-    for (int i = 1; i < original_image.rows; i++) 
+    for (int i = 1; i < original_image.rows - 1; i++) 
     {   
-        for (int j = 1; j < original_image.cols; j++) 
+        for (int j = 1; j < original_image.cols - 1 ; j++) 
         {
-            double tmp = 0.0;
-            for (int k = 0; k < kernel_inv.rows; k++) 
-            {
-                for (int l = 0; l < kernel_inv.cols; l++) 
-                {
-                    int x = j - 1 + l;
-                    int y = i - 1 + k;
+            for(int ch = 0 ; ch < original_image.channels() ; ch++){
 
-                    if ((x >= 0 && x < original_image.cols) && (y >= 0 && y < original_image.rows)){
-                        tmp += (int)original_image.at<u_char>(y, x) * (int)kernel_inv.at<u_char>(k, l);
+                double tmp = 0.0;
+                for (int k = 0; k < kernel_inv.rows; k++) 
+                {
+                    for (int l = 0; l < kernel_inv.cols; l++) 
+                    {
+                        int x = j - 1 + l;
+                        int y = i - 1 + k; 
+
+                        if ((x >= 0 && x < original_image.cols) && (y >= 0 && y < original_image.rows)){
+                            tmp += (double)original_image.at<Vec3b>(y, x).val[ch] * (double)kernel_inv.at<double>(k, l);
+                        }
                     }
                 }
-            }
 
-            resultant_image.at<u_char>(i, j) = saturate_cast<char>(tmp);
+                resultant_image.at<Vec3b>(i, j).val[ch] = saturate_cast<uchar>(tmp);        // Why Unsigned? 
+            }
         }
     }
     return resultant_image;
@@ -56,8 +76,9 @@ Mat convolve(Mat kernel, Mat original_image){
 int main( int argc, char** argv )
 {
     
-    Mat image = imread("walle.png",IMREAD_GRAYSCALE);    // Read Image
-    Mat img2;
+    // Mat image = imread("Dog_img.jpeg",IMREAD_GRAYSCALE); // Read Image - Grayscale
+    Mat image = imread("assets/walle.png",IMREAD_COLOR);        // Read Image - Colored
+    Mat res_img, filter_img;
     // Format for last argument in Create, ones and zero
     // CV_[The number of bits per item][Signed or Unsigned][Type Prefix]C[The channel number]
 
@@ -67,17 +88,25 @@ int main( int argc, char** argv )
         // kernel = Mat::ones(4,4, CV_64F);        // Just to create matrix with all entries 1
         // kernel = Mat::eye(4,4, CV_32F);         // Just to create matrix with all entries 0
     */
-    double sobelx_data[9] = {0.111, 0.111, 0.111, 0.111, 0.111, 0.111, 0.111, 0.111, 0.111};
-    Mat sobelx = cv::Mat(3, 3, CV_32F, sobelx_data);
-    // cout<<image<<endl<<endl;
-    img2 = convolve(sobelx, image);
-    cout<<"Original: "<<(int)image.at<u_char>(100,250)<<endl;
-    cout<<"img2: "<<(int)img2.at<u_char>(100,250)<<endl;
-    // cout<<"OUTPUT = \n"<<img2<<endl<<endl;
 
-    // Functions to show images
-    namedWindow("Copy", WINDOW_NORMAL);
-    imshow("Copy", img2);
+    Mat sobelx = (Mat_<double>(3, 3) << 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125);
+    // cout<<image<<endl<<endl;
+
+    /*
+    // Accessing elements of Channels uchar
+    // cout<<(int)image.at<Vec3b>(100,100).val[1]<<endl;
+    // cout<<(int)image.at<double>(100,100)<<endl;          // Used mostly for GRAYSCALE IMAGE Operations
+    */
+
+    resize(image, image, Size(image.cols*0.5, image.rows*0.5), 0, 0);
+
+    res_img = convolve(sobelx,image);
+
+    // Convolution In-Built Function
+    filter2D(image, filter_img, -1, sobelx, Point(-1,-1), 5.0, BORDER_REPLICATE);
+
+    imshow("Result Naive", res_img);
+    imshow("Result Fast", filter_img);
     // Resizing the Window for Better Visualization
     waitKey(0);
     return 0;
