@@ -42,7 +42,7 @@ struct BMPHeader {
 // If the file cannot be opened, we print an error message to cerr and exit the program with a non-zero status code.
 
 int main() {
-    const char* filename = "image2.bmp";
+    const char* filename = "image.bmp";
     int fd = open(filename, O_RDONLY);
 
     if (fd < 0) {
