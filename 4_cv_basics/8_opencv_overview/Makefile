@@ -24,7 +24,7 @@ build:
 	@mkdir -p $(BIN_DIR)
 	@mkdir -p $(FOLDER)/build
 	@echo $(shell pwd) 
-	@cp $(FOLDER)/*.cpp $(FOLDER)/build && cp $(FOLDER)/*.hpp $(FOLDER)/build 
+	@cp $(FOLDER)/*.cpp $(FOLDER)/build
 	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@../..@g' {} \;
 	@find $(FOLDER)/build -name "*.hpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@../..@g' {} \;
 	@$(CC) $(CFLAGS) $(FOLDER)/build/$(notdir $(shell basename $(FOLDER))).cpp -o $(BIN_DIR)/$(notdir $(shell basename $(FOLDER))) -I $(FOLDER)/build $(LDFLAGS)
