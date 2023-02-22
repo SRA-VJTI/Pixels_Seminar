@@ -1,8 +1,11 @@
-
 # Image Storing Formats
 
 * All images are stored in the computer as rectangular pixels. The resolution is an image referign to the number of pixels in a grid. Higher resolutions can be more details can be stored in an image. 
 * Images are stored and transmitted using image file formats, which are digital file formats. Each file format has an own method for storing and compressing image data, which can affect how many pixels an image can have.
+
+
+## The goal of this topic is to familiarise you with various Image Storing Formats 
+
 
 ## Different Image Storing Formats
 
@@ -29,3 +32,26 @@
 * A PNG file is an image saved in the Portable Network Graphic (PNG) format, commonly used to store web graphics, digital photographs, and images with transparent backgrounds. It is a raster graphic similar to a .JPG image but is compressed with lossless compression and supports transparency.
 
 * This means that a PNG image file can contain a moderate number of pixels while still maintaining high image quality. For example, a 1920x1080 pixel PNG image can be under 3 MB in size.
+
+## Build and run the executables
+
+Now that you are aware with the various image storing formats, let's look at how to create and execute executables.
+
+After cloning in the Pixels_Seminar repository, get into the Image_storing_formats folder using cd command 
+
+`cd /Pixels_Seminar/Image_storing_formats`
+
+Image_storing_formats.cpp is our code file.
+
+Perform make command in 
+
+`make`
+
+To run and build the `Image_storing_formats.cpp` file perform 
+
+`./Image_storing_formats`
+
+The output will show Image size, Bits per pixel and Image data size.
+
+
+
