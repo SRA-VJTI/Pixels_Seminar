@@ -35,7 +35,7 @@ value of the output pixel is the minimum value of all pixels in the neighborhood
 neighboring pixels have the value 0. Morphological erosion removes islands and small objects so that only substantive objects remain.
 
 <p align="center">
-    <img src = "../Assets/normal_image.png" width="200" height="250"/> <img src = "../Assets/erroded_image.png"width="200" height="250"/>
+    <img src = "./Assets/normal_image.png" width="200" height="250"/> <img src = "./Assets/erroded_image.png"width="200" height="250"/>
 </p>  
   
 
@@ -49,7 +49,7 @@ neighboring pixels have the value 0. Morphological erosion removes islands and s
 
   
 <p align="center">
-    <img src = "../Assets/erosion.gif"/>
+    <img src = "./Assets/erosion.gif"/>
 </p>
 
 
@@ -66,7 +66,7 @@ of the neighboring pixels have the value 1. Morphological dilation makes objects
 
   
 <p align="center">
-    <img src="../Assets/normal_image.png"width="200" height="250"/> <img src="../Assets/dilation.png" width="200" height="250"/>
+    <img src="./Assets/normal_image.png"width="200" height="250"/> <img src="./Assets/dilation.png" width="200" height="250"/>
 </p>
 
 **Working of dilation**:
@@ -75,7 +75,7 @@ A pixel element in the original image is ‘1’ if atleast one pixel under the 
 It increases the white region in the image or size of foreground object increases.
 
 <p align="center">
-    <img src="../Assets/dilation.gif"/>
+    <img src="./Assets/dilation.gif"/>
 </p>  
   
 
@@ -104,7 +104,7 @@ erosion are restored to their original size by the dilation:
 Results of opening with a square structuring element
 
 <p align="center">
-    <img src="../Assets/opening.png" width="400" height="250"/>
+    <img src="./Assets/opening.png" width="400" height="250"/>
 </p>  
 
 ## **Closing**
@@ -119,7 +119,7 @@ In this case, the dilation and erosion should be performed with a rotated by 180
 so that the rotated and initial versions of it do not differ.
 
 <p align="center">
-    <img src="../Assets/closing.png" width="400" height="250"/>
+    <img src="./Assets/closing.png" width="400" height="250"/>
 </p>
 
 ## **Gradient**
@@ -128,7 +128,7 @@ The difference between the dilation and the erosion of the image. This is used t
 apply some filtering before calculating the gradient because it is very sensitive to noise.
 
 <p align="center">
-    <img src="../Assets/gradient.png" width="400" height="250"/>
+    <img src="./Assets/gradient.png" width="400" height="250"/>
 </p>
     
 ## **Applications of morphological Compound operations (Opening and closing)**:
