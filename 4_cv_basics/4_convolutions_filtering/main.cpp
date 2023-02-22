@@ -1,10 +1,75 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
-#include <chrono>
-#include "convolution.hpp"
+#include <chrono>              // To time execution
+#include "convolution.hpp"     // Our naive implementation of the convolution operation
 
 int main()
 {
+    /* To demonstrate an example of a naive, suboptimal
+     * implementation of the convolution operation, we will
+     * compare its results with the in-built OpenCV
+     * convolution function, `filter2D`. You can make changes
+     * (improvements, preferably :P) to the naive implementation
+     * to see how close you can get.
+     */
+
+    std::cout << "Demonstrating naive convolution...\n";
+
+    // Read input image
+    std::string input_path = "./assets/walle.png";
+    cv::Mat input = cv::imread(input_path, cv::IMREAD_COLOR);        // Read colored image
+    // cv::Mat input = cv::imread(input_path, cv::IMREAD_GRAYSCALE); // Read grayscale image
+
+    // Resize the input image to a more managable size for demonstration purposes
+    cv::resize(input, input, cv::Size(256, 256));
+
+    // Create a 3x3 Sobel kernel
+    cv::Mat sobel = (cv::Mat_<double>(3, 3) <<
+        -1., 0., 1.,
+        -2., 0., 2.,
+        -1., 0., 1.
+    );
+
+    // Declare the output image matrix
+    cv::Mat output;
+
+    // This is just one way to create a cv::Mat, some other ways are:
+    // cv::Mat kernel;                        // Declaration
+    // kernel.create(3, 3, CV_8UC(2));        // Creates an empty 3x3 matrix
+    // kernel = cv::Mat::ones(4, 4, CV_64F);  // Creates a 4x4 unit matrix
+    // kernel = cv::Mat::eye(3, 3, CV_64F);   // Creates a 3x3 indentity matrix
+
+    /* Some notes about how these functions work:
+     * As you may have noticed, the first two arguments here
+     * specify the dimensions of the matrix, while the third
+     * seems a little more cryptic. It is a type specification; with
+     * format CV_[Bits][(S)igned/(U)nsigned/(F)loat][C[Channel No.]]
+     */
+
+    // Now to actually convolve
+    auto start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
+    output = convolve(sobel, input);                         // Convolve
+    auto stop = std::chrono::high_resolution_clock::now();   // Stop clock
+
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << "Naive convolution took " << duration.count() << " microseconds.\n";
+
+    cv::imshow("Naive output", output);
+    cv::waitKey(0);
+
+    // And using the built-in function
+    start = std::chrono::high_resolution_clock::now();
+    cv::filter2D(input, output, -1, sobel, cv::Point(-1, -1), 5.0, cv::BorderTypes::BORDER_REPLICATE);
+    stop = std::chrono::high_resolution_clock::now();
+
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << "Convolution using filter2D took " << duration.count() << " microseconds.\n";
+
+    cv::imshow("filter 2D output", output);
+    cv::waitKey(0);
+
+    std::cout << '\n';
+
     /* To demonstrate convolutions using separable kernels,
      * we will first convolve an image using a regular gaussian
      * kernel, then we will convolve the same original image
@@ -13,10 +78,6 @@ int main()
     
     std::cout << "Demonstrating separable convolutions...\n";
 
-    // Read input image
-    std::string input_path = "./assets/test.png";
-    cv::Mat input = cv::imread(input_path);
-
     // Define standard 3x3 Gaussian kernel
     cv::Mat gaussian = (cv::Mat_<double>(3, 3) <<
         1. / 16, 2. / 16, 1. / 16,
@@ -24,11 +85,11 @@ int main()
         1. / 16, 2. / 16, 1. / 16
     );
 
-    auto start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
-    cv::Mat output = convolve(gaussian, input);              // Convolve
-    auto stop = std::chrono::high_resolution_clock::now();   // Stop clock
+    start = std::chrono::high_resolution_clock::now();
+    filter2D(input, output, -1, gaussian);              // Convolve with original 'full' kernel
+    stop = std::chrono::high_resolution_clock::now();
 
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Regular convolution took " << duration.count() << " microseconds.\n";
 
     cv::imshow("Output", output);
@@ -38,18 +99,21 @@ int main()
     cv::Mat gaussian_v = (cv::Mat_<double>(3, 1) << 1. / 4, 1. / 2, 1. / 4);
     cv::Mat gaussian_h = (cv::Mat_<double>(1, 3) << 1. / 4, 1. / 2, 1. / 4);
 
-    start = std::chrono::high_resolution_clock::now();   // Start clock to time execution
-    cv::Mat output_v = convolve(gaussian_v, input);      // Convolve with vertical 'half' kernel
-    cv::Mat output_vh = convolve(gaussian_h, output_v);  // Convolve with horizontal 'half' kernel
-    stop = std::chrono::high_resolution_clock::now();    // Stop clock
+    // Declare matrix to store intermediate image
+    cv::Mat intermediate;
+
+    start = std::chrono::high_resolution_clock::now();
+    cv::filter2D(input, intermediate, -1, gaussian_v);   // Convolve with vertical 'half' kernel
+    cv::filter2D(intermediate, output, -1, gaussian_h);  // Convolve with horizontal 'half' kernel
+    stop = std::chrono::high_resolution_clock::now();
 
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Separated convolution took " << duration.count() << " microseconds.\n";
 
-    cv::imshow("Output of first 'half'", output_v);
+    cv::imshow("Output of first 'half'", intermediate);
     cv::waitKey(0);
 
-    cv::imshow("Output of first 'half'", output_vh);
+    cv::imshow("Output of first 'half'", output);
     cv::waitKey(0);
 
     return 0;
