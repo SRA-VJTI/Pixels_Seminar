@@ -327,7 +327,110 @@ Sr. No.
 
 <td>The cv::drawContours function draws contours onto the input/output image. The function takes as input a vector of contours (contours) and an index of the contour to draw (contourIdx), and draws the specified contour onto the image.
 </td>
+
+<tr>
+<td>15</td>
+<td>
+void cv::erode ( InputArray src,
+OutputArray dst,
+InputArray kernel,
+Point anchor = Point(-1,-1),
+int iterations = 1) 
+</td>
+<td>
+
+<b>src</b>: input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+
+<b>dst</b>: output image of the same size and type as src.
+
+<b>kernel</b>: structuring element used for erosion; if element=Mat(), a 3 x 3 rectangular structuring element is used. Kernel can be created using getStructuringElement.
+
+<b>anchor</b>: position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
+
+<b>iterations</b>: number of times erosion is applied.
+</td>
+
+<td>
+Erodes an image by using a specific structuring element.
+
+The function erodes the source image using the specified structuring element that determines the shape of a pixel neighborhood over which the minimum is taken.
+
+</td>
 </tr>
+
+<tr>
+<td>
+16
+</td>
+
+<td>
+void cv::dilate ( InputArray src,
+OutputArray dst,
+InputArray kernel,
+Point anchor = Point(-1,-1),
+int iterations = 1) 
+</td>
+
+<td>
+
+<b>src</b>: input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+
+<b>dst</b>: output image of the same size and type as src.
+
+<b>kernel</b>: structuring element used for dilation; if element=Mat(), a 3 x 3 rectangular structuring element is used. Kernel can be created using getStructuringElement
+
+<b>anchor</b>: position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
+
+<b>iterations</b>: number of times dilation is applied.
+
+</td>
+
+<td>
+Dilates an image by using a specific structuring element.
+
+The function dilates the source image using the specified structuring element that determines the shape of a pixel neighborhood over which the maximum is taken.
+</td>
+</tr>
+
+<tr>
+<td>
+17
+</td>
+
+<td>
+void cv::morphologyEx ( InputArray src,
+OutputArray dst,
+int op,
+InputArray kernel,
+Point anchor = Point(-1,-1),
+int iterations = 1) 
+</td>
+
+<td>
+<b>src</b>: Source image. The number of channels can be arbitrary. The depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+
+<b>dst</b>: Destination image of the same size and type as source image.
+
+<b>op</b>: Type of a morphological operation
+<u>Options (MorphTypes)</u>
+- MORPH_ERODE 
+- MORPH_DILATE
+- MORPH_CLOSE
+- MORPH_OPEN
+- MORPH_GRADIENT
+
+<b>kernel</b>: Structuring element. It can be created using getStructuringElement.
+
+<b>anchor</b>: Anchor position with the kernel. Negative values mean that the anchor is at the kernel center.
+
+<b>iterations</b>: Number of times erosion and dilation are applied.
+</td>
+
+<td>
+Performs advanced morphological transformations.
+
+The function cv::morphologyEx can perform advanced morphological transformations using erosion and dilation as basic operations.
+</td>
 
 </table>
 
@@ -558,4 +661,65 @@ Illustration:
 </tr>
 <tr>
 <td style="text-align: center" colspan="2"><image src="../../assets/images/contours.png" alt = "Image1" width = 350 height="200"></td>
+</table>
+
+
+<table>
+<tr>
+<th colspan="2" style="text-align:center"> MORPHOLOGICAL OPERATIONS </th>
+
+</tr>
+<td style="text-align:center">
+<b>Input Image</b>
+</td>
+<td style="text-align:center">
+<b>Eroded Image</b>
+</td>
+<tr>
+
+</tr>
+<td>
+<image src="../../assets/images/morphology_opencv1.png">
+</td>
+<td>
+<image src="../../assets/images/morphology_opencv2.png">
+</td>
+<tr>
+
+</tr>
+<td style="text-align:center">
+<b>Dilated Image</b>
+</td>
+<td style="text-align:center">
+<b>Opened Image</b>
+</td>
+<tr>
+
+</tr>
+<td>
+<image src="../../assets/images/morphology_opencv3.png">
+</td>
+<td>
+<image src="../../assets/images/morphology_opencv4.png">
+</td>
+<tr>
+
+</tr>
+<td style="text-align:center">
+<b>Closed Image</b>
+</td>
+<td style="text-align:center">
+<b>Gradient of Image</b>
+</td>
+<tr>
+
+</tr>
+<td>
+<image src="../../assets/images/morphology_opencv5.png">
+</td>
+<td>
+<image src="../../assets/images/morphology_opencv6.png">
+</td>
+<tr>
+
 </table>
