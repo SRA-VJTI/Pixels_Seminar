@@ -141,9 +141,7 @@ $$
 A \cdot a & A \cdot b & A \cdot c \\
 B \cdot a & B \cdot b & B \cdot c \\
 C \cdot a & C \cdot b & C \cdot c
-\end{bmatrix}
-=
-\begin{bmatrix}A \\ B \\ C\end{bmatrix} \begin{bmatrix}a & b & c\end{bmatrix}
+\end{bmatrix} = \begin{bmatrix}A \\ B \\ C\end{bmatrix} \begin{bmatrix}a & b & c\end{bmatrix}
 $$
 
 The Gaussian kernel is a well-known example of a separable kernel:
@@ -153,9 +151,7 @@ $$
 1 / 16 & 2 / 16 & 1 / 16 \\
 2 / 16 & 4 / 16 & 2 / 16 \\
 1 / 16 & 2 / 16 & 1 / 16
-\end{bmatrix}
-=
-\begin{bmatrix}1 / 4 \\ 1 / 2 \\ 1 / 4\end{bmatrix} \begin{bmatrix}1 / 4 & 1 / 2 & 1 / 4\end{bmatrix}
+\end{bmatrix} = \begin{bmatrix}1 / 4 \\ 1 / 2 \\ 1 / 4\end{bmatrix} \begin{bmatrix}1 / 4 & 1 / 2 & 1 / 4\end{bmatrix}
 $$
 
 ![Separable convolution](./assets/Convolution18.png)
