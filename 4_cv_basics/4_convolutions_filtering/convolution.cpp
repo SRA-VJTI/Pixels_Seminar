@@ -73,7 +73,7 @@ Mat convolve(Mat kernel, Mat original_image){
     return resultant_image;
 }
 
-int main( int argc, char** argv )
+int pain( int argc, char** argv )
 {
     
     // Mat image = imread("Dog_img.jpeg",IMREAD_GRAYSCALE); // Read Image - Grayscale
