@@ -1,5 +1,6 @@
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
+#include <opencv2/core/core.hpp>
 #include <iostream>
 using namespace cv;
 
@@ -30,7 +31,7 @@ int main(int argc, char** argv)
 	namedWindow("Original Image", WINDOW_AUTOSIZE );
 	imshow( "Original Image",  original_image);
 	namedWindow("Filtered Image", WINDOW_AUTOSIZE );
-    //imshow( "Filtered Image",  SobelEdgeX(original_image));
+    imshow( "Filtered Image",  SobelEdgeX(original_image));
 	//imshow( "Filtered Image",  SobelEdgeY(original_image));
 	waitKey(0);
 	return 0;

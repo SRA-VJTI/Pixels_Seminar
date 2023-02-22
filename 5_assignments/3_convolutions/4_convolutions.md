@@ -18,7 +18,7 @@ Tasks
        - Path of image to be filtered.
    - **Expected Output**: 
        - Two windows depicting difference between original and filtered image.
-       - Example :![](https://i.imgur.com/h3uxiYc.jpg)
+       - Example :![](https://i.imgur.com/T2jJUvN.png)![](https://i.imgur.com/h3uxiYc.jpg)
 
 
 ## Gaussian Smoothning:
@@ -28,7 +28,7 @@ Tasks
        - Path of image to be filtered.
    - **Expected Output**: 
        - Two windows depicting difference between original and filtered image.
-       - Example :![](https://i.imgur.com/T2jJUvN.png)
+       - Example :![](https://i.imgur.com/h3uxiYc.jpg)
 
 ## Sharpening:
    - **Description**:
