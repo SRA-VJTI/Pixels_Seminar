@@ -1,45 +1,31 @@
-## Capturing image from the webcam
----
-
-```
+#include "opencv2/opencv.hpp"
+#include "iostream"
+using namespace cv;
+using namespace std;
+int main(int, char**) {
     cv::VideoCapture camera(0);
     if (!camera.isOpened()) {
         std::cerr << "ERROR: Could not open camera" << std::endl;
         return 1;
     }
-```
-The code above open the first webcam plugged in the computer.
 
----
-Create a window to display the images from the webcam
-```
+
     cv::namedWindow("Webcam", 100);
-```
 
-Capture the next frame from the webcam
-```
+
     cv::Mat frame;
         
     camera >> frame;
-```
-
-Display the frame until you press a key<br>
-Show the image on the window named Webcam
-
-```
+    
     while (1) {
         cv::imshow("Webcam", frame);
         // wait (10ms) for a key to be pressed
         if (cv::waitKey(10) >= 0)
             break;
     }
-```
 
----
-## Blob detection
-Setup SimpleBlobDetector parameters.
-
-```
+// Blob detection 
+	SimpleBlobDetector::Params params;
 
 	// Change thresholds
 	params.minThreshold = 10;
@@ -60,14 +46,31 @@ Setup SimpleBlobDetector parameters.
 	// Filter by Inertia
 	params.filterByInertia = true;
 	params.minInertiaRatio = 0.01;
-```
 
-Store the blobs in a vector of name keypoints. (Vector is a data structure like array)
-```
-vector<KeyPoint> keypoints;
-```
-Now, the blobs detected should be shown on the frame captured. Show them as red circles.
-```
+
+	// Storage for blobs
+	vector<KeyPoint> keypoints;
+
+
+#if CV_MAJOR_VERSION < 3   // If you are using OpenCV 2
+
+	// Set up detector with params
+	SimpleBlobDetector detector(params);
+
+	// Detect blobs
+	detector.detect( frame, keypoints);
+#else 
+
+	// Set up detector with params
+	Ptr<SimpleBlobDetector> detector = SimpleBlobDetector::create(params);   
+
+	// Detect blobs
+	detector->detect( frame, keypoints);
+#endif 
+
+	// DrawMatchesFlags::DRAW_RICH_KEYPOINTS flag ensures
+	// the size of the circle corresponds to the size of blob
+
 	Mat im_with_keypoints;
 	drawKeypoints( frame, keypoints, im_with_keypoints, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
 
@@ -76,7 +79,4 @@ Now, the blobs detected should be shown on the frame captured. Show them as red 
 	waitKey(0);
 
     return 0;
-```
----
-## You will get an ouput like this
-![demo](trial.png)
+}
