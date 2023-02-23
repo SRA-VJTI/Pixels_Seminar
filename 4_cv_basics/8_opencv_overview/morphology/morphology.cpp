@@ -49,7 +49,7 @@ int main()
     // Reading image, in grayscale colorspace
     image = imread("PROJECT_SOURCE_DIR/assets/images/morph.png", IMREAD_GRAYSCALE);
 
-    // Resultant morphological transformation (change function name here)
+    // Resultant morphological transformation (change function name & kernel size)
     Mat res = erosion(image, 5);
 
     // Displaying source image
