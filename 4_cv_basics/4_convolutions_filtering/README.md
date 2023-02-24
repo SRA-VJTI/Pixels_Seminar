@@ -30,8 +30,7 @@ product obtained by convolving them together, and is defined as follows:
 $$(f \ast g)(x) = \sum_{u = -\infty}^\infty{f(u)g(x - u)}$$  
 and if $f$ and $g$ are continuous functions, then $f \ast g$ is the
 product obtained by convolving them together, and is defined as follows:
-$$(f \ast g)(x) =  \int_{-\infty}^{\infty}{f(u)g(x - u)}\cdot\mathrm{d}u
-$$  
+$$(f \ast g)(x) = \int_{-\infty}^\infty{f(u)g(x - u)} \cdot \mathrm{d}u$$  
 In this notation, $f$ is known as the **kernel**, while $g$ is the actual input.
 (Convolution is commutative, so the names can be swapped too)
 
@@ -48,9 +47,8 @@ refer to as **matrices**, with which we convolve input images to bring out
 certain desired effects. Some such effects are blurring, sharpening, outlining,
 embossing, edge detection, et cetera.
 
-So, here $$ f(x) = Image, \\
-            g(x) = Kernel \\
- $$
+So, here
+$$f(x) = InputImage, \\ g(x) = Kernel$$
 
 Now, we can directly apply the kernels on the input image using convolution.
 ## Different kernels and their effects
