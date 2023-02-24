@@ -1,11 +1,12 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
-#include <chrono>              // To time execution
+#include <chrono>              // To time execution - Benchmarking
 #include "convolution.hpp"     // Our naive implementation of the convolution operation
 
 int main()
 {
-    /* To demonstrate an example of a naive, suboptimal
+    /* 
+     * To demonstrate an example of a naive, suboptimal
      * implementation of the convolution operation, we will
      * compare its results with the in-built OpenCV
      * convolution function, `filter2D`. You can make changes
@@ -39,7 +40,8 @@ int main()
     // kernel = cv::Mat::ones(4, 4, CV_64F);  // Creates a 4x4 unit matrix
     // kernel = cv::Mat::eye(3, 3, CV_64F);   // Creates a 3x3 indentity matrix
 
-    /* Some notes about how these functions work:
+    /*
+     * Some notes about how these functions work:
      * As you may have noticed, the first two arguments here
      * specify the dimensions of the matrix, while the third
      * seems a little more cryptic. It is a type specification; with
@@ -59,7 +61,9 @@ int main()
 
     // And using the built-in function
     start = std::chrono::high_resolution_clock::now();
+
     cv::filter2D(input, output, -1, sobel, cv::Point(-1, -1), 5.0, cv::BorderTypes::BORDER_REPLICATE);
+    
     stop = std::chrono::high_resolution_clock::now();
 
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
@@ -113,7 +117,7 @@ int main()
     cv::imshow("Output of first 'half'", intermediate);
     cv::waitKey(0);
 
-    cv::imshow("Output of first 'half'", output);
+    cv::imshow("Output of Second 'half'", output);
     cv::waitKey(0);
 
     return 0;

@@ -28,8 +28,14 @@ pixel value and those that happen to surround it.
 Mathematically, if $f$ and $g$ are discrete functions, then $f \ast g$ is the
 product obtained by convolving them together, and is defined as follows:
 $$(f \ast g)(x) = \sum_{u = -\infty}^\infty{f(u)g(x - u)}$$  
+and if $f$ and $g$ are continuous functions, then $f \ast g$ is the
+product obtained by convolving them together, and is defined as follows:
+$$(f \ast g)(x) =  \int_{-\infty}^{\infty}{f(u)g(x - u)}\cdot\mathrm{d}u
+$$  
 In this notation, $f$ is known as the **kernel**, while $g$ is the actual input.
 (Convolution is commutative, so the names can be swapped too)
+
+`Note : In our use case which is an image, that has finite and discrete number of rows and columns we just need to ue convolution for discrete functions.`
 
 The convolution operation is better shown using an animation:
 
@@ -37,11 +43,16 @@ The convolution operation is better shown using an animation:
 
 ## What are kernels?
 
-Kernels, also known as **filters**, are 2D arrays of numbers, which we often
+Kernels, also known as **filters**, are arrays of numbers (can be n dimensional i.e. 1D, 2D, 3D ...), which we often
 refer to as **matrices**, with which we convolve input images to bring out
 certain desired effects. Some such effects are blurring, sharpening, outlining,
 embossing, edge detection, et cetera.
 
+So, here $$ f(x) = Image, \\
+            g(x) = Kernel \\
+ $$
+
+Now, we can directly apply the kernels on the input image using convolution.
 ## Different kernels and their effects
 
 Here are some examples of specific kernels and their effects on some example
@@ -176,8 +187,8 @@ repository.
 
 ```bash
 cd 4_cv_basics/4_convolutions_filtering  # Enter the project directory
-make -j4                                 # Use make to build the project
-./Pixels_Seminar                         # Execute the built project
+make                                     # Use make to build the project
+./Convolution_Filtering                  # Execute the built project
 ```
 
 The demo code is purposefully kept in an unoptimized state, your task is to
@@ -194,5 +205,5 @@ Above points are given only for the purpose of giving a rough idea about
 possible optimizations and are not necessarily sufficient.
 
 ## Resources you can visit
-
-- [Interactive demo](https://setosa.io/ev/image-kernels/)
+- [Build your Intuition about Convolution](https://youtu.be/KuXjwB4LzSA) :)
+- [Interactive demo](https://setosa.io/ev/image-kernels/) 
