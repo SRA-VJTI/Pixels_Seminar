@@ -48,6 +48,10 @@ int main()
      * format CV_[Bits][(S)igned/(U)nsigned/(F)loat][C[Channel No.]]
      */
 
+    // Making All Windows resizable
+    cv::namedWindow("Naive output", cv::WINDOW_NORMAL);
+    cv::namedWindow("filter 2D output", cv::WINDOW_NORMAL);
+
     // Now to actually convolve
     auto start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
     output = convolve(sobel, input);                         // Convolve
@@ -57,7 +61,6 @@ int main()
     std::cout << "Naive convolution took " << duration.count() << " microseconds.\n";
 
     cv::imshow("Naive output", output);
-    cv::waitKey(0);
 
     // And using the built-in function
     start = std::chrono::high_resolution_clock::now();
@@ -96,8 +99,12 @@ int main()
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Regular convolution took " << duration.count() << " microseconds.\n";
 
+    // Making All Windows resizable
+    cv::namedWindow("Output", cv::WINDOW_NORMAL);
+    cv::namedWindow("Output of first 'half'", cv::WINDOW_NORMAL);
+    cv::namedWindow("Output of Second 'half'", cv::WINDOW_NORMAL);
+
     cv::imshow("Output", output);
-    cv::waitKey(0);
 
     // Define decomposed standard 3x3 Gaussian kernel
     cv::Mat gaussian_v = (cv::Mat_<double>(3, 1) << 1. / 4, 1. / 2, 1. / 4);
@@ -115,7 +122,6 @@ int main()
     std::cout << "Separated convolution took " << duration.count() << " microseconds.\n";
 
     cv::imshow("Output of first 'half'", intermediate);
-    cv::waitKey(0);
 
     cv::imshow("Output of Second 'half'", output);
     cv::waitKey(0);

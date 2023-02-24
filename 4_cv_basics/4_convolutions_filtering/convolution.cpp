@@ -14,17 +14,17 @@ using namespace cv;
 /// @return : An Output Image with the kernel applied
 Mat convolve(Mat kernel, Mat original_image){
     
-    Mat kernel_inv{kernel.size(), kernel.type()}, temp_kernel{kernel.size(), kernel.type()};
+    Mat kernel_inv{kernel.size(), kernel.type()}, temp_kernel{kernel.size(), kernel.type()}, image_pad;
     Mat resultant_image{original_image.size(), original_image.type()};
-
+    
     // Just checking whether these funcitons are continuous or not
     kernel_inv.isContinuous();
     kernel.isContinuous();
 
     // ################################ Flip Kernel Suboptimally ######################## //
 
-    /* 
-        ################################### Using For Loops ###############################
+    /*  // Using For Loops
+        
     for(int i = 0 ; i < kernel.rows ; i++ ){
         cout<<"k"<<endl;
         kernel_inv.row(i) = kernel.row(kernel.rows - i - 1).clone(); 
@@ -39,16 +39,18 @@ Mat convolve(Mat kernel, Mat original_image){
 
 
     // Method 2: Simply using in-built functions
-    flip(kernel, kernel_inv, -1);  
+    // flip(kernel, kernel_inv, -1);  
 
     // Viewing channels for each image
     // cout<<original_image.channels()<<endl;
 
-    // #################################################################################### //
+    // # - - - - - - - - - Adding Padding to the Image - - - - - - - - - - # //
+    copyMakeBorder( original_image, image_pad, 1, 1, 1, 1, BORDER_REPLICATE, Scalar(0)); 
+    // # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - # //
 
-    for (int i = 1; i < original_image.rows - 1; i++) 
+    for (int i = 1; i < image_pad.rows - 1; i++) 
     {   
-        for (int j = 1; j < original_image.cols - 1 ; j++) 
+        for (int j = 1; j < image_pad.cols - 1 ; j++) 
         {
             for(int ch = 0 ; ch < original_image.channels() ; ch++){
 
@@ -58,15 +60,15 @@ Mat convolve(Mat kernel, Mat original_image){
                     for (int l = 0; l < kernel_inv.cols; l++) 
                     {
                         int x = j - 1 + l;
-                        int y = i - 1 + k; 
+                        int y = i - 1 + k;  
 
-                        if ((x >= 0 && x < original_image.cols) && (y >= 0 && y < original_image.rows)){
-                            tmp += (double)original_image.at<Vec3b>(y, x).val[ch] * (double)kernel_inv.at<double>(k, l);
+                        if ((x >= 0 && x < image_pad.cols) && (y >= 0 && y < image_pad.rows)){
+                            tmp += (double)image_pad.at<Vec3b>(y, x).val[ch] * (double)kernel.at<double>(k, l);
                         }
                     }
                 }
 
-                resultant_image.at<Vec3b>(i, j).val[ch] = saturate_cast<uchar>(tmp);        // Why Unsigned? 
+                resultant_image.at<Vec3b>(i-1, j-1).val[ch] = saturate_cast<uchar>(tmp);        // Why Unsigned? 
             }
         }
     }
