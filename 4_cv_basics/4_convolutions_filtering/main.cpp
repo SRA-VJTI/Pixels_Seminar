@@ -17,12 +17,12 @@ int main()
     std::cout << "Demonstrating naive convolution...\n";
 
     // Read input image
-    std::string input_path = "./assets/walle.png";
+    std::string input_path = "./assets/Dog_img.jpeg";
     cv::Mat input = cv::imread(input_path, cv::IMREAD_COLOR);        // Read colored image
     // cv::Mat input = cv::imread(input_path, cv::IMREAD_GRAYSCALE); // Read grayscale image
 
     // Resize the input image to a more managable size for demonstration purposes
-    cv::resize(input, input, cv::Size(256, 256));
+    cv::resize(input, input, cv::Size(input.cols*0.5, input.rows*0.5));
 
     // Create a 3x3 Sobel kernel
     cv::Mat sobel = (cv::Mat_<double>(3, 3) <<
@@ -124,8 +124,8 @@ int main()
     cv::imshow(" Output by Naive Seperable Convolution ", output);
     cv::waitKey(0);
 
-    cv::namedWindow("Output of first 'half'", cv::WINDOW_NORMAL);
-    cv::namedWindow("Output of Second 'half'", cv::WINDOW_NORMAL);
+    cv::namedWindow("Output of Vertical Convolution", cv::WINDOW_NORMAL);
+    cv::namedWindow("Output of Horizontal Convolution", cv::WINDOW_NORMAL);
 
     start = std::chrono::high_resolution_clock::now();
     cv::filter2D(input, intermediate, -1, gaussian_v);   // Convolve with vertical 'half' kernel
@@ -135,9 +135,9 @@ int main()
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Separated convolution took " << duration.count() << " microseconds.\n";
 
-    cv::imshow("Output of first 'half'", intermediate);
+    cv::imshow("Output of Vertical Convolution", intermediate);
 
-    cv::imshow("Output of Second 'half'", output);
+    cv::imshow("Output of Horizontal Convolution", output);
     cv::waitKey(0);
     
     return 0;
