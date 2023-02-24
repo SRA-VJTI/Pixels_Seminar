@@ -54,7 +54,7 @@ int main()
 
     // Now to actually convolve
     auto start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
-    output = convolve(sobel, input);                         // Convolve
+    output = convolve(input, sobel);                         // Convolve
     auto stop = std::chrono::high_resolution_clock::now();   // Stop clock
 
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
@@ -64,9 +64,7 @@ int main()
 
     // And using the built-in function
     start = std::chrono::high_resolution_clock::now();
-
     cv::filter2D(input, output, -1, sobel, cv::Point(-1, -1), 5.0, cv::BorderTypes::BORDER_REPLICATE);
-    
     stop = std::chrono::high_resolution_clock::now();
 
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
@@ -101,8 +99,6 @@ int main()
 
     // Making All Windows resizable
     cv::namedWindow("Output", cv::WINDOW_NORMAL);
-    cv::namedWindow("Output of first 'half'", cv::WINDOW_NORMAL);
-    cv::namedWindow("Output of Second 'half'", cv::WINDOW_NORMAL);
 
     cv::imshow("Output", output);
 
@@ -112,6 +108,24 @@ int main()
 
     // Declare matrix to store intermediate image
     cv::Mat intermediate;
+
+    // Making All Windows resizable
+    cv::namedWindow(" Output by Naive Seperable Convolution ", cv::WINDOW_NORMAL);
+
+    // Now to actually convolve
+    start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
+    intermediate = convolve(input, gaussian_v);         // Convolve Vertically
+    output = convolve(intermediate, gaussian_h);        // Convolve Horizontally
+    stop = std::chrono::high_resolution_clock::now();   // Stop clock
+
+    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    std::cout << "Naive Seperated Convolution " << duration.count() << " microseconds.\n";
+
+    cv::imshow(" Output by Naive Seperable Convolution ", output);
+    cv::waitKey(0);
+
+    cv::namedWindow("Output of first 'half'", cv::WINDOW_NORMAL);
+    cv::namedWindow("Output of Second 'half'", cv::WINDOW_NORMAL);
 
     start = std::chrono::high_resolution_clock::now();
     cv::filter2D(input, intermediate, -1, gaussian_v);   // Convolve with vertical 'half' kernel
@@ -125,6 +139,6 @@ int main()
 
     cv::imshow("Output of Second 'half'", output);
     cv::waitKey(0);
-
+    
     return 0;
 }

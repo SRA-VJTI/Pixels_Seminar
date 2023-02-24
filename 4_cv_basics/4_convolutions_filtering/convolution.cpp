@@ -12,7 +12,7 @@ using namespace cv;
 /// @param   Original_image
 /// @param   kernel
 /// @return : An Output Image with the kernel applied
-Mat convolve(Mat kernel, Mat original_image){
+Mat convolve(Mat original_image, Mat kernel){
     
     Mat kernel_inv{kernel.size(), kernel.type()}, temp_kernel{kernel.size(), kernel.type()}, image_pad;
     Mat resultant_image{original_image.size(), original_image.type()};
