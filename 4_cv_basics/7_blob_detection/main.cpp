@@ -1,50 +1,34 @@
-# Blob Detection
-BLOB stands for Binary Large Object
+#include <opencv2/opencv.hpp>
+// selectROI is part of tracking API
+// #include <opencv2/tracking.hpp>
+#include <bits/stdc++.h>
+using namespace std;
+using namespace cv;
 
-Informally a blob is a region of an image in which some properties like intensity or color are approximately constant.
-
-## Capturing image from the webcam
----
-
-```
+int main(int argc, char **arv)
+{
     cv::VideoCapture camera(0);
-    if (!camera.isOpened()) {
+    if (!camera.isOpened())
+    {
         std::cerr << "ERROR: Could not open camera" << std::endl;
         return 1;
     }
-```
-The code above open the first webcam plugged in the computer.
 
----
-Create a window to display the images from the webcam
-```
     cv::namedWindow("Webcam", 100);
-```
 
-Capture the next frame from the webcam
-```
     cv::Mat im;
-        
+
     camera >> im;
-```
 
-Display the frame until you press a key<br>
-Show the image on the window named Webcam
-
-```
-    while (1) {
+    while (1)
+    {
         cv::imshow("Webcam", im);
         // wait (10ms) for a key to be pressed
         if (cv::waitKey(10) >= 0)
             break;
     }
-```
 
----
-## Selecting region of interest and cropping
-
-```
-// Read image (When not using webcam)
+    // Read image (When not using webcam)
     // Mat im = imread("image.jpg");
 
     Mat orig_img = im;
@@ -71,19 +55,7 @@ Show the image on the window named Webcam
     x2 = x1 + imCrop.cols;
     y1 = offset.y;
     y2 = y1 + y1 + imCrop.rows;
-```
-## Converting to HSV and finding bounding values for mask
-1. Why converting to HSV?<br>
-Since we are using the web cam the intensity and illumination of consecutive frame does not remain same.
-Hence to find the color in range instead of particular color. HSV format is useful as H value denotes specific color and S, V can be used for illumination and intensity.
 
-
-
-1. Calculating the median H,S,V values from roi
-
-1. Initializing the lower and upper bound for mask
-
-```
     // median hsv ////////////////////////////////////////////////////
     set<double> h_values, s_values, v_values;
     int counter = 0;
@@ -124,23 +96,7 @@ Hence to find the color in range instead of particular color. HSV format is usef
     upper.push_back(h + 5);
     upper.push_back(max(s + 50, double(255)));
     upper.push_back(max(v + 50, double(255)));
-```
 
---- 
-## Detecting the blob
-### Constructing mask for detection of blob
-1. Convert to HSV
-
-1. Make a mask using `inRange()` by passing lower and upper bounds calculated earlier
-
-* What is a mask?<br>
-A mask is a binary image consisting of zero and non-zero values. If a mask is applied to another image of the same size, all pixels which are zero in the mask are set to zero in the output image. All others remain unchanged.
-
-3. Blur the mask to remove the noise using `medianBlur()`
- 
-1. Placing mask over frame to finded colored mask using `bitwise_and()`
-
-```
     ///// Creating hsv of the frame /////////////////////////
     Mat hsv;
     cv::cvtColor(orig_img, hsv, cv::COLOR_RGB2HSV);
@@ -166,17 +122,9 @@ A mask is a binary image consisting of zero and non-zero values. If a mask is ap
     imshow("output", output);
     waitKey(0);
     destroyAllWindows();
-```
-## Drawing the blob
-1. Find the contour from the generated mask using `findContours()`
+    //////////////////////////
 
-	* What is a contour?<br>
-	Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition
-1. Find the contour having the maximum area using `contourArea()`
-1. Draw the contour on the frame using `drawContours()`
-
-```
-vector<vector<cv::Point>> contours;
+    vector<vector<cv::Point>> contours;
     vector<Vec4i> hierarchy;
     cv::Mat contourOutput = blur.clone();
     cv::findContours(contourOutput, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
@@ -199,4 +147,4 @@ vector<vector<cv::Point>> contours;
     waitKey(0);
     destroyAllWindows();
     return 0;
-```
+}
