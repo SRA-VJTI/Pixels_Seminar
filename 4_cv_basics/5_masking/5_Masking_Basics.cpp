@@ -41,7 +41,7 @@ Mat masking(Mat image)
 int main() 
 {
    Mat image;//taking an image matrix
-   image = imread("mi.png");//loading an image//
+   image = imread("nike.png");//loading an image//
    
    Mat new_img = masking(image);
    imwrite("true_logo.png", new_img);
