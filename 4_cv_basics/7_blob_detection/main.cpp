@@ -5,6 +5,56 @@
 using namespace std;
 using namespace cv;
 
+double median(vector<double> vec)
+{
+    int size = vec.size();
+    if (size == 0)
+    {
+        return 0; // Handle empty vector case
+    }
+    std::sort(vec.begin(), vec.end());
+    if (size % 2 == 0)
+    {
+        // Even number of elements, take average of middle two
+        return (vec[size / 2 - 1] + vec[size / 2]) / 2.0;
+    }
+    else
+    {
+        // Odd number of elements, take middle element
+        return vec[size / 2];
+    }
+}
+tuple<double, double, double> getMedianPixelValues(Mat img)
+{
+    // Initialize vectors to store the pixel values of each color channel
+    vector<double> blue_pixels;
+    vector<double> green_pixels;
+    vector<double> red_pixels;
+
+    // Iterate over the rows and columns of the image
+    for (int i = 0; i < img.rows; i++)
+    {
+        for (int j = 0; j < img.cols; j++)
+        {
+            // Access the pixel value at (i, j)
+            Vec3b pixel = img.at<Vec3b>(i, j);
+
+            // Add the pixel values to the corresponding vectors
+            blue_pixels.push_back(pixel[0]);
+            green_pixels.push_back(pixel[1]);
+            red_pixels.push_back(pixel[2]);
+        }
+    }
+
+    // Calculate the median of each color channel
+    double blue_median = median(blue_pixels);
+    double green_median = median(green_pixels);
+    double red_median = median(red_pixels);
+
+    // Return the median values as a tuple
+    return make_tuple(blue_median, green_median, red_median);
+}
+vector<double> lower, upper;
 int main(int argc, char **arv)
 {
     cv::VideoCapture camera(0);
@@ -18,133 +68,115 @@ int main(int argc, char **arv)
 
     cv::Mat im;
 
-    camera >> im;
+    while (1)
+    {
+        camera >> im; // 1 - To get a continuous feed
+        cv::imshow("Webcam", im);
+
+        // wait (10ms) for a key to be pressed
+        if (cv::waitKey(10) == 'q')
+        {
+            Mat orig_img = im;
+
+            // Select ROI
+            Rect2d r = selectROI(im);
+
+            // Crop image
+            Mat imCrop = im(r);
+
+            // Display Cropped Image
+            imshow("Image", imCrop);
+
+            // To get the ROI co-ordinates in the original image
+            Point offset;
+            Size wholesize;
+            imCrop.locateROI(wholesize, offset);
+            cout << "imgRoi Offset: " << offset.x << "," << offset.y << endl;
+
+            int x1, x2, y1, y2;
+            x1 = offset.x;
+            x2 = x1 + imCrop.cols;
+            y1 = offset.y;
+            y2 = y1 + y1 + imCrop.rows;
+
+            // Getiing medians of h,s,v to set lower and upper bounds
+            Mat cropHsv;
+            cv::cvtColor(imCrop, cropHsv, cv::COLOR_BGR2HSV);
+            tuple<double, double, double> medians = getMedianPixelValues(cropHsv);
+            double h, s, v;
+            h = get<0>(medians);
+            s = get<1>(medians);
+            v = get<2>(medians);
+            // Max <--> Min
+            lower.push_back(h - 5);
+            lower.push_back(max(double(0), s - 50));
+            lower.push_back(max(double(0), v - 50));
+
+            upper.push_back(h + 5);
+            upper.push_back(min(s + 50, double(255)));
+            upper.push_back(min(v + 50, double(255)));
+
+            break;
+        }
+    }
 
     while (1)
     {
-        cv::imshow("Webcam", im);
-        // wait (10ms) for a key to be pressed
-        if (cv::waitKey(10) >= 0)
-            break;
-    }
+        // Converting to hsv
+        Mat frame;
+        camera >> frame;
+        Mat hsv;
+        cv::cvtColor(frame, hsv, cv::COLOR_RGB2HSV);
+        imshow("hsv_full", hsv);
 
-    // Read image (When not using webcam)
-    // Mat im = imread("image.jpg");
+        // Masking
+        cv::Mat masked;
+        cv::inRange(hsv, cv::Scalar(lower[0], lower[1], lower[2]), cv::Scalar(upper[0], upper[1], upper[2]), masked);
+        imshow("masked_full", masked);
 
-    Mat orig_img = im;
+        // Median Blur
+        Mat blur;
+        medianBlur(masked, blur, 5);
+        imshow("blur", blur);
 
-    // Select ROI
-    Rect2d r = selectROI(im);
+        // Performing bitwise_and using the 'blur' mask
+        Mat output;
+        bitwise_and(frame, frame, output, blur);
+        imshow("output", output);
 
-    // Crop image
-    Mat imCrop = im(r);
+        // Find contours
+        vector<vector<Point>> contours;
+        vector<Vec4i> hierarchy;
+        findContours(blur, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
-    // Display Cropped Image
-    imshow("Image", imCrop);
-    waitKey(0);
-    destroyAllWindows();
-
-    // To get the ROI co-ordinates in the original image///////////
-    Point offset;
-    Size wholesize;
-    imCrop.locateROI(wholesize, offset);
-    cout << "imgRoi Offset: " << offset.x << "," << offset.y << endl;
-
-    int x1, x2, y1, y2;
-    x1 = offset.x;
-    x2 = x1 + imCrop.cols;
-    y1 = offset.y;
-    y2 = y1 + y1 + imCrop.rows;
-
-    // median hsv ////////////////////////////////////////////////////
-    set<double> h_values, s_values, v_values;
-    int counter = 0;
-    Mat cropHsv;
-    cv::cvtColor(imCrop, cropHsv, cv::COLOR_BGR2HSV);
-    for (int i = y1; i < y2; i++)
-    {
-        for (int j = x1; j < x2; j++)
+        // Find largest contour
+        int largestIdx = -1;
+        int largestArea = 0;
+        for (int i = 0; i < contours.size(); i++)
         {
-            h_values.insert(cropHsv.at<Vec3b>(i, j)[0]);
-            s_values.insert(cropHsv.at<Vec3b>(i, j)[1]);
-            v_values.insert(cropHsv.at<Vec3b>(i, j)[2]);
-            counter++;
+            int area = contourArea(contours[i]);
+            if (area > largestArea)
+            {
+                largestArea = area;
+                largestIdx = i;
+            }
+        }
+
+        // Draw largest contour on frame
+        if (largestIdx >= 0)
+        {
+            drawContours(frame, contours, largestIdx, Scalar(0, 255, 0), 2);
+        }
+
+        // Show frame
+        imshow("Blob detected", frame);
+        waitKey(10);
+        if (cv::waitKey(10) == 'x')
+        {
+            destroyAllWindows();
+            camera.release();
         }
     }
-    auto it_h = h_values.begin();
-    auto it_s = s_values.begin();
-    auto it_v = v_values.begin();
 
-    for (auto x : h_values)
-        cout << x << " ";
-    for (int k = 0; k < h_values.size() / 2; k++)
-    {
-        it_h++;
-        it_s++;
-        it_v++;
-    }
-    double h, s, v;
-    h = *it_h; // median of hue
-    s = *it_s; // median of saturation
-    v = *it_v; // median of value
-    // cout << "Medians: " << h << " " << s << " " << v << endl;
-    vector<double> lower, upper;
-    lower.push_back(h - 5);
-    lower.push_back(min(double(0), s - 50));
-    lower.push_back(min(double(0), v - 50));
-
-    upper.push_back(h + 5);
-    upper.push_back(max(s + 50, double(255)));
-    upper.push_back(max(v + 50, double(255)));
-
-    ///// Creating hsv of the frame /////////////////////////
-    Mat hsv;
-    cv::cvtColor(orig_img, hsv, cv::COLOR_RGB2HSV);
-    imshow("hsv_full", hsv);
-    waitKey(0);
-    destroyAllWindows();
-
-    // Masking /////////////////////////////////////////////
-    Mat masked;
-    inRange(hsv, Scalar(0.0, lower[1], lower[2]), Scalar(5.0, upper[1], upper[2]), masked);
-    imshow("masked_full", masked);
-    waitKey(0);
-    destroyAllWindows();
-    ///////////////// Median Blur //////////
-    Mat blur;
-    medianBlur(masked, blur, 5);
-    imshow("blur", blur);
-    waitKey(0);
-    destroyAllWindows();
-    //////////////////////////
-    Mat output;
-    bitwise_and(im, im,output, blur);
-    imshow("output", output);
-    waitKey(0);
-    destroyAllWindows();
-    //////////////////////////
-
-    vector<vector<cv::Point>> contours;
-    vector<Vec4i> hierarchy;
-    cv::Mat contourOutput = blur.clone();
-    cv::findContours(contourOutput, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-    imshow("contours", contourOutput);
-    waitKey(0);
-    destroyAllWindows();
-    int area=0;
-    int count=0;int largest=0;
-    for (size_t i = 0; i < contours.size(); i++)
-    {
-        if(contourArea(contours[i])>area)
-        {
-        largest=i;
-        area=contourArea(contours[i]);
-        }
-        count++;
-    }
-    drawContours(im, contours, largest, Scalar(0, 255, 0), 2, LINE_8, hierarchy, 0);
-    imshow("contours", im);
-    waitKey(0);
-    destroyAllWindows();
     return 0;
 }
