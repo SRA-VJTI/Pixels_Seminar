@@ -31,7 +31,7 @@ The compilation process transforms a human-readable code into a machine-readable
 During the stages of compilation, there are several types of files involved.
 
 * Source(.c):
-These files contain function definitions, and the entire program logics, these files are human readable and by convention their names ending with ```. c```
+These files contain function definitions, and the entire program logics, these files are human readable and by convention their names ending with ```.c```
 
 * Assembly(.s):
 Assembly Language mainly consists of mnemonic processor instructions or data and other statements or instructions. 
