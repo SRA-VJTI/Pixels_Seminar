@@ -1,6 +1,5 @@
 #include <opencv2/opencv.hpp>
-// selectROI is part of tracking API
-// #include <opencv2/tracking.hpp>
+
 #include <bits/stdc++.h>
 using namespace std;
 using namespace cv;
