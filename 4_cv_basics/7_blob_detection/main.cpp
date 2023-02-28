@@ -1,9 +1,7 @@
-#include <opencv2/opencv.hpp>
-
 #include <bits/stdc++.h>
+#include <opencv2/opencv.hpp>
 using namespace std;
 using namespace cv;
-
 double median(vector<double> vec)
 {
     int size = vec.size();
@@ -11,10 +9,10 @@ double median(vector<double> vec)
     {
         return 0; // Handle empty vector case
     }
-    std::sort(vec.begin(), vec.end());
+    sort(vec.begin(), vec.end());
     if (size % 2 == 0)
     {
-        // Even number of elements, take average of middle two
+        // Even number of elements, take average of middle 2
         return (vec[size / 2 - 1] + vec[size / 2]) / 2.0;
     }
     else
@@ -53,127 +51,79 @@ tuple<double, double, double> getMedianPixelValues(Mat img)
     // Return the median values as a tuple
     return make_tuple(blue_median, green_median, red_median);
 }
-vector<double> lower, upper;
-int main(int argc, char **arv)
+int main()
 {
-    cv::VideoCapture camera(0);
-    if (!camera.isOpened())
+    VideoCapture video(0);
+    int h = 0, s = 0, v = 0;
+    while (video.isOpened())
     {
-        std::cerr << "ERROR: Could not open camera" << std::endl;
-        return 1;
-    }
+        Mat frame;
+        video.read(frame);
+        imshow("Image", frame);
 
-    cv::namedWindow("Webcam", 100);
-
-    cv::Mat im;
-
-    while (1)
-    {
-        camera >> im; // 1 - To get a continuous feed
-        cv::imshow("Webcam", im);
-
-        // wait (10ms) for a key to be pressed
-        if (cv::waitKey(10) == 'q')
+        if (waitKey(10) == 'q')
         {
-            Mat orig_img = im;
-
-            // Select ROI
-            Rect2d r = selectROI(im);
-
-            // Crop image
-            Mat imCrop = im(r);
-
-            // Display Cropped Image
-            imshow("Image", imCrop);
-
-            // To get the ROI co-ordinates in the original image
-            Point offset;
-            Size wholesize;
-            imCrop.locateROI(wholesize, offset);
-            cout << "imgRoi Offset: " << offset.x << "," << offset.y << endl;
-
-            int x1, x2, y1, y2;
-            x1 = offset.x;
-            x2 = x1 + imCrop.cols;
-            y1 = offset.y;
-            y2 = y1 + y1 + imCrop.rows;
-
-            // Getiing medians of h,s,v to set lower and upper bounds
-            Mat cropHsv;
-            cv::cvtColor(imCrop, cropHsv, cv::COLOR_BGR2HSV);
-            tuple<double, double, double> medians = getMedianPixelValues(cropHsv);
-            double h, s, v;
+            Rect bbox = selectROI("Image", frame, false, false);
+            Mat hsv;
+            cvtColor(frame, hsv, COLOR_BGR2HSV);
+            Mat obj_img = hsv(Rect(bbox.x, bbox.y, bbox.width, bbox.height));
+            tuple<double, double, double> medians = getMedianPixelValues(obj_img);
             h = get<0>(medians);
             s = get<1>(medians);
             v = get<2>(medians);
-            // Max <--> Min
-            lower.push_back(h - 5);
-            lower.push_back(max(double(0), s - 50));
-            lower.push_back(max(double(0), v - 50));
-
-            upper.push_back(h + 5);
-            upper.push_back(min(s + 50, double(255)));
-            upper.push_back(min(v + 50, double(255)));
-
             break;
         }
     }
 
-    while (1)
+    while (video.isOpened())
     {
-        // Converting to hsv
         Mat frame;
-        camera >> frame;
+        video.read(frame);
+
         Mat hsv;
-        cv::cvtColor(frame, hsv, cv::COLOR_RGB2HSV);
-        imshow("hsv_full", hsv);
+        cvtColor(frame, hsv, COLOR_BGR2HSV);
 
-        // Masking
-        cv::Mat masked;
-        cv::inRange(hsv, cv::Scalar(lower[0], lower[1], lower[2]), cv::Scalar(upper[0], upper[1], upper[2]), masked);
-        imshow("masked_full", masked);
+        Scalar lower(h - 5, max(0, s - 50), max(0, v - 50));
+        Scalar upper(h + 5, min(s + 50, 255), min(v + 50, 255));
 
-        // Median Blur
+        Mat masked;
+        inRange(hsv, lower, upper, masked);
+
         Mat blur;
         medianBlur(masked, blur, 5);
-        imshow("blur", blur);
 
-        // Performing bitwise_and using the 'blur' mask
-        Mat output;
-        bitwise_and(frame, frame, output, blur);
-        imshow("output", output);
+        Mat blob_mask;
+        bitwise_and(frame, frame, blob_mask, blur);
 
-        // Find contours
+        imshow("blob_mask", blob_mask);
+
         vector<vector<Point>> contours;
         vector<Vec4i> hierarchy;
         findContours(blur, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
-        // Find largest contour
-        int largestIdx = -1;
-        int largestArea = 0;
-        for (int i = 0; i < contours.size(); i++)
+        int idx = 0;
+        double current_max = 0;
+        int counter = 0;
+
+        for (const auto &n : contours)
         {
-            int area = contourArea(contours[i]);
-            if (area > largestArea)
+            double area = contourArea(n);
+            if (area > current_max)
             {
-                largestArea = area;
-                largestIdx = i;
+                current_max = area;
+                idx = counter;
             }
+            counter++;
         }
 
-        // Draw largest contour on frame
-        if (largestIdx >= 0)
-        {
-            drawContours(frame, contours, largestIdx, Scalar(0, 255, 0), 2);
-        }
+        drawContours(frame, contours, idx, Scalar(0, 255, 255), 2);
+        imshow("Output", frame);
 
-        // Show frame
-        imshow("Blob detected", frame);
-        waitKey(10);
-        if (cv::waitKey(10) == 'x')
+        if (waitKey(10) == 'x')
         {
             destroyAllWindows();
-            camera.release();
+            video.release();
+            break;
         }
     }
 
