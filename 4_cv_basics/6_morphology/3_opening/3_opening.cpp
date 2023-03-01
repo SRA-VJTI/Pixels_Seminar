@@ -4,22 +4,15 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include "helper.hpp"
+#include "../helper.hpp"
 
 using namespace cv;
 using namespace std;
 
 int main(int argc, char** argv)
 {
-
-    if ( argc != 2 )
-    {
-        std::cout <<"usage: dilate.out <Image_Path>\n";
-        return -1;
-    }
-
 	// Reading the Image
-	Mat source_image = imread(argv[1], IMREAD_GRAYSCALE);
+	Mat source_image = imread("Path Of Image", IMREAD_GRAYSCALE);
 
 	// Check if the image is created
 	// successfully or not
@@ -33,10 +26,12 @@ int main(int argc, char** argv)
     Mat output_image{source_image.size(), source_image.type()};
 
 	//Applying erosion on source image
-	temp1 = erosion(source_image, temp1);
+	int kernel_size_erosion = 3;
+	temp1 = erosion(source_image, temp1,kernel_size_erosion);
 
     // Applying dilation on erroded image
-    output_image = dilation(temp1, output_image);
+	int kernel_size_dilation = 3;
+	output_image = dilation(temp1, output_image,kernel_size_dilation);
 
 	//Displaying both source and output image
 	namedWindow("source", WINDOW_NORMAL);

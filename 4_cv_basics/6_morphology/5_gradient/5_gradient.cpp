@@ -4,23 +4,16 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include "helper.hpp"
+#include "../helper.hpp"
 
 using namespace cv;
 using namespace std;
 
 
-int main(int argc, char** argv)
+int main()
 {
-
-    if (argc != 2)
-    {
-        std::cout <<"usage: gradient.out <Image_Path>\n";
-        return -1;
-    }
-    
 	// Reading the Image
-	Mat source_image = imread(argv[1],IMREAD_GRAYSCALE);
+	Mat source_image = imread("Path To Image",IMREAD_GRAYSCALE);
 
 	// Check if the image is created
 	// successfully or not
@@ -34,10 +27,12 @@ int main(int argc, char** argv)
 	Mat gradient{source_image.size(), source_image.type()};
 
 	// For Erosion
-	erod = erosion(source_image, erod);
+	int kernel_size_erosion = 3;
+	erod = erosion(source_image, erod, kernel_size_erosion);
 
 	// For Dilation
-	dill = dilation(source_image, dill);
+	int kernel_size_dilation = 3;
+	dill = dilation(source_image, dill,kernel_size_dilation);
 
     // For gradient
     gradient = difference(dill, erod, gradient);
@@ -45,8 +40,8 @@ int main(int argc, char** argv)
 
 	// Display the image
 	imshow("source", source_image);
-	// imshow("erosion", erod);
-	// imshow("dilate", dill);
+	imshow("erosion", erod);
+	imshow("dilate", dill);
     imshow("gradient", gradient);
 	waitKey();
 
