@@ -1,6 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project( Nearest-Neighbour )
-find_package( OpenCV REQUIRED )
-include_directories( ${OpenCV_INCLUDE_DIRS} )
-add_executable( Nearest-Neighbour Nearest-Neighbour.cpp )
-target_link_libraries( Nearest-Neighbour ${OpenCV_LIBS} )
