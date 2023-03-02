@@ -14,3 +14,4 @@ LIBS = $(shell pkg-config --libs opencv4)
 # Similar to how we used to link and make object files in the terminal
 $(PROJECT) : $(SRC)					
 	$(CC) $(SRC) -o $(PROJECT) $(CFLAGS) $(LIBS)	
+	
