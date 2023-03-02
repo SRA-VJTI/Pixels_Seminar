@@ -1,7 +1,7 @@
 /*
-Main .cpp file for Bi-Linear Interpolation
+Main .cpp file for Nearest-Neighbour Interpolation
 */
-#include "bi_linear_functions.hpp"
+#include "nearest_neighbour_functions.hpp"
 
 using namespace std;
 using namespace cv;
@@ -11,7 +11,7 @@ int main(int argc, char** argv)
 	// For Debugging. Prints error message on Terminal 
 	if (argc != 2) 
 	{
-		printf("usage: bi_linear.out <Image_Path>\n");
+		printf("usage: nearest_neighbour.out <Image_Path>\n");
 		return -1;
 	}
 
@@ -48,11 +48,11 @@ int main(int argc, char** argv)
 	int pixels_increase_x = 100, pixels_increase_y = 100;
 	double scale_x = 5, scale_y = 5;
 	
-	// Bi-Linear Interpolation function calls
-	bi_linear_scale_down_image(image, pixels_reduce_x, pixels_reduce_y);
-	bi_linear_scale_up_image(image, pixels_increase_x, pixels_increase_y);
-	bi_linear_fscale_down_image(image, scale_x, scale_y);
-	bi_linear_fscale_up_image(image, scale_x, scale_y);
+	// Nearest-Neighbour Interpolation function calls
+	nearest_neighbour_scale_down_image(image, pixels_reduce_x, pixels_reduce_y);
+	nearest_neighbour_scale_up_image(image, pixels_increase_x, pixels_increase_y);
+	nearest_neighbour_fscale_down_image(image, scale_x, scale_y);
+	nearest_neighbour_fscale_up_image(image, scale_x, scale_y);
 
 	// For Original Image
 	// Create a window.
