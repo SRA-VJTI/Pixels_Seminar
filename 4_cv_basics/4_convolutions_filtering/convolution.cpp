@@ -20,23 +20,11 @@ Mat convolve(Mat original_image, Mat kernel){
     // Just checking whether these funcitons are continuous or not
     kernel_inv.isContinuous();
     kernel.isContinuous();
-
-    // ################################ Flip Kernel Suboptimally ######################## //
-
-    /*  // Using For Loops
-        
-    for(int i = 0 ; i < kernel.rows ; i++ ){
-        cout<<"k"<<endl;
-        kernel_inv.row(i) = kernel.row(kernel.rows - i - 1).clone(); 
-    }
-
-    temp_kernel = kernel_inv.clone();
-
-    for(int i = 0 ; i < kernel.cols ; i++ ){
-        kernel_inv.col(i) = temp_kernel.col(kernel.cols - i - 1).clone();
-    }
-    */
-
+    
+    // Using For Loops
+    // for(int i = 0 ; i < kernel.rows ; i++ ){ cout<<"k"<<endl; kernel_inv.row(i) = kernel.row(kernel.rows - i - 1).clone(); }
+    // temp_kernel = kernel_inv.clone();
+    // for(int i = 0 ; i < kernel.cols ; i++ ){ kernel_inv.col(i) = temp_kernel.col(kernel.cols - i - 1).clone();}
 
     // Method 2: Simply using in-built functions
     // flip(kernel, kernel_inv, -1);  
@@ -44,9 +32,8 @@ Mat convolve(Mat original_image, Mat kernel){
     // Viewing channels for each image
     // cout<<original_image.channels()<<endl;
 
-    // # - - - - - - - - - Adding Padding to the Image - - - - - - - - - - # //
+    // Adding Padding to the Image 
     copyMakeBorder( original_image, image_pad, 1, 1, 1, 1, BORDER_REPLICATE, Scalar(0)); 
-    // # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - # //
 
     for (int i = 1; i < image_pad.rows - 1; i++) 
     {   
