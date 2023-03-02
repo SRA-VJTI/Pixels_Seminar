@@ -34,7 +34,7 @@ $$(f \ast g)(x) = \int_{-\infty}^\infty{f(u)g(x - u)} \cdot \mathrm{d}u$$
 In this notation, $f$ is known as the **kernel**, while $g$ is the actual input.
 (Convolution is commutative, so the names can be swapped too)
 
-`Note : In our use case which is an image, that has finite and discrete number of rows and columns we just need to ue convolution for discrete functions.`
+`Note: In our use case, where we convolve an image having a finite number of discrete rows and columns, we just need to use the discrete form of the convolution operation.`
 
 The convolution operation is better shown using an animation:
 
@@ -48,7 +48,7 @@ certain desired effects. Some such effects are blurring, sharpening, outlining,
 embossing, edge detection, et cetera.
 
 So, here
-$$f(x) = InputImage, \\ g(x) = Kernel$$
+$$f(x) = \text{InputImage}, \\ g(x) = \text{Kernel}$$
 
 Now, we can directly apply the kernels on the input image using convolution.
 ## Different kernels and their effects
@@ -64,6 +64,7 @@ _Example:_
 
 _Matrix:_
 
+```math
 $$
 \begin{bmatrix}
 1 / 9 & 1 / 9 & 1 / 9 \\
@@ -71,6 +72,7 @@ $$
 1 / 9 & 1 / 9 & 1 / 9
 \end{bmatrix}
 $$
+```
 
 Blur operations like this have the effect of averaging nearby pixels.  
 This simple blur corresponds to a simple **average**, whereas others (like the
@@ -86,6 +88,7 @@ _Example:_
 
 _Matrix:_
 
+```math
 $$
 \begin{bmatrix}
 -1 & -1 & -1 \\
@@ -93,6 +96,7 @@ $$
 -1 & -1 & -1
 \end{bmatrix}
 $$
+```
 
 This also works as a high pass filter.
 
@@ -104,6 +108,7 @@ _Example:_
 
 _Matrices (horizontal and vertical):_
 
+```math
 $$
 \begin{bmatrix}
 -1 & -2 & -1 \\
@@ -117,6 +122,7 @@ $$
 -1 &  0 & +1
 \end{bmatrix}
 $$
+```
 
 ### Sharpening operator
 
@@ -126,6 +132,7 @@ _Example:_
 
 _Matrix:_
 
+```math
 $$
 \begin{bmatrix}
 0 & -0.5 & 0 \\
@@ -133,6 +140,7 @@ $$
 0 & -0.5 & 0
 \end{bmatrix}
 $$
+```
 
 ## Separable convolutions
 
@@ -145,6 +153,7 @@ is decomposed by writing it as a product of a $m \times 1$ matrix and a
 $1 \times n$ matrix. Convolving the input with each of these takes $m$ and $n$
 multiplications per pixel respectively, reducing the total to $m + n$.
 
+```math
 $$
 \begin{bmatrix}
 A \cdot a & A \cdot b & A \cdot c \\
@@ -152,9 +161,11 @@ B \cdot a & B \cdot b & B \cdot c \\
 C \cdot a & C \cdot b & C \cdot c
 \end{bmatrix} = \begin{bmatrix}A \\ B \\ C\end{bmatrix} \begin{bmatrix}a & b & c\end{bmatrix}
 $$
+```
 
 The Gaussian kernel is a well-known example of a separable kernel:
 
+```math
 $$
 \begin{bmatrix}
 1 / 16 & 2 / 16 & 1 / 16 \\
@@ -162,19 +173,22 @@ $$
 1 / 16 & 2 / 16 & 1 / 16
 \end{bmatrix} = \begin{bmatrix}1 / 4 \\ 1 / 2 \\ 1 / 4\end{bmatrix} \begin{bmatrix}1 / 4 & 1 / 2 & 1 / 4\end{bmatrix}
 $$
+```
 
 ![Separable convolution](./assets/Convolution18.png)
 
 It is worth noting that the convolution operation is associative, so either of
 the simpler convolutions can be applied first.
 
+```math
 $$
 \text{input} \ast \begin{bmatrix}
 A \cdot a & A \cdot b & A \cdot c \\
 B \cdot a & B \cdot b & B \cdot c \\
 C \cdot a & C \cdot b & C \cdot c
-\end{bmatrix} = \text{input} \ast \Bigg(\begin{bmatrix}1 / 4 \\ 1 / 2 \\ 1 / 4\end{bmatrix} \begin{bmatrix}1 / 4 & 1 / 2 & 1 / 4\end{bmatrix}\Bigg) = \Bigg(\text{input} \ast \begin{bmatrix}1 / 4 \\ 1 / 2 \\ 1 / 4\end{bmatrix}\Bigg) \ast \begin{bmatrix}1 / 4 & 1 / 2 & 1 / 4\end{bmatrix}
+\end{bmatrix} = \text{input} \ast \Bigg(\begin{bmatrix}A \\ B \\ C\end{bmatrix} \begin{bmatrix}a & b & c\end{bmatrix}\Bigg) = \Bigg(\text{input} \ast \begin{bmatrix}A \\ B \\ C\end{bmatrix}\Bigg) \ast \begin{bmatrix}a & b & c\end{bmatrix}
 $$
+```
 
 ## A suboptimal implementation
 
