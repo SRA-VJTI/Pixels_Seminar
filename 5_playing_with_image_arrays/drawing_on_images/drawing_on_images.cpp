@@ -1,6 +1,4 @@
-//including the necessary header files
 #include <iostream>
-//the following header files are from the OpenCV library for C++
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>

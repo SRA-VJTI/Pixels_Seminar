@@ -8,15 +8,15 @@
 using namespace std;
 using namespace cv;
 
-//reading the image and converting it into cv::Mat format
-Mat img = imread("dog.jpeg");
+//declaring functions for different operations
+Mat black_out_rows(Mat img, int height, int width);
+Mat change_blue(Mat img, int height, int width);
 
-//declaring functions for different operation
-Mat black_out_rows(int height, int width);
-Mat change_blue(int height, int width);
-
-int main(){
-    Mat img2;
+int main()
+{
+    //reading the image and converting it into cv::Mat formatt
+    Mat img = imread("dog.jpeg");
+    Mat img2, img3;
     //obtaining the dimensions of the image
     int width = img.size().width;
     int height = img.size().height;
@@ -24,28 +24,31 @@ int main(){
     cout << "Width of the image: " << width << endl;
     cout << "Height of the image: " << height << endl;
 
-    cout<<"You have a choice to make - 0 or 1. What will it be? "<<endl;
-    cin>>choice;
-    if (choice==0){
+    cout << "You have a choice to make - 0 or 1. What will it be? ";
+    cin >> choice;
+    if (choice == 0)
+    {
         //making alternate rows of pixels of the image black
-        img2 = black_out_rows(height, width);
+        img2 = black_out_rows(img, height, width);
+        //displaying the image on the screen. The image will be displayed until any key is pressed
+        imshow("window", img2);
+        waitKey(0);
     }
-    else if (choice==1)
+    else if (choice == 1)
     {
         // changing only one channel of the image, in this case, blue
-        img2 = change_blue(height, width);
+        img3 = change_blue(img, height, width);
+        imshow("processed image", img3);
+        waitKey(0);
     }
 
-    //displaying the image on the screen. The image will be displayed until any key is pressed
-    imshow("window", img2);
-    waitKey(0);
     return 0;
 }
 
 //defining the functions
 
 //making alternate rows of pixels of the image black
-Mat black_out_rows(int height, int width){
+Mat black_out_rows(Mat img, int height, int width){
     for (int i=0; i<height; i++){
         for (int j=0; j<width; j++){
             if(i%2==0){
@@ -61,9 +64,7 @@ Mat black_out_rows(int height, int width){
 }
 
 //changing only one channel of the image, in this case, blue
-//the colors in Mat container are stored in the BGR format.
-//Hence, the zeroth element of every coordinate is the blue channel
-Mat change_blue(int height, int width){
+Mat change_blue(Mat img, int height, int width){
     for (int i=0; i<height; i++){
         for (int j=0; j<width; j++){
             if(i%2==0){

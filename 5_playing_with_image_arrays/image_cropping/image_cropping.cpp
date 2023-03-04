@@ -1,6 +1,4 @@
-//including the necessary header files
 #include <iostream>
-//the following header files are from the OpenCV library for C++
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/imgproc.hpp>
@@ -34,26 +32,3 @@ int main(){
 
     return 0;
 }
-
-// int main(int argc, char** argv)
-// {
-//     // Read the image file as
-//     // imread("default.jpg");
-//     Mat image = imread("lion.jpeg", IMREAD_GRAYSCALE);
-  
-//     // Error Handling
-//     if (image.empty()) {
-//         cout << "Image File Not Found" << endl;
-  
-//         // wait for any key press
-//         cin.get();
-//         return -1;
-//     }
-  
-//     // Show Image inside a window with the name provided
-//     imshow("Window Name", image);
-  
-//     // Wait for any keystroke
-//     waitKey(0);
-//     return 0;
-// }
