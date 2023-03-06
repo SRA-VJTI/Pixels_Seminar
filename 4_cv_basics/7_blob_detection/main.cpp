@@ -2,6 +2,7 @@
 #include <opencv2/opencv.hpp>
 using namespace std;
 using namespace cv;
+
 double median(vector<double> vec)
 {
     int size = vec.size();
@@ -21,6 +22,7 @@ double median(vector<double> vec)
         return vec[size / 2];
     }
 }
+
 tuple<double, double, double> getMedianPixelValues(Mat img)
 {
     // Initialize vectors to store the pixel values of each color channel
@@ -51,6 +53,7 @@ tuple<double, double, double> getMedianPixelValues(Mat img)
     // Return the median values as a tuple
     return make_tuple(blue_median, green_median, red_median);
 }
+
 int main()
 {
     VideoCapture video(0);
@@ -80,27 +83,36 @@ int main()
         Mat frame;
         video.read(frame);
 
+        // Converting to hsv
         Mat hsv;
         cvtColor(frame, hsv, COLOR_BGR2HSV);
 
+
+        // Getting lower and upper bounds for h,s,v values
         Scalar lower(h - 5, max(0, s - 50), max(0, v - 50));
         Scalar upper(h + 5, min(s + 50, 255), min(v + 50, 255));
 
+        // Masking
         Mat masked;
         inRange(hsv, lower, upper, masked);
 
+        // Median Blur
         Mat blur;
         medianBlur(masked, blur, 5);
 
+        // Performing bitwise_and using the 'blur' mask
         Mat blob_mask;
         bitwise_and(frame, frame, blob_mask, blur);
 
         imshow("blob_mask", blob_mask);
 
+        // Find contours
         vector<vector<Point>> contours;
         vector<Vec4i> hierarchy;
         findContours(blur, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
 
+
+        // Find largest contour
         int idx = 0;
         double current_max = 0;
         int counter = 0;
@@ -116,6 +128,7 @@ int main()
             counter++;
         }
 
+        // Draw the largest contour detected
         drawContours(frame, contours, idx, Scalar(0, 255, 255), 2);
         imshow("Output", frame);
 
