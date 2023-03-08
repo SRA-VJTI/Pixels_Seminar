@@ -31,7 +31,7 @@ The compilation process transforms a human-readable code into a machine-readable
 During the stages of compilation, there are several types of files involved.
 
 * Source(.c):
-These files contain function definitions, and the entire program logics, these files are human readable and by convention their names ending with ```.c```
+These files contain function definitions, and the entire program logics. These files are human readable and by convention their names ends with ```.c```, ```.cpp```, ```.py```, etc.
 
 * Assembly(.s):
 Assembly Language mainly consists of mnemonic processor instructions or data and other statements or instructions. 
@@ -39,13 +39,17 @@ Assembly Language mainly consists of mnemonic processor instructions or data and
 	Flag : -S 
 
 	eg. ```gcc -S foo.c```
+	
+	This command will generate ```foo.s``` as output.
 
 * Object(.o):
 These files are produced as the output of the compiler. They consist of function definitions in binary form, but they are not executable by themselves and by convention their names end with ```.o```. 
 
-	Flag : -o 
+	Flag : -c
 	
-	eg. ```gcc -o foo.c```
+	eg. ```gcc -c foo.c```
+	
+	This command will generate ```foo.o``` as output.
 
 ## Build Systems
 
