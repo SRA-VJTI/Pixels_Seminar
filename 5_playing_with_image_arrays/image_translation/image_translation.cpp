@@ -8,7 +8,7 @@ using namespace cv;
 
 int main(){
     // reading image and storing it in Mat format
-    Mat image = imread("dog.jpeg");
+    Mat image = imread("../assets/dog.jpeg");
 
     // storing the dimensions of the image
     int height = image.cols;

@@ -8,7 +8,7 @@ using namespace cv;
 
 int main(){
     //reading an image and converting to cv::Mat format
-    Mat img = imread("dog.jpeg");
+    Mat img = imread("../assets/dog.jpeg");
     Mat img2, img4;
 
     //obtaining the dimensions of the image

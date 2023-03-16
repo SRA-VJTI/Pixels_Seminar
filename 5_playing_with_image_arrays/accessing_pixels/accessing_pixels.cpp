@@ -15,7 +15,7 @@ Mat change_blue(Mat img, int height, int width);
 int main()
 {
     //reading the image and converting it into cv::Mat formatt
-    Mat img = imread("dog.jpeg");
+    Mat img = imread("../assets/dog.jpeg");
     Mat img2, img3;
     //obtaining the dimensions of the image
     int width = img.size().width;
