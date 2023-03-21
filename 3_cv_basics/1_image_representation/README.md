@@ -2,19 +2,19 @@
 
 ## Table Of Contents
 - [Table Of Contents](#table-of-contents)
-- [How do we represent Image?](#How-do-we-represent-Image?)
-- [SOME IMPORTANT TERMINOLOGIES](#SOME-IMPORTANT-TERMINOLOGIES)
-- [COLOUR MODELS](#COLOUR-MODELS)
-    * [ADDITIVE MODEL](#ADDITIVE-MODEL)
-    * [SUBTRACTIVE MODEL](#SUBTRACTIVE-MODEL)
-    * [HSV COLOUR MODEL](#HSV-COLOUR-MODEL)
-- [Different Image Storing Formats](#Different-Image-Storing-Formats)
-    * [Bitmap (.bmp)](#Bitmap-(.bmp))
-    * [Tiff Format](#Tiff-Format)
-    * [Jpg Format](#Jpg-Format)
-    * [Png Format](#Png-Format)
-- [Installations](#Installations)
-- [Build and run the executables](#Build-and-run-the-executables)
+- [How do we represent Image?](#how-do-we-represent-image)
+- [SOME IMPORTANT TERMINOLOGIES](#some-important-terminologies)
+- [COLOUR MODELS](#colour-models)
+    * [ADDITIVE MODEL](#additive-model)
+    * [SUBTRACTIVE MODEL](#subtractive-model)
+    * [HSV COLOUR MODEL](#hsv-colour-model)
+- [Different Image Storing Formats](#different-image-storing-formats)
+    * [Bitmap (.bmp)](#bitmap-bmp)
+    * [Tiff Format](#tiff-format)
+    * [Jpg Format](#jpg-format)
+    * [Png Format](#png-format)
+- [Installations](#installations)
+- [Build and run the executables](#build-and-run-the-executables)
 
 ## How do we represent Image?
 
@@ -42,16 +42,17 @@ The size of the image is defined as the total number of pixels in the horizontal
 
 number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
 
-## BINARY IMAGES
+### BINARY IMAGES
+
+![image](https://user-images.githubusercontent.com/109454803/226694714-44da9176-7f15-49d6-960b-3e77ea5b44a4.png)
 
 
-![BINARY IMAGES](./images/b&w.PNG)
+### GRAYSCALE IMAGES
+![image](https://user-images.githubusercontent.com/109454803/226695141-32c82835-31f9-42dc-82fc-6d9948b9235d.png)
 
-## GRAYSCALE IMAGES
-![GRAYSCALE IMAGES](./images/gray.PNG)
+### RGB IMAGES
+![image](https://user-images.githubusercontent.com/109454803/226695502-c0d9311f-bc48-41c3-9db0-43d1d3a005bd.png)
 
-## RGB IMAGES
-![RGB IMAGES](./images/rgb.PNG)
 
 2. **Resolution**: The number of pixels per unit is called the resolution
 
@@ -99,7 +100,7 @@ Their types are:
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
-![ADDITIVE MODEL](./images/add.PNG)
+![image](https://user-images.githubusercontent.com/109454803/226695799-882fa65b-b77f-4cc9-be5b-e9723eb26b06.png)
 
 ### SUBTRACTIVE MODEL
 
@@ -111,7 +112,7 @@ Their types are:
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
-![SUBTRACTIVE MODEL](./images/subt.PNG)
+![image](https://user-images.githubusercontent.com/109454803/226695999-806df95e-c3a6-4ad9-b0bb-623e5785ef44.png)
 
 ### HSV COLOUR MODEL
 
@@ -123,7 +124,7 @@ Their types are:
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
-![HSV COLOUR MODEL](./images/hsv(img).PNG)
+![image](https://user-images.githubusercontent.com/109454803/226696173-9fb989c7-7a6e-4f64-9b9d-0ef56f608552.png)
 
 ### THREE COMPONENTS
 
@@ -160,7 +161,7 @@ reveals the most color.
 * Images are stored and transmitted using image file formats, which are digital file formats. Each file format has an own method for storing and compressing image data, which can affect how many pixels an image can have.
 
 
-## The goal of this topic is to familiarise you with various Image Storing Formats 
+#### The goal of this topic is to familiarise you with various Image Storing Formats 
 
 
 ## Different Image Storing Formats
