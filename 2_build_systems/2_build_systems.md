@@ -101,7 +101,7 @@ target: prerequisites
 Let's create a very simple Makefile. First, create an `example.c` file:
 
 ```c
-int main() {return 0};
+int main() {return 0;}
 ```
 
 Then, let's create our first `Makefile`. Create the file (`touch Makefile`) and add a target `hello`.
