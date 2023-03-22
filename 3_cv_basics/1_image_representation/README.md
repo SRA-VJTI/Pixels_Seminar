@@ -3,22 +3,20 @@
 ## Table Of Contents
 - [Image Representation](#image-representation)
   - [Table Of Contents](#table-of-contents)
-  - [How do we represent Image?](#how-do-we-represent-image)
-  - [SOME IMPORTANT TERMINOLOGIES](#some-important-terminologies)
-    - [BINARY IMAGES](#binary-images)
-    - [GRAYSCALE IMAGES](#grayscale-images)
-    - [RGB IMAGES](#rgb-images)
-  - [COLOUR MODELS](#colour-models)
-    - [ADDITIVE MODEL](#additive-model)
-    - [SUBTRACTIVE MODEL](#subtractive-model)
-    - [HSV COLOUR MODEL](#hsv-colour-model)
-    - [THREE COMPONENTS](#three-components)
-      - [The goal of this topic is to familiarise you with various Image Storing Formats](#the-goal-of-this-topic-is-to-familiarise-you-with-various-image-storing-formats)
+  - [How Do We Represent Image?](#how-do-we-represent-image)
+  - [Some Important Terminologies](#some-important-terminologies)
+    - [Binary Images](#binary-images)
+    - [Grayscale Images](#grayscale-images)
+    - [RGB Images](#rgb-images)
+  - [Colour Models](#colour-models)
+    - [Additive Model](#additive-model)
+    - [Subtractive Models](#subtractive-models)
+    - [HSV Colour Model](#hsv-colour-model)
   - [Different Image Storing Formats](#different-image-storing-formats)
-      - [Bitmap (.bmp)](#bitmap-bmp)
-      - [Tiff Format](#tiff-format)
-      - [Jpg Format](#jpg-format)
-      - [Png Format](#png-format)
+      - [BitMap (.bmp)](#bitmap-bmp)
+      - [TIFF Format (.tiff , .tif)](#tiff-format-tiff--tif)
+      - [JPG Format (.jpg , .jpeg , .jpe , .jif , .jfif)](#jpg-format-jpg--jpeg--jpe--jif--jfif)
+      - [PNG Format (.png)](#png-format-png)
   - [How is image actually stored ?](#how-is-image-actually-stored-)
     - [Block 1: File Type Data](#block-1-file-type-data)
     - [Block 2: Image Information Data](#block-2-image-information-data)
@@ -26,10 +24,12 @@
     - [Block 4: Raw Pixel Data](#block-4-raw-pixel-data)
     - [Total BMP File Size](#total-bmp-file-size)
   - [Installations](#installations)
+    - [Ubuntu](#ubuntu)
+    - [MacOS](#macos)
   - [Build and run the executables](#build-and-run-the-executables)
       - [Run without make](#run-without-make)
 
-## How do we represent Image?
+## How Do We Represent Image?
 
 - It can be represented in various forms. 
 - As most of the time, representation
@@ -41,7 +41,7 @@
 - So,for the simplicity of computing it is represented in a matrix form.
 
 
-## SOME IMPORTANT TERMINOLOGIES
+## Some Important Terminologies
 
 1. Pixel: Pixel is the smallest unit of a picture displayed on the computer screen.
 
@@ -55,15 +55,15 @@ The size of the image is defined as the total number of pixels in the horizontal
 
 number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
 
-### BINARY IMAGES
+### Binary Images
 
 ![image](https://user-images.githubusercontent.com/109454803/226694714-44da9176-7f15-49d6-960b-3e77ea5b44a4.png)
 
 
-### GRAYSCALE IMAGES
+### Grayscale Images
 ![image](https://user-images.githubusercontent.com/109454803/226695141-32c82835-31f9-42dc-82fc-6d9948b9235d.png)
 
-### RGB IMAGES
+### RGB Images
 ![image](https://user-images.githubusercontent.com/109454803/226695502-c0d9311f-bc48-41c3-9db0-43d1d3a005bd.png)
 
 
@@ -98,12 +98,12 @@ It includes–
 
 ● **Pixel aspect ratio**: Width of Pixel/Height of Pixel
 
-## COLOUR MODELS
+## Colour Models
 
 Color model is a 3D color coordinate system to produce all range of color through the primary color set.
 Their types are:
 
-### ADDITIVE MODEL
+### Additive Model
 
 ● It is also named as “RGB model.” RGB stands for Red, Green, Blue.
 
@@ -115,7 +115,7 @@ Their types are:
 
 ![image](https://user-images.githubusercontent.com/109454803/226695799-882fa65b-b77f-4cc9-be5b-e9723eb26b06.png)
 
-### SUBTRACTIVE MODEL
+### Subtractive Models
 
 ● It is also named as “CMYK Model.” CMYK stands for Cyan, Magenta, Yellow, and Black.
 
@@ -127,7 +127,7 @@ Their types are:
 
 ![image](https://user-images.githubusercontent.com/109454803/226695999-806df95e-c3a6-4ad9-b0bb-623e5785ef44.png)
 
-### HSV COLOUR MODEL
+### HSV Colour Model
 
 ● These are schemes that describe the way colors combine to create the spectrum we see.
 
@@ -139,65 +139,46 @@ in terms of their shade (saturation or amount of gray) and their brightness valu
 
 ![image](https://user-images.githubusercontent.com/109454803/226696173-9fb989c7-7a6e-4f64-9b9d-0ef56f608552.png)
 
-### THREE COMPONENTS
+Three Components of HSV colour model are as follows:
 
-**HUE**: Hue is the color portion of the model, expressed as a number from 0 to 360 degrees:
+* **HUE**: Hue is the color portion of the model, expressed as a number from 0 to 360 degrees:
+  * Red falls between 0 and 60 degrees.
+  * Yellow falls between 61 and 120 degrees.
+  * Green falls between 121 and 180 degrees.
+  * Cyan falls between 181 and 240 degrees.
+  * Blue falls between 241 and 300 degrees.
+  * Magenta falls between 301 and 360 degrees.
 
-Red falls between 0 and 60 degrees.
+* **SATURATION**: Saturation describes the amount of gray in a particular color, from 0 to 100 percent.
+  * Reducing this component toward zero introduces more gray and produces a faded effect. Sometimes,
+  * saturation appears as a range from 0 to 1, where 0 is gray, and 1 is a primary color.
 
-Yellow falls between 61 and 120 degrees.
-
-Green falls between 121 and 180 degrees.
-
-Cyan falls between 181 and 240 degrees.
-
-Blue falls between 241 and 300 degrees.
-
-Magenta falls between 301 and 360 degrees.
-
-**SATURATION**: Saturation describes the amount of gray in a particular color, from 0 to 100 percent.
-
-Reducing this component toward zero introduces more gray and produces a faded effect. Sometimes,
-
-saturation appears as a range from 0 to 1, where 0 is gray, and 1 is a primary color.
-
-**VALUE (OR BRIGHTNESS)**: Value works in conjunction with saturation and describes the brightness or
-
-intensity of the color, from 0 to 100 percent, where 0 is completely black, and 100 is the brightest and
-
-reveals the most color.
-
-
-
+* **VALUE (OR BRIGHTNESS)**: Value works in conjunction with saturation and describes the brightness or intensity of the color, from 0 to 100 percent, where 0 is completely black, and 100 is the brightest and reveals the most color.
    
 * All images are stored in the computer as rectangular pixels. The resolution is an image referign to the number of pixels in a grid. Higher resolutions can be more details can be stored in an image. 
 * Images are stored and transmitted using image file formats, which are digital file formats. Each file format has an own method for storing and compressing image data, which can affect how many pixels an image can have.
 
-
-#### The goal of this topic is to familiarise you with various Image Storing Formats 
-
-
 ## Different Image Storing Formats
 
-#### Bitmap (.bmp)
+#### BitMap (.bmp)
 
 * The BMP(Bitmap) format simply records the colour of each pixel with no compression(typically).
 * It simply stores the image pixels by pixels.  This means that a BMP image file can contain a large number of pixels, but the file size will also be very large. For example, a 1920x1080 pixel BMP image can be over 6 MB in size.
 
-#### Tiff Format
+#### TIFF Format (.tiff , .tif)
 
 * A TIFF, which stands for Tag Image File Format, is a computer file used to store raster graphics and image information. A favourite among photographers, TIFFs are a handy way to store high-quality images before editing if you want to avoid lossy file formats. 
 
 * TIFF files are a lossless form of file compression, which means they’re larger than most but don’t lose image quality.
 
-#### Jpg Format
+#### JPG Format (.jpg , .jpeg , .jpe , .jif , .jfif)
 
 * A JPG file is a raster image saved in the JPEG format, commonly used to store digital photographs and graphics created by image-editing software. JPEG features lossy compression that can significantly reduce the size of an image without much degradation and supports up to 16,777,216 colors.
 
 * This means that a JPEG image file can contain a moderate number of pixels while still maintaining reasonable image quality. For example, a 1920x1080 pixel JPEG image can be under 1 MB in size.
 
 
-#### Png Format
+#### PNG Format (.png)
 * A PNG file is an image saved in the Portable Network Graphic (PNG) format, commonly used to store web graphics, digital photographs, and images with transparent backgrounds. It is a raster graphic similar to a .JPG image but is compressed with lossless compression and supports transparency.
 
 * This means that a PNG image file can contain a moderate number of pixels while still maintaining high image quality. For example, a 1920x1080 pixel PNG image can be under 3 MB in size.
@@ -205,7 +186,7 @@ reveals the most color.
 ## How is image actually stored ?
 
 To simplify how image is stored we will restrict ourselves to the following parameters: 
-* Image is of the format bitmap, because they do not contain any compressed data so there is no extra step required for decompression
+* Image is of the format `BitMap(BMP)`, since they do not contain any compressed data so there is no extra step required for decompression
 * Image is grayscale.
 
 Every file is made of binary numbers, whether that is an image file or a text file. These binary numbers represent the content of the file and a computer decodes that information in the CPU. A plain-text file contains only text (without any styling or file metadata). Each character of the text is represented by their code-point (a decimal number assigned to each character). So if view a plain-text file in a binary, all binary numbers represent characters only.
@@ -277,16 +258,29 @@ The size of this block, however, is not that straightforward to calculate. BMP s
 
 The FileSize field in `BITMAPFILEHEADER` header is the sum of all the bytes in these 4 blocks. We could set the value of this field to 0 and it might work in all the BMP rendering applications but doing that should be avoided.
 
-<img src="assets/bmp_detailed_file_structure.webp" style="background-color:white;"/>
+![](assets/bmp_detailed_file_structure.jpg)
 
 *Note: It is to be noted that this example uses SDL2 library just to fulfil the purpose of displaying each pixel of the image on the screen. As such there is no special need to understand the internals of SDL2 library to understand the basics of image representation.*
 
 ## Installations
 
 To install sdl and its related libraries :
-> sudo apt-get install libsdl2-2.0-0 \
-> sudo apt-get install libsdl2-image-dev
 
+### Ubuntu
+
+```sh 
+sudo apt-get install libsdl2-2.0-0 
+```
+
+```sh 
+sudo apt-get install libsdl2-image-dev 
+```
+
+### MacOS
+
+```zsh
+brew install sdl2
+```
 
 ## Build and run the executables
 
