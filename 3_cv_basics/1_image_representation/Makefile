@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -Wall -Wextra -pedantic -std=c++11
-LIBS = -lSDL2 -lSDL2_image
+LIBS = -lSDL2
 
 SRCS = image_representation.cpp
 OBJS = $(SRCS:.cpp=.o)
