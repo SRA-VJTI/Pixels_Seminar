@@ -8,32 +8,41 @@
 // When reading the binary file, it is necessary to allign struct members in a meomory to avoid any misinterpretation.
 // That is why, push is used  to set the packing to 1 byte, so that the BMPHeader struct is packed with no padding
 // and the pop is used to restore the default packing setting after the BMPHeader struct is defined.
+// More about data padding and alignment can be found here: https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/
 #pragma pack(push, 1)
-struct BMPHeader
+
+// structure to store the file type data
+struct BitMapFileHeader
 {
-    char signature[2];          // "BM" (0x42, 0x4D)
+    char file_type[2];          // "BM" (0x42, 0x4D)
     uint32_t file_size;         // Total size of the BMP file in bytes
     uint16_t reserved1;         // Unused (0)
     uint16_t reserved2;         // Unused (0)
-    uint32_t data_offset;       // Offset to the start of the pixel data
+    uint32_t pixel_data_offset; // Offset to the start of the pixel data
+};
+
+// structure to store image information data
+struct BitMapInfoHeader
+{
     uint32_t header_size;       // Size of this header (40 bytes)
     int32_t width;              // Width of the image in pixels
     int32_t height;             // Height of the image in pixels
     uint16_t planes;            // Number of color planes (1)
     uint16_t bits_per_pixel;    // Number of bits per pixel (8 for grayscale)
     uint32_t compression;       // Compression method (0 for uncompressed)
-    uint32_t image_size;        // Size of the raw image data (0 for uncompressed
+    uint32_t image_size;        // Size of the raw image data (0 for uncompressed)
     int32_t x_pixels_per_meter; // Horizontal resolution in pixels per meter
     int32_t y_pixels_per_meter; // Vertical resolution in pixels per meter
     uint32_t colors_used;       // Number of colors used in the image, 0 means all colors are used
     uint32_t colors_important;  // Number of important colors used, 0 means all colors are important
 };
 
-// Define the BMPImage structure that contains the BMPHeader and the pixel data
+// Define the BMPImage structure that contains the File Type Data, Image Information data and the pixel data
 struct BMPImage
 {
-    BMPHeader header;
-    std::vector<uint8_t> data;
+    BitMapFileHeader header;   // File Type Data
+    BitMapInfoHeader info;     // Image Information Data
+    std::vector<uint8_t> data; // Raw Pixel Data
 };
 #pragma pack(pop)
 
@@ -54,36 +63,58 @@ int main(int argc, char *argv[])
         std::cerr << "Error: Could not open input file: " << argv[1] << std::endl;
         return 1;
     }
-    // create a BMPImage object to hold the image data.
-    // check if the first two bytes of the BMP header indicate that this is a BMP image (the signature 'BM'). If not, print an error message which returns 1.
 
+    // create a BMPImage object to hold the image data.
     BMPImage image;
-    infile.read(reinterpret_cast<char *>(&image.header), sizeof(BMPHeader));
-    if (image.header.signature[0] != 'B' || image.header.signature[1] != 'M')
+
+    // read the BMP image file and store the size of BitMapFileHeader (14 bytes) in image.header
+    infile.read(reinterpret_cast<char *>(&image.header), sizeof(BitMapFileHeader));
+
+    // check if the first two bytes of the BMP header indicate that this is a BMP image (the signature 'BM'). If not, print an error message which returns 1.
+    if (image.header.file_type[0] != 'B' || image.header.file_type[1] != 'M')
     {
         std::cerr << "Error: Input file is not a BMP image" << std::endl;
         return 1;
     }
-    if (image.header.bits_per_pixel != 8)
+
+    // Output image file type data to the console
+    std::cout << "\n-------------------- Bit Map File Header --------------------" << std::endl;
+    std::cout << "File type: " << image.header.file_type << std::endl;
+    std::cout << "File Size: " << image.header.file_size << std::endl;
+    std::cout << "Pixel Data Offset: " << image.header.pixel_data_offset << std::endl;
+    std::cout << "-------------------------------------------------------------\n" << std::endl;
+
+    // read the BMP image file and store the size of BitMapInfoHeader (40 bytes) in image.info
+    infile.read(reinterpret_cast<char *>(&image.info), sizeof(BitMapInfoHeader));
+    if (image.info.bits_per_pixel != 8)
     {
         std::cerr << "Error: Input file is not an 8-bit BMP image" << std::endl;
         return 1;
     }
 
-    // if valid, the code allocates memory for the image data (the pixel values) by resizing the image.data vector to hold width x height elements.
-    // read the image data from the input file into the image.data vector
-    image.data.resize(image.header.width * image.header.height);
-    infile.read(reinterpret_cast<char *>(image.data.data()), image.data.size());
-
-    int h = image.header.height;
-    int w = image.header.width;
+    int h = image.info.height;
+    int w = image.info.width;
 
     // Output image attributes to console
-    std::cout << "Image width: " << w << std::endl;
-    std::cout << "Image height: " << h << std::endl;
-    std::cout << "Color depth: " << static_cast<int>(image.header.bits_per_pixel) << " bits per pixel" << std::endl;
-    std::cout << "Compression type: " << image.header.compression << std::endl;
-    std::cout << "Pixel array offset: " << image.header.data_offset << std::endl;
+    std::cout << "-------------------- Bit Map Info Header --------------------" << std::endl;
+    std::cout << "Header Size: " << image.info.header_size << std::endl;
+    std::cout << "Width: " << image.info.width << std::endl;
+    std::cout << "Height: " << image.info.height << std::endl;
+    std::cout << "Planes: " << image.info.planes << std::endl;
+    std::cout << "Bits per pixel: " << static_cast<int>(image.info.bits_per_pixel) << std::endl;
+    std::cout << "Compression type: " << image.info.compression << std::endl;
+    std::cout << "Image Size: " << image.info.image_size << std::endl;
+    std::cout << "X pixels per meter: " << image.info.x_pixels_per_meter << std::endl;
+    std::cout << "Y pixels per meter: " << image.info.y_pixels_per_meter << std::endl;
+    std::cout << "Number of Colors Used: " << image.info.colors_used << std::endl;
+    std::cout << "Number of important colors: " << image.info.colors_important << std::endl;
+    std::cout << "-------------------------------------------------------------\n" << std::endl;
+
+    // if valid, the code allocates memory for the image data (the pixel values) by resizing the image.data vector to hold width x height elements.
+    image.data.resize(w * h);
+
+    // read the image data from the input file into the image.data vector
+    infile.read(reinterpret_cast<char *>(image.data.data()), image.data.size());
 
     // To plot the data of each grayscale pixel fetched from the bitmap file, SDL2 library is used
     SDL_Event event;
@@ -97,13 +128,15 @@ int main(int argc, char *argv[])
     SDL_RenderClear(renderer);
 
     // Plot each pixel on the screen based on its location
-    for (int i = 0; i < image.header.width; i++)
+    for (int i = 0; i < h; i++)
     {
-        for (int j = 0; j < image.header.height; j++)
+        for (int j = 0; j < w; j++)
         {
-            uint8_t k = image.data[h * w - 1 - (i + j * h)];
+            uint8_t k = image.data[j + i * h];
             SDL_SetRenderDrawColor(renderer, k, k, k, 255);
-            SDL_RenderDrawPoint(renderer, i, j);
+
+            // It is to be noted that SDL library follows botton left as the origin of the image
+            SDL_RenderDrawPoint(renderer, j, h - i - 1);
         }
     }
 

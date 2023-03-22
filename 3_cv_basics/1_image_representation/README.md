@@ -1,20 +1,33 @@
 # Image Representation
 
 ## Table Of Contents
-- [Table Of Contents](#table-of-contents)
-- [How do we represent Image?](#how-do-we-represent-image)
-- [SOME IMPORTANT TERMINOLOGIES](#some-important-terminologies)
-- [COLOUR MODELS](#colour-models)
-    * [ADDITIVE MODEL](#additive-model)
-    * [SUBTRACTIVE MODEL](#subtractive-model)
-    * [HSV COLOUR MODEL](#hsv-colour-model)
-- [Different Image Storing Formats](#different-image-storing-formats)
-    * [Bitmap (.bmp)](#bitmap-bmp)
-    * [Tiff Format](#tiff-format)
-    * [Jpg Format](#jpg-format)
-    * [Png Format](#png-format)
-- [Installations](#installations)
-- [Build and run the executables](#build-and-run-the-executables)
+- [Image Representation](#image-representation)
+  - [Table Of Contents](#table-of-contents)
+  - [How do we represent Image?](#how-do-we-represent-image)
+  - [SOME IMPORTANT TERMINOLOGIES](#some-important-terminologies)
+    - [BINARY IMAGES](#binary-images)
+    - [GRAYSCALE IMAGES](#grayscale-images)
+    - [RGB IMAGES](#rgb-images)
+  - [COLOUR MODELS](#colour-models)
+    - [ADDITIVE MODEL](#additive-model)
+    - [SUBTRACTIVE MODEL](#subtractive-model)
+    - [HSV COLOUR MODEL](#hsv-colour-model)
+    - [THREE COMPONENTS](#three-components)
+      - [The goal of this topic is to familiarise you with various Image Storing Formats](#the-goal-of-this-topic-is-to-familiarise-you-with-various-image-storing-formats)
+  - [Different Image Storing Formats](#different-image-storing-formats)
+      - [Bitmap (.bmp)](#bitmap-bmp)
+      - [Tiff Format](#tiff-format)
+      - [Jpg Format](#jpg-format)
+      - [Png Format](#png-format)
+  - [How is image actually stored ?](#how-is-image-actually-stored-)
+    - [Block 1: File Type Data](#block-1-file-type-data)
+    - [Block 2: Image Information Data](#block-2-image-information-data)
+    - [Block 3: Color Pallet (semi-optional)](#block-3-color-pallet-semi-optional)
+    - [Block 4: Raw Pixel Data](#block-4-raw-pixel-data)
+    - [Total BMP File Size](#total-bmp-file-size)
+  - [Installations](#installations)
+  - [Build and run the executables](#build-and-run-the-executables)
+      - [Run without make](#run-without-make)
 
 ## How do we represent Image?
 
@@ -189,6 +202,84 @@ reveals the most color.
 
 * This means that a PNG image file can contain a moderate number of pixels while still maintaining high image quality. For example, a 1920x1080 pixel PNG image can be under 3 MB in size.
 
+## How is image actually stored ?
+
+To simplify how image is stored we will restrict ourselves to the following parameters: 
+* Image is of the format bitmap, because they do not contain any compressed data so there is no extra step required for decompression
+* Image is grayscale.
+
+Every file is made of binary numbers, whether that is an image file or a text file. These binary numbers represent the content of the file and a computer decodes that information in the CPU. A plain-text file contains only text (without any styling or file metadata). Each character of the text is represented by their code-point (a decimal number assigned to each character). So if view a plain-text file in a binary, all binary numbers represent characters only.
+
+So every BMP image contains the following sections
+1) File Type Data
+2) Image Information Data
+3) Color Pallet
+4) Raw Pixel Data
+
+![](assets/bmp_file_structure.png)
+
+### Block 1: File Type Data
+
+This block is a BMP Header labeled as `BITMAPFILEHEADER`. This is the starting point of the BMP file and has 14 bytes width. This header contains a total of 5 fields of variable byte width. These are mentioned in the below table.
+
+| Field Name | Size (in Bytes) | Description |
+|----------|:-------------:|------------------------|
+| FileType |  2 Bytes | A 2 character string value in ASCII to specify a DIB file type. It must be 'BM' or '0x42 0x4D' in hexadecimals for modern compatibility reasons. |
+| FileSize | 4 Bytes | An integer (unsigned) representing entire file size in bytes. This value is basically the number of bytes in a BMP image file. |
+| Reserved | 2 Bytes | These 2 bytes are reserved to be utilized by an image processing application to add additional meaningful information. It should be initialized to '0' integer (unsigned) value. |
+| Reserved | 2 Bytes | Same as the above. |
+| PixelDataOffset | 4 Bytes | An integer (unsigned) representing the offset of actual pixel data in bytes. In nutshell:- it is the number of bytes between start of the file (0) and the first byte of the pixel data. |
+| Total | 14 Bytes | Size of the BITMAPFILEHEADER in bytes. |
+
+### Block 2: Image Information Data
+
+This is a DIB Header must be used to specify the color and image information. Unlike `BITMAPFILEHEADER`, there are many types of info headers (listed on the Wiki page). Each header has different byte-width but for compatibility reasons, we use BITMAPINFOHEADER.
+
+| Field Name | Size (in Bytes) | Description |
+|----------|:-------------:|------------------------|
+| HeaderSize | 4 bytes | An integer (unsigned) representing the size of the header in bytes. It should be '40' in decimal to represent BITMAPINFOHEADER header type. |
+| ImageWidth |	4 bytes | An integer (signed) representing the width of the final image in pixels.|
+| ImageHeight | 4 bytes | An integer (signed) representing the height of the final image in pixels. |
+| Planes | 2 bytes | An integer (unsigned) representing the number of color planes of the target device. Should be '1' in decimal. |
+| BitsPerPixel | 2 bytes | An integer (unsigned) representing the number of bits (memory) a pixel takes (in pixel data) to represent a color. |
+| Compression | 4 bytes | An integer (unsigned) representing the value of compression to use. Should be '0' in decimal to represent no-compression (identified by 'BI_RGB'). |
+| ImageSize | 4 bytes | An integer (unsigned) representing the final size of the compressed image. Should be '0' in decimal when no compression algorithm is used. |
+| XpixelsPerMeter | 4 bytes | An integer (signed) representing the horizontal resolution of the target device. This parameter will be adjusted by the image processing application but should be set to '0' in decimal to indicate no preference. |
+| YpixelsPerMeter | 4 bytes | An integer (signed) representing the verical resolution of the target device (same as the above). |
+| TotalColors | 4 bytes | An integer (unsigned) representing the number of colors in the color pallet (size of the color pallet or color table). If this is set to '0' in decimal :- 2^BitsPerPixel colors are used. |
+| ImportantColors | 4 bytes | An integer (unsigned) representing the number of important colors. Generally ignored by setting '0' decimal value. |
+| Total | 40 bytes | Size of the BITMAPINFOHEADER in bytes. |
+
+### Block 3: Color Pallet (semi-optional)
+
+This block contains the list of colors to be used by a pixel. This is an indexed table with the index starting from 0. The integer value of the pixel points to the color index in this table and that color is printed on the screen.
+
+*However, this block is mandatory when BitsPerPixel is less than or equal to 8, hence this block is semi-optional.*
+
+The below table contains information about the maximum possible colors for a given BitsPerPixel(bpp) or bit-depth.
+
+| BitsPerPixel(bpp) | Palletized | Max Colors | Description |
+|:----------:|:-------------:|:--------------:|:-------:|
+|1 | Yes | 2 | Ideal for monochromatic image of any two colors defined in the pallet. |
+| 4 | Yes | 16 | Maximum 16 distinct colors can be defined in the pallet. |
+| 8 | Yes | 256 | Maximum 256 distinct colors can be defined in the pallet. |
+| 16 | No | 65_536 | Color is derived from RGB value (5-bit color channel / MSB is ignored). |
+| 24 | No | 16M (16_777_215) | Color is derived from RGB value (8-bit color channel). |
+| 32 | No | 4B (4_294_967_296) | Color is derived from RGBA value (8-bit color channel and 8-bit alpha channel). |
+
+### Block 4: Raw Pixel Data
+
+This block contains binary numbers dedicated to representing the unique color values of each individual pixel. Depending on the bpp of the BMP image, a byte can contain color values of multiple pixels or multiple bytes can be used to represent the color value of a single pixel.
+
+The size of this block, however, is not that straightforward to calculate. BMP scan lines need padding bytes and hence, we will be able to calculate size once we have written all the bytes.
+
+### Total BMP File Size
+
+The FileSize field in `BITMAPFILEHEADER` header is the sum of all the bytes in these 4 blocks. We could set the value of this field to 0 and it might work in all the BMP rendering applications but doing that should be avoided.
+
+<img src="assets/bmp_detailed_file_structure.webp" style="background-color:white;"/>
+
+*Note: It is to be noted that this example uses SDL2 library just to fulfil the purpose of displaying each pixel of the image on the screen. As such there is no special need to understand the internals of SDL2 library to understand the basics of image representation.*
 
 ## Installations
 
