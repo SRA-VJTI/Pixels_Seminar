@@ -18,9 +18,21 @@ In this section, we change the pixel values of all the channels in alternate row
 
 
 ## PART 2
-This section is similar to the first one, except that instead of changing all the channel values to 0, we are increasing the blue channel values of each pixel to 255, i.e., the maximum value.
+This section is similar to the first one, except that instead of changing the alternate channel values to 0, we are increasing the blue channel values of each pixel to 255, i.e., the maximum value.
 
 The steps here almost remain the same. Instead of choosing 0, the user must choose 1 to execute this functionality.
 Here again, with the help of 2 for loops and the .at operator, we set the values of the blue channel to 255.
 
 On observation, we see that the images in the Mat format are stored by default in the BGR format and they are accessed in the same order, i.e., 0 for Blue, 1 for Green and 2 for Red.
+
+*This is the original image*
+
+![Original Image](https://user-images.githubusercontent.com/103985810/226842324-3afe2553-e5d7-402f-92e9-ff59e7c57cf2.jpeg)
+
+*On choosing option 0*
+
+![Option 0 result](https://user-images.githubusercontent.com/103985810/226842865-4e4b8ca7-6d49-47a4-b50c-86fb07ea693e.png)
+
+*On choosing option 1*
+
+![Option 1 result](https://user-images.githubusercontent.com/103985810/226843490-d960e0c4-1ee1-4448-b076-c35d6113bf85.png)
