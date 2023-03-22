@@ -288,9 +288,11 @@ Now that you are aware with the various image storing formats, let's look at how
 
 After cloning in the Pixels_Seminar repository, get into the image_storing_formats folder using cd command 
 
-`cd /Pixels_Seminar/Image_storing_formats`
+```sh
+cd /Pixels_Seminar/3_cv_basics
+```
 
-image_storing_formats.cpp is our code file.
+`image_representation.cpp` is our code file.
 
 Perform make command 
 
@@ -298,7 +300,7 @@ Perform make command
 
 To run 
 
-- `./image <image_path>)`\
+- `./image <image_path>`\
   for eg : `./image /home/chinmay/Pixels_Seminar/3_cv_basics/1_image_representation/image.bmp`
 
 This will display the image.
@@ -306,7 +308,7 @@ This will display the image.
 #### Run without make
 If you want to run the code without make then just type
 
-- `g++ -g image_storing_formats.cpp -o output $(pkg-config --cflags --libs sdl2 SDL2_image)`
+- `g++ -g image_representation.cpp -o output $(pkg-config --cflags --libs sdl2)`
 
 and then
 - `./image <image_path>)`\
