@@ -13,6 +13,11 @@ int main()
         return -1;
     }
 
+    int height = image.size().height;
+    int width = image.size().width;
+
+    cout << "Original Image Size: " << width << "x" << height << std::endl;
+
     Mat im2;
 
     Size new_size;

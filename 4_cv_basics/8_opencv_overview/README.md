@@ -2,9 +2,9 @@
 
 ### _OpenCV_ is a cross-platform library using which we can develop real-time computer vision applications. It mainly focuses on image processing, video capture and analysis including features like face detection and object detection.
 
-1. Open CV is an Open Source, C++ based API(Application Programming Interface) Library for Computer Vision
-2. It includes several computer vision algorithms
-3. Explore more of OpenCV [here](https://opencv.org/)
+1. OpenCV is an Open Source, C++ based API(Application Programming Interface) Library for Computer Vision.
+2. It includes several computer vision algorithms.
+3. Explore more of OpenCV [here](https://opencv.org/).
 
 - **Computer Vision** :
   Computer Vision can be defined as a discipline that explains how to reconstruct, interrupt, and understand a 3D scene from its 2D images, in terms of the properties of the structure present in the scene. It deals with modeling and replicating human vision using computer software and hardware.
@@ -348,6 +348,7 @@ int iterations = 1)
 <b>anchor</b>: position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
 
 <b>iterations</b>: number of times erosion is applied.
+
 </td>
 
 <td>
@@ -389,6 +390,7 @@ int iterations = 1)
 Dilates an image by using a specific structuring element.
 
 The function dilates the source image using the specified structuring element that determines the shape of a pixel neighborhood over which the maximum is taken.
+
 </td>
 </tr>
 
@@ -413,7 +415,8 @@ int iterations = 1)
 
 <b>op</b>: Type of a morphological operation
 <u>Options (MorphTypes)</u>
-- MORPH_ERODE 
+
+- MORPH_ERODE
 - MORPH_DILATE
 - MORPH_CLOSE
 - MORPH_OPEN
@@ -424,12 +427,14 @@ int iterations = 1)
 <b>anchor</b>: Anchor position with the kernel. Negative values mean that the anchor is at the kernel center.
 
 <b>iterations</b>: Number of times erosion and dilation are applied.
+
 </td>
 
 <td>
 Performs advanced morphological transformations.
 
 The function cv::morphologyEx can perform advanced morphological transformations using erosion and dilation as basic operations.
+
 </td>
 
 </table>
@@ -440,286 +445,16 @@ Once the requirements are satisfied, you can easily download the project and use
 
 1. First navigate to the folder `opencv_overview`
 2. Navigate to the required folder.
-3. `mkdir build`
-4. `cd build`
-5. `cmake ..`
-6. `make`
-7. `<subfolder_name>`
+
+```
+ make
+ ./<subfolder_name>
+```
 
 For example, if the subfolder is `masking` then the following commands needs to be executed:
 
-1. `cd masking`
-2. `cd build`
-3. `cmake ..`
-4. `make`
-5. `./masking`
-
-## Theory and Approach
-
-### Converting Image to Grayscale
-
-#### Illustrations
-
-<img src="../../assets/images/grayscale.png"/>
-
-### Resizing an Image
-
-#### Illustrations
-
-<img src = "../../assets/images/resize.png" />
-
-### Image Blending
-
-This is also image addition, but different weights are given to images in order to give a feeling of blending or transparency. Images are added as per the equation below:
-
-                    g(x)=(1−α)f0(x)+αf1(x)
-
-By varying α from 0→1, you can perform a cool transition between one image to another.
-
-Here I took two images to blend together. The first image is given a weight of 0.7 and the second image is given 0.3. cv.addWeighted() applies the following equation to the image:
-
-                     dst=α⋅img1+β⋅img2+γ
-
-Here γ is taken as zero.
-
-**Note** : Image combination is a subset of Image Blending. In image blendign we can specify the amont/percentage of effect that we want form either of the input images.
-
-#### Illustrations
-
-<img src="../../assets/images/blending1.png" aligh = "left"/>
-<img src="../../assets/images/blending2.png"/>
-
-### Bitwise Operations and Masking
-
-1. Lower pixel values are close to BLACK
-2. Higher pixel values are close to WHITE
-3. These operations are done bitwise i.e. Pixel wise.
-4. The logic of operation remains same as that of seen in logical/ bitwise operations
-
-#### Illustrations
-
-#### Input Images
-
-<img src="../../assets/images/bitwise_ip1.png" align="left" width="300" height="300"/>
-<img src="../../assets/images/bitwise_ip2.png" align = "centre" width="300" height="300"/>
-
-#### Bitwise AND
-
-<img src="../../assets/images/bitwise_and1.png" width="300" height="300"/>
-
-#### Bitwise OR
-
-<img src="../../assets/images/bitwise_or1.png" width="300" height="300"/>
-
-#### Bitwise XOR
-
-<img src="../../assets/images/bitwise_xor.png" width="300" height="300"/>
-
-#### Bitwise NOT
-
-1. Image1 - Bitwise NOT/inversion of Input Image 1
-2. Image2 - Bitwise NOT/inversion of Input Image 2
-
-<img src="../../assets/images/bitwise_not1.png" align="left" width="300" height="300"/>
-
-<br>
-
-<img src="../../assets/images/bitwise_not2.png" align="justified" width="300" height="300"/>
-
-### Masking
-
-1. Masking is an image processing method in which we define a small 'image piece' and use it to modify a larger image.
-2. When talking about editing and processing images the term 'masking' refers to the practice of using a mask to protect a specific area of an image, just as you would use masking tape when painting your house.
-3. Masking an area of an image protects that area from being altered by changes made to the rest of the image.
-4. Masking is the process that is underneath many types of image processing, including edge detection, motion detection, and noise reduction
-5. Usually binary masks are used (BLACK and WHITE)
-6. Generally, BLACK portions are those which are undesired and want to be removed/ masked off
-7. Generally, WHITE portions are those which are desired and want to be retained in the original image
-
-### Detecting an object based on the range of pixel values in the HSV colorspace using inRange()
-
-#### HSV colorspace
-
-1. HSV (hue, saturation, value) colorspace is a model to represent the colorspace similar to the RGB color model. 2. Since the hue channel models the color type, it is very useful in image processing tasks that need to segment objects based on its color.
-2. Variation of the saturation goes from unsaturated to represent shades of gray and fully saturated (no white component).
-3. Value channel describes the brightness or the intensity of the color.
-
-<img src="../../assets/images/hsv.jpg"/>
-
-#### Object Detection Illustration
-
-<img src="../../assets/images/inrange1.jpeg" width = "400" height="550" align = "left"/>
-<img src="../../assets/images/inrange2.jpeg" width = "400" height="400"/>
-
-### Countours
-
-Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition.
-
-Illustration:
-
-<img src="../../assets/images/contours_1.png" />
-
-## Expected Results
-
-<!-- Masking -->
-<table>
-<tr>
-<th colspan="2" style="text-align:center"> MASKING </th>
-</tr>
-<tr>
-<th style="text-align:center"> Image1</th>
-<th style="text-align:center"> Image2 </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/Image1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/Image2.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-<tr>
-<th style="text-align:center"> ROI</th>
-<th style="text-align:center"> Gray </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/roi.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/gray.png" alt = "Image1" width = 350 height="200"></td>
-
-<tr>
-<th style="text-align:center"> Mask</th>
-<th style="text-align:center"> Mask_Inv </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/mask.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/mask_inv.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-<tr>
-<th style="text-align:center"> BG</th>
-<th style="text-align:center"> FG </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/bg.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/fg.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-<tr>
-<th colspan="2" style="text-align:center"> dst</th>
-</tr>
-<tr>
-<td colspan="2" style="text-align: center"><image src="../../assets/images/dst.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-</table>
-
-<!-- Object Detection -->
-<table>
-<tr>
-<th colspan="2" style="text-align:center"> OBJECT DETECTION </th>
-</tr>
-<tr>
-<th style="text-align:center"> img</th>
-<th style="text-align:center"> hsv </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/img.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/hsv.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-<tr>
-<th style="text-align:center"> mask1</th>
-<th style="text-align:center"> mask2 </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/mask1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/mask2.png" alt = "Image1" width = 350 height="200"></td>
-
-<tr>
-<th style="text-align:center"> Mask</th>
-<th style="text-align:center"> target </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/mask_od.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/target.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-</table>
-
-<!-- Contours -->
-<table>
-<tr>
-<th colspan="2" style="text-align:center"> CONTOURS </th>
-</tr>
-<tr>
-<th style="text-align:center"> Gray</th>
-<th style="text-align:center"> Edges </th>
-</tr>
-<tr>
-<td><image src="../../assets/images/gray_player.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../assets/images/edges.png" alt = "Image1" width = 350 height="200"></td>
-</tr>
-
-<tr>
-<th style="text-align:center" colspan="2"> Contours</th>
-</tr>
-<tr>
-<td style="text-align: center" colspan="2"><image src="../../assets/images/contours.png" alt = "Image1" width = 350 height="200"></td>
-</table>
-
-
-<table>
-<tr>
-<th colspan="2" style="text-align:center"> MORPHOLOGICAL OPERATIONS </th>
-
-</tr>
-<td style="text-align:center">
-<b>Input Image</b>
-</td>
-<td style="text-align:center">
-<b>Eroded Image</b>
-</td>
-<tr>
-
-</tr>
-<td>
-<image src="../../assets/images/morphology_opencv1.png">
-</td>
-<td>
-<image src="../../assets/images/morphology_opencv2.png">
-</td>
-<tr>
-
-</tr>
-<td style="text-align:center">
-<b>Dilated Image</b>
-</td>
-<td style="text-align:center">
-<b>Opened Image</b>
-</td>
-<tr>
-
-</tr>
-<td>
-<image src="../../assets/images/morphology_opencv3.png">
-</td>
-<td>
-<image src="../../assets/images/morphology_opencv4.png">
-</td>
-<tr>
-
-</tr>
-<td style="text-align:center">
-<b>Closed Image</b>
-</td>
-<td style="text-align:center">
-<b>Gradient of Image</b>
-</td>
-<tr>
-
-</tr>
-<td>
-<image src="../../assets/images/morphology_opencv5.png">
-</td>
-<td>
-<image src="../../assets/images/morphology_opencv6.png">
-</td>
-<tr>
-
-</table>
+```
+cd masking
+make
+./masking
+```
