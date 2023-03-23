@@ -3,7 +3,8 @@
 # Variables
 CC = g++
 CFLAGS = #-Wall -std=c++11 -shared
-LDFLAGS = `pkg-config opencv4 --cflags --libs`
+# LDFLAGS = ` -lm -lstdc++ -lsqlite3 pkg-config opencv4 --cflags --libs`
+LDFLAGS = `pkg-config opencv4 --cflags --libs` -lsqlite3
 BIN_DIR = bin
 #command to get the OS
 UNAME_S := $(shell uname -r)
@@ -47,7 +48,7 @@ build:
 	@cp $(FOLDER)/*.cpp $(FOLDER)/build && cp $(FOLDER)/*.hpp $(FOLDER)/build 
 	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
 	@find $(FOLDER)/build -name "*.hpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
-	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FOLDER).cpp -o $(BIN_DIR)/$(FOLDER) -I $(FOLDER)/build $(LDFLAGS)
+	@$(CC) $(CFLAGS) $(FOLDER)/build/$(notdir $(shell basename $(FOLDER))).cpp -o $(BIN_DIR)/$(notdir $(shell basename $(FOLDER))) -I $(FOLDER)/build $(LDFLAGS)
 endif
 	
 
@@ -56,13 +57,13 @@ endif
 ifeq ($(FOLDER),)
 clean:
 	@echo "Cleaning..."
-	@rm -rf */build
+	@rm -rf **/build && rm -rf */*/build
 	@rm -rf $(BIN_DIR)
 else
 clean:
 	@echo "Cleaning..."
 	@rm -rf $(FOLDER)/build
-	@rm -rf $(BIN_DIR)/$(FOLDER)
+	@rm -rf $(BIN_DIR)/$(notdir $(shell basename $(FOLDER)))
 endif
 
 # the command make run FOLDER=<subfolder> should run the executable in the subfolder
@@ -72,6 +73,5 @@ run:
 else
 run:
 	@echo "Running..."
-	@./$(BIN_DIR)/$(FOLDER)
+	@./$(BIN_DIR)/$(notdir $(shell basename $(FOLDER)))
 endif
-
