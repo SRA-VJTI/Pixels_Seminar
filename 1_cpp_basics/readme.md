@@ -1,10 +1,13 @@
 #                    **Basics Of C++**
 
 ## **Table Of Contents :**
-
+* [Variables And Data Types](#variables-and-data-types)
 * [Type Casting](#type-casting)
 * [Namespace](#namespace)
 * [Enumeration](#enumeration)
+* [Functions](#functions)
+* [Classes And Objects](#classes-and-objects)
+* [Templates](#templates)
 * [Arrays](#arrays)
   * [Initializing Arrays](#initializing-arrays)
   * [ Array Accessing](#array-accessing)
@@ -14,9 +17,15 @@
 * [Pointers And Array](#pointers-and-array)
 * [Passing 2D Array To A Function](#passing-2d-array-to-a-function)
 * [Vectors](#vectors)
-* [OpenCV Mat](#opencv-mat)
 
 
+## **Variables and Data Types:**
+A variable provides us with named storage that our programs can manipulate. Each variable in C++ has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
+
+![datatypes](https://i.imgur.com/1IycG7T.jpg)
+
+
+![size](https://i.imgur.com/UAGOLXA.png)
 ## **Type Casting:**
  Type casting refers to the conversion of one data type to another in a program. Typecasting can be done in two ways: automatically by the compiler and manually by the programmer or user. Type Casting is also known as Type Conversion.
  
@@ -47,7 +56,15 @@ int main()
 	return 0;
 }
 ```
-2. **Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
+**Output:**
+
+**`x = 107`**
+
+**`y = a`**
+
+**`z = 108`**
+
+2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
 
 **Synatx:**
 
@@ -157,6 +174,181 @@ int main() {
 **`Summer = 4`**
 
 In the above code we first made an enum datatype `seasons` ,having elements `spring,summer,autumn and winter` and assigned them values of 34,4,9,32 respectively.Then we made a variable `s` of data type `seasons` i.e enum and assigned it the value of `summer`i.e value of summer(4) is stored in `s` variable.  
+
+
+## **Functions:**
+
+A function is a set of statements that take inputs, do some specific computation, and produce output. The idea is to put some commonly or repeatedly done tasks together and make a function so that instead of writing the same code again and again for different inputs, we can call the function.
+
+A C++ function definition consists of a function header and a function body. Here are all the parts of a function −
+
+  Return Type − A function may return a value. The return_type is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case, the return_type is the keyword void.
+
+  Function Name − This is the actual name of the function. The function name and the parameter list together constitute the function signature.
+
+  Parameters − A parameter is like a placeholder. When a function is invoked, you pass a value to the parameter. This value is referred to as actual parameter or argument. The parameter list refers to the type, order, and number of the parameters of a function. Parameters are optional; that is, a function may contain no parameters.
+
+  Function Body − The function body contains a collection of statements that define what the function does.
+
+```C++
+#include <iostream>
+using namespace std;
+
+// Following function that takes two parameters 'x' and 'y'
+// as input and returns max of two input numbers
+int max(int x, int y)
+{
+	if (x > y)
+		return x;
+	else
+		return y;
+}
+
+// main function that doesn't receive any parameter and
+// returns integer
+int main()
+{
+	int a = 10, b = 20;
+
+	// Calling above function to find max of 'a' and 'b'
+	int m = max(a, b);
+
+	cout << "m is " << m;
+	return 0;
+}
+```
+**Output:**
+
+**`m is 20`**
+
+## **Classes And Objects:**
+A class in C++ is the building block that leads to Object-Oriented programming. It is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A C++ class is like a blueprint for an object.A Class is a user defined data-type which has data members and member functions.
+
+An Object is an instance of a Class. When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
+
+![immage](https://i.imgur.com/ekXLq3C.png)
+
+In C++, there are three access specifiers:
+
+  **public** - members are accessible from outside the class
+
+  **private** - members cannot be accessed (or viewed) from outside the class
+
+  **protected** - members cannot be accessed from outside the class, however, they can be accessed in inherited classes. 
+
+```C++
+// C++ program to demonstrate function
+// declaration outside class
+
+#include <iostream>
+using namespace std;
+class Sra
+{
+	public:
+	char first_letter;
+	int id;
+	
+	// printname is not defined inside class definition
+	void printletter();
+	
+	// printid is defined inside class definition
+	void printid()
+	{
+		cout <<"SRA id is: "<<id;
+	}
+};
+
+// Definition of printname using scope resolution operator ::
+void Sra::printletter()
+{
+	cout <<"First letter of my name  is: "<<first_letter;
+}
+int main() {
+	
+	Sra obj1;
+	obj1.first_letter= 'v';
+	obj1.id=24;
+	
+	// call printname()
+	obj1.printletter();
+	cout << endl;
+	
+	// call printid()
+	obj1.printid();
+	return 0;
+}
+```
+**Output:**
+
+**`First letter of my name is v.`**
+ 
+**` SRA id is 24.`**
+
+
+## **Templates:**
+A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types. For example, a software company may need to sort() for different data types. Rather than writing and maintaining multiple codes, we can write one sort() and pass the datatype as a parameter. 
+
+There are two ways we can implement templates:
+
+1.  Function Templates
+2.  Class Templates
+
+```C++
+//Example of Function Template
+
+#include <iostream>  
+using namespace std;  
+template<class T> T add(T &a,T &b)  
+{  
+    T result = a+b;  
+    return result;  
+      
+}  
+int main()  
+{  
+  int i =2;  
+  int j =3;  
+  float m = 2.3;  
+  float n = 1.2;  
+  cout<<"Addition of i and j is :"<<add(i,j);  
+  cout<<'\n';  
+  cout<<"Addition of m and n is :"<<add(m,n);  
+  return 0;  
+}  
+```
+**Output:**
+
+**`Addition of i and j is : 5`**
+
+**`Addition of m and n is : 3.5`**
+
+
+```C++
+    #include <iostream>  
+    using namespace std;  
+    template<class T>  
+    class A   
+    {  
+        public:  
+        T num1 = 5;  
+        T num2 = 6;  
+        void add()  
+        {  
+            std::cout << "Addition of num1 and num2 : " << num1+num2<<std::endl;  
+        }  
+          
+    };  
+      
+    int main()  
+    {  
+        A<int> d;  
+        d.add();  
+        return 0;  
+    }  
+  ```
+**Output:**
+
+**`Addition of num1 and num2 : 11`**
 
 ## **Arrays :**
  An array is a collection of elements of the same type placed in contiguous memory locations that can be individually referenced by using an index to a unique identifier.
@@ -537,195 +729,6 @@ We use the index number to access the vector elements. Here, we use the **`at()`
 **Output :**
 
 ![output](https://i.imgur.com/bOxhXIl.png)
-
-
- ## **OpenCV MAT**
-
-The images captured using cameras, scanners etc. capture the numerical values at each points of the image which are nothing but the values of the pixels at those points and in order to store and handle the images in the form of a matrix and to manage the memory associated with the images, we make use of class called Mat in OpenCV and by making use of Mat class in OpenCV, the memory management happens automatically and the memory allocated for a Mat class object can be reused and this class is available in the package opencv2/core.hpp in the OpenCV C++ library.
-
-1. **Constructing an OpenCV Mat Object from C++ Array**
-
-``` C++
-include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-
-    // Construct from and array
-    uint8_t greyArr[11][11] = {
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 }
-    };
-
-    cv::Mat greyImg = cv::Mat(11, 11, CV_8U, &greyArr);
-    std::string greyArrWindow = "Grey Array Image";
-    cv::namedWindow(greyArrWindow, cv::WINDOW_AUTOSIZE);
-    cv::imshow(greyArrWindow, greyImg);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-
-Above is an example of creating a Mat object from a standard C++ two dimensional (ie, nested) array of unsigned 8 bit integers representing grey scale color intensities from black (0) to white (255). In this example we have specified the dimensions, in rows and columns, of the Mat object being constructed as well as the data type of CV_8U indicating a single channel 8 bit unsigned integer, also defined as a uchar in OpenCV. We then used the HighGUI library to display the Mat object populated with a gradient of intensities of grey pixels within a named window.
-
-**Output :**
-
-![image](https://i.imgur.com/2rP7TPs.png)
-
-2. **OpenCV program in C++ to create a matrix using Mat function and** **display the matrix as the output on the screen.**
-
-```C++
-//including all the necessary headers
-#include "opencv2/core.hpp"
-#include <iostream>
-#include <opencv2/opencv.hpp>
-//defining the namespace std and cv
-using namespace std;
-using namespace cv;
-void main()
-{
-//creating a matrix using mat function and displaying the matrix as the output on the screen
-Mat Mvalue(4, 4, CV_8UC3, Scalar(1, 0, 1));
-cout<<"The resulting matrix is:\n";
-cout << "Mvalue = " << endl << " " << Mvalue << endl << endl;
-}
-```
-Here we have used `cout` instead of `imshow` and hence we get a matrix as an output on terminal.
-
-**Output :**
-
-![image](https://i.imgur.com/iENpEyD.png)
-
-3. **Constructing an OpenCV Mat Object from C++ Vector :**
-
-Pixel data residing in the standard C++ vector can also be used to construct an OpenCV Mat object in a manner very similar to what is shown above in the array example. The major difference being you must call the data() method of the vector class like so.
-
-```C++
-#include <algorithm>
-#include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-
-	// ... omitting the previous examples for brevity
-
-    std::vector<uint8_t> vec = {
-        0,   0,   0,   0,   0,   0,
-        25,  25,  25,  25,  25,  25,
-        50,  50,  50,  50,  50,  50,
-        75,  75,  75,  75,  75,  75,
-        100, 100, 100, 100, 100, 100,
-        125, 125, 125, 125, 125, 125,
-        150, 150, 150, 150, 150, 150,
-        175, 175, 175, 175, 175, 175,
-        200, 200, 200, 200, 200, 200,
-        225, 225, 225, 225, 225, 225,
-        255, 255, 255, 255, 255, 255
-    };
-    cv::Mat greyImgFromVec(11, 6, CV_8U, vec.data());
-    std::string greyImgFromVecWindow = "Grey Image From Vec";
-    cv::namedWindow(greyImgFromVecWindow);
-    cv::imshow(greyImgFromVecWindow, greyImgFromVec);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-**Output :**
-
-![image](https://i.imgur.com/tijRwaX.png)
-
-4. **Copying vector Data Into an OpenCV Mat Object :**
-
-The method of copying vector data into a Mat object is done in a similar fashion as seen in the array example utilizing the memcpy function. However, to demonstrate yet another way of constructing a Mat object we will utilize the Size class from OpenCV to specify the dimensions of the Mat object being constructed but, do note the order of dimensions are switched when using the Size object whereby the number of columns is supplied first then followed by the rows which differs from the rows then columns order of the previously shown Mat constructors
-
-```C++
-#include <algorithm>
-#include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-	// ... omitting above examples for brevity
-
-    std::vector<uint8_t> vec = {
-        0,   0,   0,   0,   0,   0,
-        25,  25,  25,  25,  25,  25,
-        50,  50,  50,  50,  50,  50,
-        75,  75,  75,  75,  75,  75,
-        100, 100, 100, 100, 100, 100,
-        125, 125, 125, 125, 125, 125,
-        150, 150, 150, 150, 150, 150,
-        175, 175, 175, 175, 175, 175,
-        200, 200, 200, 200, 200, 200,
-        225, 225, 225, 225, 225, 225,
-        255, 255, 255, 255, 255, 255
-    };
-    // ... omitting example for brevity
-
-    // again, the memcpy function can be used to copy a vector's data into
-    // a Mat object similar to what was shown with the array example previously.
-    cv::Mat greyImgForVecCopy = cv::Mat(cv::Size(6, 11), CV_8U);
-    std::memcpy(greyImgForVecCopy.data, vec.data(), vec.size() * sizeof(uint8_t));
-
-    std::fill(std::begin(vec), std::end(vec), 100);
-
-    std::string greyImgFromVecCopyWindow = "Grey Image Vec Copy";
-    cv::namedWindow(greyImgFromVecCopyWindow);
-    cv::imshow(greyImgFromVecCopyWindow, greyImgForVecCopy);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-**Output :**
-
-![image](https://i.imgur.com/tijRwaX.png)
-
-
-
-
-   
-
 
 
 
