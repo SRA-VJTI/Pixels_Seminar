@@ -11,11 +11,16 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-	// Reading the Image
-	Mat source_image = imread("Path Of Image", IMREAD_GRAYSCALE);
+	if ( argc != 2 )	
+    {
+        std::cout <<"usage: ./output <Image_Path>\n";
+        return -1;
+    }
 
-	// Check if the image is created
-	// successfully or not
+	// Reading the Image
+	Mat source_image = imread(argv[1], IMREAD_GRAYSCALE);
+
+	// Check if the image is created successfully or not
 	if (!source_image.data)
 	{
 		std::cout << "Could not open or find the image\n";

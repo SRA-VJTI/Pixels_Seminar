@@ -9,19 +9,27 @@
 using namespace cv;
 using namespace std;
 
-int main()
+int main(int argc, char **argv)
 {
+	if ( argc != 2 )	
+    {
+        std::cout <<"usage: ./output <Image_Path>\n";
+        return -1;
+    }
+
 	// Reading the Image
-	Mat source_image = imread("../Assets/closing.png", IMREAD_GRAYSCALE);
-	// Check if the image is created
-	// successfully or not
+	Mat source_image = imread(argv[1], IMREAD_GRAYSCALE);
+	
+	// Check if the image is created successfully or not
 	if (!source_image.data)
 	{
 		cout << "Could not open or find the image\n";
 		return 0;
 	}
+
 	// creating container for output image according to size and type of source image
 	Mat output_image{source_image.size(), source_image.type()};
+	
 	// Applying erosion on source image
 	int kernel_size = 3;
 	output_image = erosion(source_image, output_image, kernel_size);
