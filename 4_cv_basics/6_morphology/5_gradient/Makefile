@@ -1,5 +1,5 @@
-output:	5_gradient.cpp	../include/helper.hpp	../src/helper.cpp
-	g++ 5_gradient.cpp ../src/helper.cpp -o output `pkg-config --cflags --libs opencv4`
+output:	5_gradient.cpp	../include/morphology.hpp	../src/morphology.cpp
+	g++ 5_gradient.cpp ../src/morphology.cpp -o output `pkg-config --cflags --libs opencv4`
 
 clean:
 	rm output
