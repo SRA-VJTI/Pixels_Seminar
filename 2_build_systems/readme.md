@@ -1,11 +1,27 @@
 # Table of contents
 
-* How to use
-* Compiler
+* Makefile for Pixels
+    * How to use
+    * Install OpenCV
+    * Building
+* Compilers
+    * What is a compiler?
+    * Compiler directives
+    * Different stages of compilation
+    * Different types of files during compilation
 * Build systems
-* Synatx of Makefile
+    * What is a build system ?
+    * Why do we need build systems ?
+* GNU Make Build System
+    * Syntax of Makefile
+    * Variables in Makefile
+* Automatic Variables and Wildcards in Makefile
+    * Automatic Variables
+    * The `*` wildcard
+    * The `%` wildcard
+* Commands and execution
 
-# Makefile for Pixels
+## Makefile for Pixels
 
 This is a Makefile to build and run the Pixels code. The Makefile has the following features:
 
