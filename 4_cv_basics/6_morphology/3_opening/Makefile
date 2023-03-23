@@ -1,4 +1,4 @@
-output:
+output:	3_opening.cpp	../helper.hpp
 	g++ 3_opening.cpp -o output `pkg-config --cflags --libs opencv4`
 
 clean:
