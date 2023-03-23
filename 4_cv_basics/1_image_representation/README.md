@@ -292,7 +292,7 @@ This will display the image.
 #### Run without make
 If you want to run the code without make then just type
 
-- `g++ -g image_representation.cpp -o output $(pkg-config --cflags --libs sdl2)`
+- `g++ -g image_representation.cpp -o image $(pkg-config --cflags --libs sdl2)`
 
 and then
 - `./image <image_path>)`\
