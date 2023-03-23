@@ -17,10 +17,6 @@ Mat convolve(Mat original_image, Mat kernel){
     Mat kernel_inv{kernel.size(), kernel.type()}, temp_kernel{kernel.size(), kernel.type()}, image_pad;
     Mat resultant_image{original_image.size(), original_image.type()};
     
-    // Just checking whether these funcitons are continuous or not
-    kernel_inv.isContinuous();
-    kernel.isContinuous();
-    
     // Using For Loops
     // for(int i = 0 ; i < kernel.rows ; i++ ){ cout<<"k"<<endl; kernel_inv.row(i) = kernel.row(kernel.rows - i - 1).clone(); }
     // temp_kernel = kernel_inv.clone();
