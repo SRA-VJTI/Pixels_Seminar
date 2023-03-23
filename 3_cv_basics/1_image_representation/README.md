@@ -5,6 +5,7 @@
   - [Table Of Contents](#table-of-contents)
   - [How Do We Represent Image?](#how-do-we-represent-image)
   - [Some Important Terminologies](#some-important-terminologies)
+  - [Types of Images](#types-of-images)
     - [Binary Images](#binary-images)
     - [Grayscale Images](#grayscale-images)
     - [RGB Images](#rgb-images)
@@ -32,64 +33,34 @@
 ## How Do We Represent Image?
 
 - It can be represented in various forms. 
-- As most of the time, representation
-
-  refers to the way that brings information, such as color is coded digitally,
-
-  and how the image is stored, i.e., how an image file is structured.
+- As most of the time, representation refers to the way that brings information, such as color is coded digitally, and how the image is stored, i.e., how an image file is structured.
 
 - So,for the simplicity of computing it is represented in a matrix form.
 
 
 ## Some Important Terminologies
 
-1. Pixel: Pixel is the smallest unit of a picture displayed on the computer screen.
+1. **Pixel**: Pixel is the smallest unit of a picture displayed on the computer screen.
 
 A pixel includes its own:-
-
-● Intensity
-
-● Name or Address
-
-The size of the image is defined as the total number of pixels in the horizontal direction times the total
-
-number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
-
-### Binary Images
-
-![image](https://user-images.githubusercontent.com/109454803/226694714-44da9176-7f15-49d6-960b-3e77ea5b44a4.png)
+* **Intensity**
+* **Name or Address**
 
 
-### Grayscale Images
-![image](https://user-images.githubusercontent.com/109454803/226695141-32c82835-31f9-42dc-82fc-6d9948b9235d.png)
-
-### RGB Images
-![image](https://user-images.githubusercontent.com/109454803/226695502-c0d9311f-bc48-41c3-9db0-43d1d3a005bd.png)
+The size of the image is defined as the total number of pixels in the horizontal direction times the total number of pixels in the vertical direction. For eg: (512 x 512,640 x 480, or 1024 x 768).
 
 
-2. **Resolution**: The number of pixels per unit is called the resolution
+2. **Resolution**: The number of pixels per unit is called the resolution of the image.The sharpness of the picture on display depends on the resolution and the size of the monitor.
 
-of the image.The sharpness of the picture on display depends on the
-
-resolution and the size of the monitor.
-
-It includes-
+It includes- 
 
 ● **Image Resolution**: The distance between two pixels.
 
-● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called
-
-Screen Resolution.
-
+● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called Screen Resolution.
 For Example– 640 x 480, 1024 x 768 (Horizontal x Vertical)
 
 
-3. **Aspect Ratio**: The ratio of image’s width to its height is known as
-
-the aspect ratio of an image. The height and width of an image are
-
-measured in length or number of pixels.
-
+3. **Aspect Ratio**: The ratio of image’s width to its height is known as the aspect ratio of an image. The height and width of an image are measured in length or number of pixels.
 For Example: If a graphics has an aspect ratio of 2:1, it means the width is twice large to height.
 
 It includes–
@@ -97,6 +68,19 @@ It includes–
 ● **Frame aspect ratio**: Horizontal /Vertical Size
 
 ● **Pixel aspect ratio**: Width of Pixel/Height of Pixel
+
+## Types of Images
+There are many type of images , and we will look in detail about different types of images , and the color distribution in them.
+
+### Binary Images
+
+![image](https://user-images.githubusercontent.com/109454803/226694714-44da9176-7f15-49d6-960b-3e77ea5b44a4.png)
+
+### Grayscale Images
+![image](https://user-images.githubusercontent.com/109454803/226695141-32c82835-31f9-42dc-82fc-6d9948b9235d.png)
+
+### RGB Images
+![image](https://user-images.githubusercontent.com/109454803/226695502-c0d9311f-bc48-41c3-9db0-43d1d3a005bd.png)
 
 ## Colour Models
 
@@ -286,10 +270,10 @@ brew install sdl2
 
 Now that you are aware with the various image storing formats, let's look at how to create and execute executables.
 
-After cloning in the Pixels_Seminar repository, get into the image_storing_formats folder using cd command 
+After cloning in the Pixels_Seminar repository, get into the 1_image_representation folder using cd command 
 
 ```sh
-cd /Pixels_Seminar/3_cv_basics
+cd /Pixels_Seminar/3_cv_basics/1_image_representation
 ```
 
 `image_representation.cpp` is our code file.
