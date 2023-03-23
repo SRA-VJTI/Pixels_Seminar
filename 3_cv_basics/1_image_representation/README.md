@@ -74,13 +74,14 @@ There are many type of images , and we will look in detail about different types
 
 ### Binary Images
 
-![image](https://user-images.githubusercontent.com/109454803/226694714-44da9176-7f15-49d6-960b-3e77ea5b44a4.png)
+![image](https://user-images.githubusercontent.com/109454803/227176586-f93af71a-7a23-47df-bc4d-e3841c2d9367.png)
+
 
 ### Grayscale Images
-![image](https://user-images.githubusercontent.com/109454803/226695141-32c82835-31f9-42dc-82fc-6d9948b9235d.png)
+![image](https://user-images.githubusercontent.com/109454803/227176655-016be56e-a12a-49cc-9cfd-84f3cc5a8ac3.png)
 
 ### RGB Images
-![image](https://user-images.githubusercontent.com/109454803/226695502-c0d9311f-bc48-41c3-9db0-43d1d3a005bd.png)
+![image](https://user-images.githubusercontent.com/109454803/227176734-915aa2f6-1b76-4df6-acb2-717cf27b3064.png)
 
 ## Colour Models
 
@@ -97,7 +98,7 @@ Their types are:
 
 ● It is used in digital media.For eg: Computer Monitor, Television etc.
 
-![image](https://user-images.githubusercontent.com/109454803/226695799-882fa65b-b77f-4cc9-be5b-e9723eb26b06.png)
+![image](https://user-images.githubusercontent.com/109454803/227176865-0e5dfe90-0ae4-422d-8340-7a9ade22e7b2.png)
 
 ### Subtractive Models
 
@@ -109,7 +110,7 @@ Their types are:
 
 ● The CMYK model uses printing inks. For Example: Paint, Pigments, and color filter etc.
 
-![image](https://user-images.githubusercontent.com/109454803/226695999-806df95e-c3a6-4ad9-b0bb-623e5785ef44.png)
+![image](https://user-images.githubusercontent.com/109454803/227176955-044854dc-3d00-48b1-b82e-e9d806235b30.png)
 
 ### HSV Colour Model
 
@@ -121,7 +122,7 @@ Their types are:
 
 in terms of their shade (saturation or amount of gray) and their brightness value.
 
-![image](https://user-images.githubusercontent.com/109454803/226696173-9fb989c7-7a6e-4f64-9b9d-0ef56f608552.png)
+![image](https://user-images.githubusercontent.com/109454803/227177010-d7c8e9e3-1c25-48ca-866a-42e921920644.png)
 
 Three Components of HSV colour model are as follows:
 
@@ -292,7 +293,7 @@ This will display the image.
 #### Run without make
 If you want to run the code without make then just type
 
-- `g++ -g image_representation.cpp -o output $(pkg-config --cflags --libs sdl2)`
+- `g++ -g image_representation.cpp -o image $(pkg-config --cflags --libs sdl2)`
 
 and then
 - `./image <image_path>)`\
