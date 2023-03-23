@@ -4,7 +4,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include "../helper.hpp"
+#include "../include/helper.hpp"
 
 using namespace cv;
 using namespace std;
