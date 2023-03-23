@@ -1,4 +1,4 @@
-#include "../include/helper.hpp"
+#include "../include/morphology.hpp"
 
 int kernel_sum(Mat image, int row, int col, int Kernel_size)
 {
