@@ -56,6 +56,7 @@ int main()
 	return 0;
 }
 ```
+
 **Output:**
 
 **`x = 107`**
@@ -66,7 +67,9 @@ int main()
 
 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
 
-**Synatx:**
+ 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
+
+**Syntax:**
 
 **`(type)expression`**
 
@@ -729,7 +732,6 @@ We use the index number to access the vector elements. Here, we use the **`at()`
 **Output :**
 
 ![output](https://i.imgur.com/bOxhXIl.png)
-
 
 
 
