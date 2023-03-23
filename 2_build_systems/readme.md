@@ -1,25 +1,25 @@
 # Table of contents
 
-* Makefile for Pixels
-    * How to use
-    * Install OpenCV
-    * Building
-* Compilers
-    * What is a compiler?
-    * Compiler directives
-    * Different stages of compilation
-    * Different types of files during compilation
-* Build systems
-    * What is a build system ?
-    * Why do we need build systems ?
-* GNU Make Build System
-    * Syntax of Makefile
-    * Variables in Makefile
-* Automatic Variables and Wildcards in Makefile
-    * Automatic Variables
-    * The `*` wildcard
-    * The `%` wildcard
-* Commands and execution
+* [Makefile for Pixels](#makefile-for-pixels)
+    * [How to use a makefile](#how-to-use)
+    * [Installing OpenCV](#install-opencv)
+    * [Building using Makefile](#building)
+* [Compilers](#compilers)
+    * [What is a compiler?](#what-is-a-compiler)
+    * [Compiler directives](#compiler-directives)
+    * [Different stages of compilation](#different-stages-of-compilation)
+    * [Different types of files during compilation](#different-types-of-files-during-compilation)
+* [Build systems](#build-systems)
+    * [What is a build system ?](#what-is-a-build-system-)
+    * [Why do we need build systems ?](#why-do-we-need-build-systems-)
+* [GNU Make Build System](#gnu-make-build-system)
+    * [Syntax of Makefile](#syntax-of-makefile)
+    * [Variables in Makefile](#variables-in-makefile)
+* [Automatic Variables and Wildcards in Makefile](#automatic-variables-and-wildcards-in-makefile)
+    * [Automatic Variables](#automatic-variables)
+    * [The `*` wildcard](#the--wildcard)
+    * [The `%` wildcard](#the--wildcard-1)
+* [Commands and execution](#commands-and-execution)
 
 ## Makefile for Pixels
 
