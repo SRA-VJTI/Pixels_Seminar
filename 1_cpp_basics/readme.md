@@ -4,6 +4,8 @@
 * [Variables And Data Types](#variables-and-data-types)
 * [Type Casting](#type-casting)
 * [Namespace](#namespace)
+* [Conditional Statements](#conditional-statements)
+* [Control Loops](#control-loops)
 * [Enumeration](#enumeration)
 * [Functions](#functions)
 * [Classes And Objects](#classes-and-objects)
@@ -11,8 +13,9 @@
 * [Arrays](#arrays)
   * [Initializing Arrays](#initializing-arrays)
   * [ Array Accessing](#array-accessing)
+  * [Printing 1-D Array](#printing-1-d-array)
   * [Multidimensional Arrays](#multidimensional-arrays)
-  * [Printing a 2D array](#printing-a-2d-array)
+  * [Printing a 2D array](#printing-a-2d-array)  
 * [Pointers](#pointers)
 * [Pointers And Array](#pointers-and-array)
 * [Passing 2D Array To A Function](#passing-2d-array-to-a-function)
@@ -142,6 +145,134 @@ return 0;
 **Output:**
 
 **`Inside first_space`**
+
+## **Conditional Statements:**
+Conditional statements, also known as selection statements, are used to make decisions based on a given condition. If the condition evaluates to True, a set of statements is executed, otherwise another set of statements is executed.
+
+1. **If Statement:**
+
+```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num =10;
+  if(num>5) // condition 
+  {
+    cout<<"Hello From SRA\n";
+//If condn is fullfilled it will get executed
+  } 
+  return 0;
+}
+```
+**Output:**
+
+**`Hello From SRA`**
+
+2. **If-else:**
+```C++
+//Code to find even and odd num using if else statement
+#include <iostream>
+using namespace std;
+int main()
+{
+  int num =10;
+  if(num%2 == 0)
+  {cout<<"the number is even\n";
+  }
+  else
+  {cout<<"The number is odd\n";}
+  return 0;
+}
+```
+**Output:**
+
+**`Then number is even`**
+
+3. **Switch statement:**
+
+```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+int day = 4;
+switch (day) {
+  case 1:
+    cout << "Monday";
+    break;
+  case 2:
+    cout << "Tuesday";
+    break;
+  case 3:
+    cout << "Wednesday";
+    break;
+  case 4:
+    cout << "Thursday";
+    break;
+  case 5:
+    cout << "Friday";
+    break;
+  case 6:
+    cout << "Saturday";
+    break;
+  case 7:
+    cout << "Sunday";
+    break;
+   default:
+   cout<<"Not a day";
+   break; 
+}
+return 0;
+}
+```
+
+**Output**
+
+**`Thursday`**
+
+## **Control Loops:**
+
+1, **For Loop:**
+
+Firsts initialize,then condition check,then execute bode,finally updates the control variable.
+
+**Synatx:**
+```C++
+for( initialization exp; test exp; update exp)
+{
+  
+  // statement we want to execute;
+}
+```
+
+2. **While Loop:**
+
+**Syntax:**
+```C++
+initialization exp;
+while(test exp)
+{
+   
+  // statement we want to execute;
+  //update statement;
+}
+```
+3. **Do-While Loop:**
+
+Firsts initialize,,then execute bode, updates the control variable,then condition check.
+In a do-while loop the loop body executes at least once irrespective of of the test condition.
+
+**Syntax:**
+```C++
+nitialization exp;
+do
+{
+    // statement we want to execute;
+  // update expression;
+}while(test expression);
+```
+
 
 ## **Enumeration:**
 
@@ -398,8 +529,35 @@ int foo[5];         // declaration of a new array`**
 
  foo[2] = 75;        // access to an element of the array.`**
 ```
+## **Printing 1-D Array:**
+We can use loops for taking and printing values of a 1-D array,
+```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+  int arr1[5]= {1,2,3,4,5};
+  int i;
+  for(i=0;i<5;i++)
+  {cout<<Values of Array are: <<arr1[i]<<endl;
+  }
+  return 0;
+}
+```
 
-- ## **Multidimensional Arrays :**
+**Output:**
+
+**`Values of Array are: 1`**
+
+**`Values of Array are: 2`**
+
+**`Values of Array are: 3`**
+
+**`Values of Array are: 4`**
+
+**`Values of Array are: 5`**
+
+ ## **Multidimensional Arrays :**
 
 A two-dimensional array in C++ is the simplest form of a multi-dimensional array. It can be visualized as an array of arrays. The image below depicts a two-dimensional array:
 
