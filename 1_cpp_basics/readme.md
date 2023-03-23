@@ -14,7 +14,6 @@
 * [Pointers And Array](#pointers-and-array)
 * [Passing 2D Array To A Function](#passing-2d-array-to-a-function)
 * [Vectors](#vectors)
-* [OpenCV Mat](#opencv-mat)
 
 
 ## **Type Casting:**
@@ -47,9 +46,9 @@ int main()
 	return 0;
 }
 ```
-2. **Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
+ 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
 
-**Synatx:**
+**Syntax:**
 
 **`(type)expression`**
 
@@ -539,198 +538,4 @@ We use the index number to access the vector elements. Here, we use the **`at()`
 ![output](https://i.imgur.com/bOxhXIl.png)
 
 
- ## **OpenCV MAT**
-
-The images captured using cameras, scanners etc. capture the numerical values at each points of the image which are nothing but the values of the pixels at those points and in order to store and handle the images in the form of a matrix and to manage the memory associated with the images, we make use of class called Mat in OpenCV and by making use of Mat class in OpenCV, the memory management happens automatically and the memory allocated for a Mat class object can be reused and this class is available in the package opencv2/core.hpp in the OpenCV C++ library.
-
-1. **Constructing an OpenCV Mat Object from C++ Array**
-
-``` C++
-include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-
-    // Construct from and array
-    uint8_t greyArr[11][11] = {
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 },
-        { 0, 25, 50, 75, 100, 125, 150, 175, 200, 225, 255 }
-    };
-
-    cv::Mat greyImg = cv::Mat(11, 11, CV_8U, &greyArr);
-    std::string greyArrWindow = "Grey Array Image";
-    cv::namedWindow(greyArrWindow, cv::WINDOW_AUTOSIZE);
-    cv::imshow(greyArrWindow, greyImg);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-
-Above is an example of creating a Mat object from a standard C++ two dimensional (ie, nested) array of unsigned 8 bit integers representing grey scale color intensities from black (0) to white (255). In this example we have specified the dimensions, in rows and columns, of the Mat object being constructed as well as the data type of CV_8U indicating a single channel 8 bit unsigned integer, also defined as a uchar in OpenCV. We then used the HighGUI library to display the Mat object populated with a gradient of intensities of grey pixels within a named window.
-
-**Output :**
-
-![image](https://i.imgur.com/2rP7TPs.png)
-
-2. **OpenCV program in C++ to create a matrix using Mat function and** **display the matrix as the output on the screen.**
-
-```C++
-//including all the necessary headers
-#include "opencv2/core.hpp"
-#include <iostream>
-#include <opencv2/opencv.hpp>
-//defining the namespace std and cv
-using namespace std;
-using namespace cv;
-void main()
-{
-//creating a matrix using mat function and displaying the matrix as the output on the screen
-Mat Mvalue(4, 4, CV_8UC3, Scalar(1, 0, 1));
-cout<<"The resulting matrix is:\n";
-cout << "Mvalue = " << endl << " " << Mvalue << endl << endl;
-}
-```
-Here we have used `cout` instead of `imshow` and hence we get a matrix as an output on terminal.
-
-**Output :**
-
-![image](https://i.imgur.com/iENpEyD.png)
-
-3. **Constructing an OpenCV Mat Object from C++ Vector :**
-
-Pixel data residing in the standard C++ vector can also be used to construct an OpenCV Mat object in a manner very similar to what is shown above in the array example. The major difference being you must call the data() method of the vector class like so.
-
-```C++
-#include <algorithm>
-#include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-
-	// ... omitting the previous examples for brevity
-
-    std::vector<uint8_t> vec = {
-        0,   0,   0,   0,   0,   0,
-        25,  25,  25,  25,  25,  25,
-        50,  50,  50,  50,  50,  50,
-        75,  75,  75,  75,  75,  75,
-        100, 100, 100, 100, 100, 100,
-        125, 125, 125, 125, 125, 125,
-        150, 150, 150, 150, 150, 150,
-        175, 175, 175, 175, 175, 175,
-        200, 200, 200, 200, 200, 200,
-        225, 225, 225, 225, 225, 225,
-        255, 255, 255, 255, 255, 255
-    };
-    cv::Mat greyImgFromVec(11, 6, CV_8U, vec.data());
-    std::string greyImgFromVecWindow = "Grey Image From Vec";
-    cv::namedWindow(greyImgFromVecWindow);
-    cv::imshow(greyImgFromVecWindow, greyImgFromVec);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-**Output :**
-
-![image](https://i.imgur.com/tijRwaX.png)
-
-4. **Copying vector Data Into an OpenCV Mat Object :**
-
-The method of copying vector data into a Mat object is done in a similar fashion as seen in the array example utilizing the memcpy function. However, to demonstrate yet another way of constructing a Mat object we will utilize the Size class from OpenCV to specify the dimensions of the Mat object being constructed but, do note the order of dimensions are switched when using the Size object whereby the number of columns is supplied first then followed by the rows which differs from the rows then columns order of the previously shown Mat constructors
-
-```C++
-#include <algorithm>
-#include <cstring>
-#include <iostream>
-#include <string.h>
-#include <vector>
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/highgui.hpp>
-
-using std::cout;
-using std::endl;
-
-int main() {
-	// ... omitting above examples for brevity
-
-    std::vector<uint8_t> vec = {
-        0,   0,   0,   0,   0,   0,
-        25,  25,  25,  25,  25,  25,
-        50,  50,  50,  50,  50,  50,
-        75,  75,  75,  75,  75,  75,
-        100, 100, 100, 100, 100, 100,
-        125, 125, 125, 125, 125, 125,
-        150, 150, 150, 150, 150, 150,
-        175, 175, 175, 175, 175, 175,
-        200, 200, 200, 200, 200, 200,
-        225, 225, 225, 225, 225, 225,
-        255, 255, 255, 255, 255, 255
-    };
-    // ... omitting example for brevity
-
-    // again, the memcpy function can be used to copy a vector's data into
-    // a Mat object similar to what was shown with the array example previously.
-    cv::Mat greyImgForVecCopy = cv::Mat(cv::Size(6, 11), CV_8U);
-    std::memcpy(greyImgForVecCopy.data, vec.data(), vec.size() * sizeof(uint8_t));
-
-    std::fill(std::begin(vec), std::end(vec), 100);
-
-    std::string greyImgFromVecCopyWindow = "Grey Image Vec Copy";
-    cv::namedWindow(greyImgFromVecCopyWindow);
-    cv::imshow(greyImgFromVecCopyWindow, greyImgForVecCopy);
-
-    cv::waitKey(0);
-    cv::destroyAllWindows();
-
-    return 0;
-}
-```
-**Output :**
-
-![image](https://i.imgur.com/tijRwaX.png)
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
+ 
