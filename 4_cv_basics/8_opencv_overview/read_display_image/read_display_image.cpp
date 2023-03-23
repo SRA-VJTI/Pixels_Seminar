@@ -19,7 +19,6 @@ int main()
     // x[1] - width of the image (number of columns)
     cout << x[0] << ',' << x[1] << endl;
     cout << image.channels() << endl;
-    cout << typeid(image).name() << endl;
     namedWindow("Display Image");
     imshow("Display Image", image);
     waitKey(0);

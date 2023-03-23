@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+     // Reading input images (A and B)
     Mat image1 = imread("PROJECT_SOURCE_DIR/assets/images/dummy1.jpg");
     Mat image2 = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
 
@@ -13,8 +14,11 @@ int main()
 
     Mat res;
 
-    float alpha = 0.6, beta = 1 - alpha;
+    // Defining weights for the two images
+    float alpha = 0.4, beta = (1 - alpha);
 
+    // Blending image1 and image2
+    // res = alpha * image1 + beta * image2 + gamma(0)
     addWeighted(image1, alpha, image2, beta, 0.0, res);
 
     namedWindow("Display Image");
