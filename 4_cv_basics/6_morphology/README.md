@@ -49,7 +49,7 @@ In a binary image, a pixel is set to 0 if any of the neighboring pixels have the
 so that only substantive objects remain.
 
 <p align="center">
-    <img src = "./Assets/normal_image.png" width="200" height="250"/> <img src = "./Assets/erroded_image.png"width="200" height="250"/>
+    <img src = "./assets/normal_image.png" width="200" height="250"/> <img src = "./assets/erroded_image.png"width="200" height="250"/>
 </p>  
   
 
@@ -63,7 +63,7 @@ so that only substantive objects remain.
 
   
 <p align="center">
-    <img src = "./Assets/erosion.gif"/>
+    <img src = "./assets/erosion.gif"/>
 </p>
 
 
@@ -84,7 +84,7 @@ Morphological dilation makes objects more visible and fills in small holes in ob
 
   
 <p align="center">
-    <img src="./Assets/normal_image.png"width="200" height="250"/> <img src="./Assets/dilation.png" width="200" height="250"/>
+    <img src="./assets/normal_image.png"width="200" height="250"/> <img src="./assets/dilation.png" width="200" height="250"/>
 </p>
 
 **Working of dilation**:
@@ -93,7 +93,7 @@ Morphological dilation makes objects more visible and fills in small holes in ob
 3. It increases the white region in the image or size of foreground object increases.
 
 <p align="center">
-    <img src="./Assets/dilation.gif"/>
+    <img src="./assets/dilation.gif"/>
 </p>  
   
 ## **Applications of basic morphological operations**:
@@ -121,7 +121,7 @@ erosion are restored to their original size by the dilation:
 Results of opening with a square structuring element
 
 <p align="center">
-    <img src="./Assets/opening.png" width="400" height="250"/>
+    <img src="./assets/opening.png" width="400" height="250"/>
 </p>  
 
 ## **Closing**
@@ -136,7 +136,7 @@ In this case, the dilation and erosion should be performed with a rotated by 180
 so that the rotated and initial versions of it do not differ.
 
 <p align="center">
-    <img src="./Assets/closing.png" width="400" height="250"/>
+    <img src="./assets/closing.png" width="400" height="250"/>
 </p>
 
 ## **Gradient**
@@ -145,7 +145,7 @@ The difference between the dilation and the erosion of the image. This is used t
 apply some filtering before calculating the gradient because it is very sensitive to noise.
 
 <p align="center">
-    <img src="./Assets/gradient.png" width="400" height="250"/>
+    <img src="./assets/gradient.png" width="400" height="250"/>
 </p>
     
 ## **Applications of Compound morphological operations**:
