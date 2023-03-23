@@ -44,7 +44,7 @@ int main()
    image = imread("nike.png");//loading an image//
    
    Mat new_img = masking(image);
-   imwrite("true_logo.png", new_img);
+   imwrite("bg_free.png", new_img);
    imshow("center",new_img);
    waitKey(0);
    destroyAllWindows();
