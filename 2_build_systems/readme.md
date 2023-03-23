@@ -34,8 +34,7 @@ This is a Makefile to build and run the Pixels code. The Makefile has the follow
 
 ### Install OpenCV
 
-Before using this Makefile, you need to install OpenCV. You can install OpenCV by running the make install command.
-Build the project
+Before using this Makefile, you need to install OpenCV. You can install OpenCV by running the `make install` command.
 
 ## Building
 

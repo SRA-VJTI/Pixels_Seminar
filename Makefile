@@ -22,13 +22,13 @@ else
 	@echo "Installing OpenCV..."
 ifeq ($(shell cat /etc/os-release | awk '{if (match ($$0, /debian/)) {print "true"; exit;}}'),true)
 	@echo "Debian"
-	@sudo apt-get install libopencv-dev
+	@sudo apt-get install libopencv-dev libsdl2-2.0-0 libsdl2-image-dev
 else ifeq ($(shell uname -a | awk '{if (match ($$0, /Darwin/)) print "true"}'),true)
 	@echo "Mac"
-	@brew install opencv
+	@brew install opencv sdl2
 else ifeq ($(shell cat /etc/os-release | awk '{if (match ($$0, /arch/)) {print "true"; exit;}}'),true)
 	@echo "Arch Linux"
-	@sudo pacman -S opencv hdf5 glew vtk fmt 
+	@sudo pacman -S opencv hdf5 glew vtk fmt sdl2
 else
 	@echo "Unknown OS"
 endif
