@@ -20,7 +20,14 @@
 * [Pointers And Array](#pointers-and-array)
 * [Passing 2D Array To A Function](#passing-2d-array-to-a-function)
 * [Vectors](#vectors)
+## **To run a .cpp file on your terminal**
+```md
+Compile the .cpp file with following command:
+$ g++ <filename>.cpp
+Followed by running the executable, with this command:
+$ ./a.out
 
+```
 
 ## **Variables and Data Types:**
 A variable provides us with named storage that our programs can manipulate. Each variable in C++ has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
@@ -233,7 +240,7 @@ return 0;
 
 ## **Control Loops:**
 
-1, **For Loop:**
+1. **For Loop:**
 
 Firsts initialize,then condition check,then execute bode,finally updates the control variable.
 
@@ -265,7 +272,7 @@ In a do-while loop the loop body executes at least once irrespective of of the t
 
 **Syntax:**
 ```C++
-nitialization exp;
+initialization exp;
 do
 {
     // statement we want to execute;
