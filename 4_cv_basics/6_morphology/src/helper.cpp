@@ -1,18 +1,5 @@
-#ifndef HELPER_HPP
-#define HELPER_HPP
+#include "../include/helper.hpp"
 
-#include <opencv2/core.hpp>
-
-using namespace cv;
-
-/*
-/ @brief finds sum of elements in a kernel about given co-ordinate(y, x)
-/ @param Mat image
-/ @param row (y)
-/ @param col (x)
-/ @param Kernel size
-/ @return sum
-*/
 int kernel_sum(Mat image, int row, int col, int Kernel_size)
 {
 	if (Kernel_size % 2 != 1 || Kernel_size < 3)
@@ -40,12 +27,6 @@ int kernel_sum(Mat image, int row, int col, int Kernel_size)
 	return sum;
 }
 
-/*
-/ @brief performs erosion on source image and stores it in output image
-/ @param Mat source_image
-/ @param Mat output_image
-/ @return output_image after erosion
-*/
 Mat erosion(Mat source_image, Mat output_image, int Kernel_size)
 {
 	for (int i = 0; i < source_image.rows; i++)
@@ -66,13 +47,6 @@ Mat erosion(Mat source_image, Mat output_image, int Kernel_size)
 	return output_image;
 }
 
-/*
-/ @brief performs dilation on source image and stores it in output image
-/ @param Mat source_image
-/ @param Mat output_image
-/ @param kernel size
-/ @return output_image after erosion
-*/
 Mat dilation(Mat source_image, Mat output_image, int kernel_size)
 {
 	for (int i = 0; i < source_image.rows; i++)
@@ -93,13 +67,6 @@ Mat dilation(Mat source_image, Mat output_image, int kernel_size)
 	return output_image;
 }
 
-/*
-/ @brief Gives difference between two given arrays
-/ @param img_1 input image
-/ @param img_2 input image
-/ @param output container to store output image
-/ @return output image
-*/
 Mat difference(Mat img_1, Mat img_2, Mat output)
 {
 	if (img_1.size() != img_2.size())
@@ -115,5 +82,3 @@ Mat difference(Mat img_1, Mat img_2, Mat output)
 	}
 	return output;
 }
-
-#endif // !HELPER_HPP
