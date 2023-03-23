@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <cstdint>
-#include <SDL2/SDL.h>
+#include "image_representation.hpp"
 
 // Pragma directives are used to control allignment of the padding.
 // When reading the binary file, it is necessary to allign struct members in a meomory to avoid any misinterpretation.

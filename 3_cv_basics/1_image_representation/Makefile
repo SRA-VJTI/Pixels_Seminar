@@ -2,10 +2,9 @@ CC = g++
 CFLAGS = -Wall -Wextra -pedantic -std=c++11
 LIBS = -lSDL2
 
-SRCS = image_representation.cpp
+SRCS = image_representation.cpp image_representation.hpp
 OBJS = $(SRCS:.cpp=.o)
 TARGET = image
-
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
