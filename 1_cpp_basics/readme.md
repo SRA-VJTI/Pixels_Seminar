@@ -163,7 +163,7 @@ Conditional statements, also known as selection statements, are used to make dec
 using namespace std;
 int main()
 {
-  int num =10;
+  int num =10; // num variable made nad initialized with value 10
   if(num>5) // condition 
   {
     cout<<"Hello From SRA\n";
@@ -184,10 +184,10 @@ using namespace std;
 int main()
 {
   int num =10;
-  if(num%2 == 0)
+  if(num%2 == 0) //if num is divisible by 2 i.e remainder is 0   when divided by 2
   {cout<<"the number is even\n";
   }
-  else
+  else//if If statement is not satisfied the else statement is executed
   {cout<<"The number is odd\n";}
   return 0;
 }
@@ -204,13 +204,13 @@ using namespace std;
 int main()
 {
 int day = 4;
-switch (day) {
-  case 1:
+switch (day) {// Switch statement with day given as condition for cases
+  case 1:  //If day=1 then case1 is executed
     cout << "Monday";
-    break;
-  case 2:
+    break; //if case1 is executed then break is executed and exits switch statement
+  case 2: //If day=2 then case2 is executed
     cout << "Tuesday";
-    break;
+    break;//if case2 is executed then break is executed and exits switch statement
   case 3:
     cout << "Wednesday";
     break;
@@ -226,7 +226,7 @@ switch (day) {
   case 7:
     cout << "Sunday";
     break;
-   default:
+   default:// If none of the case is satisfied then default statement is executed.
    cout<<"Not a day";
    break; 
 }
@@ -298,12 +298,12 @@ enum name_of_enum
 using namespace std;
 
 enum seasons { spring = 34, summer = 4, autumn = 9, winter = 32};
-
+// enum named season is made and spring,summer ,autumn and winter are its member with values 34,5,9,32 respectively 
 int main() {
 
-    seasons s;
+    seasons s; // s is a variable of type seasons(enum)
 
-    s = summer;
+    s = summer; //s is assigned value of summer
     cout << "Summer = " << s << endl;
 
     return 0;
@@ -337,7 +337,7 @@ using namespace std;
 
 // Following function that takes two parameters 'x' and 'y'
 // as input and returns max of two input numbers
-int max(int x, int y)
+int max(int x, int y)//max function made with return type int and parameters int x and int y
 {
 	if (x > y)
 		return x;
@@ -383,13 +383,13 @@ In C++, there are three access specifiers:
 
 #include <iostream>
 using namespace std;
-class Sra
+class Sra //A class named Sra is made
 {
-	public:
-	char first_letter;
+	public: //public specifier is used
+	char first_letter;// member variables
 	int id;
 	
-	// printname is not defined inside class definition
+	// printletter is not defined inside class definition
 	void printletter();
 	
 	// printid is defined inside class definition
@@ -399,7 +399,7 @@ class Sra
 	}
 };
 
-// Definition of printname using scope resolution operator ::
+// Definition of printletter using scope resolution operator ::
 void Sra::printletter()
 {
 	cout <<"First letter of my name  is: "<<first_letter;
@@ -410,7 +410,7 @@ int main() {
 	obj1.first_letter= 'v';
 	obj1.id=24;
 	
-	// call printname()
+	// call printletter()
 	obj1.printletter();
 	cout << endl;
 	
@@ -543,9 +543,9 @@ We can use loops for taking and printing values of a 1-D array,
 using namespace std;
 int main()
 {
-  int arr1[5]= {1,2,3,4,5};
-  int i;
-  for(i=0;i<5;i++)
+  int arr1[5]= {1,2,3,4,5};//An array of size 5 is declared and initialized
+  int i; // a variables made for looping
+  for(i=0;i<5;i++)// for loop used for looping
   {cout<<Values of Array are: <<arr1[i]<<endl;
   }
   return 0;
@@ -592,19 +592,19 @@ int arr[4][2] = {1234, 56, 1212, 33, 1434, 80, 1312, 78};
 using namespace std; 
 int main( ) 
 {  
-	int arr[4][2] = {
+	int arr[4][2] = {//An array with 4 rows and 2 columns is made and initialized
 		{ 10, 11 },
 		{ 20, 21 },
 		{ 30, 31 },
 		{ 40, 41 }
 		} ;
 		
-	int i,j;
+	int i,j;//Two variables for looping
 	
 	cout<<"Printing a 2D Array:\n";
-	for(i=0;i<4;i++)
+	for(i=0;i<4;i++)//traversing through row
 	{
-		for(j=0;j<2;j++)
+		for(j=0;j<2;j++)//traversing through column
 		{
 			cout<<"\t"<<arr[i][j];
 		}

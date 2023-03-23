@@ -3,13 +3,13 @@ using namespace std;
 int main()
 {
 int day = 4;
-switch (day) {
-  case 1:
+switch (day) {//Switch statement with day given as condition for cases
+  case 1://If day=1 then case1 is executed
     cout << "Monday";
-    break;
-  case 2:
+    break;//if case1 is executed then break is executed and exits switch statement
+  case 2://If day=2 then case2 is executed
     cout << "Tuesday";
-    break;
+    break;//if case2 is executed then break is executed and exits switch statement
   case 3:
     cout << "Wednesday";
     break;
@@ -25,7 +25,7 @@ switch (day) {
   case 7:
     cout << "Sunday";
     break;
-   default:
+   default:// If none of the case is satisfied then default statement is executed.
    cout<<"Not a day";
    break; 
 }

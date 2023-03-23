@@ -9,7 +9,7 @@ class Sra
 	char first_letter;
 	int id;
 	
-	// printname is not defined inside class definition
+	// printletter is not defined inside class definition
 	void printletter();
 	
 	// printid is defined inside class definition
@@ -19,7 +19,7 @@ class Sra
 	}
 };
 
-// Definition of printname using scope resolution operator ::
+// Definition of printletter using scope resolution operator ::
 void Sra::printletter()
 {
 	cout <<"First letter of my name  is: "<<first_letter;
@@ -30,7 +30,7 @@ int main() {
 	obj1.first_letter= 'v';
 	obj1.id=24;
 	
-	// call printname()
+	// call printletter()
 	obj1.printletter();
 	cout << endl;
 	
