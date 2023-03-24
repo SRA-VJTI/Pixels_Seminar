@@ -1,76 +1,26 @@
 #include <bits/stdc++.h>
 #include <opencv2/opencv.hpp>
+#include "include/blob_detection.hpp"
 using namespace std;
 using namespace cv;
 
-double median(vector<double> vec)
-{
-    int size = vec.size();
-    if (size == 0)
-    {
-        return 0; // Handle empty vector case
-    }
-    sort(vec.begin(), vec.end());
-    if (size % 2 == 0)
-    {
-        // Even number of elements, take average of middle 2
-        return (vec[size / 2 - 1] + vec[size / 2]) / 2.0;
-    }
-    else
-    {
-        // Odd number of elements, take middle element
-        return vec[size / 2];
-    }
-}
-
-tuple<double, double, double> getMedianPixelValues(Mat img)
-{
-    // Initialize vectors to store the pixel values of each color channel
-    vector<double> blue_pixels;
-    vector<double> green_pixels;
-    vector<double> red_pixels;
-
-    // Iterate over the rows and columns of the image
-    for (int i = 0; i < img.rows; i++)
-    {
-        for (int j = 0; j < img.cols; j++)
-        {
-            // Access the pixel value at (i, j)
-            Vec3b pixel = img.at<Vec3b>(i, j);
-
-            // Add the pixel values to the corresponding vectors
-            blue_pixels.push_back(pixel[0]);
-            green_pixels.push_back(pixel[1]);
-            red_pixels.push_back(pixel[2]);
-        }
-    }
-
-    // Calculate the median of each color channel
-    double blue_median = median(blue_pixels);
-    double green_median = median(green_pixels);
-    double red_median = median(red_pixels);
-
-    // Return the median values as a tuple
-    return make_tuple(blue_median, green_median, red_median);
-}
-
 int main()
 {
-    VideoCapture video(0);
+    VideoCapture video(0); // Read input video
     int h = 0, s = 0, v = 0;
     while (video.isOpened())
     {
         Mat frame;
-        video.read(frame);
+        video.read(frame); // Read one frame from the video
         imshow("Image", frame);
 
-        if (waitKey(10) == 'q')
+        if (waitKey(10) == 'q') //Wait for "q" key to be pressed
         {
-            Rect bbox = selectROI("Image", frame, false, false);
+            Rect bbox = selectROI("Image", frame, false, false); // Select a region of interest on the image
             Mat hsv;
-            cvtColor(frame, hsv, COLOR_BGR2HSV);
+            cvtColor(frame, hsv, COLOR_BGR2HSV); // Convert BGR color model to HSV
             Mat obj_img = hsv(Rect(bbox.x, bbox.y, bbox.width, bbox.height));
-            tuple<double, double, double> medians = getMedianPixelValues(obj_img);
+            tuple<double, double, double> medians = getMedianPixelValues(obj_img); // Find the median of HSV in the selected region.
             h = get<0>(medians);
             s = get<1>(medians);
             v = get<2>(medians);
