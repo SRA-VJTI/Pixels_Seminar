@@ -1,25 +1,38 @@
-# Table of contents
+# Build Systems
 
-* [Makefile for Pixels](#makefile-for-pixels)
-    * [How to use a makefile](#how-to-use)
-    * [Installing OpenCV](#install-opencv)
-    * [Building using Makefile](#building)
-* [Compilers](#compilers)
-    * [What is a compiler?](#what-is-a-compiler)
-    * [Compiler directives](#compiler-directives)
-    * [Different stages of compilation](#different-stages-of-compilation)
-    * [Different types of files during compilation](#different-types-of-files-during-compilation)
-* [Build systems](#build-systems)
-    * [What is a build system ?](#what-is-a-build-system-)
-    * [Why do we need build systems ?](#why-do-we-need-build-systems-)
-* [GNU Make Build System](#gnu-make-build-system)
-    * [Syntax of Makefile](#syntax-of-makefile)
-    * [Variables in Makefile](#variables-in-makefile)
-* [Automatic Variables and Wildcards in Makefile](#automatic-variables-and-wildcards-in-makefile)
-    * [Automatic Variables](#automatic-variables)
-    * [The `*` wildcard](#the--wildcard)
-    * [The `%` wildcard](#the--wildcard-1)
-* [Commands and execution](#commands-and-execution)
+In this page, you'll find notes on compilers, build systems, and GNU Make build system. It also contains the readme for the Makefile in the Root of the pixels folder.
+
+## Table of contents
+
+- [Build Systems](#build-systems)
+	- [Table of contents](#table-of-contents)
+	- [Makefile for Pixels](#makefile-for-pixels)
+		- [How to use](#how-to-use)
+			- [Install OpenCV](#install-opencv)
+			- [Building](#building)
+			- [Run](#run)
+			- [Variables](#variables)
+			- [Note](#note)
+	- [Build Systems](#build-systems-1)
+		- [Compilers](#compilers)
+			- [What is a compiler?](#what-is-a-compiler)
+			- [Compiler Directives](#compiler-directives)
+			- [Different stages of compilation](#different-stages-of-compilation)
+			- [Different types of files during compilation](#different-types-of-files-during-compilation)
+		- [Build Systems](#build-systems-2)
+			- [What is a build system ?](#what-is-a-build-system-)
+			- [Why do we need build systems ?](#why-do-we-need-build-systems-)
+			- [GNU Make Build System](#gnu-make-build-system)
+				- [Syntax of Makefile](#syntax-of-makefile)
+				- [Example 1](#example-1)
+				- [Variables in Makefile](#variables-in-makefile)
+				- [Example 2](#example-2)
+				- [Automatic Variables and Wildcards in Makefile](#automatic-variables-and-wildcards-in-makefile)
+					- [Automatic Variables](#automatic-variables)
+					- [The `*` wildcard](#the--wildcard)
+					- [The `%` wildcard](#the--wildcard-1)
+					- [Example 3](#example-3)
+				- [Commands and execution](#commands-and-execution)
 
 ## Makefile for Pixels
 
@@ -30,13 +43,13 @@ This is a Makefile to build and run the Pixels code. The Makefile has the follow
 - It can clean all build files in the specified subfolder or all subfolders.
 - It can run the executable file in the specified subfolder.
 
-## How to use
+### How to use
 
-### Install OpenCV
+#### Install OpenCV
 
 Before using this Makefile, you need to install OpenCV. You can install OpenCV by running the `make install` command.
 
-## Building
+#### Building
 
 To build any subfolder, run the following command:
 
@@ -64,7 +77,7 @@ To clean a specific subfolder's build files, run the following command:
 make clean FOLDER=<subfolder>
 ```
 
-### Run
+#### Run
 
 To run any subfolder's compiled code, run the following command:
 
@@ -74,7 +87,7 @@ make run FOLDER=<subfolder>
 
 Replace `<subfolder>` with the name of the subfolder that contains the project. The command will run the executable file in the `bin` folder.
 
-### Variables
+#### Variables
 
 The following variables are used in the Makefile:
 
@@ -89,19 +102,21 @@ The following variables are used in the Makefile:
 - The Makefile assumes that the subfolder contains a file with the same name as the subfolder, with the extension .cpp.
 - The Makefile assumes that the header files are in the same directory as the source files.
 
-## Compilers
+## Build Systems
 
-### What is a compiler?
+### Compilers
+
+#### What is a compiler?
 
 A compiler is a special program that translates a programming language's source code into machine code, bytecode or another programming language. The source code is typically written in a high-level, human-readable language such as C/C++.
 
-### Compiler Directives 
+#### Compiler Directives 
 
 Compiler directives refer to statement written in the source code of a program that lets the programmer instruct the compiler to perform a specific operation within the compilation phase itself.
 
 For example, the ```#include``` directive incorporates the contents of a header file to the compilation. Similarly, The ```#define``` directive is used to define a macro.
 
-### Different stages of compilation
+#### Different stages of compilation
 
 <p align="center">
   <img src="../assets/images/Compilation_Stages.png" width="800" />
@@ -117,7 +132,7 @@ The compilation process transforms a human-readable code into a machine-readable
 
 4) Linking : The main working of the linker is to combine the object code of library files with the object code of our program.
 
-### Different types of files during compilation
+#### Different types of files during compilation
 
 During the stages of compilation, there are several types of files involved.
 
@@ -142,15 +157,15 @@ These files are produced as the output of the compiler. They consist of function
 	
 	This command will generate ```foo.o``` as output.
 
-## Build Systems
+### Build Systems
 
-### What is a build system ?
+#### What is a build system ?
 
 All build systems have a straightforward purpose: they transform the source code written by humans into executable binaries that can be read by machines. 
 
 Build systems aren't just for human-authored code; they also allow machines to create builds automatically, whether for testing or for releases to production. In an organization with thousands of engineers, it's common that most builds are triggered automatically rather than directly by engineers.
 
-### Why do we need build systems ?
+#### Why do we need build systems ?
 
 The need for a build system might not be immediately obvious. As long as all the source code is in the same directory, a command like this works fine:
 
@@ -167,11 +182,11 @@ The compiler also doesn’t know anything about how to handle external dependenc
 
 This is why we need build systems.
 
-## GNU Make Build System
+#### GNU Make Build System
 
 Makefiles are useful for determining which parts of a large program need recompilation. They are commonly used to compile C and C++ files but other languages have similar tools. Make can also be used to run a series of instructions when specific files change.
 
-### Syntax of Makefile
+##### Syntax of Makefile
 
 Makefile consists of a set of rules.
 
@@ -187,7 +202,7 @@ target: prerequisites
 - Each target may have one or more **prerequisites** that need to exist before the target can be built.
 - Prerequisites are also files, and they must be created before the target file can be generated.
 
-### Example 1
+##### Example 1
 
 Let's create a very simple Makefile. First, create an `example.c` file:
 
@@ -215,7 +230,7 @@ Now, when we run `make`, we can observe that the file is recompiled. This is bec
 
 How does make do this? It uses the file-system timestamps to determine if something has changed. If the dependencies of a target are changed, the target is regenerated.
 
-### Variables in Makefile
+##### Variables in Makefile
 
 Makefile supports variables, but only strings.
 
@@ -238,7 +253,7 @@ b := 'one two' # Not recommended. b is assigned to the string "'one two'"
 
 We can reference variables using either `$()` or `${}`.
 
-### Example 2
+##### Example 2
 
 Let’s try something more. Create two files `greeting.c` and `hello.c`.
 
@@ -279,9 +294,9 @@ greeting: greeting.c
 	gcc greeting.c -o greeting
 ```
 
-## Automatic Variables and Wildcards in Makefile
+##### Automatic Variables and Wildcards in Makefile
 
-### Automatic Variables
+###### Automatic Variables
 
 Here are some automatic variables which can be used in Makefile:
 
@@ -290,7 +305,7 @@ Here are some automatic variables which can be used in Makefile:
 - `$^` returns the names of all the prerequisites, separated by spaces
 - `$?` returns the names of only the prerequisites that are newer than the target, separated by spaces.
 
-### The `*` wildcard
+###### The `*` wildcard
 
 The `*` wildcard searches your file-system for matching filenames. In the previous example, we can list out all the C files with it’s help
 
@@ -299,7 +314,7 @@ print: $(wildcard *.c)
 	ls -la  $^
 ```
 
-### The `%` wildcard
+###### The `%` wildcard
 
 The `%` wildcard is used to match any string. It is useful when our files follow a certain pattern. The `%` character matches any string, and that string is used as a variable in the rule definition.
 
@@ -312,7 +327,7 @@ For example, let's say we have several source files with the extension `.c`, and
 
 This rule tells make that any file ending in `.o` can be created by compiling the corresponding `.c` file. The `$<` automatic variable is used to get the name of the first prerequisite, which in this case is the `.c` file. The `$@` variable is used to get the name of the target, which is the `.o` file.
 
-### Example 3
+###### Example 3
 
 Let's say we have three source files called `file1.c`, `file2.c`, and `file3.c`. We want to create three corresponding object files called `file1.o`, `file2.o`, and `file3.o`. We can use the `%` wildcard to match the file names and create a rule that compiles any `.c` file into a corresponding `.o` file.
 
@@ -327,7 +342,7 @@ This rule tells make that any file ending in `.o` can be created by compiling th
 
 When we run `make all`, it will compile all three source files into object files using the same rule.
 
-## Commands and execution
+##### Commands and execution
 
 Makefile executes all commands under the target. The commands under the target are executed in the order they appear in the Makefile. 
 
