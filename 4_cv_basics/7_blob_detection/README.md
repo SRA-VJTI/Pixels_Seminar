@@ -4,6 +4,11 @@ BLOB stands for Binary Large Object
 
 Informally a blob is a region of an image in which some properties like intensity or color are approximately constant.
 
+## Table of Contents
+
+- [Understanding the code](#understanding-the-code)
+- [Detecting the blob](#detecting-the-blob)
+
 ## Understanding the code
 
 ---
