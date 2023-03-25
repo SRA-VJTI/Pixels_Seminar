@@ -439,7 +439,7 @@ There are two ways we can implement templates:
 
 #include <iostream>  
 using namespace std;  
-template<class T> T add(T &a,T &b)  
+template<class T> T add(T &a,T &b)  //Declaring a Functional template
 {  
     T result = a+b;  
     return result;  
@@ -451,9 +451,9 @@ int main()  
   int j =3;  
   float m = 2.3;  
   float n = 1.2;  
-  cout<<"Addition of i and j is :"<<add(i,j);  
+  cout<<"Addition of i and j is :"<<add(i,j);  //Calling the template for integer data type
   cout<<'\n';  
-  cout<<"Addition of m and n is :"<<add(m,n);  
+  cout<<"Addition of m and n is :"<<add(m,n);  //Calling the template for float data type
   return 0;  
 }  
 ```
@@ -467,7 +467,7 @@ int main()  
 ```C++
     #include <iostream>  
     using namespace std;  
-    template<class T>  
+    template<class T>  //Declaring the Class template
     class A   
     {  
         public:  
@@ -483,7 +483,7 @@ int main()  
     int main()  
     {  
         A<int> d;  
-        d.add();  
+        d.add();  //Calling the class method
         return 0;  
     }  
   ```
@@ -651,7 +651,7 @@ A pointer is a variable that stores the memory address of an object. Pointers ar
     int number=30;    
     int ∗p;      
     p=&number;//stores the address of number variable    
-    cout<<"Address of number variable is:"<<&number<<endl;    
+    cout<<"Address of number variable is:"<<&number<<endl;
     cout<<"Address of p variable is:"<<p<<endl;    
     cout<<"Value of p variable is:"<<*p<<endl;    
        return 0;  
@@ -676,26 +676,26 @@ A pointer is a variable that stores the memory address of an object. Pointers ar
  Here is an example of pointer to a 2D array:
 
  ``` C++
- #include<iostream>
+#include<iostream>
 using namespace std;
 /* Usage of pointer to an array */ 
 int main( ) 
 {  
-      int  a[4][2] = {
+      int  a[4][2] = {  // Declaring and initialising a 2D array
            {1, 2},
            {1, 2},
            {1, 2},
            {1, 2}
            } ;
            
-      int (*ptr)[2] ;
+      int (*ptr)[2] ; //Declaring a 2D pointer
       int  i, j;
       for (i = 0 ; i <= 3 ; i++)
       {
-      		ptr=&a[i];
+      		ptr=&a[i]; //Stores the address of Array a with index i, in ptr
       		cout<<"Row"<<i<<":";
             for (j = 0; j <= 1; j++)
-                cout<<"\t"<<*(*ptr+j);
+                cout<<"\t"<<*(*ptr+j); //Prints the data at pointed by address ptr+j
             cout<<endl;
       } 
     return 0;  
@@ -741,27 +741,27 @@ C++ does not allow to pass an entire array as an argument to a function. However
 #include<iostream>
 using namespace std;   
  
-void display(int (*ptr)[4], int  row, int  col)
+void display(int (*ptr)[4], int  row, int  col) //Call by Address
 {
 	int  i, j ;
 	for(i=0;i<row;i++)
 	{
 		for(j=0;j<col;j++)
-    		cout<<"\t"<<*(*(ptr + i)+j); 
+    		cout<<"\t"<<*(*(ptr + i)+j); //Array is printed with help of pointer arithmetic
 		cout<<"\n";
 	}  
     cout<<"\n";
 } 
  
-void print(int  ptr[][4], int row, int col)
+void print(int  ptr[][4], int row, int col)//Call by value
 {
     int  i, j; 
     for(i=0;i<row;i++)
     {   
-	 for(j=0;j<col;j++)
-   	    	cout<<"\t"<<ptr[i][j];
-   	 cout<<"\n";
-	}
+	    for(j=0;j<col;j++)
+   	      cout<<"\t"<<ptr[i][j];
+   	  cout<<"\n";
+  	}
    cout<<"\n";
 }
  
@@ -769,7 +769,7 @@ int main()
 {
   int  a[3][4] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21} ; 
  
-  display (a, 3, 4);
+  display (a, 3, 4); 
   print (a, 3, 4);
   return 0;
 }
@@ -848,7 +848,7 @@ int main() {
 using namespace std;
 
 int main() {
-  vector<int> num {1, 2, 3, 4, 5};
+  vector<int> num {1, 2, 3, 4, 5}; //Initialising a vector
 
   cout << "Initial Vector: ";
 
@@ -882,11 +882,11 @@ Here, we have initialized an int vector num with the elements {1, 2, 3, 4, 5}. H
 using namespace std;
 
 int main() {
-  vector<int> num {1, 2, 3, 4, 5};
+  vector<int> num {1, 2, 3, 4, 5}; //Initialised a vector
 
-  cout << "Element at Index 0: " << num.at(0) << endl;
-  cout << "Element at Index 2: " << num.at(2) << endl;
-  cout << "Element at Index 4: " << num.at(4);
+  cout << "Element at Index 0: " << num.at(0) << endl; //Printing value at vector index 0
+  cout << "Element at Index 2: " << num.at(2) << endl; //Printing value at vector index 2
+  cout << "Element at Index 4: " << num.at(4); //Printing value at vector index 4
 
   return 0;
 }

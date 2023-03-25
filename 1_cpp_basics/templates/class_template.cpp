@@ -1,7 +1,7 @@
-#include <iostream>  
-using namespace std;  
-template<class T>  
-class A   
+    #include <iostream>  
+    using namespace std;  
+    template<class T>  //Declaring the Class template
+    class A   
     {  
         public:  
         T num1 = 5;  
@@ -13,9 +13,9 @@ class A
           
     };  
       
-int main()  
+    int main()  
     {  
         A<int> d;  
-        d.add();  
+        d.add();  //Calling the class method
         return 0;  
-    }
+    } 
