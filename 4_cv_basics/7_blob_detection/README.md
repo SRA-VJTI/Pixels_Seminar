@@ -6,8 +6,71 @@ Informally a blob is a region of an image in which some properties like intensit
 
 ## Table of Contents
 
-- [Understanding the code](#understanding-the-code)
+- [Preprocessing](#preprocessing)
+    - [Choosing the color of blob](#choosing-the-color-of-blob)
+    - [Converting to HSV and finding bounding values for mask](#converting-to-hsv-and-finding-bounding-values-for-mask)
+
 - [Detecting the blob](#detecting-the-blob)
+    - [Constructing mask for detecting blob](#constructing-mask-for-detecting-blob)
+    - [Drawing the blob](#drawing-the-blob)
+
+- [Understanding the code](#understanding-the-code)
+
+
+## Preprocessing
+
+## Choosing the color of blob
+* Reading the frame using video.read()
+* Select a region in a frame of your color choice using selectROI()
+
+![](./assets/roi_blob.png)
+
+## Converting to HSV and finding bounding values for mask
+* Converting the frame to HSV format using cvtColor(... , ... , COLOR_BGR2HSV)
+
+    * Why converting to HSV?  
+        Since we are using the web cam the intensity and illumination of consecutive frame does not remain same.  
+        Hence to find the color in range instead of particular color. HSV format is useful as H value denotes specific color and S, V can be used for illumination and intensity. 
+
+        ![](./assets/hsv_blob.png)
+
+* Extracting the select region from ROI
+* Calculating the median H,S,V values from ROI
+* Initializing the lower and upper bound for mask
+
+---
+
+# Detecting the blob
+## Constructing mask for detecting blob
+* Read the frame from video
+* Convert from BGR to HSV
+* Make a mask using inRange() by passing lower and upper bounds calculated earlier
+
+    * What is a mask?  
+    A mask is a binary image consisting of zero and non-zero values. If a mask is applied to another image of the same size, all pixels which are zero in the mask are set to zero in the output image. All others remain unchanged. 
+   
+  ![](./assets/not_blurredmask.png)
+
+* Blur the mask to remove the noise using medianBlur()  
+
+![](./assets/blurred_mask.png)
+
+* Placing mask over frame to finded colored mask using bitwise_and()
+
+![](./assets/colored_mask.png)
+
+
+## Drawing the blob
+* Find the contour from the generated mask using cv2.findContours()
+
+    * What is contour?  
+    Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition
+
+    ![](./assets/multiple_contours.png) 
+    ![](./assets/blob.png)
+    
+* Find the contour having the maximum area using contourArea()
+* Draw the contour on the frame using drawContours()
 
 ## Understanding the code
 
@@ -34,9 +97,6 @@ int main()
 * `selectROI()` allows you to select that part of the captured frame in which the blob exists (and has to be detected later).
 * Next, convert the frame to hsv.
 * obj_img is hsv image of the size of the selected ROI.
-<br>Why converting to HSV?<br>
-   Since we are using the web cam the intensity and illumination of consecutive frame does not remain same.
-   Hence to find the color in range instead of particular color. HSV format is useful as H value denotes specific color and S, V can be used for illumination and intensity.
 
 * Next, we want the median values of each of hue, saturation and value, of the <b>selected ROI</b>.
 
@@ -80,9 +140,6 @@ int main()
 
 ```
 * We make a mask using `inRange()` function with the lower and upper scalars obatined.
-<br>
-    What is a mask?<br>
-    A mask is a binary image consisting of zero and non-zero values. If a mask is applied to another image of the same size, all pixels which are zero in the mask are set to zero in the output image. All others remain unchanged.
 * We blur the mask to remove noises. 
 * Placing blurred mask over frame to find `bitwise_and()`.
 
@@ -104,12 +161,7 @@ int main()
 
 ---
 
-## Detecting the blob
 * Find the contour from the generated mask using `findContours()`
-
-   - What is a contour?<br>
-     Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition
-
 * Find the contour having the maximum area using `contourArea()`
 * Draw the largest contour on the frame using `drawContours()`
 
