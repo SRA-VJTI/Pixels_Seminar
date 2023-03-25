@@ -14,7 +14,7 @@ LDFLAGS = -L/usr/local/lib
 LIBS = -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lopencv_imgproc
 
 # Source files
-SRCS = ./src/main.cpp ./src/pixels_Interpolation.cpp
+SRCS = ./src/main.cpp ./src/interpolation.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
