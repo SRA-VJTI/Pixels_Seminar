@@ -1,11 +1,12 @@
 ## List of Contents:
-1. [Bitwise Operations](Bitwise-Operations)
-    1. [Bitwise AND](1.-Bitwise-AND-(A-intersection-B))
-    2. [Bitwise OR](2.-Bitwise-OR-(A-union-B))
-    3. [Bitwise XOR](3.-Bitwise-XOR-(Mutually-Exclusive))
-2. [Masking](Masking)
-3. [Working](Working)
-4. [Usage Instructions](Usage)
+1. [Bitwise Operations](#Bitwise-Operations)
+    1. [Bitwise AND](#1.-Bitwise-AND-(A-intersection-B))
+    2. [Bitwise OR](#2.-Bitwise-OR-(A-union-B))
+    3. [Bitwise XOR](#3.-Bitwise-XOR-(Mutually-Exclusive))
+2. [Masking](#Masking)
+3. [Working](#Working)
+4. [Usage Instructions](#Usage)
+5. [Example Illustration](#Example)
 
 
 # Bitwise Operations
@@ -47,9 +48,18 @@ If the values of the RGB to be neglected don't match with the current pixel RGB 
 4. The program then returns the new image, saves it and displays it on the user screen.
 
 ## Usage
+0. (Optional) If you are facing include errors try changing ```#include <opencv2/opencv.hpp>``` to ```#include <opencv4/opencv2/opencv.hpp>```    which might potentially resolve your error, or a simple google search will help.
 1. Navigate to ../Pixels_Seminar/4_cv_basics/5_masking
 2. Open terminal in this folder
 3. run   ```make clean``` to lean out any previous builds
-4. type ```make build FILE=5_Masking_Basics.cpp``` to build the executable
-5. run ```make run FILE=5_Masking_Basics.cpp```
+4. type ```make build FILE=5_masking.cpp``` to build the executable
+5. run ```make run FILE=5_masking.cpp```
 6. You should now have an imshow window open showing you the output as well as a newly created image in your folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
+
+
+## Example
+#### Input Image
+![Nike.png](https://i.imgur.com/aX8x8QT.png "nike.png")
+
+#### Output Image
+![bg_free.png](https://i.imgur.com/xJvIrrn.png "bg_free.png")
