@@ -1,7 +1,7 @@
 #                    **Basics Of C++**
 
 ## **Table Of Contents :**
-* [To Run a .cpp file On your terminal](#to-run-a-cpp-file)
+* [To Run a .cpp file On your terminal](#to-run-a-.cpp-file-on-your-terminal)
 * [Variables And Data Types](#variables-and-data-types)
 * [Type Casting](#type-casting)
 * [Namespace](#namespace)
@@ -33,10 +33,10 @@ $ ./a.out
 ## **Variables and Data Types:**
 A variable provides us with named storage that our programs can manipulate. Each variable in C++ has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
 
-![datatypes](https://i.imgur.com/1IycG7T.jpg)
+<img src="/home/vansh/Pixels_Seminar/assets/images/data_types_cpp.jpg">
 
+<img src="/home/vansh/Pixels_Seminar/assets/images/cpp_datatype1.png">
 
-![size](https://i.imgur.com/UAGOLXA.png)
 ## **Type Casting:**
  Type casting refers to the conversion of one data type to another in a program. Typecasting can be done in two ways: automatically by the compiler and manually by the programmer or user. Type Casting is also known as Type Conversion.
  
@@ -70,11 +70,9 @@ int main()
 
 **Output:**
 
-**`x = 107`**
 
-**`y = a`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/implicit_typecast.png">
 
-**`z = 108`**
 
 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
 
@@ -103,7 +101,9 @@ int main()
 }
 ```
 **Output:**
-**`Sum = 2`**
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/explicit.png">
+
 
 ## **Namespace:**
 Namespace provide the space where we can define or declare identifier i.e. variable,  method, classes.Using namespace, you can define the space or context in which identifiers are defined i.e. variable, method, classes. In essence, a namespace defines a scope.
@@ -151,12 +151,13 @@ return 0;
 ```
 **Output:**
 
-**`Inside first_space`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/namespace.png">
+
 
 ## **Conditional Statements:**
 Conditional statements, also known as selection statements, are used to make decisions based on a given condition. If the condition evaluates to True, a set of statements is executed, otherwise another set of statements is executed.
 
-1. **If Statement:**
+1.**If Statement:**
 
 ```C++
 #include <iostream>
@@ -174,9 +175,10 @@ int main()
 ```
 **Output:**
 
-**`Hello From SRA`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/if.png">
 
-2. **If-else:**
+
+2.**If-else:**
 ```C++
 //Code to find even and odd num using if else statement
 #include <iostream>
@@ -185,7 +187,7 @@ int main()
 {
   int num =10;
   if(num%2 == 0) //if num is divisible by 2 i.e remainder is 0   when divided by 2
-  {cout<<"the number is even\n";
+  {cout<<"the Number is even\n";
   }
   else//if If statement is not satisfied the else statement is executed
   {cout<<"The number is odd\n";}
@@ -194,9 +196,10 @@ int main()
 ```
 **Output:**
 
-**`Then number is even`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/ifelse.png">
 
-3. **Switch statement:**
+
+3.**Switch statement:**
 
 ```C++
 #include <iostream>
@@ -236,7 +239,8 @@ return 0;
 
 **Output**
 
-**`Thursday`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/switch.png">
+
 
 ## **Control Loops:**
 
@@ -283,7 +287,7 @@ do
 
 ## **Enumeration:**
 
-Enum, which is also known as enumeration, is a user-defined data type that enables you to create a new data type that has a fixed range of possible values, and the variable can select one value from the set of values.nums or enumerations are generally used when you expect the variable to select one value from the possible set of values. It increases the abstraction and enables you to focus more on values rather than worrying about how to store them.
+Enum, which is also known as enumeration, is a user-defined data type that enables you to create a new data type that has a fixed range of possible values, and the variable can select one value from the set of values.Enums or enumerations are generally used when you expect the variable to select one value from the possible set of values. It increases the abstraction and enables you to focus more on values rather than worrying about how to store them.
 
 **Synatx:**
 ```C++
@@ -312,7 +316,8 @@ int main() {
 
 **Output:**
 
-**`Summer = 4`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/enum.png">
+
 
 In the above code we first made an enum datatype `seasons` ,having elements `spring,summer,autumn and winter` and assigned them values of 34,4,9,32 respectively.Then we made a variable `s` of data type `seasons` i.e enum and assigned it the value of `summer`i.e value of summer(4) is stored in `s` variable.  
 
@@ -360,14 +365,16 @@ int main()
 ```
 **Output:**
 
-**`m is 20`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/func.png">
+
 
 ## **Classes And Objects:**
 A class in C++ is the building block that leads to Object-Oriented programming. It is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A C++ class is like a blueprint for an object.A Class is a user defined data-type which has data members and member functions.
 
 An Object is an instance of a Class. When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
 
-![immage](https://i.imgur.com/ekXLq3C.png)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/classes.png">
 
 In C++, there are three access specifiers:
 
@@ -421,9 +428,8 @@ int main() {
 ```
 **Output:**
 
-**`First letter of my name is v.`**
- 
-**` SRA id is 24.`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/classesnew.png">
+
 
 
 ## **Templates:**
@@ -459,9 +465,8 @@ int main()  
 ```
 **Output:**
 
-**`Addition of i and j is : 5`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/templates.png">
 
-**`Addition of m and n is : 3.5`**
 
 
 ```C++
@@ -489,7 +494,8 @@ int main()  
   ```
 **Output:**
 
-**`Addition of num1 and num2 : 11`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/templclass.png">
+
 
 ## **Arrays :**
  An array is a collection of elements of the same type placed in contiguous memory locations that can be individually referenced by using an index to a unique identifier.
@@ -498,7 +504,9 @@ Five values of type int can be declared as an array without having to declare fi
 
 For example, a five element integer array foo may be logically represented as;
 
-![array](https://i.imgur.com/TAHEqe6.jpg)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/array1.jpg">
+
 
 where each blank panel represents an element of the array. In this case, these are values of type int. These elements are numbered from 0 to 4, with 0 being the first while 4 being the last; In C++, the index of the first array element is always zero.
 
@@ -521,7 +529,8 @@ The elements in an array can be explicitly initialized to specific values when i
 int foo [5] = { 16, 2, 77, 40, 12071 };
 ```
  This statement declares an array that can be represented like this:
-![array](https://i.imgur.com/TOGDgk5.jpg)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/array2.jpg">
 
  ## **Array Accessing :**
 **The syntax is:**
@@ -546,7 +555,7 @@ int main()
   int arr1[5]= {1,2,3,4,5};//An array of size 5 is declared and initialized
   int i; // a variables made for looping
   for(i=0;i<5;i++)// for loop used for looping
-  {cout<<Values of Array are: <<arr1[i]<<endl;
+  {cout<<"Values of Array are: "<<arr1[i]<<endl;
   }
   return 0;
 }
@@ -554,21 +563,15 @@ int main()
 
 **Output:**
 
-**`Values of Array are: 1`**
+<img src="/home/vansh/Pixels_Seminar/assets/images/print1darr.png">
 
-**`Values of Array are: 2`**
-
-**`Values of Array are: 3`**
-
-**`Values of Array are: 4`**
-
-**`Values of Array are: 5`**
 
  ## **Multidimensional Arrays :**
 
 A two-dimensional array in C++ is the simplest form of a multi-dimensional array. It can be visualized as an array of arrays. The image below depicts a two-dimensional array:
 
-![array](https://i.imgur.com/U2rhDGD.png)
+<img src="/home/vansh/Pixels_Seminar/assets/images/2darrayimg.png">
+
 
 **We can  initialize a 2D array in the following way.**
 ```C++
@@ -614,6 +617,10 @@ int main( )
 } 
 ```
 
+**Output:**
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/2darray.png">
+
 In the above code
 
    1.  We firstly initialize a 2D array, arr[4][2] with certain values,
@@ -626,7 +633,7 @@ In the above code
 
 5.  And accordingly, we print the individual element arr[ i ][ j ].
 
-- ## **Pointers :**
+## **Pointers :**
 
 A pointer is a variable that stores the memory address of an object. Pointers are used extensively in both C and C++ for three main purposes:
 
@@ -703,7 +710,7 @@ int main( )
 ```
 The output is:
 
-![outout](https://i.imgur.com/aA7IBsy.png)
+<img src="/home/vansh/Pixels_Seminar/assets/images/2darrnpoin.png">
 
 Here,
 
@@ -774,6 +781,9 @@ int main()
   return 0;
 }
 ```
+**Output:**
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/2dtofunc.png">
 
 Here,
 
@@ -839,7 +849,8 @@ int main() {
 ```
 **Output :**
 
-![output](https://i.imgur.com/nqsiMAI.png)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/vector1.png">
 
 **2. Add Elements to a Vector :**
 ```C++
@@ -847,14 +858,13 @@ int main() {
 #include <vector>
 using namespace std;
 
-<<<<<<< HEAD:1_cpp_basics/readme.md
+
 int main() 
 {
-  vector<int> num {1, 2, 3, 4, 5};
-=======
-int main() {
+  
+
   vector<int> num {1, 2, 3, 4, 5}; //Initialising a vector
->>>>>>> db3faf4239245f6fa4c437299f1c4abc3698de85:1_cpp_basics/README.md
+
 
   cout << "Initial Vector: ";
 
@@ -880,7 +890,8 @@ int main() {
 Here, we have initialized an int vector num with the elements {1, 2, 3, 4, 5}. Here, the **`push_back()`** function adds elements 6 and 7 to the vector.
 
 **Output :**
-![output](https://i.imgur.com/zrPaav5.png)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/vector2.png">
 
 **3. Access Elements of a Vector :**
 
@@ -904,7 +915,8 @@ We use the index number to access the vector elements. Here, we use the **`at()`
 
 **Output :**
 
-![output](https://i.imgur.com/bOxhXIl.png)
+
+<img src="/home/vansh/Pixels_Seminar/assets/images/vector3.png">
 
 
 
