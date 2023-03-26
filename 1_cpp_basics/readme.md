@@ -1,6 +1,7 @@
 #                    **Basics Of C++**
 
 ## **Table Of Contents :**
+* [To Run a .cpp file On your terminal](#to-run-a-cpp-file)
 * [Variables And Data Types](#variables-and-data-types)
 * [Type Casting](#type-casting)
 * [Namespace](#namespace)
@@ -77,8 +78,7 @@ int main()
 
 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
 
- 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
-
+ 
 **Syntax:**
 
 **`(type)expression`**
@@ -847,12 +847,14 @@ int main() {
 #include <vector>
 using namespace std;
 
-int main() {
+int main() 
+{
   vector<int> num {1, 2, 3, 4, 5};
 
   cout << "Initial Vector: ";
 
-  for (const int& i : num) {
+  for (const int& i : num) 
+  {
     cout << i << "  ";
   }
   
@@ -862,7 +864,8 @@ int main() {
 
   cout << "\nUpdated Vector: ";
 
-  for (const int& i : num) {
+  for (const int& i : num) 
+  {
     cout << i << "  ";
   }
 
