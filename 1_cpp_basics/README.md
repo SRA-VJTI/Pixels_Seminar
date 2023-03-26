@@ -33,9 +33,8 @@ $ ./a.out
 ## **Variables and Data Types:**
 A variable provides us with named storage that our programs can manipulate. Each variable in C++ has a specific type, which determines the size and layout of the variable's memory; the range of values that can be stored within that memory; and the set of operations that can be applied to the variable.
 
-<img src="assets/images/data_types_cpp.jpg">
-
-<img src="assets/images/cpp_datatype1.png">
+<img src="../assets/images/data_types_cpp.jpg" >
+<img src="../assets/images/cpp_datatype1.png" >
 
 ## **Type Casting:**
  Type casting refers to the conversion of one data type to another in a program. Typecasting can be done in two ways: automatically by the compiler and manually by the programmer or user. Type Casting is also known as Type Conversion.
@@ -71,7 +70,7 @@ int main()
 **Output:**
 
 
-<img src="assets/images/implicit_typecast.png">
+<img src="../assets/images/implicit_typecast.png">
 
 
 2.**Explicit Type Conversion:** This process is also called type casting and it is user-defined. Here the user can typecast the result to make it of a particular data type.
@@ -102,7 +101,7 @@ int main()
 ```
 **Output:**
 
-<img src="assets/images/explicit.png">
+<img src="../assets/images/explicit.png">
 
 
 ## **Namespace:**
@@ -151,7 +150,7 @@ return 0;
 ```
 **Output:**
 
-<img src="assets/images/namespace.png">
+<img src="../assets/images/namespace.png">
 
 
 ## **Conditional Statements:**
@@ -175,7 +174,7 @@ int main()
 ```
 **Output:**
 
-<img src="assets/images/if.png">
+<img src="../assets/images/if.png">
 
 
 2.**If-else:**
@@ -196,7 +195,7 @@ int main()
 ```
 **Output:**
 
-<img src="assets/images/ifelse.png">
+<img src="../assets/images/ifelse.png">
 
 
 3.**Switch statement:**
@@ -239,7 +238,7 @@ return 0;
 
 **Output**
 
-<img src="assets/images/switch.png">
+<img src="../assets/images/switch.png">
 
 
 ## **Control Loops:**
@@ -316,7 +315,7 @@ int main() {
 
 **Output:**
 
-<img src="assets/images/enum.png">
+<img src="../assets/images/enum.png">
 
 
 In the above code we first made an enum datatype `seasons` ,having elements `spring,summer,autumn and winter` and assigned them values of 34,4,9,32 respectively.Then we made a variable `s` of data type `seasons` i.e enum and assigned it the value of `summer`i.e value of summer(4) is stored in `s` variable.  
@@ -365,7 +364,7 @@ int main()
 ```
 **Output:**
 
-<img src="assets/images/func.png">
+<img src="../assets/images/func.png">
 
 
 ## **Classes And Objects:**
@@ -374,7 +373,7 @@ A class in C++ is the building block that leads to Object-Oriented programming. 
 An Object is an instance of a Class. When a class is defined, no memory is allocated but when it is instantiated (i.e. an object is created) memory is allocated.
 
 
-<img src="assets/images/classes.png">
+<img src="../assets/images/classes.png">
 
 In C++, there are three access specifiers:
 
@@ -428,7 +427,7 @@ int main() {
 ```
 **Output:**
 
-<img src="assets/images/classesnew.png">
+<img src="../assets/images/classesnew.png">
 
 
 
@@ -465,7 +464,7 @@ int main()  
 ```
 **Output:**
 
-<img src="assets/images/templates.png">
+<img src="../assets/images/templates.png">
 
 
 
@@ -494,7 +493,7 @@ int main()  
   ```
 **Output:**
 
-<img src="assets/images/templclass.png">
+<img src="../assets/images/templclass.png">
 
 
 ## **Arrays :**
@@ -505,7 +504,7 @@ Five values of type int can be declared as an array without having to declare fi
 For example, a five element integer array foo may be logically represented as;
 
 
-<img src="assets/images/array1.jpg">
+<img src="../assets/images/array1.jpg">
 
 
 where each blank panel represents an element of the array. In this case, these are values of type int. These elements are numbered from 0 to 4, with 0 being the first while 4 being the last; In C++, the index of the first array element is always zero.
@@ -530,7 +529,7 @@ int foo [5] = { 16, 2, 77, 40, 12071 };
 ```
  This statement declares an array that can be represented like this:
 
-<img src="assets/images/array2.jpg">
+<img src="../assets/images/array2.jpg">
 
  ## **Array Accessing :**
 **The syntax is:**
@@ -563,14 +562,14 @@ int main()
 
 **Output:**
 
-<img src="assets/images/print1darr.png">
+<img src="../assets/images/print1darr.png">
 
 
  ## **Multidimensional Arrays :**
 
 A two-dimensional array in C++ is the simplest form of a multi-dimensional array. It can be visualized as an array of arrays. The image below depicts a two-dimensional array:
 
-<img src="assets/images/2darrayimg.png">
+<img src="../assets/images/2darrayimg.png">
 
 
 **We can  initialize a 2D array in the following way.**
@@ -619,7 +618,7 @@ int main( )
 
 **Output:**
 
-<img src="assets/images/2darray.png">
+<img src="../assets/images/2darray.png">
 
 In the above code
 
@@ -668,7 +667,7 @@ A pointer is a variable that stores the memory address of an object. Pointers ar
    
  **The output of above code is :**
 
- <img src="assets/images/pointers.png">
+ <img src="../assets/images/pointers.png">
  
  In the above code:
  1. We first created a integer **`number`** and assigned it the value 30 .
@@ -710,7 +709,7 @@ int main( )
 ```
 The output is:
 
-<img src="assets/images/2darrnpoin.png">
+<img src="../assets/images/2darrnpoin.png">
 
 Here,
 
@@ -783,7 +782,7 @@ int main()
 ```
 **Output:**
 
-<img src="assets/images/2dtofunc.png">
+<img src="../assets/images/2dtofunc.png">
 
 Here,
 
@@ -850,7 +849,7 @@ int main() {
 **Output :**
 
 
-<img src="assets/images/vector1.png">
+<img src="../assets/images/vector1.png">
 
 **2. Add Elements to a Vector :**
 ```C++
@@ -891,7 +890,7 @@ Here, we have initialized an int vector num with the elements {1, 2, 3, 4, 5}. H
 
 **Output :**
 
-<img src="assets/images/vector2.png">
+<img src="../assets/images/vector2.png">
 
 **3. Access Elements of a Vector :**
 
@@ -916,7 +915,7 @@ We use the index number to access the vector elements. Here, we use the **`at()`
 **Output :**
 
 
-<img src="assets/images/vector3.png">
+<img src="../assets/images/vector3.png">
 
 
 
