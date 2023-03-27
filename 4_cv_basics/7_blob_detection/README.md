@@ -55,13 +55,13 @@ Informally a blob is a region of an image in which some properties like intensit
 
 ![](./assets/blurred_mask.png)
 
-* Placing mask over frame to finded colored mask using bitwise_and()
+* Placing mask over frame to find colored mask using bitwise_and()
 
 ![](./assets/colored_mask.png)
 
 
 ## Drawing the blob
-* Find the contour from the generated mask using cv2.findContours()
+* Find the contour from the generated mask using findContours()
 
     * What is contour?  
     Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition
