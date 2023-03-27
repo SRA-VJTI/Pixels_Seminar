@@ -12,7 +12,7 @@ int main()
     {
         Mat frame;
         video.read(frame); // Read one frame from the video
-        namedWindow("Image", WINDOW_NORMAL);
+        resizeWindow("Image", 640, 480);
         imshow("Image", frame);
 
         if (waitKey(10) == 'q') //Wait for "q" key to be pressed
@@ -54,7 +54,7 @@ int main()
         // Performing bitwise_and using the 'blur' mask
         Mat blob_mask;
         bitwise_and(frame, frame, blob_mask, blur);
-        namedWindow("blob_mask", WINDOW_NORMAL);
+        resizeWindow("blob_mask", 640, 480);
         imshow("blob_mask", blob_mask);
 
         // Find contours
@@ -81,7 +81,7 @@ int main()
 
         // Draw the largest contour detected
         drawContours(frame, contours, idx, Scalar(0, 255, 255), 2);
-        namedWindow("Output", WINDOW_NORMAL);
+        resizeWindow("Output", 640, 480);
         imshow("Output", frame);
 
         if (waitKey(10) == 'x')
