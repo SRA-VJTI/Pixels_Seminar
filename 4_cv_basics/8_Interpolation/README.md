@@ -23,7 +23,7 @@
 
 | Original Image | Scaled Image using Interpolation 
 |-----|-----|
-|![Sunset](./Assets/pixel1.jpg)|![Sunseti](./Assets/pixeli1.jpg)|
+|![Sunset](./assets/pixel1.jpg)|![Sunseti](./assets/pixeli1.jpg)|
 
 <a name="interpolationBasics"></a>
 ## Interpolation Basics <a name="Interpolation-Basics"></a>
@@ -35,7 +35,7 @@ Let’s say we have two points on a straight line with coordinate a
 and b, and they are associated with values A and B. Now if we have a third point with coordinate x where a≤x≤b, how do we interpolate the values of cooridnates a and b at coordinate x?
 
 
-![Demo](./Assets/pixeldemo5.png)
+![Demo](./assets/pixeldemo5.png)
 
 where w=(x−a)/(b−a) .
 
@@ -47,7 +47,7 @@ Congratulations ! You have just understood linear interpolation , the first buil
 
 Given that we know how to do interpolation between two points, let’s consider a more general scenario: we have a 1-D array a of size n (e.g n = 5 ), and we wish to stretch or shrink the array to a differet size m (e.g m = 4), where the values in the new array b is somehow computed from the original array in a linear fashion.
 
-![Demo](./Assets/pixdemo6.png)
+![Demo](./assets/pixdemo6.png)
 
 How do we get the values of array b? Well, it makes sense to let b[0] == a[0] and b[3] == a[4], because they have the same coordinates. For those points in the new array for which we don’t have corresponding points in the original array (i.e. b[1] and b[2]), we can map them to the original array where they will have fractionally-valued coordinates (4/3 and 8/3). Then b[4/3] and b[8/3] can be computed using the Linear Interpolation approach from a[1], a[2] and a[2], a[3] .
 
@@ -78,20 +78,20 @@ Let the (Px,Py) be the new coordinates in the resized image , then the correspon
 **Nearest neighbour interpolation** is a method used in image processing to resize images. When an image is resized using this method, the algorithm selects the pixel closest to the target location in the new image to determine its color value. Essentially, the algorithm looks at the nearest pixel to the original pixel and uses that value as the new pixel's color.
 
 
-![Demo](./Assets/pixdemo2.png)
+![Demo](./assets/pixdemo2.png)
 
 
 
 For Example , 
 |Original Image|Scaled Image |DownScaled Image |
 |--------|---------|----|
-|![Jungle](./Assets/pixel3.jpg)|![Jungleis](./Assets/pixeli3s.jpg)| ![Jungleid](./Assets/pixeli3d.jpg)|
+|![Jungle](./assets/pixel3.jpg)|![Jungleis](./assets/pixeli3s.jpg)| ![Jungleid](./assets/pixeli3d.jpg)|
 
 
 
 #### Image Quality using Nearest Neighbour 
 
-![Demo](./Assets/pixdemo4.png)
+![Demo](./assets/pixdemo4.png)
 
 While this method is simple and computationally efficient, it can produce images with a blocky or pixelated appearance when scaling up. This is because the algorithm simply duplicates each pixel from the original image to create the new pixels, without considering any other information from the surrounding pixels.
 
@@ -106,14 +106,14 @@ Nearest neighbour interpolation is commonly used in applications where speed is 
 
 This method is called "bilinear" because it uses linear interpolation in two directions, both horizontally and vertically. Essentially, the algorithm interpolates between the values of adjacent pixels in both the horizontal and vertical directions to create new pixel values that lie between the original pixels.
 
-![Demo](./Assets/pixdemo3.png)
+![Demo](./assets/pixdemo3.png)
 
 
 **Bilinear interpolation** produces smoother results than nearest neighbour interpolation, as it takes into account information from the surrounding pixels to estimate the new pixel values. However, it is still limited by the quality and resolution of the original image, and may not be sufficient for applications where high-quality and detailed images are required.
 
 |Original Image|Scaled Image|DownScaled Image|
 |--------|---------|----|
-|![Jungle](./Assets/pixel2.jpg)|![Jungleis](./Assets/pixeli2s.jpg)| ![Jungleid](./Assets/pixeli2d.jpg)|
+|![Jungle](./assets/pixel2.jpg)|![Jungleis](./assets/pixeli2s.jpg)| ![Jungleid](./assets/pixeli2d.jpg)|
 
 **Bilinear interpolation** is commonly used in image processing applications such as graphics rendering, computer vision, and medical imaging, where high-quality images are required, but computational efficiency is also important.
 

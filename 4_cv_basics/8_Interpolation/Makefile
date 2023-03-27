@@ -26,6 +26,7 @@ TARGET = ./bin/Interpolation
 all: $(TARGET)
 
 $(TARGET): $(OBJS)
+	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
 
 .cpp.o:
