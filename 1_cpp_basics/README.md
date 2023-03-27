@@ -1,26 +1,28 @@
 #                    **Basics Of C++**
 
 ## **Table Of Contents :**
-* [To Run a .cpp file On your terminal](#to-run-a-.cpp-file-on-your-terminal)
-* [Variables And Data Types](#variables-and-data-types)
-* [Type Casting](#type-casting)
-* [Namespace](#namespace)
-* [Conditional Statements](#conditional-statements)
-* [Control Loops](#control-loops)
-* [Enumeration](#enumeration)
-* [Functions](#functions)
-* [Classes And Objects](#classes-and-objects)
-* [Templates](#templates)
-* [Arrays](#arrays)
-  * [Initializing Arrays](#initializing-arrays)
-  * [ Array Accessing](#array-accessing)
-  * [Printing 1-D Array](#printing-1-d-array)
-  * [Multidimensional Arrays](#multidimensional-arrays)
-  * [Printing a 2D array](#printing-a-2d-array)  
-* [Pointers](#pointers)
-* [Pointers And Array](#pointers-and-array)
-* [Passing 2D Array To A Function](#passing-2d-array-to-a-function)
-* [Vectors](#vectors)
+- [**Basics Of C++**](#basics-of-c)
+  - [**Table Of Contents :**](#table-of-contents-)
+  - [**To run a .cpp file on your terminal**](#to-run-a-cpp-file-on-your-terminal)
+  - [**Variables and Data Types:**](#variables-and-data-types)
+  - [**Type Casting:**](#type-casting)
+  - [**Namespace:**](#namespace)
+  - [**Conditional Statements:**](#conditional-statements)
+  - [**Control Loops:**](#control-loops)
+  - [**Enumeration:**](#enumeration)
+  - [**Functions:**](#functions)
+  - [**Classes And Objects:**](#classes-and-objects)
+  - [**Templates:**](#templates)
+  - [**Arrays :**](#arrays-)
+  - [**Initializing Arrays :**](#initializing-arrays-)
+  - [**Array Accessing :**](#array-accessing-)
+  - [**Printing 1-D Array:**](#printing-1-d-array)
+  - [**Multidimensional Arrays :**](#multidimensional-arrays-)
+  - [**Printing a 2D Array:**](#printing-a-2d-array)
+  - [**Pointers :**](#pointers-)
+  - [**Pointers And Array :**](#pointers-and-array-)
+  - [**Passing 2D Array To A Function :**](#passing-2d-array-to-a-function-)
+  - [**Vectors :**](#vectors-)
 ## **To run a .cpp file on your terminal**
 ```md
 Compile the .cpp file with following command:
@@ -49,7 +51,7 @@ using namespace std;
 
 int main()
 {
-	int x = 10; // integer x
+	int x = 10;	  // integer x
 	char y = 'a'; // character c
 
 	// y implicitly converted to int. ASCII
@@ -60,11 +62,12 @@ int main()
 	float z = x + 1.0;
 
 	cout << "x = " << x << endl
-		<< "y = " << y << endl
-		<< "z = " << z << endl;
+		 << "y = " << y << endl
+		 << "z = " << z << endl;
 
 	return 0;
 }
+
 ```
 
 **Output:**
@@ -94,10 +97,11 @@ int main()
 	// Explicit conversion from double to int
 	int sum = (int)x + 1;
 
-	cout << "Sum = " << sum;
+	cout << "Sum = " << sum << endl;
 
 	return 0;
 }
+
 ```
 **Output:**
 
@@ -126,27 +130,28 @@ using namespace std;
 // first name space
 namespace first_space
 {
-void func()
-{
-	cout << "Inside first_space" << endl;
-}
+	void func()
+	{
+		cout << "Inside first_space" << endl;
+	}
 }
 
 // second name space
 namespace second_space
 {
-void func()
-{
-	cout << "Inside second_space" << endl;
-}
+	void func()
+	{
+		cout << "Inside second_space" << endl;
+	}
 }
 using namespace first_space;
-int main ()
+int main()
 {
-// This calls function from first name space.
-func();
-return 0;
+	// This calls function from first name space.
+	func();
+	return 0;
 }
+
 ```
 **Output:**
 
@@ -163,14 +168,15 @@ Conditional statements, also known as selection statements, are used to make dec
 using namespace std;
 int main()
 {
-  int num =10; // num variable made nad initialized with value 10
-  if(num>5) // condition 
+  int num = 10;
+  if (num > 5) // condition
   {
-    cout<<"Hello From SRA\n";
-//If condn is fullfilled it will get executed
-  } 
+    cout << "Hello From SRA\n";
+    // If condn is fullfilled it will get executed
+  }
   return 0;
 }
+
 ```
 **Output:**
 
@@ -180,16 +186,20 @@ int main()
 2.**If-else:**
 ```C++
 //Code to find even and odd num using if else statement
+// Code to find even and odd num using if else statement
 #include <iostream>
 using namespace std;
 int main()
 {
-  int num =10;
-  if(num%2 == 0) //if num is divisible by 2 i.e remainder is 0   when divided by 2
-  {cout<<"the Number is even\n";
+  int num = 10;
+  if (num % 2 == 0) // if num is divisible by 2 i.e remainder is 0   when divided by 2
+  {
+    cout << "the number is even\n";
   }
-  else//if If statement is not satisfied the else statement is executed
-  {cout<<"The number is odd\n";}
+  else // if If statement is not satisfied the else statement is executed
+  {
+    cout << "The number is odd\n";
+  }
   return 0;
 }
 ```
@@ -205,14 +215,15 @@ int main()
 using namespace std;
 int main()
 {
-int day = 4;
-switch (day) {// Switch statement with day given as condition for cases
-  case 1:  //If day=1 then case1 is executed
+  int day = 4;
+  switch (day)
+  {       // Switch statement with day given as condition for cases
+  case 1: // If day=1 then case1 is executed
     cout << "Monday";
-    break; //if case1 is executed then break is executed and exits switch statement
-  case 2: //If day=2 then case2 is executed
+    break; // if case1 is executed then break is executed and exits switch statement
+  case 2:  // If day=2 then case2 is executed
     cout << "Tuesday";
-    break;//if case2 is executed then break is executed and exits switch statement
+    break; // if case2 is executed then break is executed and exits switch statement
   case 3:
     cout << "Wednesday";
     break;
@@ -228,12 +239,13 @@ switch (day) {// Switch statement with day given as condition for cases
   case 7:
     cout << "Sunday";
     break;
-   default:// If none of the case is satisfied then default statement is executed.
-   cout<<"Not a day";
-   break; 
+  default: // If none of the case is satisfied then default statement is executed.
+    cout << "Not a day";
+    break;
+  }
+  return 0;
 }
-return 0;
-}
+
 ```
 
 **Output**
@@ -247,11 +259,10 @@ return 0;
 
 Firsts initialize,then condition check,then execute bode,finally updates the control variable.
 
-**Synatx:**
+**Syntax:**
 ```C++
 for( initialization exp; test exp; update exp)
 {
-  
   // statement we want to execute;
 }
 ```
@@ -265,7 +276,7 @@ while(test exp)
 {
    
   // statement we want to execute;
-  //update statement;
+  // update statement;
 }
 ```
 3. **Do-While Loop:**
@@ -279,7 +290,7 @@ initialization exp;
 do
 {
     // statement we want to execute;
-  // update expression;
+    // update expression;
 }while(test expression);
 ```
 
@@ -300,17 +311,25 @@ enum name_of_enum
 #include <iostream>
 using namespace std;
 
-enum seasons { spring = 34, summer = 4, autumn = 9, winter = 32};
-// enum named season is made and spring,summer ,autumn and winter are its member with values 34,5,9,32 respectively 
-int main() {
+enum seasons
+{
+    spring = 34,
+    summer = 4,
+    autumn = 9,
+    winter = 32
+};
+// enum named season is made and spring,summer ,autumn and winter are its member with values 34,5,9,32 respectively
+int main()
+{
 
     seasons s; // s is a variable of type seasons(enum)
 
-    s = summer; //s is assigned value of summer
+    s = summer; // s is assigned value of summer
     cout << "Summer = " << s << endl;
 
     return 0;
 }
+
 ```
 
 **Output:**
@@ -341,7 +360,7 @@ using namespace std;
 
 // Following function that takes two parameters 'x' and 'y'
 // as input and returns max of two input numbers
-int max(int x, int y)//max function made with return type int and parameters int x and int y
+int max(int x, int y) // max function made with return type int and parameters int x and int y
 {
 	if (x > y)
 		return x;
@@ -361,6 +380,7 @@ int main()
 	cout << "m is " << m;
 	return 0;
 }
+
 ```
 **Output:**
 
@@ -389,41 +409,43 @@ In C++, there are three access specifiers:
 
 #include <iostream>
 using namespace std;
-class Sra //A class named Sra is made
+class Sra
 {
-	public: //public specifier is used
-	char first_letter;// member variables
+public:
+	char first_letter;
 	int id;
-	
+
 	// printletter is not defined inside class definition
 	void printletter();
-	
+
 	// printid is defined inside class definition
 	void printid()
 	{
-		cout <<"SRA id is: "<<id;
+		cout << "SRA id is: " << id;
 	}
 };
 
 // Definition of printletter using scope resolution operator ::
 void Sra::printletter()
 {
-	cout <<"First letter of my name  is: "<<first_letter;
+	cout << "First letter of my name  is: " << first_letter;
 }
-int main() {
-	
+int main()
+{
+
 	Sra obj1;
-	obj1.first_letter= 'v';
-	obj1.id=24;
-	
+	obj1.first_letter = 'v';
+	obj1.id = 24;
+
 	// call printletter()
 	obj1.printletter();
 	cout << endl;
-	
+
 	// call printid()
 	obj1.printid();
 	return 0;
 }
+
 ```
 **Output:**
 
@@ -440,27 +462,28 @@ There are two ways we can implement templates:
 2.  Class Templates
 
 ```C++
-//Example of Function Template
+// Example of Function Template
 
-#include <iostream>  
-using namespace std;  
-template<class T> T add(T &a,T &b)  //Declaring a Functional template
-{  
-    T result = a+b;  
-    return result;  
-      
-}  
-int main()  
-{  
-  int i =2;  
-  int j =3;  
-  float m = 2.3;  
-  float n = 1.2;  
-  cout<<"Addition of i and j is :"<<add(i,j);  //Calling the template for integer data type
-  cout<<'\n';  
-  cout<<"Addition of m and n is :"<<add(m,n);  //Calling the template for float data type
-  return 0;  
-}  
+#include <iostream>
+using namespace std;
+template <class T>
+T add(T &a, T &b) // Declaring a Functional template
+{
+  T result = a + b;
+  return result;
+}
+int main()
+{
+  int i = 2;
+  int j = 3;
+  float m = 2.3;
+  float n = 1.2;
+  cout << "Addition of i and j is :" << add(i, j); // Calling the template for integer data type
+  cout << '\n';
+  cout << "Addition of m and n is :" << add(m, n); // Calling the template for float data type
+  return 0;
+}
+
 ```
 **Output:**
 
@@ -469,27 +492,27 @@ int main()  
 
 
 ```C++
-    #include <iostream>  
-    using namespace std;  
-    template<class T>  //Declaring the Class template
-    class A   
-    {  
-        public:  
-        T num1 = 5;  
-        T num2 = 6;  
-        void add()  
-        {  
-            std::cout << "Addition of num1 and num2 : " << num1+num2<<std::endl;  
-        }  
-          
-    };  
-      
-    int main()  
-    {  
-        A<int> d;  
-        d.add();  //Calling the class method
-        return 0;  
-    }  
+    #include <iostream>
+using namespace std;
+template <class T> // Declaring the Class template
+class A
+{
+public:
+    T num1 = 5;
+    T num2 = 6;
+    void add()
+    {
+        std::cout << "Addition of num1 and num2 : " << num1 + num2 << std::endl;
+    }
+};
+
+int main()
+{
+    A<int> d;
+    d.add(); // Calling the class method
+    return 0;
+}
+
   ```
 **Output:**
 
@@ -542,7 +565,7 @@ foo [2] = 75;
 ```C++
 int foo[5];         // declaration of a new array`**
 
- foo[2] = 75;        // access to an element of the array.`**
+foo[2] = 75;        // access to an element of the array.`**
 ```
 ## **Printing 1-D Array:**
 We can use loops for taking and printing values of a 1-D array,
@@ -551,9 +574,9 @@ We can use loops for taking and printing values of a 1-D array,
 using namespace std;
 int main()
 {
-  int arr1[5]= {1,2,3,4,5};//An array of size 5 is declared and initialized
-  int i; // a variables made for looping
-  for(i=0;i<5;i++)// for loop used for looping
+  int arr1[5]= {1,2,3,4,5};  //An array of size 5 is declared and initialized
+  int i;                     // a variables made for looping
+  for(i=0;i<5;i++)           // for loop used for looping
   {cout<<"Values of Array are: "<<arr1[i]<<endl;
   }
   return 0;
@@ -590,30 +613,30 @@ int arr[4][2] = {1234, 56, 1212, 33, 1434, 80, 1312, 78};
 ## **Printing a 2D Array:**
 
 ```C++
-#include<iostream>
-using namespace std; 
-int main( ) 
-{  
-	int arr[4][2] = {//An array with 4 rows and 2 columns is made and initialized
-		{ 10, 11 },
-		{ 20, 21 },
-		{ 30, 31 },
-		{ 40, 41 }
-		} ;
-		
-	int i,j;//Two variables for looping
-	
-	cout<<"Printing a 2D Array:\n";
-	for(i=0;i<4;i++)//traversing through row
+#include <iostream>
+using namespace std;
+int main()
+{
+	int arr[4][2] = {// An array with 4 rows and 2 columns is made and initialized
+					 {10, 11},
+					 {20, 21},
+					 {30, 31},
+					 {40, 41}};
+
+	int i, j; // Two variables for looping
+
+	cout << "Printing a 2D Array:\n";
+	for (i = 0; i < 4; i++) // traversing through row
 	{
-		for(j=0;j<2;j++)//traversing through column
+		for (j = 0; j < 2; j++) // traversing through column
 		{
-			cout<<"\t"<<arr[i][j];
+			cout << "\t" << arr[i][j];
 		}
-		cout<<endl;
+		cout << endl;
 	}
-    return 0;
-} 
+	return 0;
+}
+
 ```
 
 **Output:**
@@ -622,9 +645,9 @@ int main( )
 
 In the above code
 
-   1.  We firstly initialize a 2D array, arr[4][2] with certain values,
+1.  We firstly initialize a 2D array, arr[4][2] with certain values,
     
- 2. After that, we try to print the respective array using two for loops
+2. After that, we try to print the respective array using two for loops
     
 3. the outer for loop iterates over the rows, while the inner one iterates over the columns of the 2D array.
 
@@ -650,19 +673,18 @@ A pointer is a variable that stores the memory address of an object. Pointers ar
   
 
 ``` C++
-    #include <iostream>  
-    using namespace std;  
-    int main()  
-    {  
-    int number=30;    
-    int ∗p;      
-    p=&number;//stores the address of number variable    
-    cout<<"Address of number variable is:"<<&number<<endl;
-    cout<<"Address of p variable is:"<<p<<endl;    
-    cout<<"Value of p variable is:"<<*p<<endl;    
-       return 0;  
-    }  
-   
+#include <iostream>
+using namespace std;
+int main()
+{
+    int number = 30;
+    int *p;
+    p = &number; // stores the address of number variable
+    cout << "Address of number variable is:" << &number << endl;
+    cout << "Address of p variable is:" << p << endl;
+    cout << "Value of p variable is:" << *p << endl;
+    return 0;
+}
  ```
    
  **The output of above code is :**
@@ -682,30 +704,30 @@ A pointer is a variable that stores the memory address of an object. Pointers ar
  Here is an example of pointer to a 2D array:
 
  ``` C++
-#include<iostream>
+#include <iostream>
 using namespace std;
-/* Usage of pointer to an array */ 
-int main( ) 
-{  
-      int  a[4][2] = {  // Declaring and initialising a 2D array
-           {1, 2},
-           {1, 2},
-           {1, 2},
-           {1, 2}
-           } ;
-           
-      int (*ptr)[2] ; //Declaring a 2D pointer
-      int  i, j;
-      for (i = 0 ; i <= 3 ; i++)
-      {
-      		ptr=&a[i]; //Stores the address of Array a with index i, in ptr
-      		cout<<"Row"<<i<<":";
-            for (j = 0; j <= 1; j++)
-                cout<<"\t"<<*(*ptr+j); //Prints the data at pointed by address ptr+j
-            cout<<endl;
-      } 
-    return 0;  
+/* Usage of pointer to an array */
+int main()
+{
+     int a[4][2] = {// Declaring and initialising a 2D array
+                    {1, 2},
+                    {1, 2},
+                    {1, 2},
+                    {1, 2}};
+
+     int(*ptr)[2]; // Declaring a 2D pointer
+     int i, j;
+     for (i = 0; i <= 3; i++)
+     {
+          ptr = &a[i]; // Stores the address of Array a with index i, in ptr
+          cout << "Row" << i << ":";
+          for (j = 0; j <= 1; j++)
+               cout << "\t" << *(*ptr + j); // Prints the data at pointed by address ptr+j
+          cout << endl;
+     }
+     return 0;
 }
+
 ```
 The output is:
 
@@ -744,41 +766,42 @@ C++ does not allow to pass an entire array as an argument to a function. However
 **Example :**
 
 ```C++
-#include<iostream>
-using namespace std;   
- 
-void display(int (*ptr)[4], int  row, int  col) //Call by Address
+#include <iostream>
+using namespace std;
+
+void display(int (*ptr)[4], int row, int col) // Call by Address
 {
-	int  i, j ;
-	for(i=0;i<row;i++)
+	int i, j;
+	for (i = 0; i < row; i++)
 	{
-		for(j=0;j<col;j++)
-    		cout<<"\t"<<*(*(ptr + i)+j); //Array is printed with help of pointer arithmetic
-		cout<<"\n";
-	}  
-    cout<<"\n";
-} 
- 
-void print(int  ptr[][4], int row, int col)//Call by value
-{
-    int  i, j; 
-    for(i=0;i<row;i++)
-    {   
-	    for(j=0;j<col;j++)
-   	      cout<<"\t"<<ptr[i][j];
-   	  cout<<"\n";
-  	}
-   cout<<"\n";
+		for (j = 0; j < col; j++)
+			cout << "\t" << *(*(ptr + i) + j); // Array is printed with help of pointer arithmetic
+		cout << "\n";
+	}
+	cout << "\n";
 }
- 
-int main() 
+
+void print(int ptr[][4], int row, int col) // Call by value
 {
-  int  a[3][4] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21} ; 
- 
-  display (a, 3, 4); 
-  print (a, 3, 4);
-  return 0;
+	int i, j;
+	for (i = 0; i < row; i++)
+	{
+		for (j = 0; j < col; j++)
+			cout << "\t" << ptr[i][j];
+		cout << "\n";
+	}
+	cout << "\n";
 }
+
+int main()
+{
+	int a[3][4] = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
+
+	display(a, 3, 4);
+	print(a, 3, 4);
+	return 0;
+}
+
 ```
 **Output:**
 
@@ -810,7 +833,8 @@ That is, we can change the size of the vector during the execution of a program 
 #include <vector>
 using namespace std;
 
-int main() {
+int main()
+{
 
   // initializer list
   vector<int> vector1 = {1, 2, 3, 4, 5};
@@ -825,26 +849,30 @@ int main() {
   cout << "vector1 = ";
 
   // ranged loop
-  for (const int& i : vector1) {
+  for (const int &i : vector1)
+  {
     cout << i << "  ";
   }
 
   cout << "\nvector2 = ";
 
   // ranged loop
-  for (const int& i : vector2) {
+  for (const int &i : vector2)
+  {
     cout << i << "  ";
   }
 
   cout << "\nvector3 = ";
 
   // ranged loop
-  for (int i : vector3) {
+  for (int i : vector3)
+  {
     cout << i << "  ";
   }
-
+  cout << endl;
   return 0;
 }
+
 ```
 **Output :**
 
@@ -857,34 +885,31 @@ int main() {
 #include <vector>
 using namespace std;
 
-
-int main() 
+int main()
 {
-  
-
-  vector<int> num {1, 2, 3, 4, 5}; //Initialising a vector
-
+  vector<int> num{1, 2, 3, 4, 5}; // Initialising a vector
 
   cout << "Initial Vector: ";
 
-  for (const int& i : num) 
+  for (const int &i : num)
   {
     cout << i << "  ";
   }
-  
+
   // add the integers 6 and 7 to the vector
   num.push_back(6);
   num.push_back(7);
 
   cout << "\nUpdated Vector: ";
 
-  for (const int& i : num) 
+  for (const int &i : num)
   {
     cout << i << "  ";
   }
 
   return 0;
 }
+
 ```
 Here, we have initialized an int vector num with the elements {1, 2, 3, 4, 5}. Here, the **`push_back()`** function adds elements 6 and 7 to the vector.
 
@@ -899,15 +924,17 @@ Here, we have initialized an int vector num with the elements {1, 2, 3, 4, 5}. H
 #include <vector>
 using namespace std;
 
-int main() {
-  vector<int> num {1, 2, 3, 4, 5}; //Initialised a vector
+int main()
+{
+  vector<int> num{1, 2, 3, 4, 5}; // Initialised a vector
 
-  cout << "Element at Index 0: " << num.at(0) << endl; //Printing value at vector index 0
-  cout << "Element at Index 2: " << num.at(2) << endl; //Printing value at vector index 2
-  cout << "Element at Index 4: " << num.at(4); //Printing value at vector index 4
+  cout << "Element at Index 0: " << num.at(0) << endl; // Printing value at vector index 0
+  cout << "Element at Index 2: " << num.at(2) << endl; // Printing value at vector index 2
+  cout << "Element at Index 4: " << num.at(4);         // Printing value at vector index 4
 
   return 0;
 }
+
 ```
 
 We use the index number to access the vector elements. Here, we use the **`at()`** function to access the element from the specified index.

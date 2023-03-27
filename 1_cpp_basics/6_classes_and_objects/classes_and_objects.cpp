@@ -5,35 +5,36 @@
 using namespace std;
 class Sra
 {
-	public:
+public:
 	char first_letter;
 	int id;
-	
+
 	// printletter is not defined inside class definition
 	void printletter();
-	
+
 	// printid is defined inside class definition
 	void printid()
 	{
-		cout <<"SRA id is: "<<id;
+		cout << "SRA id is: " << id;
 	}
 };
 
 // Definition of printletter using scope resolution operator ::
 void Sra::printletter()
 {
-	cout <<"First letter of my name  is: "<<first_letter;
+	cout << "First letter of my name  is: " << first_letter;
 }
-int main() {
-	
+int main()
+{
+
 	Sra obj1;
-	obj1.first_letter= 'v';
-	obj1.id=24;
-	
+	obj1.first_letter = 'v';
+	obj1.id = 24;
+
 	// call printletter()
 	obj1.printletter();
 	cout << endl;
-	
+
 	// call printid()
 	obj1.printid();
 	return 0;

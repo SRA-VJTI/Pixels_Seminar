@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	int x = 10; // integer x
+	int x = 10;	  // integer x
 	char y = 'a'; // character c
 
 	// y implicitly converted to int. ASCII
@@ -16,8 +16,8 @@ int main()
 	float z = x + 1.0;
 
 	cout << "x = " << x << endl
-		<< "y = " << y << endl
-		<< "z = " << z << endl;
+		 << "y = " << y << endl
+		 << "z = " << z << endl;
 
 	return 0;
 }

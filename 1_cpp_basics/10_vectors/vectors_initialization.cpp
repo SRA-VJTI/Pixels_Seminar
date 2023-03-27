@@ -2,7 +2,8 @@
 #include <vector>
 using namespace std;
 
-int main() {
+int main()
+{
 
   // initializer list
   vector<int> vector1 = {1, 2, 3, 4, 5};
@@ -17,24 +18,26 @@ int main() {
   cout << "vector1 = ";
 
   // ranged loop
-  for (const int& i : vector1) {
+  for (const int &i : vector1)
+  {
     cout << i << "  ";
   }
 
   cout << "\nvector2 = ";
 
   // ranged loop
-  for (const int& i : vector2) {
+  for (const int &i : vector2)
+  {
     cout << i << "  ";
   }
 
   cout << "\nvector3 = ";
 
   // ranged loop
-  for (int i : vector3) {
+  for (int i : vector3)
+  {
     cout << i << "  ";
   }
   cout << endl;
   return 0;
 }
-
