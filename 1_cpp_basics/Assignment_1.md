@@ -52,12 +52,11 @@ Write a similar function but print only the price of the items(use a pointer to 
 
 [![pic1.png](https://i.postimg.cc/k4RBx4Bz/pic1.png)](https://postimg.cc/wyHqz95Q)
 
-![](https://i.imgur.com/SeX8Ppg.png) 
+**Q5** Now copy the vector into a new vector and render an inverted vector wherein black is on top and white is at the bottom. 🤗
 
-**Q5** Now copy the image into a new image and render a color inverted image wherein black is on top and white is at the bottom. 🤗
+[![Screenshot-from-2023-03-28-00-17-16.png](https://i.postimg.cc/RhZrpSkL/Screenshot-from-2023-03-28-00-17-16.png)](https://postimg.cc/1n2YfQ58)
 
-![](https://i.imgur.com/CwUtTZb.png)
 
-**ALL THE BEST for the Assignment Guys** 👍
+**ALL THE BEST** 👍
 
-*PS - If you have any doubts don't hesitate to contact your seniors* 😄
+*PS - If you have any doubts don't hesitate to contact us* 😄
