@@ -64,9 +64,9 @@ double median(vector<double> vec)
 tuple<double, double, double> getMedianPixelValues(Mat img)
 {
     // Initialize vectors to store the pixel values of each color channel
-    vector<double> blue_pixels;
-    vector<double> green_pixels;
-    vector<double> red_pixels;
+    vector<double> hue_pixels;
+    vector<double> saturation_pixels;
+    vector<double> value_pixels;
 
     // Iterate over the rows and columns of the image
     for (int i = 0; i < img.rows; i++)
@@ -77,17 +77,17 @@ tuple<double, double, double> getMedianPixelValues(Mat img)
             Vec3b pixel = img.at<Vec3b>(i, j);
 
             // Add the pixel values to the corresponding vectors
-            blue_pixels.push_back(pixel[0]);
-            green_pixels.push_back(pixel[1]);
-            red_pixels.push_back(pixel[2]);
+            hue_pixels.push_back(pixel[0]);
+            saturation_pixels.push_back(pixel[1]);
+            value_pixels.push_back(pixel[2]);
         }
     }
 
     // Calculate the median of each color channel
-    double blue_median = median(blue_pixels);
-    double green_median = median(green_pixels);
-    double red_median = median(red_pixels);
+    double hue_median = median(hue_pixels);
+    double saturation_median = median(saturation_pixels);
+    double value_median = median(value_pixels);
 
     // Return the median values as a tuple
-    return make_tuple(blue_median, green_median, red_median);
+    return make_tuple(hue_median, saturation_median, value_median);
 }

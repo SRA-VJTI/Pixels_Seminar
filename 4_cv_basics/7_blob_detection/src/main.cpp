@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <opencv2/opencv.hpp>
-#include "include/blob_detection.hpp"
+#include "../include/blob_detection.hpp"
 using namespace std;
 using namespace cv;
 
@@ -12,6 +12,7 @@ int main()
     {
         Mat frame;
         video.read(frame); // Read one frame from the video
+        namedWindow("Image", WINDOW_NORMAL);
         imshow("Image", frame);
 
         if (waitKey(10) == 'q') //Wait for "q" key to be pressed
@@ -53,7 +54,7 @@ int main()
         // Performing bitwise_and using the 'blur' mask
         Mat blob_mask;
         bitwise_and(frame, frame, blob_mask, blur);
-
+        namedWindow("blob_mask", WINDOW_NORMAL);
         imshow("blob_mask", blob_mask);
 
         // Find contours
@@ -80,6 +81,7 @@ int main()
 
         // Draw the largest contour detected
         drawContours(frame, contours, idx, Scalar(0, 255, 255), 2);
+        namedWindow("Output", WINDOW_NORMAL);
         imshow("Output", frame);
 
         if (waitKey(10) == 'x')
