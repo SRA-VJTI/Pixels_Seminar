@@ -1,8 +1,6 @@
 #                    **Basics Of C++**
 
 ## **Table Of Contents :**
-- [**Basics Of C++**](#basics-of-c)
-  - [**Table Of Contents :**](#table-of-contents-)
   - [**To run a .cpp file on your terminal**](#to-run-a-cpp-file-on-your-terminal)
   - [**Variables and Data Types:**](#variables-and-data-types)
   - [**Type Casting:**](#type-casting)
@@ -14,11 +12,11 @@
   - [**Classes And Objects:**](#classes-and-objects)
   - [**Templates:**](#templates)
   - [**Arrays :**](#arrays-)
-  - [**Initializing Arrays :**](#initializing-arrays-)
-  - [**Array Accessing :**](#array-accessing-)
-  - [**Printing 1-D Array:**](#printing-1-d-array)
-  - [**Multidimensional Arrays :**](#multidimensional-arrays-)
-  - [**Printing a 2D Array:**](#printing-a-2d-array)
+    - [**Initializing Arrays :**](#initializing-arrays-)
+    - [**Array Accessing :**](#array-accessing-)
+    - [**Printing 1-D Array:**](#printing-1-d-array)
+    - [**Multidimensional Arrays :**](#multidimensional-arrays-)
+    - [**Printing a 2D Array:**](#printing-a-2d-array)
   - [**Pointers :**](#pointers-)
   - [**Pointers And Array :**](#pointers-and-array-)
   - [**Passing 2D Array To A Function :**](#passing-2d-array-to-a-function-)
