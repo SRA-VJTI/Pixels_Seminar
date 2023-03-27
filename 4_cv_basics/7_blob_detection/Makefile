@@ -15,3 +15,5 @@ LIBS = $(shell pkg-config --libs opencv4)
 $(PROJECT) : $(SRC)					
 	$(CC) $(SRC) -o $(PROJECT) $(CFLAGS) $(LIBS)	
 	
+clean:
+	rm blob_detection
