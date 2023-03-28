@@ -12,32 +12,32 @@
 
 #### Input Images
 
-<img src="../../../assets/images/bitwise_ip1.png" align="left" width="300" height="300"/>
+<img src="../assets/images/bitwise_ip1.png" align="left" width="300" height="300"/>
 
-<img src="../../../assets/images/bitwise_ip2.png" align = "centre" width="300" height="300"/>
+<img src="../assets/images/bitwise_ip2.png" align = "centre" width="300" height="300"/>
 
 #### Bitwise AND
 
-<img src="../../../assets/images/bitwise_and1.png" width="300" height="300"/>
+<img src="../assets/images/bitwise_and1.png" width="300" height="300"/>
 
 #### Bitwise OR
 
-<img src="../../../assets/images/bitwise_or1.png" width="300" height="300"/>
+<img src="../assets/images/bitwise_or1.png" width="300" height="300"/>
 
 #### Bitwise XOR
 
-<img src="../../../assets/images/bitwise_xor.png" width="300" height="300"/>
+<img src="../assets/images/bitwise_xor.png" width="300" height="300"/>
 
 #### Bitwise NOT
 
 1. Image1 - Bitwise NOT/inversion of Input Image 1
 2. Image2 - Bitwise NOT/inversion of Input Image 2
 
-<img src="../../../assets/images/bitwise_not1.png" align="left" width="300" height="300"/>
+<img src="../assets/images/bitwise_not1.png" align="left" width="300" height="300"/>
 
 <br>
 
-<img src="../../../assets/images/bitwise_not2.png" align="justified" width="300" height="300"/>
+<img src="../assets/images/bitwise_not2.png" align="justified" width="300" height="300"/>
 
 ### Expected Results
 
@@ -50,8 +50,8 @@
 <th style="text-align:center"> Image2 </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/Image1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/Image2.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/Image1.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/Image2.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
@@ -59,16 +59,16 @@
 <th style="text-align:center"> Gray </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/roi.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/gray.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/roi.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/gray.png" alt = "Image1" width = 350 height="200"></td>
 
 <tr>
 <th style="text-align:center"> Mask</th>
 <th style="text-align:center"> Mask_Inv </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/mask.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/mask_inv.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/mask.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/mask_inv.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
@@ -76,14 +76,14 @@
 <th style="text-align:center"> FG </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/bg.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/fg.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/bg.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/fg.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
 <th colspan="2" style="text-align:center"> dst</th>
 </tr>
 <tr>
-<td colspan="2" style="text-align: center"><image src="../../../assets/images/dst.png" alt = "Image1" width = 350 height="200"></td>
+<td colspan="2" style="text-align: center"><image src="../assets/images/dst.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 </table>

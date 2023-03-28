@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-     // Reading input images (A and B)
+    // Reading input images (A and B)
     Mat image1 = imread("PROJECT_SOURCE_DIR/assets/images/dummy1.jpg");
     Mat image2 = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
 

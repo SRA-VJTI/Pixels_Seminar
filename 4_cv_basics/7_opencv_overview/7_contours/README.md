@@ -4,7 +4,7 @@ Contours can be explained simply as a curve joining all the continuous points (a
 
 Illustration:
 
-<img src="../../../assets/images/contours_1.png" />
+<img src="../assets/images/contours_1.png" />
 
 ### What are Contours
 
@@ -49,15 +49,15 @@ OpenCV makes this a fairly simple task. Just follow these steps:
 <th style="text-align:center"> Edges </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/gray_player.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/edges.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/gray_player.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/edges.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
 <th style="text-align:center" colspan="2"> Contours</th>
 </tr>
 <tr>
-<td style="text-align: center" colspan="2"><image src="../../../assets/images/contours.png" alt = "Image1" width = 350 height="200"></td>
+<td style="text-align: center" colspan="2"><image src="../assets/images/contours.png" alt = "Image1" width = 350 height="200"></td>
 </table>
 
 <table>

@@ -56,10 +56,10 @@ It is the difference between dilation and erosion of an image.
 
 </tr>
 <td>
-<image src="../../../assets/images/morphology_opencv1.png">
+<image src="../assets/images/morphology_opencv1.png">
 </td>
 <td>
-<image src="../../../assets/images/morphology_opencv2.png">
+<image src="../assets/images/morphology_opencv2.png">
 </td>
 <tr>
 
@@ -74,10 +74,10 @@ It is the difference between dilation and erosion of an image.
 
 </tr>
 <td>
-<image src="../../../assets/images/morphology_opencv3.png">
+<image src="../assets/images/morphology_opencv3.png">
 </td>
 <td>
-<image src="../../../assets/images/morphology_opencv4.png">
+<image src="../assets/images/morphology_opencv4.png">
 </td>
 <tr>
 
@@ -92,10 +92,10 @@ It is the difference between dilation and erosion of an image.
 
 </tr>
 <td>
-<image src="../../../assets/images/morphology_opencv5.png">
+<image src="../assets/images/morphology_opencv5.png">
 </td>
 <td>
-<image src="../../../assets/images/morphology_opencv6.png">
+<image src="../assets/images/morphology_opencv6.png">
 </td>
 <tr>
 

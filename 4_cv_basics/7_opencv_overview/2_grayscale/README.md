@@ -12,4 +12,4 @@ Where $R$, $G$ and $B$ are the red, green, and blue color channels of the pixel.
 
 #### Illustration
 
-<img src="../../../assets/images/grayscale.png"/>
+<img src="../assets/images/grayscale.png"/>

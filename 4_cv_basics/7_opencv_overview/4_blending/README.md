@@ -20,9 +20,9 @@ The $\gamma$ parameter in the addWeighted function controls the gamma correction
 
 ### Illustrations
 
-<img src="../../../assets/images/blending1.png" aligh = "left"/>
+<img src="../assets/images/blending1.png" aligh = "left"/>
 
-<img src="../../../assets/images/blending2.png"/>
+<img src="../assets/images/blending2.png"/>
 
 ### Expected Results
 
@@ -36,12 +36,12 @@ The $\gamma$ parameter in the addWeighted function controls the gamma correction
 <th style="text-align:center"> Image2 </th>
 </tr>
 <tr>
-<td><image src="../../../assets/images/blending_image_1.png" alt = "Image1" width = 350 height="200"></td>
-<td><image src="../../../assets/images/blending_image_2.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/blending_image_1.png" alt = "Image1" width = 350 height="200"></td>
+<td><image src="../assets/images/blending_image_2.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
 
 <tr>
 <th style="text-align:center" colspan="2"> Display Image</th>
 </tr>
 <tr>
-<td style="text-align: center" colspan="2"><image src="../../../assets/images/blending_res.png" alt = "Image1" width = 350 height="200"></td>
+<td style="text-align: center" colspan="2"><image src="../assets/images/blending_res.png" alt = "Image1" width = 350 height="200"></td>

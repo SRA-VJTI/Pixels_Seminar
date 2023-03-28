@@ -7,7 +7,7 @@ int main()
 {
     Mat image;
 
-    //Reading image
+    // Reading image
     image = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
     if (!image.data)
     {
@@ -17,7 +17,7 @@ int main()
 
     Mat im2;
 
-    //Converts colorspace from BGR to Grayscale (BGR2GRAY)
+    // Converts colorspace from BGR to Grayscale (BGR2GRAY)
     cvtColor(image, im2, COLOR_BGR2GRAY);
 
     auto x = im2.size;

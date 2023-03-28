@@ -12,4 +12,4 @@ Choice of Interpolation Method for Resizing:
 
 ### Illustration
 
-<img src = "../../../assets/images/resize.png" />
+<img src = "../assets/images/resize.png" />
