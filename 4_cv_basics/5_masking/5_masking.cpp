@@ -41,10 +41,10 @@ Mat masking(Mat image)
 int main() 
 {
    Mat image;//taking an image matrix
-   image = imread("nike.png");//loading an image//
+   image = imread("assets/nike.png");//loading an image//
    
    Mat new_img = masking(image);
-   imwrite("bg_free.png", new_img);
+   imwrite("assets/bg_free.png", new_img);
    imshow("center",new_img);
    waitKey(0);
    destroyAllWindows();

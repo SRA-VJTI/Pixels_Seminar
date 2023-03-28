@@ -18,9 +18,8 @@ build:
 	@echo "Building..."
 	@mkdir -p $(BIN_DIR)
 	@mkdir -p $(FOLDER)/build
-	@cp $(FOLDER)/*.cpp $(FOLDER)/build && cp $(FOLDER)/*.hpp $(FOLDER)/build 
+	@cp $(FOLDER)/*.cpp $(FOLDER)/build 
 	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
-	@find $(FOLDER)/build -name "*.hpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \; 
 	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FILE) -o $(BIN_DIR)/$(basename $(FILE)) -I $(FOLDER)/build $(LDFLAGS)
 endif	
 

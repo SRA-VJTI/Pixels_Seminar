@@ -54,7 +54,7 @@ If the values of the RGB to be neglected don't match with the current pixel RGB 
 3. run   ```make clean``` to lean out any previous builds
 4. type ```make build FILE=5_masking.cpp``` to build the executable
 5. run ```make run FILE=5_masking.cpp```
-6. You should now have an imshow window open showing you the output as well as a newly created image in your folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
+6. You should now have an imshow window open showing you the output as well as a newly created image in your ```assets``` folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
 
 
 ## Example
