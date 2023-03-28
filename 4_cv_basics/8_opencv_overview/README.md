@@ -1,3 +1,18 @@
+# Table of Contents
+
+- [Introduction to OpenCV](#introduction-to-opencv)
+  - [Computer Vision vs Image Processing](#computer-vision-vs-image-processing)
+  - [Applications](#applications-of-computer-vision)
+- [Usage](#usage)
+- [Function Description](#function-description)
+- [Blending](blending/README.md)
+- [Contours](contours/README.md)
+- [Grayscale](grayscale/README.md)
+- [Masking](masking/README.md)
+- [Morphology](morphology/README.md)
+- [Object Detection](object_detection/README.md)
+- [Resizing](resizing/README.md)
+
 # **Introduction to OpenCV**
 
 ### _OpenCV_ is a cross-platform library using which we can develop real-time computer vision applications. It mainly focuses on image processing, video capture and analysis including features like face detection and object detection.
@@ -59,7 +74,27 @@
 - Autonomous vehicle
 - Safety, e.g., driver vigilance monitoring
 
-## Function Descriptions
+## Usage
+
+Once the requirements are satisfied, you can easily download the project and use it on your machine.
+
+1. First navigate to the folder `opencv_overview`
+2. Navigate to the required folder.
+
+```
+ make
+ ./<subfolder_name>
+```
+
+For example, if the subfolder is `masking` then the following commands needs to be executed:
+
+```
+cd masking
+make
+./masking
+```
+
+## Function Description
 
 Refer this from **google** and [OpenCv Docs](https://docs.opencv.org/master/index.html)
 
@@ -438,23 +473,3 @@ The function cv::morphologyEx can perform advanced morphological transformations
 </td>
 
 </table>
-
-## Usage
-
-Once the requirements are satisfied, you can easily download the project and use it on your machine.
-
-1. First navigate to the folder `opencv_overview`
-2. Navigate to the required folder.
-
-```
- make
- ./<subfolder_name>
-```
-
-For example, if the subfolder is `masking` then the following commands needs to be executed:
-
-```
-cd masking
-make
-./masking
-```
