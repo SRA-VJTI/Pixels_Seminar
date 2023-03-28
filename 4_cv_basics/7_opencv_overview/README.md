@@ -5,15 +5,14 @@
   - [Applications](#applications-of-computer-vision)
 - [Usage](#usage)
 - [Function Description](#function-description)
-- Folders
-  1. [Resizing](1_resizing)
-  2. [Grayscale](2_grayscale/README.md)
-  3. [Resizing](3_resizing/README.md)
-  4. [Blending](4_blending/README.md)
-  5. [Masking](5_masking/README.md)
-  6. [Morphology](6_morphology/README.md)
-  7. [Contours](7_contours/README.md)
-  8. [Object Detection](8_object_detection/README.md)
+- [Read/Display Image](1_read_display_image)
+- [Grayscale](2_grayscale/README.md)
+- [Resizing](3_resizing/README.md)
+- [Blending](4_blending/README.md)
+- [Masking](5_masking/README.md)
+- [Morphology](6_morphology/README.md)
+- [Contours](7_contours/README.md)
+- [Object Detection](8_object_detection/README.md)
 
 # **Introduction to OpenCV**
 
