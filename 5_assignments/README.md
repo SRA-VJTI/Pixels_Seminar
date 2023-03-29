@@ -1,4 +1,5 @@
 # PIXELS Assignment Submissions
+
 **PIXELS Seminar** is a initiative taken by **SRA (Society of Robotics & Automation) VJTI**, which provides platform for begginers to explore new domains like Image processing, 
 Computer Vision. We encourage students to learn new technologies, bring in innovative project ideas and get hands-on experience on different domains.
 
@@ -11,7 +12,9 @@ Follow [this](https://github.com/Spnetic-5/Intro_to_CV/blob/main/git_github/1.gi
 if you don't remember how to create a repository (**Please make sure you repo is private**)
 
 ### 2. Clone this repository in your pc.
+
 Open cmd/terminal and run the following command (Replace `<username>` & `<Id no.>`)
+
 ```bash
 git clone https://github.com/<username>/pixels_assignment_<Id no.>.git
 ```
