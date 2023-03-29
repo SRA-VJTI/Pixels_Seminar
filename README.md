@@ -48,6 +48,7 @@ This repository includes basics to :
     - [Morphology](./4_cv_basics/6_morphology/README.md)
     - [OpenCV](./4_cv_basics/7_opencv_overview/README.md)
     - [Blob Detection](./4_cv_basics/8_blob_detection/README.md)
+- [Assignments](./5_assignments)
 - [Installation Instructions](#installation-instructions)
 
 ## Installation Instructions
