@@ -26,4 +26,3 @@
   * [.gitignore](3_git_commands.md#.gitignore)
   * [Undoing past changes](3_git_commands.md#undoing-past-changes)
 
-* [Task](/git_github/4_task.md)
