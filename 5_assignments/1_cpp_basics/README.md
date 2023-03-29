@@ -1,4 +1,4 @@
-# Pixels Assignment 1
+# Pixels Assignment C++ basics
 
 In this assignment you will peactise problems based on the concepts of arrays, pointers, relationship of arrays and pointers and vectors.
 
