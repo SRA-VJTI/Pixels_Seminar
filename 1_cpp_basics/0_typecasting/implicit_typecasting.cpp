@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2023 Society of Robotics and Automation
@@ -19,3 +20,27 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+// An example of implicit conversion
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x = 10;	  // integer x
+	char y = 'a'; // character c
+
+	// y implicitly converted to int. ASCII
+	// value of 'a' is 97
+	x = x + y;
+
+	// x is implicitly converted to float
+	float z = x + 1.0;
+
+	cout << "x = " << x << endl
+		 << "y = " << y << endl
+		 << "z = " << z << endl;
+
+	return 0;
+}

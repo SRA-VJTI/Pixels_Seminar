@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2023 Society of Robotics and Automation
@@ -19,3 +20,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+#include <iostream>
+using namespace std;
+template <class T> // Declaring the Class template
+class A
+{
+public:
+    T num1 = 5;
+    T num2 = 6;
+    void add()
+    {
+        std::cout << "Addition of num1 and num2 : " << num1 + num2 << std::endl;
+    }
+};
+
+int main()
+{
+    A<int> d;
+    d.add(); // Calling the class method
+    return 0;
+}

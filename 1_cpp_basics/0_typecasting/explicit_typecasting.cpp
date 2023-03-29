@@ -1,3 +1,4 @@
+/*
 MIT License
 
 Copyright (c) 2023 Society of Robotics and Automation
@@ -19,3 +20,21 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+// C++ program to demonstrate
+// explicit type casting
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	float x = 1.2;
+
+	// Explicit conversion from double to int
+	int sum = (int)x + 1;
+
+	cout << "Sum = " << sum << endl;
+
+	return 0;
+}
