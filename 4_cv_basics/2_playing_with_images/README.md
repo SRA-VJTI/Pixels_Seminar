@@ -4,12 +4,12 @@ This exercise deals with the manipulation of image arrays such as changing the c
 
 The exercises can be accessed from the following:
 
-[Accessing Pixel Values](https://github.com/Komal0103/Pixels_Seminar/tree/dev/5_playing_with_image_arrays/accessing_pixels)
+[Accessing Pixel Values](/4_cv_basics/2_playing_with_images/0_accessing_pixels/)
 
-[Drawing on Images](https://github.com/Komal0103/Pixels_Seminar/tree/dev/5_playing_with_image_arrays/drawing_on_images)
+[Drawing on Images](/4_cv_basics/2_playing_with_images/1_drawing_on_images/)
 
-[Image Cropping](https://github.com/Komal0103/Pixels_Seminar/tree/dev/5_playing_with_image_arrays/image_cropping)
+[Image Cropping](/4_cv_basics/2_playing_with_images/2_image_cropping/)
 
-[Image Rotation](https://github.com/Komal0103/Pixels_Seminar/tree/dev/5_playing_with_image_arrays/image_rotation)
+[Image Translation](/4_cv_basics/2_playing_with_images/3_image_translation/)
 
-[Image Translation](https://github.com/Komal0103/Pixels_Seminar/tree/dev/5_playing_with_image_arrays/image_translation)
+[Image Rotation](/4_cv_basics/2_playing_with_images/4_image_rotation/)
