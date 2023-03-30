@@ -1,6 +1,34 @@
 # Image Representation
 
-
+## Table Of Contents
+- [Image Representation](#image-representation)
+  - [Table Of Contents](#table-of-contents)
+  - [What is Image Representation?](#what-is-image-representation?)
+  - [Some Important Terminologies](#some-important-terminologies)
+  - [Types of Images](#types-of-images)
+    - [Binary Images](#binary-images)
+    - [Grayscale Images](#grayscale-images)
+    - [RGB Images](#rgb-images)
+  - [Colour Models](#colour-models)
+    - [Additive Model](#additive-model)
+    - [Subtractive Models](#subtractive-models)
+    - [HSV Colour Model](#hsv-colour-model)
+  - [Different Image Storing Formats](#different-image-storing-formats)
+      - [BitMap (.bmp)](#bitmap-bmp)
+      - [TIFF Format (.tiff , .tif)](#tiff-format-tiff--tif)
+      - [JPG Format (.jpg , .jpeg , .jpe , .jif , .jfif)](#jpg-format-jpg--jpeg--jpe--jif--jfif)
+      - [PNG Format (.png)](#png-format-png)
+  - [How is image actually stored ?](#how-is-image-actually-stored-)
+    - [Block 1: File Type Data](#block-1-file-type-data)
+    - [Block 2: Image Information Data](#block-2-image-information-data)
+    - [Block 3: Color Pallet (semi-optional)](#block-3-color-pallet-semi-optional)
+    - [Block 4: Raw Pixel Data](#block-4-raw-pixel-data)
+    - [Total BMP File Size](#total-bmp-file-size)
+  - [Installations](#installations)
+    - [Ubuntu](#ubuntu)
+    - [MacOS](#macos)
+  - [Build and run the executables](#build-and-run-the-executables)
+      - [Run without make](#run-without-make)
 
 ## What is Image Representation?
 
@@ -225,3 +253,58 @@ The FileSize field in `BITMAPFILEHEADER` header is the sum of all the bytes in t
 
 ![](assets/bmp_detailed_file_structure.jpg)
 
+
+## Installations
+
+To install sdl and its related libraries :
+
+### Ubuntu
+
+```sh 
+sudo apt-get install libsdl2-2.0-0 
+```
+
+```sh 
+sudo apt-get install libsdl2-image-dev 
+```
+
+### MacOS
+
+```zsh
+brew install sdl2
+```
+
+## Build and run the executables
+
+Now that you are aware with the various image storing formats, let's look at how to create and execute executables.
+
+After cloning in the Pixels_Seminar repository, get into the 1_image_representation folder using cd command 
+
+```sh
+cd /Pixels_Seminar/4_cv_basics/1_image_representation
+```
+
+`image_representation.cpp` is our code file.
+
+Perform make command 
+
+`make`
+
+To run 
+
+- `./image <image_path>`\
+  for eg : `./image /home/chinmay/Pixels_Seminar/4_cv_basics/1_image_representation/image.bmp`
+
+This will display the image.
+
+#### Run without make
+If you want to run the code without make then just type
+
+- `g++ -g image_representation.cpp -o output $(pkg-config --cflags --libs sdl2)`
+
+and then
+- `./image <image_path>)`\
+  for eg : `./image /home/chinmay/Pixels_Seminar/4_cv_basics/1_image_representation/image.bmp`
+  
+  
+This will display the image.
