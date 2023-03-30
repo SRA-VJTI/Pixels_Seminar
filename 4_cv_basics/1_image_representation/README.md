@@ -5,30 +5,33 @@
   - [Table Of Contents](#table-of-contents)
   - [What is Image Representation ?](#what-is-image-representation-)
   - [Some Important Terminologies](#some-important-terminologies)
+	-  [Pixels](#pixels)
+	- [Resolution](#resolution)
+	- [Aspect Ratio](#aspect-ratio)
   - [Types of Images](#types-of-images)
-    - [Binary Images](#binary-images)
-    - [Grayscale Images](#grayscale-images)
-    - [RGB Images](#rgb-images)
+	- [Binary Images](#binary-images)
+	- [Grayscale Images](#grayscale-images)
+	- [RGB Images](#rgb-images)
   - [Colour Models](#colour-models)
-    - [Additive Model](#additive-model)
-    - [Subtractive Models](#subtractive-models)
-    - [HSV Colour Model](#hsv-colour-model)
+	- [Additive Model](#additive-model)
+	- [Subtractive Models](#subtractive-models)
+	- [HSV Colour Model](#hsv-colour-model)
   - [Different Image Storing Formats](#different-image-storing-formats)
-      - [BitMap (.bmp)](#bitmap-bmp)
-      - [TIFF Format (.tiff , .tif)](#tiff-format-tiff--tif)
-      - [JPG Format (.jpg , .jpeg , .jpe , .jif , .jfif)](#jpg-format-jpg--jpeg--jpe--jif--jfif)
-      - [PNG Format (.png)](#png-format-png)
+	- [BitMap (.bmp)](#bitmap-bmp)
+	- [TIFF Format (.tiff , .tif)](#tiff-format-tiff--tif)
+	- [JPG Format (.jpg , .jpeg , .jpe , .jif , .jfif)](#jpg-format-jpg--jpeg--jpe--jif--jfif)
+	- [PNG Format (.png)](#png-format-png)
   - [How is image actually stored ?](#how-is-image-actually-stored-)
-    - [Block 1: File Type Data](#block-1-file-type-data)
-    - [Block 2: Image Information Data](#block-2-image-information-data)
-    - [Block 3: Color Pallet (semi-optional)](#block-3-color-pallet-semi-optional)
-    - [Block 4: Raw Pixel Data](#block-4-raw-pixel-data)
-    - [Total BMP File Size](#total-bmp-file-size)
+	- [Block 1: File Type Data](#block-1-file-type-data)
+	- [Block 2: Image Information Data](#block-2-image-information-data)
+	- [Block 3: Color Pallet (semi-optional)](#block-3-color-pallet-semi-optional)
+	- [Block 4: Raw Pixel Data](#block-4-raw-pixel-data)
+	- [Total BMP File Size](#total-bmp-file-size)
   - [Installations](#installations)
-    - [Ubuntu](#ubuntu)
-    - [MacOS](#macos)
+	- [Ubuntu](#ubuntu)
+	- [MacOS](#macos)
   - [Build and run the executables](#build-and-run-the-executables)
-      - [Run without make](#run-without-make)
+	- [Run without make](#run-without-make)
 
 ## What is Image Representation ?
 
@@ -41,34 +44,35 @@
 
 1. **Pixels**: The smallest unit of an image is termed as a PIXEL.
 
-A pixel includes:
-* **Color Intensity (0 to 255)**
-* **Address of the pixel**
+	 A pixel includes:
+	* **Color Intensity (0 to 255)**
+	* **Address of the pixel**
 
 
-The size of an image is defined by the  product of total number of pixels in the horizontal direction and the number of pixels in the vertical direction. For eg: 512x512, 640x480, etc.
+	The size of an image is defined by the  product of total number of pixels in the horizontal direction and the number of pixels in the vertical direction. For eg: 512x512, 640x480, etc.
 
 
 2. **Resolution**: The number of pixels per unit is called the resolution of the image. It refeers to the number of pixels that make up an image.
 
-**BETTER THE RESOLUTION,
-BETTER WILL BE THE IMAGE.**
+	**BETTER THE RESOLUTION,
+	BETTER WILL BE THE IMAGE.**
 
-Types of Resolution:
+	 **Types of Resolution:**
 
-● **Image Resolution**: The distance between two pixels or the total number of pixels in an image.
-**Resolution ∝ Quality ∝ Size**
+	● **Image Resolution**: The distance between two pixels or the total number of pixels in an image.
+	**Resolution ∝ Quality ∝ Size**
 
-● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called Screen Resolution.
-For Example– 1920x1080 (Horizontal x Vertical)
+	● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called Screen Resolution.
+	For Example– 1920x1080 (Horizontal x Vertical)
 
 
 3. **Aspect Ratio**: It refers to the proportional relationship between the width and height of an image or video.
-For Example: 16:9, 4:3, 1:1, etc.
+	For Example: 16:9, 4:3, 1:1, etc.
 
 
 ## Types of Images
 There are 3 basic types of images as far as its classification is concerned. Let's have a look at them one by one.
+
 
 ### Binary Images
 
