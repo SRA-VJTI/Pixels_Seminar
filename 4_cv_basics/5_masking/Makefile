@@ -1,42 +1,28 @@
-# Makefile for the entire project
+# Specifying which compiler to use
+CC = g++							
 
-# Variables
-CC = g++
-CFLAGS = #-Wall -std=c++11 -shared
-# LDFLAGS = ` -lm -lstdc++ -lsqlite3 pkg-config opencv4 --cflags --libs`
-LDFLAGS = `pkg-config opencv4 --cflags --libs`
-BIN_DIR = bin
-FOLDER = .
+# Defining the name of the object that will be created after using make
+PROJECT = Masking		
 
-# the command make build FILE=<FILENAME> should build the executable in the subfolder
+# Here Include specifies which directories can be added in the include path of the main.cpp
+CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) -Iinclude/		
+# What libraries to be imported here it is opencv and SDL
+LIBS = $(shell pkg-config --libs opencv4) 
+
+# Similar to how we used to link ad make object files in the terminal
+# the command make build SRC=<FILENAME> should build the executable in the subfolder
 .PHONY: build
-ifeq ($(FILE),)
+ifeq ($(SRC), $(link),)
 build:
-	$(error "FILE is not set")
+	$(error "SRC is not set")
 else
 build:
 	@echo "Building..."
-	@mkdir -p $(BIN_DIR)
-	@mkdir -p $(FOLDER)/build
-	@cp $(FOLDER)/*.cpp $(FOLDER)/build 
-	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
-	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FILE) -o $(BIN_DIR)/$(basename $(FILE)) -I $(FOLDER)/build $(LDFLAGS)
+	@$(CC) $(SRC) $(link) -o $(PROJECT) $(CFLAGS) $(LIBS)
 endif	
 
-# the command make clean FOLDER=<subfolder> should remove all build files in the subfolder
 # if folder is not set, clean all build files all subfolders
 .PHONY: clean
 clean:
 	@echo "Cleaning..."
-	@rm -rf $(FOLDER)/build
-	@rm -rf $(BIN_DIR)
-
-# the command make run FOLDER=<subfolder> should run the executable in the subfolder
-ifeq ($(FILE),)
-run:
-	$(error FILE is not set)
-else
-run:
-	@echo "Running..."
-	@./$(BIN_DIR)/$(basename $(FILE))
-endif
+	@rm -rf $(PROJECT)
