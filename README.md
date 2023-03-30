@@ -5,7 +5,7 @@
 Every program is written in `C++` to provide the flexibility required by programmers. It also includes principles of essential development tools such as `Make` and `Git`.
 
 ## Demonstration 
-<img src="./assets/images/blob_detection.gif" width="800" />
+<img src="./assets/images/blob_demo_2023.gif" width="800" />
 
 This repository includes basics to :
 1. [C++](./1_cpp_basics/README.md) 
@@ -48,6 +48,7 @@ This repository includes basics to :
     - [Morphology](./4_cv_basics/6_morphology/README.md)
     - [OpenCV](./4_cv_basics/7_opencv_overview/README.md)
     - [Blob Detection](./4_cv_basics/8_blob_detection/README.md)
+- [Assignments](./5_assignments)
 - [Installation Instructions](#installation-instructions)
 
 ## Installation Instructions
