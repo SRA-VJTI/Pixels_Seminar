@@ -46,7 +46,7 @@ There are 3 basic types of images as far as its classification is concerned. Let
 
 Binary images are digital images that consists only 2 values for each pixel, basically 0 and 1.
 
-![image](https://www.researchgate.net/publication/329283490/figure/fig1/AS:698473540227075@1543540477871/Example-of-binary-image-Google.ppm)
+![image](https://learnlearn.uk/binary/wp-content/uploads/sites/11/2017/01/step-1-binary-bitmap-bw.png)
 
 ### Grayscale Images
 
