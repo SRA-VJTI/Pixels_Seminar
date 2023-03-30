@@ -47,8 +47,8 @@
 The smallest unit of an image is termed as a PIXEL.
 
 A pixel includes:
-	**Color Intensity (0 to 255)**
-	**Address of the pixel**
+- **Color Intensity (0 to 255)**
+- **Address of the pixel**
 
 
 The size of an image is defined by the  product of total number of pixels in the horizontal direction and the number of pixels in the vertical direction. For eg: 512x512, 640x480, etc.
@@ -60,15 +60,15 @@ The number of pixels per unit is called the resolution of the image. It refeers 
 **BETTER THE RESOLUTION,
 BETTER WILL BE THE IMAGE.**
 
+
+
 **Types of Resolution:**
 
 ● **Image Resolution**: The distance between two pixels or the total number of pixels in an image.
-	**Resolution ∝ Quality ∝ Size**
+- **Resolution ∝ Quality ∝ Size**
 
 ● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called Screen Resolution.
-	For Example– 1920x1080 (Horizontal x Vertical)
-
-![image | 400](https://techterms.com/img/lg/resolution_120.png)
+- For Example– 1920x1080 (Horizontal x Vertical)
 
 
 ### Aspect Ratio: 
