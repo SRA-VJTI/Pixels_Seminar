@@ -1,0 +1,164 @@
+{
+  "main": {
+    "id": "89d1209f9a94d205",
+    "type": "split",
+    "children": [
+      {
+        "id": "7789fe1449fb0fe9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1de7995a99ba41ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "4_cv_basics/1_image_representation/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f47148d207523497",
+    "type": "split",
+    "children": [
+      {
+        "id": "9715b70d65439a71",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "01457a249e55428f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "568a3ccbff9bbf78",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "338c243e52e7086c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6c9e0fe4dd35054e",
+    "type": "split",
+    "children": [
+      {
+        "id": "e19f23dcae5d6f3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c862f0c3f1f3cb1b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "4_cv_basics/1_image_representation/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "76c02904ec7cc1fd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "4_cv_basics/1_image_representation/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2e8b575741f4000f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "270a408446d02d71",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "4_cv_basics/1_image_representation/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1de7995a99ba41ad",
+  "lastOpenFiles": [
+    "4_cv_basics/1_image_representation/assets/rgb-img-type.webp",
+    "4_cv_basics/1_image_representation/assets/rgb.png",
+    "4_cv_basics/1_image_representation/assets/resolution.webp",
+    "4_cv_basics/1_image_representation/assets/grayscale.jpg",
+    "4_cv_basics/1_image_representation/assets/cmyk.jpg",
+    "4_cv_basics/1_image_representation/assets/binary_image.ppm",
+    "4_cv_basics/1_image_representation/assets/binary-bitmap-bw.png",
+    "4_cv_basics/1_image_representation/assets/aspect-ratio.png",
+    "4_cv_basics/1_image_representation/assets/subt.PNG",
+    "4_cv_basics/1_image_representation/assets/rgb.PNG",
+    "4_cv_basics/1_image_representation/assets/gray.PNG",
+    "4_cv_basics/1_image_representation/assets/b&w.PNG"
+  ]
+}
