@@ -1,6 +1,6 @@
 # PIXELS Assignment Submissions
 
-**PIXELS Seminar** is a initiative taken by **SRA (Society of Robotics & Automation) VJTI**, which provides platform for begginers to explore new domains like Image processing, 
+**PIXELS Seminar** is a initiative taken by **Society of Robotics & Automation (SRA) VJTI**, which provides platform for begginers to explore new domains like Image processing, 
 Computer Vision. We encourage students to learn new technologies, bring in innovative project ideas and get hands-on experience on different domains.
 
 The file contains the **Instructions** for submission of **Assignments** assigned to you in **PIXELS Seminar**.
