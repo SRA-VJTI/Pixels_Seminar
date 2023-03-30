@@ -3,7 +3,7 @@
 ## Table Of Contents
 - [Image Representation](#image-representation)
   - [Table Of Contents](#table-of-contents)
-  - [What is Image Representation?](#what-is-image-representation?)
+  - [What is Image Representation?](#what-is-image-representation-)
   - [Some Important Terminologies](#some-important-terminologies)
   - [Types of Images](#types-of-images)
     - [Binary Images](#binary-images)
