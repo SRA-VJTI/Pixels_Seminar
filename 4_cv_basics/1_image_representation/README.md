@@ -3,7 +3,7 @@
 ## Table Of Contents
 - [Image Representation](#image-representation)
   - [Table Of Contents](#table-of-contents)
-  - [What is Image Representation?](#what-is-image-representation-)
+  - [What is Image Representation ?](#what-is-image-representation-)
   - [Some Important Terminologies](#some-important-terminologies)
   - [Types of Images](#types-of-images)
     - [Binary Images](#binary-images)
@@ -30,7 +30,7 @@
   - [Build and run the executables](#build-and-run-the-executables)
       - [Run without make](#run-without-make)
 
-## What is Image Representation?
+## What is Image Representation ?
 
 - Image Representation refers to the process of encoding visual information from an image to numerical or digital format that can be stored and processed by the computer.
 
