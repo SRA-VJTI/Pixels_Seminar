@@ -127,7 +127,7 @@ This method is called "bilinear" because it uses linear interpolation in two dir
 ```
 2. Move into the Interpolation directory from the cv_basics directory by running following command :
 ```
-    cd 8_Interpolation 
+    cd 3_Interpolation 
 ```
 3. Build the file by running the following command :
 ```

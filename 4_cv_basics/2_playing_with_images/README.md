@@ -13,3 +13,10 @@ The exercises can be accessed from the following:
 [Image Translation](/4_cv_basics/2_playing_with_images/3_image_translation/)
 
 [Image Rotation](/4_cv_basics/2_playing_with_images/4_image_rotation/)
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/4_convolutions_filtering```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

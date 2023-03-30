@@ -7,6 +7,7 @@ CFLAGS = #-Wall -std=c++11 -shared
 LDFLAGS = `pkg-config opencv4 --cflags --libs`
 BIN_DIR = bin
 FOLDER = .
+FILE=5_masking.cpp
 
 # the command make build FILE=<FILENAME> should build the executable in the subfolder
 .PHONY: build
@@ -33,6 +34,7 @@ clean:
 
 # the command make run FOLDER=<subfolder> should run the executable in the subfolder
 ifeq ($(FILE),)
+FILE=5_masking.cpp
 run:
 	$(error FILE is not set)
 else

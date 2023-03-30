@@ -11,3 +11,10 @@ Image rotation is done keeping a point as a reference (here the center of the im
 *This is the rotated image*
 
 ![rotated](https://user-images.githubusercontent.com/103985810/227202114-6e76ef24-4cd1-438d-9d81-053ec39e8698.png)
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/2_playing_with_images/4_image_rotation```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

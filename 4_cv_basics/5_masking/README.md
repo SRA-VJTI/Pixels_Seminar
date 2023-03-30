@@ -51,9 +51,9 @@ If the values of the RGB to be neglected don't match with the current pixel RGB 
 0. (Optional) If you are facing include errors try changing ```#include <opencv2/opencv.hpp>``` to ```#include <opencv4/opencv2/opencv.hpp>```    which might potentially resolve your error, or a simple google search will help.
 1. Navigate to ../Pixels_Seminar/4_cv_basics/5_masking
 2. Open terminal in this folder
-3. run   ```make clean``` to lean out any previous builds
-4. type ```make build FILE=5_masking.cpp``` to build the executable
-5. run ```make run FILE=5_masking.cpp```
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
 6. You should now have an imshow window open showing you the output as well as a newly created image in your ```assets``` folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
 
 

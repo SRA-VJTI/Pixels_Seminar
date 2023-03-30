@@ -15,3 +15,10 @@ This is another type of Affine transformation where the image is shifted in the 
 *This is the translated image*
 
 ![translated](../assets/Translated.png)
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/2_playing_with_images/3_image_translation```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

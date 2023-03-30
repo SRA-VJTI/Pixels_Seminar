@@ -36,3 +36,11 @@ On observation, we see that the images in the Mat format are stored by default i
 *On choosing option 1*
 
 ![Option 1 result](https://user-images.githubusercontent.com/103985810/226843490-d960e0c4-1ee1-4448-b076-c35d6113bf85.png)
+
+## Usage
+0. (Optional) If you are facing include errors try changing ```#include <opencv2/opencv.hpp>``` to ```#include <opencv4/opencv2/opencv.hpp>```    which might potentially resolve your error, or a simple google search will help.
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/2_playing_with_images/0_accessing_pixels```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
