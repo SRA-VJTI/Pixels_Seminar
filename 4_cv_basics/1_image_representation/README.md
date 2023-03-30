@@ -265,6 +265,9 @@ The FileSize field in `BITMAPFILEHEADER` header is the sum of all the bytes in t
 
 ![](assets/bmp_detailed_file_structure.jpg)
 
+**Note: It is to be noted that this example uses SDL2 library just to fulfil the purpose of displaying each pixel of the image on the screen. As such there is no special need to understand the internals of SDL2 library to understand the basics of image representation.**
+
+
 
 ## Installations
 
