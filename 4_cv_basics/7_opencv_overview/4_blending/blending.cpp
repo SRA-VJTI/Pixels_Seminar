@@ -29,8 +29,8 @@ using namespace std;
 int main()
 {
     // Reading input images (A and B)
-    Mat image1 = imread("PROJECT_SOURCE_DIR/assets/images/dummy1.jpg");
-    Mat image2 = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
+    Mat image1 = imread("../assets/images/dummy1.jpg");
+    Mat image2 = imread("../assets/images/purple_night.jpg");
 
     resize(image1, image1, Size(), 0.75, 0.75);
     resize(image2, image2, Size(), 0.75, 0.75);

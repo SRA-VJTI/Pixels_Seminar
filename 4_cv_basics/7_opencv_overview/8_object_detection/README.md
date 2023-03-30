@@ -58,3 +58,10 @@ The bitwise arithmetic with OpenCV was used to extract the foreground/background
 <td><image src="../assets/images/mask_od.png" alt = "Image1" width = 350 height="200"></td>
 <td><image src="../assets/images/target.png" alt = "Image1" width = 350 height="200"></td>
 </tr>
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/8_object_detection```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

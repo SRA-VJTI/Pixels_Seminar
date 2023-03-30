@@ -31,7 +31,7 @@ int main()
     Mat image;
 
     // Reading image
-    image = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
+    image = imread("../assets/images/purple_night.jpg");
     if (!image.data)
     {
         cout << "Image not found" << endl;

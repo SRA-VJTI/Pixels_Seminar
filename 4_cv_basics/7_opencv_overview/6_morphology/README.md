@@ -100,3 +100,10 @@ It is the difference between dilation and erosion of an image.
 <tr>
 
 </table>
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/6_morphology```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

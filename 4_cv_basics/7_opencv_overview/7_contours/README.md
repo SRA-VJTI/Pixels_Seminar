@@ -62,3 +62,10 @@ OpenCV makes this a fairly simple task. Just follow these steps:
 
 <table>
 <tr>
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/7_contours```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

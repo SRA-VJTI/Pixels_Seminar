@@ -29,7 +29,7 @@ using namespace std;
 int main()
 {
     Mat image;
-    image = imread("PROJECT_SOURCE_DIR/assets/images/gray.png");
+    image = imread("../assets/images/gray.png");
     if (!image.data)
     {
         cout << "Image not found" << endl;

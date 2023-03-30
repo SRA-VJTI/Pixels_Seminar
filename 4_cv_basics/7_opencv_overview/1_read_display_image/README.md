@@ -10,3 +10,10 @@
 This function waits for a certain period before closing the program. If you use waitKey(10000), it will close the program after 10 seconds. If you write waitKey(0), it will get the desired output. This function will enable us to give the system the required time to operate. wait for the keystroke from the user. When the user clicks any key from the keyboard, the program will stop. This function has to be written as 'waitKey(milliseconds)'.
 
 - <b>destroyWindows()</b>: This function closes all windows. When we create windows, we allocate some memory. <b>destroyWindow()</b> function releases that memory to the system.
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/1_read_display_image```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

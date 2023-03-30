@@ -30,7 +30,7 @@ using namespace cv;
 int main()
 {
     Mat img;
-    img = imread("PROJECT_SOURCE_DIR/assets/images/DK.jpeg");
+    img = imread("../assets/images/DK.jpeg");
 
     // 1. Convert to Grayscale
     Mat gray;

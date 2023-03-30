@@ -13,3 +13,10 @@ Where $R$, $G$ and $B$ are the red, green, and blue color channels of the pixel.
 #### Illustration
 
 <img src="../assets/images/grayscale.png"/>
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/2_grayscale```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```

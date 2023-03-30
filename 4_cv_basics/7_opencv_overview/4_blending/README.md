@@ -45,3 +45,10 @@ The $\gamma$ parameter in the addWeighted function controls the gamma correction
 </tr>
 <tr>
 <td style="text-align: center" colspan="2"><image src="../assets/images/blending_res.png" alt = "Image1" width = 350 height="200"></td>
+
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/7_opencv_overview/4_blending```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
