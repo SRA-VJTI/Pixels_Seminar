@@ -68,14 +68,14 @@ BETTER WILL BE THE IMAGE.**
 ● **Screen Resolution**: The number of horizontal and vertical pixels displayed on the screen is called Screen Resolution.
 	For Example– 1920x1080 (Horizontal x Vertical)
 
-![image | 500](https://techterms.com/img/lg/resolution_120.png)
+![image | 400](https://techterms.com/img/lg/resolution_120.png)
 
 
 ### Aspect Ratio: 
 It refers to the proportional relationship between the width and height of an image or video.
 	For Example: 16:9, 4:3, 1:1, etc.
 
-![image | 500](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDaOZb_8TzXwTL-OfagXZmqKbXxCWFG2mTlw&usqp=CAU)
+![image | 400](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDaOZb_8TzXwTL-OfagXZmqKbXxCWFG2mTlw&usqp=CAU)
 
 
 ## Types of Images
