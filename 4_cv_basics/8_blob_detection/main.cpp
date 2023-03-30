@@ -23,7 +23,7 @@ SOFTWARE.
 */
 #include <bits/stdc++.h>
 #include <opencv2/opencv.hpp>
-#include "../include/blob_detection.hpp"
+#include "blob_detection.hpp"
 using namespace std;
 using namespace cv;
 
