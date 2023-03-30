@@ -28,27 +28,22 @@ using namespace std;
 
 int main()
 {
-    // Reading input images (A and B)
-    Mat image1 = imread("PROJECT_SOURCE_DIR/assets/images/dummy1.jpg");
-    Mat image2 = imread("PROJECT_SOURCE_DIR/assets/images/purple_night.jpg");
+    Mat image;
+    image = imread("./assets/images/purple_night.jpg");
+    if (!image.data)
+    {
+        cout << "Image not found" << endl;
+        return -1;
+    }
 
-    resize(image1, image1, Size(), 0.75, 0.75);
-    resize(image2, image2, Size(), 0.75, 0.75);
-    imshow("Image1", image1);
-    imshow("Image2", image2);
+    auto x = image.size;
 
-    Mat res;
-
-    // Defining weights for the two images
-    float alpha = 0.4, beta = (1 - alpha);
-
-    // Blending image1 and image2
-    // res = alpha * image1 + beta * image2 + gamma(0)
-    addWeighted(image1, alpha, image2, beta, 0.0, res);
-
+    // x[0] - height of the image (number of rows)
+    // x[1] - width of the image (number of columns)
+    cout << x[0] << ',' << x[1] << endl;
+    cout << image.channels() << endl;
     namedWindow("Display Image");
-    resize(res, res, Size(), 0.75, 0.75);
-    imshow("Display Image", res);
+    imshow("Display Image", image);
     waitKey(0);
 
     return 0;

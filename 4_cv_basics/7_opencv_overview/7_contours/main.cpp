@@ -29,41 +29,34 @@ using namespace cv;
 
 int main()
 {
-    // Read image
-    Mat img = imread("PROJECT_SOURCE_DIR/assets/images/DK.jpeg");
-    imshow("Image", img);
+    Mat img;
+    img = imread("./assets/images/DK.jpeg");
 
-    // Convert image to hsv
-    Mat hsv;
-    cvtColor(img, hsv, COLOR_BGR2HSV);
-    imshow("HSV", hsv);
+    // 1. Convert to Grayscale
+    Mat gray;
+    cvtColor(img, gray, COLOR_BGR2GRAY);
+    imshow("Gray", gray);
 
-    // hsv format -> (min hue, min saturation , min value) -> (max hue, max saturation , max value)
-    // RED mask =>
-    // Mat mask1 = inRange(hsv, Scalar(0, 100, 0), Scalar(10, 255, 255));
+    // 2. Apply Canny Edge detection
+    Mat edges;
+    Canny(gray, edges, 170, 250);
+    imshow("edges", edges);
 
-    // YELLOW mask =>
+    // 3. Find contours
+    std::vector<std::vector<Point>> contours;
+    std::vector<Vec4i> hierarchy;
+    findContours(edges, contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 
-    Mat mask1;
-    inRange(hsv, Scalar(15, 30, 150), Scalar(36, 255, 255), mask1);
-    imshow("mask1", mask1);
+    imshow("Canny edges after contouring", edges);
 
-    // BLUE mask =>
-    Mat mask2;
-    inRange(hsv, Scalar(33, 52, 80), Scalar(150, 200, 255), mask2);
-    imshow("mask2", mask2);
+    // 4. Draw contours on image
+    Mat contourImg = Mat::zeros(img.size(), CV_8UC3);
+    for (size_t i = 0; i < contours.size(); i++)
+    {
+        drawContours(img, contours, i, Scalar(0, 255, 0), 2);
+    }
 
-    // Final mask and masked
-    Mat mask;
-    bitwise_or(mask1, mask2, mask);
-    imshow("mask", mask);
-
-    Mat target;
-    bitwise_and(img, img, target, mask);
-    imshow("target", target);
-
+    imshow("Contours", img);
     waitKey(0);
     destroyAllWindows();
-
-    return 0;
 }
