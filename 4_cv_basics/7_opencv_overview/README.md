@@ -83,16 +83,15 @@ Once the requirements are satisfied, you can easily download the project and use
 2. Navigate to the required folder.
 
 ```
- make
- ./<subfolder_name>
+ make SRC=<subfolder>/main.cpp
+ ./Opencv_overview
 ```
 
-For example, if the subfolder is `masking` then the following commands needs to be executed:
+For example, if the subfolder is `5_masking` then the following commands needs to be executed:
 
 ```
-cd masking
-make
-./masking
+make SRC=5_masking/main.cpp
+./Opencv_overview
 ```
 
 ## Function Description
