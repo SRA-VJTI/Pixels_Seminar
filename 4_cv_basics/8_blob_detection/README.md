@@ -79,7 +79,7 @@ Informally a blob is a region of an image in which some properties like intensit
 1. Navigate to ../Pixels_Seminar/4_cv_basics/8_blob_detection
 2. Open terminal in this folder
 3. run   ```make clean``` to clean out any previous builds
-4. run ```make``` to build the executable
+4. run ```make SRC=main.cpp link=src/blob_detection.cpp``` to build the executable
 5. run ```./blob_detection```
 6. You should now have an imshow window "Image" capturing a video. Press ```q```  to capture the desired frame.
 7. Using the cursor, select your region of interest (ROI), which is a rectangular box
