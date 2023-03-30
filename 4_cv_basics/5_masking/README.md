@@ -52,9 +52,8 @@ If the values of the RGB to be neglected don't match with the current pixel RGB 
 1. Navigate to ../Pixels_Seminar/4_cv_basics/5_masking
 2. Open terminal in this folder
 3. run   ```make clean``` to lean out any previous builds
-4. type ```make build FILE=5_masking.cpp``` to build the executable
-5. run ```make run FILE=5_masking.cpp```
-6. You should now have an imshow window open showing you the output as well as a newly created image in your ```assets``` folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
+4. type ```make SRC=main.cpp``` to build the executable
+5. You should now have an imshow window open showing you the output as well as a newly created image in your ```assets``` folder named ```bg_free.png``` which you can view with your image viewer (recommended) 
 
 
 ## Example
