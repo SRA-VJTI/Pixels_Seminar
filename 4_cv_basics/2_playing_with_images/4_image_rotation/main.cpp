@@ -43,7 +43,7 @@ Mat rotate(Mat src, double angle)
 
 int main(){
     // converting the image into Mat format
-    Mat img = imread("../assets/dog.jpeg");
+    Mat img = imread("./assets/dog.jpeg");
     Mat img2;
     // obtaining the image dimensions
     int height=img.size().height;
