@@ -303,7 +303,7 @@ cd /Pixels_Seminar/4_cv_basics/1_image_representation
 
 Perform make command 
 
-`make`
+`make SRC=main.cpp`
 
 To run 
 

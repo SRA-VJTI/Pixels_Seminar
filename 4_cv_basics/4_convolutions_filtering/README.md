@@ -198,9 +198,9 @@ To build and run it, execute the following commands from the root of this
 repository.
 
 ```bash
-cd 4_cv_basics/4_convolutions_filtering  # Enter the project directory
-make                                     # Use make to build the project
-./Convolution_Filtering                  # Execute the built project
+cd 4_cv_basics/4_convolutions_filtering      # Enter the project directory
+make SRC=main.cpp link=src/convolution.cpp   # Use make to build the project
+./Convolution_Filtering                      # Execute the built project
 ```
 
 The demo code is purposefully kept in an unoptimized state, your task is to

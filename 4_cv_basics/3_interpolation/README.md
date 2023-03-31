@@ -131,13 +131,9 @@ This method is called "bilinear" because it uses linear interpolation in two dir
 ```
 3. Build the file by running the following command :
 ```
-    make -j4
+    make SRC=main.cpp link=interpolation.cpp
 ```
-4. Move into the bin directory in order to execute the binary file created by running following command: 
-```
-    cd bin
-```
-5. Finally execute the binary file created by running the following command :
+4. Finally execute the binary file created by running the following command :
 ```
     ./Interpolation
 ```
