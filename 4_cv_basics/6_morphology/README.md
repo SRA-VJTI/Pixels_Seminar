@@ -154,3 +154,11 @@ apply some filtering before calculating the gradient because it is very sensitiv
 2. Recognisation of handwritten characters
 3. Edge detection
 4. Coin counting and valuation
+
+## Build and run the executables
+
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/6_morphology/(Specific Folder)```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
