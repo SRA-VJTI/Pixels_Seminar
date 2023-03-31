@@ -23,14 +23,20 @@ OBJS = $(SRCS:.cpp=.o)
 TARGET = ./bin/Interpolation
 
 # Rules
-all: $(TARGET)
+build: $(TARGET)
+	@echo "Building..."
 
 $(TARGET): $(OBJS)
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+run:
+	@echo "Running..."
+	@./bin/Interpolation
 
 clean:
-	rm -f $(OBJS) $(TARGET)
+	@echo "Cleaning..."
+	@rm -f $(OBJS) $(TARGET)

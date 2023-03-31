@@ -121,25 +121,11 @@ This method is called "bilinear" because it uses linear interpolation in two dir
 <a name="Demo"></a>
 ## Demo 
 
-1. Move into the cv_basics directory from the root pixels directory by running following command :
-```
-    cd 4_cv_basics 
-```
-2. Move into the Interpolation directory from the cv_basics directory by running following command :
-```
-    cd 3_Interpolation 
-```
-3. Build the file by running the following command :
-```
-    make -j4
-```
-4. Move into the bin directory in order to execute the binary file created by running following command: 
-```
-    cd bin
-```
-5. Finally execute the binary file created by running the following command :
-```
-    ./Interpolation
-```
+## Usage Instructions
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/3_interpolation```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
 
 
