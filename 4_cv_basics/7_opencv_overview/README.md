@@ -77,22 +77,7 @@
 
 ## Usage
 
-Once the requirements are satisfied, you can easily download the project and use it on your machine.
-
-1. First navigate to the folder `opencv_overview`
-2. Navigate to the required folder.
-
-```
- make
- ./<subfolder_name>
-```
-
-For example, if the subfolder is `masking` then the following commands needs to be executed:
-
-```
-cd masking
-make
-./masking
+See the Folder Makefiles for Usage Instructions
 ```
 
 ## Function Description
