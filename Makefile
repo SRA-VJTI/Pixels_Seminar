@@ -15,7 +15,7 @@ else
 ifeq ($(shell cat /etc/os-release | awk '{if (match ($$0, /debian/)) {print "true"; exit;}}'),true)
 	@echo "Debian"
 	@sudo apt-get update -y
-	@sudo apt-get install libopencv-dev libsdl2-2.0-0 libsdl2-image-dev -y
+	@sudo apt-get install libopencv-dev libsdl2-2.0-0 libsdl2-image-dev libsdl2-dev -y
 else ifeq ($(shell uname -a | awk '{if (match ($$0, /Darwin/)) print "true"}'),true)
 	@echo "Mac"
 	@brew install opencv sdl2
