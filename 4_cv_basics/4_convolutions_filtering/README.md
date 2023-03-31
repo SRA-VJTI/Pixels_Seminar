@@ -190,18 +190,13 @@ C \cdot a & C \cdot b & C \cdot c
 $$
 ```
 
-## A suboptimal implementation
+## Usage Instructions
 
-We have spun up a suboptimal implementation of the convolution operation for
-demonstration purposes.  
-To build and run it, execute the following commands from the root of this
-repository.
-
-```bash
-cd 4_cv_basics/4_convolutions_filtering  # Enter the project directory
-make                                     # Use make to build the project
-./Convolution_Filtering                  # Execute the built project
-```
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/4_convolutions_filtering```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
 
 The demo code is purposefully kept in an unoptimized state, your task is to
 understand it and then improve it based on your understanding.  
