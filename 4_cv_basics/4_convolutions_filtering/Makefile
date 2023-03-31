@@ -2,11 +2,11 @@
 CC = g++							
 
 # Defining the name of the object that will be created after using make
-PROJECT = Convolution_Filtering		
+PROJECT = convolution_filtering		
 
 # Here Include specifies which directories can be added in the include path of the main.cpp
 CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) -Iinclude/		
-# What libraries to be imported here it is opencv and SDL
+# What libraries to be imported here it is opencv 
 LIBS = $(shell pkg-config --libs opencv4) 
 
 # Similar to how we used to link ad make object files in the terminal
