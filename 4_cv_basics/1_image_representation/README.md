@@ -291,26 +291,11 @@ brew install sdl2
 
 ## Build and run the executables
 
-Now that you are aware with the various image storing formats, let's look at how to create and execute executables.
-
-After cloning in the Pixels_Seminar repository, get into the 1_image_representation folder using cd command 
-
-```sh
-cd /Pixels_Seminar/4_cv_basics/1_image_representation
-```
-
-`image_representation.cpp` is our code file.
-
-Perform make command 
-
-`make`
-
-To run 
-
-- `./image <image_path>`\
-  for eg : `./image /home/chinmay/Pixels_Seminar/4_cv_basics/1_image_representation/image.bmp`
-
-This will display the image.
+1. Navigate to ```../Pixels_Seminar/4_cv_basics/1_image_representation```
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. type ```make build``` to build the executable
+5. run ```make run```
 
 #### Run without make
 If you want to run the code without make then just type

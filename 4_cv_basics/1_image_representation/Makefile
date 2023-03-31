@@ -2,9 +2,10 @@
 
 # Variables
 CC = g++
-CFLAGS = -Wall -Wextra -pedantic -std=c++11
+CFLAGS = #-Wall -std=c++11 -shared
 # LDFLAGS = ` -lm -lstdc++ -lsqlite3 pkg-config opencv4 --cflags --libs`
 LDFLAGS = `pkg-config opencv4 --cflags --libs`
+LIBS=-lSDL2
 BIN_DIR = bin
 FOLDER = .
 FILE=image_representation.cpp
@@ -21,7 +22,7 @@ build:
 	@mkdir -p $(FOLDER)/build
 	@cp $(FOLDER)/*.cpp $(FOLDER)/build 
 	@find $(FOLDER)/build -name "*.cpp" -type f -exec sed -i 's@PROJECT_SOURCE_DIR@$(shell pwd)@g' {} \;
-	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FILE) -o $(BIN_DIR)/$(basename $(FILE)) -I $(FOLDER)/build $(LDFLAGS)
+	@$(CC) $(CFLAGS) $(FOLDER)/build/$(FILE) -o $(BIN_DIR)/$(basename $(FILE)) -I $(FOLDER)/build $(LDFLAGS) $(LIBS)
 endif	
 
 # the command make clean FOLDER=<subfolder> should remove all build files in the subfolder
@@ -34,11 +35,12 @@ clean:
 
 # the command make run FOLDER=<subfolder> should run the executable in the subfolder
 ifeq ($(FILE),)
-FILE=5_masking.cpp
+FILE=image_representation.cpp
 run:
 	$(error FILE is not set)
 else
 run:
 	@echo "Running..."
-	@./$(BIN_DIR)/$(basename $(FILE))
+	@./$(BIN_DIR)/$(basename $(FILE)) image.bmp
+	@./$(BIN_DIR)/$(basename $(FILE)) image1.bmp
 endif
