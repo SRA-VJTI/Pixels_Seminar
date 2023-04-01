@@ -41,7 +41,7 @@ This repository includes basics to :
     - [Git commands](./3_git_github/3_git_commands.md)
 - [Image Processing](./4_cv_basics)
     - [Image Representation](./4_cv_basics/1_image_representation/README.md)
-    - [Playing with Images](./4_cv_basics/2_playing_with_images/readme.md)
+    - [Playing with Images](./4_cv_basics/2_playing_with_images/README.md)
     - [Interpolation](./4_cv_basics/3_interpolation/README.md)
     - [Convolution](./4_cv_basics/4_convolutions_filtering/README.md)
     - [Masking](./4_cv_basics/5_masking/README.md)
