@@ -1,124 +1,102 @@
-# Pixels Assignment C++ basics
+#                                   Assignment 1
 
-In this assignment you will peactise problems based on the concepts of arrays, pointers, relationship of arrays and pointers and vectors.
 
-## Basic of C++
+## Question 1
+Create a 2D array with 3 rows and 4 columns and a 1D array of size 9.
+Create two functions with the same name for entering 1D and 2D array elements, and another two functions with the same name for printing 1D and 2D array elements, making a total of 4 functions. When printing, print only the elements having index which is multiple of three i.e. (for 1D array index 0,3,6,etc and for 2D array [0][0], [0][3], [1][0], [1][3],etc) 
 
-Fun with pointers.
+Hint: Make use of concepts like Namespace for making two functions with same name.
 
-Q1. A teacher awards each student with 3 candies at the start of the day. Each time a student misbehaves she takes away 2 candies from them and awards them with an extra candy when they perform well in their tests. There are 4 students in the class.
-Write a program to help the teacher distribute the right number of candies.
+**Testcases:**
 
-**Input**
-1. No. of tests taken by the teacher
-2. Roll no.s who did bad in each test
-
+Input:
 ```
-Enter no. of tests taken => 3 
-Enter Roll Numbers of 1st test with bad preformance => 1 
-Enter Roll Numbers of 2nd test with bad preformance => 2 4
-Enter Roll Numbers of 3rd test with bad preformance => 4 1
+Enter elements of 2D Array:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+Enter elements of 1D Array:
+13
+14
+15
+16
+17
+18
+19
+20
+21
 ```
-
-**Expected Output**
-
+Expected Output:
 ```
-Final Candies with each student : 
-Roll No. 1 => 1
-Roll No. 2 => 3
-Roll No. 3 => 3
-Roll No. 4 => 1
-```
-
-**Other Test Cases**
-
-No. of exams = 5
-Roll Numbers with bad performance in 1st test = 1 2
-Roll Numbers with bad performance in 2nd test = 1 
-Roll Numbers with bad performance in 3rd test = 4 2
-Roll Numbers with bad performance in 4th test = 3 
-Roll Numbers with bad performance in 5th test = 3 2 
-
-*Hint U can use the recently taught concepts of pointer arithmetics*
-
----
-
-Q2. A shopkeeper keeps a record of his inventory. Write a program to help him change the stock as and when the orders are placed. Too easy right 😉.Let's make things more interesting. Use the concept of pointers to access this two-dimensional array. 
-
-**Input: Initial Table**
-| Unique ID of good |Price | In Stock  |
-| -------- | -------- | -------- |
-|0001      |250       |70        |
-|0002      |500       |20        |
-|0003      |1000      |50        |
-|0004      |1500      |11        |
-
-Note: Show the initial table in the output window as well as the updated table once changes have been made
-
-**Input: Changing the Table**
-Change price of 0001 to 370
-Change price of 0004 to 1510
-Change price of 0003 to 40
-
-Change Quantity of 0004 to 150
-
-Add a new ID 0005 with price 320 and quantity 40
-
-Now, once table is passes as the input rank each of the Unique IDs according to the total cost of each good.
-
-**Sample Output**
-```
-Rank order : 0004, 0001, 0005, 0002, 0003
+Elements of 2D Array at Index which is a multiple of 3:
+1
+4
+5
+8
+9
+12
+Elements of 1D Array at Index which is a multiple of 3:
+13
+16
+19
 ```
 
-* Hint an array is stored in a continuous block of memory 😉
+## Question 2
+Write a program to find the size of integer data type without using sizeof operator.
 
+Hint: Search about pointer arithmetic.
 
-**Question with extra points**
-
-Write a similar function but print only the price of the items(use a pointer to a single element of the array), and arrange the ID's in form of descending order of the total price (Here, the ID of the largest total price should be 0001 and ID of the least total price should be 0005)
-
----
-
-Q3. Lets us build upon our knowledge of pointers and arrays even further. Create a Print function that prints out the entire two-dimensional array. (Pass a pointer array to the  function)
-
-**Sample Input**
+**Expected Output:**
 ```
-Enter Number of rows and columns : 3 4
-
-Input enter elements in 1st row : 1, 2, 3, 4
-Input enter elements in 2nd row : 5, 6, 7, 8
-Input enter elements in 3rd row : 9, 10, 11, 12
-
-```
-**Sample Output**
-
-```
- 1 2 3 4
- 5 6 7 8 
- 9 10 11 12
+Size of integer data type is 4.
 ```
 
----
+## Question 3
+Write a program in which you will make a void function to sort the array in ascending manner, this function will take the pointer of 0th Index of array as the only parameter. Also, Print the sorted array.
 
-Q4. We have learned the concepts of vectors now lets use them to render vectors which represent images
+**Testcases:**
 
-
-Write a logic to display this pattern
-
-* Hint it involves use of multiple concepts like if-else statements and for loops
-
+Input:
 ```
-    1 0 0 0 0 1 1 1 1 1  
-    1 1 0 0 0 1 1 1 1 0 
-    1 1 1 0 0 1 1 1 0 0 
-    1 1 1 1 0 1 1 0 0 0
-    1 1 1 1 1 1 0 0 0 0
+Enter the number of elements in array:
+6
+Enter the elements in array:
+55
+20
+40
+90
+82
+66
+```
+Expected Output:
+```
+20
+40
+55
+66
+82
+90
 ```
 
-Now copy the vector into a new vector and render an inverted vector wherein black is on top and white is at the bottom. 
+## Question 4
+This is the input and output for a program. Write a programs that does this using Vectors. Make sure to use iterators
+```
+Input:
+6
+4 1 2 7 8 5
+
+Output:
+Smallest: 1
+Largest: 8
+```
 
 
-**ALL THE BEST** 👍
-
-*PS - If you have any doubts don't hesitate to contact us* 😄
