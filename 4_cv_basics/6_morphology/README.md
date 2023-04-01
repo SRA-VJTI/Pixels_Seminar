@@ -154,3 +154,30 @@ apply some filtering before calculating the gradient because it is very sensitiv
 2. Recognisation of handwritten characters
 3. Edge detection
 4. Coin counting and valuation
+
+## **Usage**:
+To compile code of given subfolder command format is
+```
+make build <subfolder name>
+```
+To run compiled binary command format is
+```
+./output <image path>
+```
+To clean the output file following format should be used
+```
+make clean <subfolder name>
+```
+
+
+For example if you want to compile and run code in 1_erosion then use following commands
+```
+make build 1_erosion
+
+./_1_erosion assets/normal_image.png
+```
+
+For removing output file 
+```
+make clean 1_erosion
+```
