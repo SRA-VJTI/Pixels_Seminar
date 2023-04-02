@@ -299,7 +299,7 @@ After cloning in the Pixels_Seminar repository, get into the 1_image_representat
 cd /Pixels_Seminar/4_cv_basics/1_image_representation
 ```
 
-`image_representation.cpp` is our code file.
+`main.cpp` is our code file.
 
 Perform make command 
 
@@ -307,19 +307,19 @@ Perform make command
 
 To run 
 
-- `./image <image_path>`\
-  for eg : `./image /home/chinmay/Pixels_Seminar/4_cv_basics/1_image_representation/image.bmp`
+- `./image_representation <image_path>`\
+  for eg : `./image_representation assets/image.bmp`
 
 This will display the image.
 
 #### Run without make
 If you want to run the code without make then just type
 
-- `g++ -g image_representation.cpp -o output $(pkg-config --cflags --libs sdl2)`
+- `g++ -g main.cpp -o image_representation $(pkg-config --cflags --libs sdl2)`
 
 and then
-- `./image <image_path>)`\
-  for eg : `./image /home/chinmay/Pixels_Seminar/4_cv_basics/1_image_representation/image.bmp`
+- `./image_representation <image_path>)`\
+  for eg : `./image_representation assets/image.bmp`
   
   
 This will display the image.
