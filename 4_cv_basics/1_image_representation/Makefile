@@ -5,9 +5,9 @@ CC = g++
 PROJECT = image_representation		
 
 # Here Include specifies which directories can be added in the include path of the main.cpp
-CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) -Iinclude/		
+CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) $(shell pkg-config --cflags sdl2)		
 # What libraries to be imported here it is opencv and SDL
-LIBS = $(shell pkg-config --libs opencv4) -lSDL2
+LIBS = $(shell pkg-config --libs opencv4) $(shell pkg-config --libs sdl2)
 
 # Similar to how we used to link ad make object files in the terminal
 # the command make build SRC=<FILENAME> should build the executable in the subfolder
