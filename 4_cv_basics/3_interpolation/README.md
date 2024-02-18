@@ -127,15 +127,15 @@ This method is called "bilinear" because it uses linear interpolation in two dir
 ```
 2. Move into the Interpolation directory from the cv_basics directory by running following command :
 ```
-    cd 8_Interpolation 
+    cd 3_interpolation 
 ```
 3. Build the file by running the following command :
 ```
-    make SRC=main.cpp link=interpolation.cpp
+    make SRC=main.cpp link=src/interpolation.cpp
 ```
 4. Finally execute the binary file created by running the following command :
 ```
-    ./Interpolation
+    ./interpolation
 ```
 
 
