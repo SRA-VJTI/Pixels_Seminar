@@ -15,7 +15,7 @@ Informally a blob is a region of an image in which some properties like intensit
     - [Drawing the blob](#drawing-the-blob)
 - [Usage](#usage)
 - [Understanding the code](#understanding-the-code)
-
+- [Demo](#demo)
 
 ## Preprocessing
 
@@ -234,3 +234,4 @@ int main()
 ```
     ./blob_detection
 ```
+5. Press q and select the ROI and then press enter. 
