@@ -21,9 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-#include <bits/stdc++.h>
 #include <opencv2/opencv.hpp>
-#include "blob_detection.hpp"
+#include "./src/blob_detection.hpp"
 using namespace std;
 using namespace cv;
 
