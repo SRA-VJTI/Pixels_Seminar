@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #include <opencv2/opencv.hpp>
-#include "./src/blob_detection.hpp"
+#include "blob_detection.hpp"
 using namespace std;
 using namespace cv;
 

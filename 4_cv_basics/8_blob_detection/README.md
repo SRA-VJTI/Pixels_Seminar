@@ -216,3 +216,21 @@ int main()
     return 0;
 }
 ```
+## Demo 
+
+1. Move into the cv_basics directory from the root pixels directory by running following command :
+```
+    cd 4_cv_basics 
+```
+2. Move into the blob_detection directory from the cv_basics directory by running following command :
+```
+    cd 8_blob_detection 
+```
+3. Build the file by running the following command :
+```
+    make SRC=main.cpp link=./src/blob_detection.cpp
+```
+4. Finally execute the binary file created by running the following command :
+```
+    ./blob_detection
+```
