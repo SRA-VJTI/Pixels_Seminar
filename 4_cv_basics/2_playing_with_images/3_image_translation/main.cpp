@@ -55,7 +55,7 @@ int main(){
     {
         for(int c = 0; c<width-tx; c++)
         {
-            img2.at<uchar>(c,r)=image.at<uchar>(c, r);
+            img2.at<uchar>(c,r)=image.at<uchar>(c+tx, r+ty);
         }
     }
 
