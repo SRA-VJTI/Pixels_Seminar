@@ -27,44 +27,34 @@ using namespace cv;
 using namespace std;
 
 
-
 Mat masking(Mat image)
 {
    Vec3b grey = Vec3b(230,230,230); //defining masks for the colours which you do not need in the image
-   Vec3b white = Vec3b(255,255,255);
+   Vec3b white = Vec3b(255,255,255); //so here we want to mask grey and white colours
    
-   int height = image.rows;
+   int height = image.rows; //taking the height and width of the input 'image'
    int width = image.cols;
 
-   Mat transparentImg = Mat::zeros(height,width, CV_8UC4); //dreates a new transparent empty image
+   Mat transparentImg{image.size(), image.type()}; //creates a new transparent empty image
 
-   for(int i = 0; i<height; i++)
-    {
-	for(int j = 0; j<width; j++)
-	{
-		Vec3b x = image.at<Vec3b>(i, j);//getting the pixel rgb values
-		Vec4b y  = Vec4b(x[0],x[1],x[2],255);
-		if(grey==x || white==x) //Add the range for the colours which you want to ignore
-		{
-			//do not write to the transparent image if it has RGB values which we don't wish for it to have
-			; 
-		}
-		else
-		{
-			transparentImg.at<Vec4b>(i,j)=y; //write to the new image all other colours except the one's to be ignored (4th channel here in Vec4b being alpha)
-		}
-	}
-	
+   for(int i = 0; i < height; i++)
+   {
+      for(int j = 0; j < width; j++)
+      {
+         Vec3b x = image.at<Vec3b>(i, j); //getting the pixel rgb values
+         if(grey != x && white != x)
+         {
+            transparentImg.at<Vec3b>(i,j)=x; //write to the new image all other colours except the one's to be ignored
+         }
+      }
    }
    return transparentImg;
 }
 
-
-
 int main() 
 {
-   Mat image;//taking an image matrix
-   image = imread("assets/nike.png");//loading an image//
+   Mat image; //taking an image matrix
+   image = imread("assets/nike.png"); //loading an image
    
    Mat new_img = masking(image);
    imwrite("assets/bg_free.png", new_img);
