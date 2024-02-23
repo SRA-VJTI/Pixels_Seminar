@@ -12,7 +12,8 @@
 - [Separable convolutions](#separable-convolutions)
 - [A suboptimal implementation](#a-suboptimal-implementation)
 - [Resources you can visit](#resources-you-can-visit)
-
+- [Demo](#running-instructions)
+- [Results](#results)
 ## What are convolutions?
 
 A convolution is a fundamental mathematical operation commonly used in various
@@ -250,3 +251,15 @@ possible optimizations and are not necessarily sufficient.
 ```
     ./convolution_filtering
 ```
+
+## Results
+>Naive Convolution:-
+
+![Naive](./assets/naive.png)
+
+>Convolutions Using OpenCV:-
+
+![ConvolutionUsingOpenCV](./assets/convolutionsusingopencv.png)
+>Separable Convolutions Using OpenCV:-
+
+![SeparableConvolutions](./assets/SeparableConvolutions.png)
