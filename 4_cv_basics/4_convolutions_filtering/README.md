@@ -12,7 +12,8 @@
 - [Separable convolutions](#separable-convolutions)
 - [A suboptimal implementation](#a-suboptimal-implementation)
 - [Resources you can visit](#resources-you-can-visit)
-
+- [Instructions](#running-instruction)
+- [Results](#results)
 ## What are convolutions?
 
 A convolution is a fundamental mathematical operation commonly used in various
@@ -219,3 +220,78 @@ possible optimizations and are not necessarily sufficient.
 ## Resources you can visit
 - [Build your Intuition about Convolution](https://youtu.be/KuXjwB4LzSA) :)
 - [Interactive demo](https://setosa.io/ev/image-kernels/) 
+
+## Running Instruction
+### Without Benchmarks
+
+1. Move into the cv_basics directory from the root pixels directory by running following command :
+```
+    cd 4_cv_basics 
+```
+2. Move into the Convolutions directory from the cv_basics directory by running following command :
+```
+    cd 4_convolutions_filtering 
+```
+3. For building the file:-
+- If you want to build naive convolution then run
+```
+    make SRC=naive.cpp link=convolution.cpp
+```
+
+- If you want to build convolutionUsingOpenCV then run
+```
+    make SRC=convolutionUsingOpenCV.cpp link=convolution.cpp
+```
+
+- If you want to build SeparableConvolution then run
+```
+    make SRC=separableConvolutions.cpp link=convolution.cpp
+```
+
+4. Finally execute the binary file created by running the following command :
+```
+    ./convolution_filtering
+```
+
+### With Benchmarks
+
+1. Move into the cv_basics directory from the root pixels directory by running following command :
+```
+    cd 4_cv_basics 
+```
+2. Move into the Convolutions directory directory from the cv_basics directory by running following command :
+```
+    cd 4_convolutions_filtering 
+```
+3. For building the file:-
+- If you want to build naive convolution then run
+```
+    make SRC=./benchmarks/naive.cpp link=./src/convolution.cpp
+```
+
+- If you want to build convolutionUsingOpenCV then run
+```
+    make SRC=./benchmarks/convolutionUsingOpenCV.cpp link=./src/convolution.cpp
+```
+
+- If you want to build SeparableConvolution then run
+```
+    make SRC=./benchmarks/separableConvolutions.cpp link=./src/convolution.cpp
+```
+
+4. Finally execute the binary file created by running the following command :
+```
+    ./convolution_filtering
+```
+
+## Results
+>Naive Convolution:-
+
+![Naive](./assets/naive.png)
+
+>Convolutions Using OpenCV:-
+
+![ConvolutionUsingOpenCV](./assets/convolutionsusingopencv.png)
+>Separable Convolutions Using OpenCV:-
+
+![SeparableConvolutions](./assets/SeparableConvolutions.png)

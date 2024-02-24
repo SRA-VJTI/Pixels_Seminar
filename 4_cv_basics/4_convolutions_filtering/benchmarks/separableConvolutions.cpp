@@ -36,68 +36,16 @@ int main()
      * (improvements, preferably :P) to the naive implementation
      * to see how close you can get.
      */
-
-    std::cout << "Demonstrating naive convolution...\n";
-
     // Read input image
     std::string input_path = "./assets/Dog_img.jpeg";
     cv::Mat input = cv::imread(input_path, cv::IMREAD_COLOR);        // Read colored image
     // cv::Mat input = cv::imread(input_path, cv::IMREAD_GRAYSCALE); // Read grayscale image
 
-    // Resize the input image to a more managable size for demonstration purposes
+    // Resize the input image to a more manageable size for demonstration purposes
     cv::resize(input, input, cv::Size(input.cols*0.5, input.rows*0.5));
-
-    // Create a 3x3 Sobel kernel
-    cv::Mat sobel = (cv::Mat_<double>(3, 3) <<
-        -1., 0., 1.,
-        -2., 0., 2.,
-        -1., 0., 1.
-    );
 
     // Declare the output image matrix
     cv::Mat output;
-
-    // This is just one way to create a cv::Mat, some other ways are:
-    // cv::Mat kernel;                        // Declaration
-    // kernel.create(3, 3, CV_8UC(2));        // Creates an empty 3x3 matrix
-    // kernel = cv::Mat::ones(4, 4, CV_64F);  // Creates a 4x4 unit matrix
-    // kernel = cv::Mat::eye(3, 3, CV_64F);   // Creates a 3x3 indentity matrix
-
-    /*
-     * Some notes about how these functions work:
-     * As you may have noticed, the first two arguments here
-     * specify the dimensions of the matrix, while the third
-     * seems a little more cryptic. It is a type specification; with
-     * format CV_[Bits][(S)igned/(U)nsigned/(F)loat][C[Channel No.]]
-     */
-
-    // Making All Windows resizable
-    cv::namedWindow("Naive output", cv::WINDOW_NORMAL);
-    cv::namedWindow("filter 2D output", cv::WINDOW_NORMAL);
-
-    // Now to actually convolve
-    auto start = std::chrono::high_resolution_clock::now();  // Start clock to time execution
-    output = convolve(input, sobel);                         // Convolve
-    auto stop = std::chrono::high_resolution_clock::now();   // Stop clock
-
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-    std::cout << "Naive convolution took " << duration.count() << " microseconds.\n";
-
-    cv::imshow("Naive output", output);
-
-    // And using the built-in function
-    start = std::chrono::high_resolution_clock::now();
-    cv::filter2D(input, output, -1, sobel, cv::Point(-1, -1), 5.0, cv::BorderTypes::BORDER_REPLICATE);
-    stop = std::chrono::high_resolution_clock::now();
-
-    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-    std::cout << "Convolution using filter2D took " << duration.count() << " microseconds.\n";
-
-    cv::imshow("filter 2D output", output);
-    cv::waitKey(0);
-
-    std::cout << '\n';
-
     /* To demonstrate convolutions using separable kernels,
      * we will first convolve an image using a regular gaussian
      * kernel, then we will convolve the same original image
@@ -113,18 +61,18 @@ int main()
         1. / 16, 2. / 16, 1. / 16
     );
 
-    start = std::chrono::high_resolution_clock::now();
+    auto start = std::chrono::high_resolution_clock::now();
     filter2D(input, output, -1, gaussian);              // Convolve with original 'full' kernel
-    stop = std::chrono::high_resolution_clock::now();
+    auto stop = std::chrono::high_resolution_clock::now();
 
-    duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "Regular convolution took " << duration.count() << " microseconds.\n";
 
     // Making All Windows resizable
     cv::namedWindow("Output", cv::WINDOW_NORMAL);
 
     cv::imshow("Output", output);
-
+    cv::waitKey(0);
     // Define decomposed standard 3x3 Gaussian kernel
     cv::Mat gaussian_v = (cv::Mat_<double>(3, 1) << 1. / 4, 1. / 2, 1. / 4);
     cv::Mat gaussian_h = (cv::Mat_<double>(1, 3) << 1. / 4, 1. / 2, 1. / 4);
@@ -148,8 +96,6 @@ int main()
     cv::waitKey(0);
 
     cv::namedWindow("Output of Vertical Convolution", cv::WINDOW_NORMAL);
-    cv::namedWindow("Output of Horizontal Convolution", cv::WINDOW_NORMAL);
-
     start = std::chrono::high_resolution_clock::now();
     cv::filter2D(input, intermediate, -1, gaussian_v);   // Convolve with vertical 'half' kernel
     cv::filter2D(intermediate, output, -1, gaussian_h);  // Convolve with horizontal 'half' kernel
@@ -159,11 +105,10 @@ int main()
     std::cout << "Separated convolution took " << duration.count() << " microseconds.\n";
 
     cv::imshow("Output of Vertical Convolution", intermediate);
-
+    cv::waitKey(0);
+    cv::namedWindow("Output of Horizontal Convolution", cv::WINDOW_NORMAL);
     cv::imshow("Output of Horizontal Convolution", output);
     cv::waitKey(0);
     
     return 0;
-
 }
-
