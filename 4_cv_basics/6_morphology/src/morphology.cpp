@@ -27,7 +27,7 @@ int kernel_sum(Mat image, int row, int col, int Kernel_size)
 {
 	if (Kernel_size % 2 != 1 || Kernel_size < 3)
 	{
-		std::cout << "Kernel size should be of odd and grater than or equal to 3";
+		std::cout << "Kernel size should be of odd and greater than or equal to 3";
 		return -1;
 	}
 
@@ -53,7 +53,7 @@ Mat erosion(Mat source_image, Mat output_image, int Kernel_size)
 	{
 		for (int j = 0; j < source_image.cols; j++)
 		{
-			if (kernel_sum(source_image, i, j, Kernel_size) != 255 * 9)
+			if (kernel_sum(source_image, i, j, Kernel_size) != 255 * (Kernel_size*Kernel_size))
 			{
 				output_image.at<u_char>(i, j) = saturate_cast<char>(0);
 			}
