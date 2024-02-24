@@ -195,19 +195,9 @@ $$
 
 We have spun up a suboptimal implementation of the convolution operation for
 demonstration purposes.  
-To build and run it, execute the following commands from the root of this
-repository.
-
-```bash
-cd 4_cv_basics/4_convolutions_filtering      # Enter the project directory
-make SRC=main.cpp link=src/convolution.cpp   # Use make to build the project
-./Convolution_Filtering                      # Execute the built project
-```
-
 The demo code is purposefully kept in an unoptimized state, your task is to
 understand it and then improve it based on your understanding.  
 Feel free to make any changes you deem useful.
-
 Some points to be considered while thinking about optimizations are:
 
 - Will it work for kernels having different sizes?
