@@ -41,10 +41,7 @@ int kernel_sum(Mat image, int row, int col, int Kernel_size)
 			{
 				sum = sum + (int)image.at<u_char>(i, j);
 			}
-			else
-			{
-				sum = sum;
-			}
+
 		}
 	}
 	return sum;
