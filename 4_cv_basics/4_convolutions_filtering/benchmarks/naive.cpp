@@ -24,7 +24,7 @@ SOFTWARE.
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <chrono>              // To time execution - Benchmarking
-#include "convolution.hpp"     // Our naive implementation of the convolution operation
+#include "../include/convolution.hpp"     // Our naive implementation of the convolution operation
 
 int main()
 {
