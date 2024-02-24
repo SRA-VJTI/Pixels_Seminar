@@ -284,7 +284,7 @@ possible optimizations and are not necessarily sufficient.
     ./convolution_filtering
 ```
 
-## Results of different convolutions
+## Results
 >Naive Convolution:-
 
 ![Naive](./assets/naive.png)
