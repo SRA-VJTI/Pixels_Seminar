@@ -79,6 +79,11 @@ make install
 ```
 
 ### Option 2 - using bash script
+- Giving permission to execute.
+```sh
+chmod +x setup.sh
+```
+- Executing script
 ```sh
 ./setup.sh
 ```
