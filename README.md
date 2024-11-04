@@ -55,8 +55,6 @@ This repository includes basics to :
 
 OpenCV library and other dependency needs to be installed on your system, so follow these steps of installation:
 
-# Installation Guide
-
 ## Clone SRA-VJTI's Pixel Repository
 ```sh
 git clone https://github.com/SRA-VJTI/Pixels_Seminar.git
