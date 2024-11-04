@@ -54,9 +54,6 @@ This repository includes basics to :
 ## Installation Instructions
 
 OpenCV library and other dependency needs to be installed on your system, so follow these steps of installation:
-I'll fix the Markdown formatting in your README.md file to make it clearer and more consistent.
-
-
 
 # Installation Guide
 
