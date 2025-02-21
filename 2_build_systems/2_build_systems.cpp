@@ -23,25 +23,25 @@ SOFTWARE.
 */
 #include "2_build_systems.hpp"
 
-using namespace cv;
+
 using namespace std;
 
 int main(int argc, char** argv)
 {
     // Create a black image
-    Mat image = Mat::zeros( 400, 400, CV_8UC3 );
+    cv::Mat image = cv::Mat::zeros( 400, 400, CV_8UC3 );
 
     // Write some Text
-    putText(image, "Hello World :)", Point(15, 200),
-        FONT_HERSHEY_SIMPLEX, 2, Scalar(0, 255, 0), 3);
+    cv::putText(image, "Hello World :)", cv::Point(15, 200),
+        cv::FONT_HERSHEY_SIMPLEX, 2, cv::Scalar(0, 255, 0), 3);
 
-    imshow("Hello World", image);
+    cv::imshow("Hello World", image);
     
     //display an image from the $PROJECT_SOURCE_DIR/assets/images/b&w.PNG
-    Mat img = imread(std::string(PROJECT_SOURCE_DIR) + "/assets/images/rotate.png", IMREAD_COLOR);
-    imshow("Example", img);
+    cv::Mat img = cv::imread(std::string(PROJECT_SOURCE_DIR) + "/assets/images/rotate.png", cv::IMREAD_COLOR);
+    cv::imshow("Example", img);
 
     // Wait for a keystroke in the window
-    waitKey(0);
+    cv::waitKey(0);
     return 0;
 }
