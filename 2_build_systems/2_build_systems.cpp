@@ -38,8 +38,8 @@ int main(int argc, char** argv)
     cv::imshow("Hello World", image);
     
     //display an image from the $PROJECT_SOURCE_DIR/assets/images/b&w.PNG
-    cv::Mat img = cv::imread("PROJECT_SOURCE_DIR/assets/images/bcci.png", cv::IMREAD_COLOR);
-    cv::imshow("b&w", img);
+    cv::Mat img = cv::imread(std::string(PROJECT_SOURCE_DIR) + "/assets/images/rotate.png", cv::IMREAD_COLOR);
+    cv::imshow("Example", img);
 
     // Wait for a keystroke in the window
     cv::waitKey(0);
