@@ -55,15 +55,20 @@ Upon running, the program will:
 ---
 
 ## Example Output
-- **Original Image:** Displays the original image loaded from `./assets/dog.jpeg`.
+- **Original Image:** 
+
+<img width="256" alt="image" src="https://github.com/user-attachments/assets/943a3582-3043-44ee-b967-193d688952a7" />
+
+
+
 - **Rotated Image:** Image rotated 90° clockwise.
 
-*(Insert images here if available for visual reference.)*
+<img width="248" alt="image" src="https://github.com/user-attachments/assets/6c6480d2-5083-49c9-8c85-032268bd774b" />
 
 ---
 
 ## Troubleshooting
-- **Image Not Found:** Make sure `dog.jpeg` exists in the `./assets/` folder. Adjust the file path if needed.
+
 - **OpenCV Installation Issues:** Verify with:
   ```bash
   pkg-config --modversion opencv4
