@@ -70,8 +70,6 @@ Upon running, the program will:
   <img width="515" alt="image" src="https://github.com/user-attachments/assets/149b9330-c537-470c-b2cf-a8a2636b341c" />
 
 
-*(Add example images here if available for visual reference.)*
-
 ---
 
 ## Troubleshooting
