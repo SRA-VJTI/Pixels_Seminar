@@ -1,4 +1,4 @@
-
+# Accessing Pixel Values with OpenCV
 This exercise mainly deals with accessing and manipulating the pixel and hence, the colour values of the images. This becomes especially important in image processing operations when we need to change the appearance of an image.
 
 The program is divided into two parts:
@@ -39,8 +39,6 @@ On observation, we see that the images in the Mat format are stored by default i
 
 
 ---
-
-# Accessing Pixel Values with OpenCV
 
 This guide walks you through accessing and manipulating pixel values in images using OpenCV with C++. Follow the steps below to compile and run the code, and see how pixel access works in practice.
 
