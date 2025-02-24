@@ -42,7 +42,7 @@ cv::Mat rotate(cv::Mat src, double angle)
 
 int main(){
     // converting the image into Mat format
-    cv::Mat img = cv::imread("./assets/dog.jpeg");
+    cv::Mat img = cv::imread("images.jpeg");
     cv::Mat img2;
     // obtaining the image dimensions
     int height=img.size().height;
