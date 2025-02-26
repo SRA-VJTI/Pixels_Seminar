@@ -57,7 +57,7 @@ cd 4_cv_basics/2_playing_with_images/0_accessing_pixels
 Compile the `main.cpp` file using the following command:
 
 ```bash
-    make -f ../Makefile build SRC=main.cpp  
+make -f ../Makefile build SRC=main.cpp  
 ```
 
 **Note:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
