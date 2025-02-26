@@ -16,7 +16,7 @@ The exercises can be accessed from the following:
 
 ## Usage
 
-Follow these steps to download, build, and run the project on your machine:
+Follow these steps to build, and run the project on your machine:
 
 1. **Navigate to the Project Folder:**  
    Move into the `2_playing_with_images` directory:
