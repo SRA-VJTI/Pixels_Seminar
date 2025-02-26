@@ -89,5 +89,3 @@ This exercise demonstrates how to rotate images in OpenCV using affine transform
 ## Resources
 - [OpenCV Affine Transformations Documentation](https://docs.opencv.org/)
 - [C++ Reference Guide](https://en.cppreference.com/)
-
-

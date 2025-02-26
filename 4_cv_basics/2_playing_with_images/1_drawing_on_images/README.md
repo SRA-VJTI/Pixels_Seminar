@@ -25,7 +25,7 @@ cd 4_cv_basics/2_playing_with_images/1_drawing_on_images
 Compile the `main.cpp` file using the following command:
 
 ```bash
-g++ -std=c++11 main.cpp -o drawing `pkg-config --cflags --libs opencv4`
+make -f ../Makefile build SRC=main.cpp  
 ```
 
 **Note:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
@@ -36,7 +36,7 @@ g++ -std=c++11 main.cpp -o drawing `pkg-config --cflags --libs opencv4`
 Run the compiled executable:
 
 ```bash
-./drawing
+./main
 ```
 
 Upon running, a window will display an image with various shapes and text drawn on it. Modify the code to experiment with different colors, shapes, thicknesses, and positions.
@@ -71,4 +71,3 @@ This exercise demonstrates how to draw shapes and text on images using OpenCV. E
 ## Resources
 - [OpenCV Drawing Functions Documentation](https://docs.opencv.org/)
 - [C++ Reference](https://en.cppreference.com/)
-
