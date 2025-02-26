@@ -107,18 +107,3 @@ This exercise helps you understand how to access and manipulate individual pixel
 ## Resources
 - [OpenCV Documentation](https://docs.opencv.org/)
 - [C++ Reference](https://en.cppreference.com/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
