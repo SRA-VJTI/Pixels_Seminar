@@ -1,4 +1,4 @@
-# ACCESSING INDIVIDUAL PIXEL VALUES OF IMAGES
+# Accessing Pixel Values with OpenCV
 This exercise mainly deals with accessing and manipulating the pixel and hence, the colour values of the images. This becomes especially important in image processing operations when we need to change the appearance of an image.
 
 The program is divided into two parts:
@@ -36,3 +36,72 @@ On observation, we see that the images in the Mat format are stored by default i
 *On choosing option 1*
 
 ![Option 1 result](https://user-images.githubusercontent.com/103985810/226843490-d960e0c4-1ee1-4448-b076-c35d6113bf85.png)
+
+
+---
+
+This guide walks you through accessing and manipulating pixel values in images using OpenCV with C++. Follow the steps below to compile and run the code, and see how pixel access works in practice.
+
+---
+
+## Directory Structure
+Navigate to the project folder containing the source code:
+
+```bash
+cd 4_cv_basics/2_playing_with_images/0_accessing_pixels
+```
+
+---
+
+## Compilation
+Compile the `main.cpp` file using the following command:
+
+```bash
+make -f ../Makefile build SRC=main.cpp  
+```
+
+---
+
+## Running the Program
+Run the compiled executable:
+
+```bash
+./main
+```
+
+Upon running, you will be prompted to select an option (**0** or **1**). The output window will vary based on your choice.
+
+---
+
+## Example Outputs
+### Option 0: Display Original Image with Accessed Pixels
+![Option 0 Output](https://github.com/user-attachments/assets/134550b8-55c7-4d24-9ea4-6d0b89825dd0)
+
+---
+
+### Option 1: Display Modified Image with Pixel Manipulation
+![Option 1 Output](https://github.com/user-attachments/assets/8e40d4dd-9bd1-446d-b36c-4b77afbb011c)
+
+---
+
+## Troubleshooting
+- **OpenCV Not Found:** Ensure OpenCV is installed and the `pkg-config` command works:
+  ```bash
+  pkg-config --modversion opencv4
+  ```
+- **Permission Denied:** Run the following command to make the file executable:
+  ```bash
+  chmod +x pixel_access
+  ```
+- **Missing Images:** Ensure the input images are in the same directory or update the image path in `main.cpp`.
+
+---
+
+## Conclusion
+This exercise helps you understand how to access and manipulate individual pixel values using OpenCV. Play around with different images and modify the code to deepen your understanding.
+
+---
+
+## Resources
+- [OpenCV Documentation](https://docs.opencv.org/)
+- [C++ Reference](https://en.cppreference.com/)

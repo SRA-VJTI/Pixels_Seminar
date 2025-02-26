@@ -2,7 +2,7 @@
 CC = g++							
 
 # Defining the name of the object that will be created after using make
-PROJECT = playing_with_images		
+PROJECT = $(basename $(notdir $(SRC)))
 
 # Here Include specifies which directories can be added in the include path of the main.cpp
 CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) -Iinclude/		

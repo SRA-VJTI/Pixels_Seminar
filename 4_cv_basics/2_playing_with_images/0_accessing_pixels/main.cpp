@@ -33,7 +33,7 @@ cv::Mat change_blue(cv::Mat img, int height, int width);
 
 int main() {
     //reading the image and converting it into cv::Mat format
-    cv::Mat img = cv::imread("./assets/dog.jpeg");
+    cv::Mat img = cv::imread("../assets/dog.jpeg");
     cv::Mat img2, img3;
     
     //obtaining the dimensions of the image
@@ -94,3 +94,5 @@ cv::Mat change_blue(cv::Mat img, int height, int width) {
     }
     return img;
 }
+
+

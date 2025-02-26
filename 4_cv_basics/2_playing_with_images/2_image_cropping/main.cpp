@@ -26,9 +26,10 @@ SOFTWARE.
  
 using namespace std;
 
+
 int main(){
     //reading an image and converting to cv::Mat format
-    cv::Mat img = cv::imread("./assets/dog.jpeg", cv::IMREAD_GRAYSCALE);
+    cv::Mat img = cv::imread("../assets/dog.jpeg", cv::IMREAD_GRAYSCALE);
     cv::Mat img4;
     cv::Vec3b* ptr;
 
