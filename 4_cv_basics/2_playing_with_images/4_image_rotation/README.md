@@ -26,8 +26,6 @@ Compile the `main.cpp` file using the following command:
 make -f ../Makefile build SRC=main.cpp  
 ```
 
-✅ **Tip:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
-
 ---
 
 ## Running the Program
