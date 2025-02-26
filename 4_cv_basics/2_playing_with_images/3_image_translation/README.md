@@ -27,7 +27,7 @@ cd 4_cv_basics/2_playing_with_images/3_image_translation
 Compile the `main.cpp` file using the following command:
 
 ```bash
-g++ -std=c++11 main.cpp -o image_translation `pkg-config --cflags --libs opencv4`
+make -f ../Makefile build SRC=main.cpp  
 ```
 
 **Note:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
@@ -38,7 +38,7 @@ g++ -std=c++11 main.cpp -o image_translation `pkg-config --cflags --libs opencv4
 Run the compiled executable:
 
 ```bash
-./image_translation
+./main
 ```
 
 Upon running, the program will:

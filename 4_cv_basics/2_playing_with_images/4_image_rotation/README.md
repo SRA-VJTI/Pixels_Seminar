@@ -23,7 +23,7 @@ cd 4_cv_basics/2_playing_with_images/4_image_rotation
 Compile the `main.cpp` file using the following command:
 
 ```bash
-g++ -std=c++11 main.cpp -o image_rotation `pkg-config --cflags --libs opencv4`
+make -f ../Makefile build SRC=main.cpp  
 ```
 
 ✅ **Tip:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
@@ -34,7 +34,7 @@ g++ -std=c++11 main.cpp -o image_rotation `pkg-config --cflags --libs opencv4`
 Run the compiled executable:
 
 ```bash
-./image_rotation
+./main
 ```
 
 Upon running, the program will:

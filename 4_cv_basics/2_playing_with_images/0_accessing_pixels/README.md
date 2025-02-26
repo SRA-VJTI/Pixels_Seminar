@@ -57,7 +57,7 @@ cd 4_cv_basics/2_playing_with_images/0_accessing_pixels
 Compile the `main.cpp` file using the following command:
 
 ```bash
-g++ -std=c++11 main.cpp -o pixel_access `pkg-config --cflags --libs opencv4`
+    make -f ../Makefile build SRC=main.cpp  
 ```
 
 **Note:** Ensure you have OpenCV installed and `pkg-config` set up correctly.
@@ -68,7 +68,7 @@ g++ -std=c++11 main.cpp -o pixel_access `pkg-config --cflags --libs opencv4`
 Run the compiled executable:
 
 ```bash
-./pixel_access
+./main
 ```
 
 Upon running, you will be prompted to select an option (**0** or **1**). The output window will vary based on your choice.
