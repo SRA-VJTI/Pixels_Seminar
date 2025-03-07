@@ -158,7 +158,7 @@ apply some filtering before calculating the gradient because it is very sensitiv
 ## **Usage**:
 To compile code of given subfolder command format is
 ```
-make build <subfolder name>
+make build SRC=<subfolder>/main.cpp
 ```
 To run compiled binary command format is
 ```
@@ -172,7 +172,7 @@ make clean <subfolder name>
 
 For example if you want to compile and run code in 1_erosion then use following commands
 ```
-make build 1_erosion
+make build SRC=1_erosion/main.cpp
 
 ./_1_erosion assets/normal_image.png
 ```
