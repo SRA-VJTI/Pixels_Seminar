@@ -27,7 +27,7 @@ using namespace std;
 
 int main(){
     // reading image and storing it in Mat format
-    cv::Mat image = cv::imread("../assets/dog.jpeg", cv::IMREAD_GRAYSCALE);
+    cv::Mat image = cv::imread("./assets/dog.jpeg", cv::IMREAD_GRAYSCALE);
 
     // storing the dimensions of the image
     int height = image.cols;

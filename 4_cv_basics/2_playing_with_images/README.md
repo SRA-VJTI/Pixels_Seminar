@@ -23,17 +23,12 @@ Follow these steps to build, and run the project on your machine:
    ```bash
    cd 2_playing_with_images
    ```
-
-2. **Go to the Desired Subfolder:**  
-   Change into the subfolder containing the source code you want to run:
-   ```bash
-   cd <subfolder_name>
-   ```
-
-3. **Build and Run the Project:**  
+   
+2. **Build and Run the Project:**  
    Use the following commands to build and execute the program:
+   
    ```bash
-   make -f ../Makefile build SRC=main.cpp
+   make build SRC=<subfolder>/main.cpp
    ./playing_with_images
    ```
 
