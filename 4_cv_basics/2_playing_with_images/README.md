@@ -33,3 +33,10 @@ Follow these steps to build, and run the project on your machine:
    ```
 
 > **Note:** Replace `<subfolder_name>` with the appropriate subfolder name containing `main.cpp`.
+
+## For example:
+   Running the code for the 'drawing_shapes' subfolder
+```bash
+make build SRC=1_drawing_on_images/main.cpp
+./playing_with_images
+```
