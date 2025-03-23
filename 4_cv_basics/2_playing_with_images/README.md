@@ -13,3 +13,30 @@ The exercises can be accessed from the following:
 [Image Translation](/4_cv_basics/2_playing_with_images/3_image_translation/)
 
 [Image Rotation](/4_cv_basics/2_playing_with_images/4_image_rotation/)
+
+## Usage
+
+Follow these steps to build, and run the project on your machine:
+
+1. **Navigate to the Project Folder:**  
+   Move into the `2_playing_with_images` directory:
+   ```bash
+   cd 2_playing_with_images
+   ```
+   
+2. **Build and Run the Project:**  
+   Use the following commands to build and execute the program:
+   
+   ```bash
+   make build SRC=<subfolder>/main.cpp
+   ./playing_with_images
+   ```
+
+> **Note:** Replace `<subfolder_name>` with the appropriate subfolder name containing `main.cpp`.
+
+## For example:
+   Running the code for the 'drawing_shapes' subfolder
+```bash
+make build SRC=1_drawing_on_images/main.cpp
+./playing_with_images
+```
