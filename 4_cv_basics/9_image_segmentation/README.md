@@ -17,7 +17,7 @@ Image segmentation allows devices to identify individual items in images. Conseq
 
 When people look at photos, they automatically segment people, objects, and backgrounds without even realizing it. Brains automatically detect edges between objects. Image segmentation allows computers to do the same so that they can segment couches from cats, people from sunsets, or tables from apples.
 
-![Image Segregation](assets/segregated.jpeg "")
+![Image Segregation](assets/segmented.jpeg "")
 
 
 
