@@ -90,7 +90,7 @@ command not found: make
 Run the installation script:
 ```sh
 chmod +x install.sh
-./install.sh
+sudo ./install.sh
 ```
 This will install the required dependencies, including `make`.
 

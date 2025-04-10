@@ -57,17 +57,14 @@ if ! command_exists git; then
     esac
 fi
 
-if [ ! -d "Pixels_Seminar" ]; then
+if [[ ! -d Pixels_Seminar && "$(basename "$PWD")" != "Pixels_Seminar" ]]; then
     echo "Cloning the repository..."
     git clone https://github.com/SRA-VJTI/Pixels_Seminar.git
 fi
 
-cd Pixels_Seminar
-
 # Check if OpenCV is installed
 if pkg-config --exists opencv4 sdl2; then
     echo "OpenCV is already installed."
-    exit 0
 else
     echo "OpenCV not found. Installing dependencies..."
 fi
