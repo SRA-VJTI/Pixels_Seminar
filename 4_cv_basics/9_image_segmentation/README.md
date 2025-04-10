@@ -13,9 +13,9 @@
 # Image Segmentation
 ## Introduction
 
-Image segmentation technology allows devices to identify individual items in images. Consequently, apps can change backgrounds or erase subjects because of this capability. This process in a computer allows machines to isolate different elements that exist in an image.
+Image segmentation allows devices to identify individual items in images. Consequently, apps can change backgrounds or erase subjects because of this capability. This process in a computer allows machines to isolate different elements that exist in an image.
 
-When people look at photos, they automatically segment people, objects, and backgrounds without even realizing it. Brains automatically detect edges between objects. Image segmentation allows computers to do the same so that they can segment couches from cats, people from sunsets, or tables from apples. This article discusses this technology with a focus specifically on the GrabCut method, which has transformed image processing procedures.
+When people look at photos, they automatically segment people, objects, and backgrounds without even realizing it. Brains automatically detect edges between objects. Image segmentation allows computers to do the same so that they can segment couches from cats, people from sunsets, or tables from apples.
 
 ![Image Segregation](assets/segregated.jpeg "")
 
