@@ -35,10 +35,10 @@ Mathematically, image segmentation is a partition problem. Given an image repres
 
 The homogeneity criterion can be based on various features:
 - Intensity: Using thresholding with a threshold $T$:
-  $$S(x,y) = \begin{cases} 
+  $$ S(x,y) = \begin{cases} 
   1, & \text{if } I(x,y) \geq T \\
   0, & \text{if } I(x,y) < T
-  \end{cases}$$
+  \end{cases} $$
 - Color: Using color similarity metrics
 - Texture: Using local pattern analysis
 - Higher-level semantic information
