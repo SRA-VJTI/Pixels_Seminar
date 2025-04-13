@@ -13,17 +13,14 @@ LIBS = $(shell pkg-config --libs opencv4)
 # Source file for segmentation (grabcut or any other)
 link = src/segmentation.cpp
 
-# Build target: run `make build SRC=<FILENAME>` to build the executable
+# Build target: run `make build` to build the executable
 .PHONY: build
 build:
-ifndef SRC
-	$(error "SRC is not set")
-endif
 ifndef link
 	$(error "link is not set")
 endif
 	@echo "Building..."
-	@$(CC) $(SRC) $(link) -o $(PROJECT) $(CFLAGS) $(LIBS)
+	@$(CC) main.cpp $(link) -o $(PROJECT) $(CFLAGS) $(LIBS)
 
 # Clean target to remove built executable
 .PHONY: clean

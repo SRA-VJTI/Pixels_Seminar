@@ -35,10 +35,12 @@ Mathematically, image segmentation is a partition problem. Given an image repres
 
 The homogeneity criterion can be based on various features:
 - Intensity: Using thresholding with a threshold $T$:
-  $$ S(x,y) = \begin{cases} 
+  ```math
+  S(x,y) = \begin{cases}
   1, & \text{if } I(x,y) \geq T \\
   0, & \text{if } I(x,y) < T
-  \end{cases} $$
+  \end{cases}
+  ```
 - Color: Using color similarity metrics
 - Texture: Using local pattern analysis
 - Higher-level semantic information
@@ -61,7 +63,9 @@ Mathematically, an image is represented as a weighted graph $G = (V, E)$ where:
 - Edge weights $w(u,v)$ represent the dissimilarity between vertices
 
 For pixels $p$ and $q$, a common weight function is:
-$$w(p,q) = e^{-\frac{||I(p) - I(q)||^2}{2\sigma^2}}$$
+```math
+w(p,q) = e^{-\frac{||I(p) - I(q)||^2}{2\sigma^2}}
+```
 
 Where $\sigma$ controls the influence of intensity differences.
 
@@ -81,7 +85,9 @@ GrabCut is an easy-to-use separator for image parts. Here's how it functions:
 - Color Analysis: The system processes color patterns in both possible foreground (within the rectangle) and certain background (beyond the rectangle). For instance, while choosing a golden retriever, the system can determine tan/gold colors as possible foreground and green grass colors as background.
 
 Mathematically, GrabCut models pixel color distributions using Gaussian Mixture Models (GMMs):
-$$P(z|α,k,θ,z) = \sum_{k=1}^{K} \pi_k \mathcal{N}(z|\mu_k,\Sigma_k)$$
+```math
+P(z|\alpha,k,\theta,z) = \sum_{k=1}^{K} \pi_k \mathcal{N}(z|\mu_k,\Sigma_k)
+```
 
 Where:
 - $\pi_k$, $\mu_k$, and $\Sigma_k$ are the weight, mean, and covariance of the $k$-th Gaussian component
@@ -92,12 +98,16 @@ Where:
 - Iterative Refinement: Once estimated, the system improves its knowledge of foreground and background colors, and then recalculates. The process is repeated a number of times until generating optimal results.
 
 The energy function combines color models with smoothness constraints:
-$$E(α,k,θ,z) = U(α,k,θ,z) + V(α)$$
+```math
+E(\alpha,k,\theta,z) = U(\alpha,k,\theta,z) + V(\alpha)
+```
 
 Where:
 - $U$ is the data term based on color models
 - $V$ enforces spatial coherence:
-  $$V(α) = \gamma \sum_{(p,q) \in E} \exp\left(-\beta||z_p - z_q||^2\right) \cdot \delta(α_p \neq α_q)$$
+  ```math
+  V(\alpha) = \gamma \sum_{(p,q) \in E} \exp\left(-\beta||z_p - z_q||^2\right) \cdot \delta(\alpha_p \neq \alpha_q)
+  ```
 
 GrabCut allows users to intervene when errors occur. If an area of the subject is not chosen, users can mark that region as clear foreground. Similarly, regions of the background that were incorrectly added can be designated as clear background. This combines human decisions with computer processing.
 
@@ -140,29 +150,52 @@ For practical implementation, the OpenCV library provides implementations of man
 Each approach has its strengths and weaknesses, making them suitable for different applications and image types. By understanding the theoretical foundations and practical implementations of these techniques, you'll be well-equipped to tackle a wide range of image segmentation challenges.
 ## How to Use This Project
 
-### 1. Build the Program
+### Prerequisites
+- OpenCV 4.x installed
+- C++ compiler (g++)
+- Make build system
 
-```bash
-make build SRC=src/main.cpp
-```
+### Running Instructions
 
-### 2. Run the Program
+1. **Clone the Repository** (if you haven't already)
+   ```bash
+   git clone https://github.com/SRA-VJTI/Pixels_Seminar.git
+   cd 4_cv_basics/9_image_segmentation
+   ```
 
-```bash
-./image_segmentation
-```
+2. **Build the Program**
+   ```bash
+   make build
+   ```
 
-### 3. Instructions
+3. **Run the Program**
+   ```bash
+   ./image_segmentation
+   ```
 
-- The default image (`cat1.jpeg`) is loaded.
-- A window will appear showing the image.
-- Draw a rectangle around the object using the mouse.
-- The program applies GrabCut to extract the foreground object.
-- The result is displayed with a clean white background.
+4. **Using the Program**
+   - After you run the program, a window will open showing the default image (`car.jpeg`)
+![Selection Window](assets/selection_window.jpeg "SELECTION WINDOW")
+   - Use your mouse to draw a rectangle around the object you want to segment:
+     - Left-click and hold to start drawing
+     - Drag to create the rectangle
+     - Release to finish drawing and press enter
+![Select the ROI](assets/rectangle.jpeg "SELECT ROI")
 
-### 4. Clean the Build
+   - The program will automatically apply the GrabCut algorithm
+   - Results will be displayed in a new window
+![Resulting Image](assets/resulting_image.jpeg "Resulting image")
+   - Press any key to exit
 
-```bash
-make clean src
-```
+5. **Clean Build Files** (optional)
+   ```bash
+   make clean
+   ```
+
+### Troubleshooting
+- If the program fails to start, ensure all the prerequisites mentioned earlier are properly installed
+- If the segmentation results are not satisfactory, try:
+  - Drawing a tighter rectangle around the object
+  - Ensuring the object has good contrast with the background
+  - Using an image with clear foreground/background separation
 
