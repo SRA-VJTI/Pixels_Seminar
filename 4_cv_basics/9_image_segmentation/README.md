@@ -35,12 +35,14 @@ Mathematically, image segmentation is a partition problem. Given an image repres
 
 The homogeneity criterion can be based on various features:
 - Intensity: Using thresholding with a threshold $T$:
-  ```math
-  S(x,y) = \begin{cases}
-  1, & \text{if } I(x,y) \geq T \\
-  0, & \text{if } I(x,y) < T
-  \end{cases}
-  ```
+
+$$
+S(x,y) = \begin{cases}
+1, & \text{if } I(x,y) \geq T \\
+0, & \text{if } I(x,y) < T
+\end{cases}
+$$
+
 - Color: Using color similarity metrics
 - Texture: Using local pattern analysis
 - Higher-level semantic information
@@ -98,16 +100,13 @@ Where:
 - Iterative Refinement: Once estimated, the system improves its knowledge of foreground and background colors, and then recalculates. The process is repeated a number of times until generating optimal results.
 
 The energy function combines color models with smoothness constraints:
-```math
-E(\alpha,k,\theta,z) = U(\alpha,k,\theta,z) + V(\alpha)
-```
+$$E(\alpha,k,\theta,z) = U(\alpha,k,\theta,z) + V(\alpha)$$
 
 Where:
 - $U$ is the data term based on color models
-- $V$ enforces spatial coherence:
-  ```math
-  V(\alpha) = \gamma \sum_{(p,q) \in E} \exp\left(-\beta||z_p - z_q||^2\right) \cdot \delta(\alpha_p \neq \alpha_q)
-  ```
+* $V$ enforces spatial coherence:
+
+$$V(a) = \gamma \sum_{(p,q) \in E} \exp(-\beta|z_p - z_q|^2) \cdot \delta(a_p \neq a_q)$$
 
 GrabCut allows users to intervene when errors occur. If an area of the subject is not chosen, users can mark that region as clear foreground. Similarly, regions of the background that were incorrectly added can be designated as clear background. This combines human decisions with computer processing.
 
