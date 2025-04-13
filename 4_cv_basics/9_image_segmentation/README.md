@@ -35,12 +35,10 @@ Mathematically, image segmentation is a partition problem. Given an image repres
 
 The homogeneity criterion can be based on various features:
 - Intensity: Using thresholding with a threshold $T$:
-  ```math
-  S(x,y) = \begin{cases}
-  1, & \text{if } I(x,y) \geq T \\
+  $$S(x,y) = \begin{cases}
+  1, & \text{if } I(x,y) \geq T \\[2pt]
   0, & \text{if } I(x,y) < T
-  \end{cases}
-  ```
+  \end{cases}$$
 - Color: Using color similarity metrics
 - Texture: Using local pattern analysis
 - Higher-level semantic information
@@ -175,16 +173,21 @@ Each approach has its strengths and weaknesses, making them suitable for differe
 
 4. **Using the Program**
    - After you run the program, a window will open showing the default image (`car.jpeg`)
-![Selection Window](assets/selection_window.jpeg "SELECTION WINDOW")
+   
+   ![Selection Window](assets/selection_window.jpeg)
+   
    - Use your mouse to draw a rectangle around the object you want to segment:
      - Left-click and hold to start drawing
      - Drag to create the rectangle
      - Release to finish drawing and press enter
-![Select the ROI](assets/rectangle.jpeg "SELECT ROI")
-
+   
+   ![Select the ROI](assets/rectangle.jpeg)
+   
    - The program will automatically apply the GrabCut algorithm
    - Results will be displayed in a new window
-![Resulting Image](assets/resulting_image.jpeg "Resulting image")
+   
+   ![Resulting Image](assets/resulting_image.jpeg)
+   
    - Press any key to exit
 
 5. **Clean Build Files** (optional)
