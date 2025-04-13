@@ -43,9 +43,8 @@ S(x,y) = \begin{cases}
 \end{cases}
 $$
 
-- Color: Using color similarity metrics
-- Texture: Using local pattern analysis
-- Higher-level semantic information
+- Color
+- Texture
 
 Simple segmentation merely clumps pixels of the same color (like blue pixels that may be defining sky). More advanced techniques detect abrupt color transitions that define edges (like the edge of a person). The most advanced techniques identify objects by shape and context.
 
