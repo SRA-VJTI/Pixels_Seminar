@@ -10,19 +10,17 @@ CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv4) -Iinclude/
 # Linker flags for OpenCV
 LIBS = $(shell pkg-config --libs opencv4)
 
-# Source file for segmentation (grabcut or any other)
-link = src/segmentation.cpp
-
-# Build target: run `make build` to build the executable
-.PHONY: build
+# Check if link is set
+ifeq ($(SRC), $(link),)
 build:
-ifndef link
-	$(error "link is not set")
-endif
+	$(error "SRC is not set")
+else
+build:
 	@echo "Building..."
-	@$(CC) main.cpp $(link) -o $(PROJECT) $(CFLAGS) $(LIBS)
+	@$(CC) $(SRC) $(link) -o $(PROJECT) $(CFLAGS) $(LIBS)
+endif	
 
-# Clean target to remove built executable
+# if folder is not set, clean all build files all subfolders
 .PHONY: clean
 clean:
 	@echo "Cleaning..."

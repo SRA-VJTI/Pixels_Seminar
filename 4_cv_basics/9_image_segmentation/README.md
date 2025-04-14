@@ -8,7 +8,7 @@
 4. [How GraphCut Works](#how-graphcut-works)
 5. [Additional Information](#additional-information)
 6. [Further Learning Resources](#further-learning-resources)
-7. [How to Use This Project](#how-to-use-this-project)
+7. [Running Instructions](#running-instructions)
 
 # Image Segmentation
 ## Introduction
@@ -54,8 +54,7 @@ Simple segmentation merely clumps pixels of the same color (like blue pixels tha
 
 ![Image Segregation](assets/graphcut.jpeg "")
 
-Graph cuts are a powerful image segmentation tool. Although the term is technical, the idea is simple.
-
+Graph cuts are a powerful image segmentation tool.
 A picture can be imagined as a neighborhood where there is a house for every pixel. Every house shares a common border with its neighboring houses (neighbor pixels). There are two community centers for the neighborhood - one for "foreground" people and another one for "background" people.
 
 Mathematically, an image is represented as a weighted graph $G = (V, E)$ where:
@@ -111,12 +110,6 @@ GrabCut allows users to intervene when errors occur. If an area of the subject i
 
 ![how individual pixels become grouped regions](assets/user_defining_roi.jpeg "")
 
-GrabCut has other functionality:
-- **Definite Region Marking**: Mark regions as "definitely foreground" or "definitely background."
-- **Multi-Object Processing**: Process multiple objects simultaneously for group images.
-- **Texture Recognition**: Consider textures for identifying visually similar objects with different patterns.
-- **Video Processing**: Extend to video applications, following subjects between frames.
-- **Multi-level Processing**: Process at various levels of detail for general shape and detailed features.
 
 ## Additional Information
 
@@ -134,44 +127,27 @@ The `cv::grabCut` function implements the GrabCut image segmentation algorithm w
 
 To deepen your understanding of image segmentation beyond GrabCut, consider exploring:
 
-1. **Watershed Algorithm**: A region-based approach that treats an image as a topographic surface
+1. **Watershed Algorithm**: A region-based approach that treats an image as a topographic surface 
 2. **Mean Shift Segmentation**: A feature-space analysis technique for locating maxima of a density function
 3. **K-means Clustering**: A simple but effective method for partitioning pixels into k clusters
-4. **Deep Learning Approaches**: Neural network architectures like U-Net or Mask R-CNN that have revolutionized semantic segmentation
 
 For practical implementation, the OpenCV library provides implementations of many segmentation algorithms:
 
-- `cv::watershed()` for watershed segmentation
-- `cv::pyrMeanShiftFiltering()` for mean shift segmentation
-- K-means clustering can be implemented using `cv::kmeans()`
+- `cv::watershed()` for watershed segmentation: [Official-Link](https://docs.opencv.org/4.x/d3/db4/tutorial_py_watershed.html)
+- `cv::pyrMeanShiftFiltering()` for mean shift segmentation: [Official-Link](https://docs.opencv.org/4.x/d7/d00/tutorial_meanshift.html)
+- K-means clustering can be implemented using `cv::kmeans()`: [Offical-Link](https://docs.opencv.org/4.x/d9/d70/tutorial_py_kmeans_index.html)
 
-Each approach has its strengths and weaknesses, making them suitable for different applications and image types. By understanding the theoretical foundations and practical implementations of these techniques, you'll be well-equipped to tackle a wide range of image segmentation challenges.
-## How to Use This Project
+Each approach has its strengths and weaknesses, making them suitable for different applications and image types. Refer Opencv official documentation for getting into this functionalities.
 
-### Prerequisites
-- OpenCV 4.x installed
-- C++ compiler (g++)
-- Make build system
+## Running Instructions
 
-### Running Instructions
+1. Navigate to ../Pixels_Seminar/4_cv_basics/9_image_segmentation
+2. Open terminal in this folder
+3. run   ```make clean``` to clean out any previous builds
+4. run ```make SRC=main.cpp link=src/segementation.cpp``` to build the executable
+5. run ```./image_segmentation```
 
-1. **Clone the Repository** (if you haven't already)
-   ```bash
-   git clone https://github.com/SRA-VJTI/Pixels_Seminar.git
-   cd 4_cv_basics/9_image_segmentation
-   ```
-
-2. **Build the Program**
-   ```bash
-   make build
-   ```
-
-3. **Run the Program**
-   ```bash
-   ./image_segmentation
-   ```
-
-4. **Using the Program**
+6. **Using the Program**
    - After you run the program, a window will open showing the default image (`car.jpeg`)
    
    ![Selection Window](assets/selection_window.jpeg)
@@ -189,16 +165,4 @@ Each approach has its strengths and weaknesses, making them suitable for differe
    ![Resulting Image](assets/resulting_image.jpeg)
    
    - Press any key to exit
-
-5. **Clean Build Files** (optional)
-   ```bash
-   make clean
-   ```
-
-### Troubleshooting
-- If the program fails to start, ensure all the prerequisites mentioned earlier are properly installed
-- If the segmentation results are not satisfactory, try:
-  - Drawing a tighter rectangle around the object
-  - Ensuring the object has good contrast with the background
-  - Using an image with clear foreground/background separation
 
